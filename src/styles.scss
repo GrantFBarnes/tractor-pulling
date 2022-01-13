@@ -1,0 +1,45 @@
+/* Global Styling */
+
+$body-color: white;
+$body-bg: #343a40;
+$card-height: 100%;
+
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+
+.total-center {
+  @extend .d-flex;
+  @extend .align-items-center;
+  @extend .justify-content-center;
+  height: 90%;
+  width: 100%;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.blur {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -ms-filter: blur(5px);
+  -o-filter: blur(5px);
+  filter: blur(5px);
+}
+
+.mainTitle {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
