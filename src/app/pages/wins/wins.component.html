@@ -51,8 +51,12 @@
           <tr class="align-middle">
             <td>{{ cl_n }}</td>
             <td>{{ getPullersStr(wins[cl_n].leaders) }}</td>
-            <td>{{ wins[cl_n].max_wins }}</td>
-            <td>{{ wins[cl_n].percentage }}</td>
+            <td [ngClass]="getWinsClass(cl_n)">
+              {{ wins[cl_n].max_wins }}
+            </td>
+            <td [ngClass]="getPercentageClass(cl_n)">
+              {{ wins[cl_n].percentage }}
+            </td>
             <td>{{ wins[cl_n].winner_count }}</td>
             <td>{{ wins[cl_n].times_pulled }}</td>
           </tr>

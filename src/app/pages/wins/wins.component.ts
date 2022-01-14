@@ -42,6 +42,22 @@ export class WinsComponent implements OnInit {
     this.getPullers();
   }
 
+  getWinsClass(cl_n: string): string {
+    const wins = this.wins[cl_n].max_wins;
+    if (wins >= 7) return 'green-text';
+    if (wins >= 5) return 'yellow-text';
+    if (wins >= 3) return 'orange-text';
+    return 'red-text';
+  }
+
+  getPercentageClass(cl_n: string): string {
+    const percent = parseInt(this.wins[cl_n].percentage);
+    if (percent >= 55) return 'green-text';
+    if (percent >= 40) return 'yellow-text';
+    if (percent >= 20) return 'orange-text';
+    return 'red-text';
+  }
+
   getPullersStr(pullers: string[]): string {
     let val = [];
     for (let p in pullers) {
