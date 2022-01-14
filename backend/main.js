@@ -38,5 +38,217 @@ function getDataDump(table) {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+// Seasons
+
+function getSeasons() {
+  return new Promise((resolve) => {
+    database
+      .select("*", "seasons", null, null)
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to get seasons" });
+        return;
+      });
+  });
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Pulls
+
+function getPulls() {
+  return new Promise((resolve) => {
+    database
+      .select("*", "pulls", null, null)
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to get pulls" });
+        return;
+      });
+  });
+}
+
+function getPullsBySeason(id) {
+  return new Promise((resolve) => {
+    if (!id) {
+      resolve({ statusCode: 500, data: "id not provided" });
+      return;
+    }
+
+    database
+      .select("*", "pulls", "season", [id])
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({
+          statusCode: 400,
+          data: "failed to get pulls for season: " + id,
+        });
+        return;
+      });
+  });
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Classes
+
+function getClasses() {
+  return new Promise((resolve) => {
+    database
+      .select("*", "classes", null, null)
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to get classes" });
+        return;
+      });
+  });
+}
+
+function getClassesByPull(id) {
+  return new Promise((resolve) => {
+    if (!id) {
+      resolve({ statusCode: 500, data: "id not provided" });
+      return;
+    }
+
+    database
+      .select("*", "classes", "pull", [id])
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({
+          statusCode: 400,
+          data: "failed to get classes for pull: " + id,
+        });
+        return;
+      });
+  });
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Hooks
+
+function getHooks() {
+  return new Promise((resolve) => {
+    database
+      .select("*", "hooks", null, null)
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to get hooks" });
+        return;
+      });
+  });
+}
+
+function getHooksByClass(id) {
+  return new Promise((resolve) => {
+    if (!id) {
+      resolve({ statusCode: 500, data: "id not provided" });
+      return;
+    }
+
+    database
+      .select("*", "hooks", "class", [id])
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({
+          statusCode: 400,
+          data: "failed to get hooks for class: " + id,
+        });
+        return;
+      });
+  });
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Pullers
+
+function getPullers() {
+  return new Promise((resolve) => {
+    database
+      .select("*", "pullers", null, null)
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to get pullers" });
+        return;
+      });
+  });
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Tractors
+
+function getTractors() {
+  return new Promise((resolve) => {
+    database
+      .select("*", "tractors", null, null)
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to get tractors" });
+        return;
+      });
+  });
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Locations
+
+function getLocations() {
+  return new Promise((resolve) => {
+    database
+      .select("*", "locations", null, null)
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to get locations" });
+        return;
+      });
+  });
+}
+
+////////////////////////////////////////////////////////////////////////////////
 
 module.exports.getDataDump = getDataDump;
+
+module.exports.getSeasons = getSeasons;
+
+module.exports.getPulls = getPulls;
+module.exports.getPullsBySeason = getPullsBySeason;
+
+module.exports.getClasses = getClasses;
+module.exports.getClassesByPull = getClassesByPull;
+
+module.exports.getHooks = getHooks;
+module.exports.getHooksByClass = getHooksByClass;
+
+module.exports.getPullers = getPullers;
+
+module.exports.getTractors = getTractors;
+
+module.exports.getLocations = getLocations;

@@ -33,53 +33,7 @@ function select(columns, table, field, values) {
 
     let command = "SELECT " + columns + " FROM " + table;
     if (field && values && values.length) {
-      command += " WHERE " + field + " IN (" + values + ")";
-    }
-
-    run(command)
-      .then((res) => resolve(res))
-      .catch((err) => reject(err));
-  });
-}
-
-function innerJoin(c1, a1, t1, f1, c2, a2, t2, f2, orderby) {
-  // c = array of column names
-  // a = array of alias names
-  // t = name of table
-  // f = name of join field
-  return new Promise((resolve, reject) => {
-    for (let i of [t1, f1, t2, f2]) {
-      if (!i) {
-        reject("tables/fields not provided");
-        return;
-      }
-    }
-
-    for (let i of [c1, a1, c2, a2]) {
-      if (!i || !i.length) {
-        reject("columns/alias not provided");
-        return;
-      }
-    }
-
-    if (c1.length !== a1.length || c2.length !== a2.length) {
-      reject("columns do not match alias");
-      return;
-    }
-
-    let command = "SELECT ";
-    for (let i in c1) {
-      command += t1 + "." + c1[i] + " as " + a1[i] + ", ";
-    }
-    for (let i in c2) {
-      command += t2 + "." + c2[i] + " as " + a2[i] + ", ";
-    }
-    command = command.slice(0, -2);
-    command += " FROM " + t1 + " INNER JOIN " + t2;
-    command += " ON " + t1 + "." + f1 + "=" + t2 + "." + f2;
-
-    if (orderby) {
-      command += " ORDER BY " + orderby + " ASC";
+      command += " WHERE " + field + " IN (" + getValues(values) + ")";
     }
 
     run(command)
@@ -96,6 +50,14 @@ function getValue(value) {
     value = JSON.stringify(value);
   }
   return value;
+}
+
+function getValues(values) {
+  let new_values = [];
+  for (let i in values) {
+    new_values.push(getValue(values[i]));
+  }
+  return new_values;
 }
 
 function update(table, data) {
@@ -182,7 +144,6 @@ function deleteById(table, id) {
 }
 
 module.exports.select = select;
-module.exports.innerJoin = innerJoin;
 module.exports.update = update;
 module.exports.create = create;
 module.exports.deleteById = deleteById;

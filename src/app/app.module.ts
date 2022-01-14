@@ -10,6 +10,7 @@ import { LoadingComponent } from './shared/components/loading/loading.component'
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 
 import { HomeComponent } from './pages/home/home.component';
+import { ResultsComponent } from './pages/results/results.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HomeComponent } from './pages/home/home.component';
     PageNotFoundComponent,
 
     HomeComponent,
+    ResultsComponent,
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
   providers: [],

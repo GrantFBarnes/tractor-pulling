@@ -84,6 +84,77 @@ router.post("/api/pulling/token", (request, response) => {
 });
 
 ////////////////////////////////////////////////////////////////////////////////
+// Seasons
+
+// Get all seasons
+router.get("/api/pulling/seasons", (request, response) => {
+  returnPromiseResponse(response, main.getSeasons());
+});
+
+////////////////////////////////////////////////////////////////////////////////
+// Pulls
+
+// Get all pulls
+router.get("/api/pulling/pulls", (request, response) => {
+  returnPromiseResponse(response, main.getPulls());
+});
+
+// Get pulls by season
+router.get("/api/pulling/pulls/:id", (request, response) => {
+  returnPromiseResponse(response, main.getPullsBySeason(request.params.id));
+});
+
+////////////////////////////////////////////////////////////////////////////////
+// Classes
+
+// Get all classes
+router.get("/api/pulling/classes", (request, response) => {
+  returnPromiseResponse(response, main.getClasses());
+});
+
+// Get classes by pull
+router.get("/api/pulling/classes/:id", (request, response) => {
+  returnPromiseResponse(response, main.getClassesByPull(request.params.id));
+});
+
+////////////////////////////////////////////////////////////////////////////////
+// Hooks
+
+// Get all hooks
+router.get("/api/pulling/hooks", (request, response) => {
+  returnPromiseResponse(response, main.getHooks());
+});
+
+// Get hooks by class
+router.get("/api/pulling/hooks/:id", (request, response) => {
+  returnPromiseResponse(response, main.getHooksByClass(request.params.id));
+});
+
+////////////////////////////////////////////////////////////////////////////////
+// Pullers
+
+// Get all pullers
+router.get("/api/pulling/pullers", (request, response) => {
+  returnPromiseResponse(response, main.getPullers());
+});
+
+////////////////////////////////////////////////////////////////////////////////
+// Tractors
+
+// Get all tractors
+router.get("/api/pulling/tractors", (request, response) => {
+  returnPromiseResponse(response, main.getTractors());
+});
+
+////////////////////////////////////////////////////////////////////////////////
+// Locations
+
+// Get all locations
+router.get("/api/pulling/locations", (request, response) => {
+  returnPromiseResponse(response, main.getLocations());
+});
+
+////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
 module.exports = router;
