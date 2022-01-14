@@ -145,6 +145,14 @@ router.get("/api/pulling/hooks/season/:id", (request, response) => {
   returnPromiseResponse(response, main.getHooksBySeason(request.params.id));
 });
 
+// Get hooks by season of winners
+router.get("/api/pulling/hooks/season/:id/winners", (request, response) => {
+  returnPromiseResponse(
+    response,
+    main.getHooksBySeasonOfWinners(request.params.id)
+  );
+});
+
 ////////////////////////////////////////////////////////////////////////////////
 // Pullers
 

@@ -251,6 +251,35 @@ function getHooksBySeason(id) {
   });
 }
 
+function getHooksBySeasonOfWinners(id) {
+  return new Promise((resolve) => {
+    if (!id) {
+      resolve({ statusCode: 500, data: "id not provided" });
+      return;
+    }
+
+    database
+      .selectChain(
+        ["hooks", "classes", "pulls"],
+        ["class", "pull", "season"],
+        [id],
+        "position",
+        1
+      )
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({
+          statusCode: 400,
+          data: "failed to get hooks of winners for season: " + id,
+        });
+        return;
+      });
+  });
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // Pullers
 
@@ -322,6 +351,7 @@ module.exports.getHooks = getHooks;
 module.exports.getHooksByClass = getHooksByClass;
 module.exports.getHooksByPull = getHooksByPull;
 module.exports.getHooksBySeason = getHooksBySeason;
+module.exports.getHooksBySeasonOfWinners = getHooksBySeasonOfWinners;
 
 module.exports.getPullers = getPullers;
 

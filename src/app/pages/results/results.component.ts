@@ -122,8 +122,8 @@ export class ResultsComponent implements OnInit {
   sortByYear(a: any, b: any): number {
     const a_year = parseInt(a.year);
     const b_year = parseInt(b.year);
-    if (a_year < b_year) return -1;
-    if (a_year > b_year) return 1;
+    if (a_year < b_year) return 1;
+    if (a_year > b_year) return -1;
     return 0;
   }
 
@@ -172,7 +172,7 @@ export class ResultsComponent implements OnInit {
       this.seasons = data;
       this.seasons.sort(this.sortByYear);
       if (this.seasons.length) {
-        const last_season = this.seasons[this.seasons.length - 1];
+        const last_season = this.seasons[0];
         this.season_id = last_season.id;
         this.season_year = last_season.year;
       }

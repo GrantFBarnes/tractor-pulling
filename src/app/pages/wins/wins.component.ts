@@ -14,6 +14,8 @@ import { Puller } from '../../shared/interfaces/puller';
 export class WinsComponent implements OnInit {
   loading: boolean = true;
 
+  pulls: Set<string> = new Set();
+
   wins: {
     [id: string]: {
       times_pulled: number;
@@ -43,6 +45,8 @@ export class WinsComponent implements OnInit {
   }
 
   getWinsClass(cl_n: string): string {
+    if (!cl_n) return '';
+    if (!this.wins[cl_n]) return '';
     const wins = this.wins[cl_n].max_wins;
     if (wins >= 7) return 'green-text';
     if (wins >= 5) return 'yellow-text';
@@ -51,6 +55,8 @@ export class WinsComponent implements OnInit {
   }
 
   getPercentageClass(cl_n: string): string {
+    if (!cl_n) return '';
+    if (!this.wins[cl_n]) return '';
     const percent = parseInt(this.wins[cl_n].percentage);
     if (percent >= 55) return 'green-text';
     if (percent >= 40) return 'yellow-text';
@@ -92,8 +98,8 @@ export class WinsComponent implements OnInit {
   sortByYear(a: any, b: any): number {
     const a_year = parseInt(a.year);
     const b_year = parseInt(b.year);
-    if (a_year < b_year) return -1;
-    if (a_year > b_year) return 1;
+    if (a_year < b_year) return 1;
+    if (a_year > b_year) return -1;
     return 0;
   }
 
@@ -142,7 +148,7 @@ export class WinsComponent implements OnInit {
 
   getHooks(): void {
     this.httpService
-      .get('/api/pulling/hooks/season/' + this.season_id)
+      .get('/api/pulling/hooks/season/' + this.season_id + '/winners')
       .subscribe((data: any) => {
         this.hooks = {};
         for (let i in data) {
@@ -163,7 +169,9 @@ export class WinsComponent implements OnInit {
       .subscribe((data: any) => {
         this.classes = {};
         this.class_names = [];
+        this.pulls = new Set();
         for (let i in data) {
+          this.pulls.add(data[i].pull);
           this.classes[data[i].id] = data[i];
           const cl_s = this.getClassStr(data[i]);
           if (this.class_names.indexOf(cl_s) < 0) {
@@ -179,7 +187,7 @@ export class WinsComponent implements OnInit {
       this.seasons = data;
       this.seasons.sort(this.sortByYear);
       if (this.seasons.length) {
-        const last_season = this.seasons[this.seasons.length - 1];
+        const last_season = this.seasons[0];
         this.season_id = last_season.id;
         this.season_year = last_season.year;
       }

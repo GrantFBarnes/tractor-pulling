@@ -56,7 +56,7 @@ function genChainCommand(field, tables, fields, values) {
   return command;
 }
 
-function selectChain(tables, fields, values) {
+function selectChain(tables, fields, values, field, value) {
   return new Promise((resolve, reject) => {
     if (!tables || !tables.length) {
       reject("tables not provided");
@@ -74,6 +74,9 @@ function selectChain(tables, fields, values) {
     }
 
     let command = genChainCommand("*", tables, fields, values);
+    if (field && value) {
+      command += " AND " + field + " = " + getValue(value);
+    }
 
     run(command)
       .then((res) => resolve(res))
