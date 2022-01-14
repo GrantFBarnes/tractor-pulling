@@ -100,7 +100,7 @@ router.get("/api/pulling/pulls", (request, response) => {
 });
 
 // Get pulls by season
-router.get("/api/pulling/pulls/:id", (request, response) => {
+router.get("/api/pulling/pulls/season/:id", (request, response) => {
   returnPromiseResponse(response, main.getPullsBySeason(request.params.id));
 });
 
@@ -113,8 +113,13 @@ router.get("/api/pulling/classes", (request, response) => {
 });
 
 // Get classes by pull
-router.get("/api/pulling/classes/:id", (request, response) => {
+router.get("/api/pulling/classes/pull/:id", (request, response) => {
   returnPromiseResponse(response, main.getClassesByPull(request.params.id));
+});
+
+// Get classes by season
+router.get("/api/pulling/classes/season/:id", (request, response) => {
+  returnPromiseResponse(response, main.getClassesBySeason(request.params.id));
 });
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -126,8 +131,18 @@ router.get("/api/pulling/hooks", (request, response) => {
 });
 
 // Get hooks by class
-router.get("/api/pulling/hooks/:id", (request, response) => {
+router.get("/api/pulling/hooks/class/:id", (request, response) => {
   returnPromiseResponse(response, main.getHooksByClass(request.params.id));
+});
+
+// Get hooks by pull
+router.get("/api/pulling/hooks/pull/:id", (request, response) => {
+  returnPromiseResponse(response, main.getHooksByPull(request.params.id));
+});
+
+// Get hooks by season
+router.get("/api/pulling/hooks/season/:id", (request, response) => {
+  returnPromiseResponse(response, main.getHooksBySeason(request.params.id));
 });
 
 ////////////////////////////////////////////////////////////////////////////////

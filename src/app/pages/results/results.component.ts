@@ -62,7 +62,9 @@ export class ResultsComponent implements OnInit {
   }
 
   getClassStr(c: Class): string {
-    return c.weight + ' ' + c.category;
+    let str = c.weight + ' ' + c.category;
+    if (c.speed != 3) str += ' (' + c.speed + ')';
+    return str;
   }
 
   padDate(i: number): string {
@@ -98,10 +100,14 @@ export class ResultsComponent implements OnInit {
   }
 
   sortByWeight(a: any, b: any): number {
-    const a_weight = a.weight;
-    const b_weight = b.weight;
+    const a_weight = parseInt(a.weight);
+    const b_weight = parseInt(b.weight);
     if (a_weight < b_weight) return -1;
     if (a_weight > b_weight) return 1;
+    const a_category = a.category;
+    const b_category = b.category;
+    if (a_category < b_category) return 1;
+    if (a_category > b_category) return -1;
     return 0;
   }
 
@@ -123,7 +129,7 @@ export class ResultsComponent implements OnInit {
 
   getHooks(): void {
     this.httpService
-      .get('/api/pulling/hooks/' + this.class_id)
+      .get('/api/pulling/hooks/class/' + this.class_id)
       .subscribe((data: any) => {
         this.hooks = data;
         this.hooks.sort(this.sortByPos);
@@ -133,7 +139,7 @@ export class ResultsComponent implements OnInit {
 
   getClasses(): void {
     this.httpService
-      .get('/api/pulling/classes/' + this.pull_id)
+      .get('/api/pulling/classes/pull/' + this.pull_id)
       .subscribe((data: any) => {
         this.classes = data;
         this.classes.sort(this.sortByWeight);
@@ -148,7 +154,7 @@ export class ResultsComponent implements OnInit {
 
   getPulls(): void {
     this.httpService
-      .get('/api/pulling/pulls/' + this.season_id)
+      .get('/api/pulling/pulls/season/' + this.season_id)
       .subscribe((data: any) => {
         this.pulls = data;
         this.pulls.sort(this.sortByDate);

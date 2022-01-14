@@ -137,6 +137,29 @@ function getClassesByPull(id) {
   });
 }
 
+function getClassesBySeason(id) {
+  return new Promise((resolve) => {
+    if (!id) {
+      resolve({ statusCode: 500, data: "id not provided" });
+      return;
+    }
+
+    database
+      .selectChain(["classes", "pulls"], ["pull", "season"], [id])
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({
+          statusCode: 400,
+          data: "failed to get classes for season: " + id,
+        });
+        return;
+      });
+  });
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // Hooks
 
@@ -172,6 +195,56 @@ function getHooksByClass(id) {
         resolve({
           statusCode: 400,
           data: "failed to get hooks for class: " + id,
+        });
+        return;
+      });
+  });
+}
+
+function getHooksByPull(id) {
+  return new Promise((resolve) => {
+    if (!id) {
+      resolve({ statusCode: 500, data: "id not provided" });
+      return;
+    }
+
+    database
+      .selectChain(["hooks", "classes"], ["class", "pull"], [id])
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({
+          statusCode: 400,
+          data: "failed to get hooks for pull: " + id,
+        });
+        return;
+      });
+  });
+}
+
+function getHooksBySeason(id) {
+  return new Promise((resolve) => {
+    if (!id) {
+      resolve({ statusCode: 500, data: "id not provided" });
+      return;
+    }
+
+    database
+      .selectChain(
+        ["hooks", "classes", "pulls"],
+        ["class", "pull", "season"],
+        [id]
+      )
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({
+          statusCode: 400,
+          data: "failed to get hooks for season: " + id,
         });
         return;
       });
@@ -243,9 +316,12 @@ module.exports.getPullsBySeason = getPullsBySeason;
 
 module.exports.getClasses = getClasses;
 module.exports.getClassesByPull = getClassesByPull;
+module.exports.getClassesBySeason = getClassesBySeason;
 
 module.exports.getHooks = getHooks;
 module.exports.getHooksByClass = getHooksByClass;
+module.exports.getHooksByPull = getHooksByPull;
+module.exports.getHooksBySeason = getHooksBySeason;
 
 module.exports.getPullers = getPullers;
 

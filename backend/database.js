@@ -42,6 +42,45 @@ function select(columns, table, field, values) {
   });
 }
 
+function genChainCommand(field, tables, fields, values) {
+  if (!tables || !tables.length) {
+    return getValues(values);
+  }
+  let command = "";
+  command += "SELECT " + field + " FROM " + tables[0];
+  command += " WHERE " + fields[0] + " IN (";
+  tables.shift();
+  fields.shift();
+  command += genChainCommand("id", tables, fields, values);
+  command += ")";
+  return command;
+}
+
+function selectChain(tables, fields, values) {
+  return new Promise((resolve, reject) => {
+    if (!tables || !tables.length) {
+      reject("tables not provided");
+      return;
+    }
+
+    if (!fields || !fields.length) {
+      reject("fields not provided");
+      return;
+    }
+
+    if (tables.length != fields.length) {
+      reject("tables and fields do not match");
+      return;
+    }
+
+    let command = genChainCommand("*", tables, fields, values);
+
+    run(command)
+      .then((res) => resolve(res))
+      .catch((err) => reject(err));
+  });
+}
+
 function getValue(value) {
   if (typeof value === "string") {
     while (value.includes("'")) value = value.replace("'", "");
@@ -144,6 +183,7 @@ function deleteById(table, id) {
 }
 
 module.exports.select = select;
+module.exports.selectChain = selectChain;
 module.exports.update = update;
 module.exports.create = create;
 module.exports.deleteById = deleteById;
