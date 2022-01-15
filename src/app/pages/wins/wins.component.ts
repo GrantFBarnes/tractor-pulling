@@ -20,6 +20,7 @@ export class WinsComponent implements OnInit {
     [id: string]: {
       times_pulled: number;
       winners: any;
+      winners_list: string[];
       winner_count: number;
       max_wins: number;
       leaders: any;
@@ -36,12 +37,26 @@ export class WinsComponent implements OnInit {
   classes: { [id: string]: Class } = {};
   class_names: string[] = [];
 
-  hooks: { [id: string]: Hook[] } = {};
+  hooks: { [cl_n: string]: Hook[] } = {};
+
+  row_show: { [cl_n: string]: boolean } = {};
+  row_show_all: boolean = false;
 
   constructor(private httpService: HttpService) {}
 
   ngOnInit(): void {
     this.getPullers();
+  }
+
+  toggleRowShowAll() {
+    this.row_show_all = !this.row_show_all;
+    for (let id in this.row_show) {
+      this.row_show[id] = this.row_show_all;
+    }
+  }
+
+  toggleRowShow(name: string) {
+    this.row_show[name] = !this.row_show[name];
   }
 
   getWinsClass(cl_n: string): string {
@@ -64,12 +79,24 @@ export class WinsComponent implements OnInit {
     return 'red-text';
   }
 
+  getPercentageStr(per: any, cl_n: string): string {
+    return ((per / this.wins[cl_n].times_pulled) * 100).toFixed(0);
+  }
+
+  getPullerStr(id: any): string {
+    const puller = this.pullers[id];
+    if (puller) {
+      return puller.first_name + ' ' + puller.last_name;
+    }
+    return '';
+  }
+
   getPullersStr(pullers: string[]): string {
     let val = [];
     for (let p in pullers) {
-      const puller = this.pullers[pullers[p]];
-      if (puller) {
-        val.push(puller.first_name + ' ' + puller.last_name);
+      const puller_str = this.getPullerStr(pullers[p]);
+      if (puller_str) {
+        val.push(puller_str);
       }
     }
     return val.toString();
@@ -81,7 +108,7 @@ export class WinsComponent implements OnInit {
     return str;
   }
 
-  sortByClass(a: any, b: any): number {
+  sortByClassName(a: any, b: any): number {
     const a_split = a.split(' ');
     const b_split = b.split(' ');
     const a_weight = parseInt(a_split[0]);
@@ -104,12 +131,13 @@ export class WinsComponent implements OnInit {
   }
 
   getWins(): void {
-    this.class_names = this.class_names.sort(this.sortByClass);
+    this.class_names = this.class_names.sort(this.sortByClassName);
     for (let i in this.class_names) {
       const cl_s = this.class_names[i];
       this.wins[cl_s] = {
         times_pulled: 0,
         winners: {},
+        winners_list: [],
         winner_count: 0,
         max_wins: 0,
         leaders: [],
@@ -128,8 +156,15 @@ export class WinsComponent implements OnInit {
       }
     }
     for (let c in this.wins) {
+      let winners_inverse: any = {};
       for (let w in this.wins[c].winners) {
         const win_count = this.wins[c].winners[w];
+
+        if (!winners_inverse[win_count]) {
+          winners_inverse[win_count] = [];
+        }
+        winners_inverse[win_count].push(w);
+
         if (win_count > this.wins[c].max_wins) {
           this.wins[c].max_wins = win_count;
           this.wins[c].leaders = [];
@@ -138,10 +173,14 @@ export class WinsComponent implements OnInit {
           this.wins[c].leaders.push(w);
         }
       }
-      this.wins[c].percentage = (
-        (this.wins[c].max_wins / this.wins[c].times_pulled) *
-        100
-      ).toFixed(0);
+      const sorted_wins = Object.keys(winners_inverse).sort().reverse();
+      for (let i in sorted_wins) {
+        const win_count = sorted_wins[i];
+        for (let p in winners_inverse[win_count]) {
+          this.wins[c].winners_list.push(winners_inverse[win_count][p]);
+        }
+      }
+      this.wins[c].percentage = this.getPercentageStr(this.wins[c].max_wins, c);
     }
     this.loading = false;
   }
@@ -176,6 +215,9 @@ export class WinsComponent implements OnInit {
           const cl_s = this.getClassStr(data[i]);
           if (this.class_names.indexOf(cl_s) < 0) {
             this.class_names.push(cl_s);
+          }
+          if (!this.row_show[cl_s]) {
+            this.row_show[cl_s] = false;
           }
         }
         this.getHooks();

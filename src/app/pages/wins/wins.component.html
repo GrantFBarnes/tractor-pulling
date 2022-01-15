@@ -41,6 +41,12 @@
     <table class="table table-dark table-hover">
       <thead>
         <tr>
+          <th class="center">
+            <div class="clickable" (click)="toggleRowShowAll()">
+              <i *ngIf="!row_show_all" class="bi bi-chevron-down"></i>
+              <i *ngIf="row_show_all" class="bi bi-chevron-up"></i>
+            </div>
+          </th>
           <th>Class</th>
           <th>Leaders</th>
           <th>Wins</th>
@@ -52,6 +58,12 @@
       <tbody>
         <ng-container *ngFor="let cl_n of class_names">
           <tr class="align-middle">
+            <td class="center">
+              <div class="clickable" (click)="toggleRowShow(cl_n)">
+                <i *ngIf="!row_show[cl_n]" class="bi bi-chevron-down"></i>
+                <i *ngIf="row_show[cl_n]" class="bi bi-chevron-up"></i>
+              </div>
+            </td>
             <td>{{ cl_n }}</td>
             <td>{{ getPullersStr(wins[cl_n].leaders) }}</td>
             <td [ngClass]="getWinsClass(cl_n)">
@@ -62,6 +74,29 @@
             </td>
             <td>{{ wins[cl_n].winner_count }}</td>
             <td>{{ wins[cl_n].times_pulled }}</td>
+          </tr>
+          <tr *ngIf="row_show[cl_n]">
+            <td></td>
+            <td colspan="6">
+              <table *ngIf="wins[cl_n]" class="table table-dark">
+                <thead>
+                  <tr>
+                    <th>Puller</th>
+                    <th>Wins</th>
+                    <th>Win %</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let p_id of wins[cl_n].winners_list">
+                    <td>{{ getPullerStr(p_id) }}</td>
+                    <td>{{ wins[cl_n].winners[p_id] }}</td>
+                    <td>
+                      {{ getPercentageStr(wins[cl_n].winners[p_id], cl_n) }}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
           </tr>
         </ng-container>
       </tbody>
