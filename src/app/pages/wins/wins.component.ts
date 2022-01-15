@@ -59,20 +59,15 @@ export class WinsComponent implements OnInit {
     this.row_show[name] = !this.row_show[name];
   }
 
-  getWinsClass(cl_n: string): string {
-    if (!cl_n) return '';
-    if (!this.wins[cl_n]) return '';
-    const wins = this.wins[cl_n].max_wins;
+  getWinsClass(wins: number): string {
     if (wins >= 7) return 'green-text';
     if (wins >= 5) return 'yellow-text';
     if (wins >= 3) return 'orange-text';
     return 'red-text';
   }
 
-  getPercentageClass(cl_n: string): string {
-    if (!cl_n) return '';
-    if (!this.wins[cl_n]) return '';
-    const percent = parseInt(this.wins[cl_n].percentage);
+  getPercentageClass(per: string): string {
+    const percent = parseInt(per);
     if (percent >= 55) return 'green-text';
     if (percent >= 40) return 'yellow-text';
     if (percent >= 20) return 'orange-text';

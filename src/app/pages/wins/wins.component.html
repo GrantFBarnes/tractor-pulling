@@ -50,7 +50,7 @@
           <th>Class</th>
           <th>Leaders</th>
           <th>Wins</th>
-          <th>%</th>
+          <th>Win %</th>
           <th>Winners</th>
           <th>Times Pulled</th>
         </tr>
@@ -66,10 +66,10 @@
             </td>
             <td>{{ cl_n }}</td>
             <td>{{ getPullersStr(wins[cl_n].leaders) }}</td>
-            <td [ngClass]="getWinsClass(cl_n)">
+            <td [ngClass]="getWinsClass(wins[cl_n].max_wins)">
               {{ wins[cl_n].max_wins }}
             </td>
-            <td [ngClass]="getPercentageClass(cl_n)">
+            <td [ngClass]="getPercentageClass(wins[cl_n].percentage)">
               {{ wins[cl_n].percentage }}
             </td>
             <td>{{ wins[cl_n].winner_count }}</td>
@@ -89,8 +89,16 @@
                 <tbody>
                   <tr *ngFor="let p_id of wins[cl_n].winners_list">
                     <td>{{ getPullerStr(p_id) }}</td>
-                    <td>{{ wins[cl_n].winners[p_id] }}</td>
-                    <td>
+                    <td [ngClass]="getWinsClass(wins[cl_n].winners[p_id])">
+                      {{ wins[cl_n].winners[p_id] }}
+                    </td>
+                    <td
+                      [ngClass]="
+                        getPercentageClass(
+                          getPercentageStr(wins[cl_n].winners[p_id], cl_n)
+                        )
+                      "
+                    >
                       {{ getPercentageStr(wins[cl_n].winners[p_id], cl_n) }}
                     </td>
                   </tr>
