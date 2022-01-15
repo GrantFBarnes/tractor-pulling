@@ -12,6 +12,7 @@ import { PageNotFoundComponent } from './shared/components/page-not-found/page-n
 import { HomeComponent } from './pages/home/home.component';
 import { ResultsComponent } from './pages/results/results.component';
 import { WinsComponent } from './pages/wins/wins.component';
+import { PointsComponent } from './pages/points/points.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { WinsComponent } from './pages/wins/wins.component';
     HomeComponent,
     ResultsComponent,
     WinsComponent,
+    PointsComponent,
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
   providers: [],

@@ -6,25 +6,20 @@ import { Hook } from '../../shared/interfaces/hook';
 import { Puller } from '../../shared/interfaces/puller';
 
 @Component({
-  selector: 'app-wins',
-  templateUrl: './wins.component.html',
+  selector: 'app-points',
+  templateUrl: './points.component.html',
   providers: [HttpService],
-  styleUrls: ['./wins.component.css'],
+  styleUrls: ['./points.component.css'],
 })
-export class WinsComponent implements OnInit {
+export class PointsComponent implements OnInit {
   loading: boolean = true;
-
-  pulls: Set<string> = new Set();
 
   data: {
     [cl_id: string]: {
-      times_pulled: number;
-      winners: any;
-      winner_list: string[];
-      winner_count: number;
-      max_wins: number;
+      pullers: { [p_id: string]: number };
+      puller_list: string[];
+      max_points: number;
       leaders: string[];
-      percentage: string;
     };
   } = {};
 
@@ -57,25 +52,6 @@ export class WinsComponent implements OnInit {
 
   toggleRowShow(name: string) {
     this.row_show[name] = !this.row_show[name];
-  }
-
-  getWinsClass(wins: number): string {
-    if (wins >= 7) return 'green-text';
-    if (wins >= 5) return 'yellow-text';
-    if (wins >= 3) return 'orange-text';
-    return 'red-text';
-  }
-
-  getPercentageClass(per: string): string {
-    const percent = parseInt(per);
-    if (percent >= 55) return 'green-text';
-    if (percent >= 40) return 'yellow-text';
-    if (percent >= 20) return 'orange-text';
-    return 'red-text';
-  }
-
-  getPercentageStr(per: any, cl_n: string): string {
-    return ((per / this.data[cl_n].times_pulled) * 100).toFixed(0);
   }
 
   getPullerStr(id: any): string {
@@ -133,69 +109,69 @@ export class WinsComponent implements OnInit {
     return 0;
   }
 
-  getWins(): void {
+  getPullerPoints(position: number): number {
+    let points = 0;
+    if (position <= 10) points = 11 - position;
+    points += 5;
+    return points;
+  }
+
+  getPoints(): void {
     this.class_names = this.class_names.sort(this.sortByClassName);
     for (let i in this.class_names) {
       const cl_n = this.class_names[i];
       this.data[cl_n] = {
-        times_pulled: 0,
-        winners: {},
-        winner_list: [],
-        winner_count: 0,
-        max_wins: 0,
+        pullers: {},
+        puller_list: [],
+        max_points: 0,
         leaders: [],
-        percentage: '',
       };
 
       for (let h in this.hooks[cl_n]) {
         const hook = this.hooks[cl_n][h];
-        if (hook.position !== 1) continue;
-        this.data[cl_n].times_pulled += 1;
-        if (!this.data[cl_n].winners[hook.puller]) {
-          this.data[cl_n].winners[hook.puller] = 0;
-          this.data[cl_n].winner_count += 1;
+
+        if (!this.data[cl_n].pullers[hook.puller]) {
+          this.data[cl_n].pullers[hook.puller] = 0;
         }
-        this.data[cl_n].winners[hook.puller] += 1;
+        this.data[cl_n].pullers[hook.puller] += this.getPullerPoints(
+          hook.position
+        );
       }
     }
     for (let cl_n in this.data) {
-      let winners_inverse: any = {};
-      for (let w in this.data[cl_n].winners) {
-        const win_count = this.data[cl_n].winners[w];
+      let pullers_inverse: any = {};
+      for (let i in this.data[cl_n].pullers) {
+        const points = this.data[cl_n].pullers[i];
 
-        if (!winners_inverse[win_count]) {
-          winners_inverse[win_count] = [];
+        if (!pullers_inverse[points]) {
+          pullers_inverse[points] = [];
         }
-        winners_inverse[win_count].push(w);
+        pullers_inverse[points].push(i);
 
-        if (win_count > this.data[cl_n].max_wins) {
-          this.data[cl_n].max_wins = win_count;
+        if (points > this.data[cl_n].max_points) {
+          this.data[cl_n].max_points = points;
           this.data[cl_n].leaders = [];
         }
-        if (win_count == this.data[cl_n].max_wins) {
-          this.data[cl_n].leaders.push(w);
+        if (points == this.data[cl_n].max_points) {
+          this.data[cl_n].leaders.push(i);
         }
       }
-      const sorted_wins = Object.keys(winners_inverse).sort(
+      const sorted_points = Object.keys(pullers_inverse).sort(
         this.sortByHighestNum
       );
-      for (let i in sorted_wins) {
-        const win_count = sorted_wins[i];
-        for (let p in winners_inverse[win_count]) {
-          this.data[cl_n].winner_list.push(winners_inverse[win_count][p]);
+      for (let i in sorted_points) {
+        const points = sorted_points[i];
+        for (let p in pullers_inverse[points]) {
+          this.data[cl_n].puller_list.push(pullers_inverse[points][p]);
         }
       }
-      this.data[cl_n].percentage = this.getPercentageStr(
-        this.data[cl_n].max_wins,
-        cl_n
-      );
     }
     this.loading = false;
   }
 
   getHooks(): void {
     this.httpService
-      .get('/api/pulling/hooks/season/' + this.season_id + '/winners')
+      .get('/api/pulling/hooks/season/' + this.season_id)
       .subscribe((data: any) => {
         this.hooks = {};
         for (let i in data) {
@@ -206,7 +182,7 @@ export class WinsComponent implements OnInit {
           }
           this.hooks[cl_n].push(data[i]);
         }
-        this.getWins();
+        this.getPoints();
       });
   }
 
@@ -216,9 +192,7 @@ export class WinsComponent implements OnInit {
       .subscribe((data: any) => {
         this.classes = {};
         this.class_names = [];
-        this.pulls = new Set();
         for (let i in data) {
-          this.pulls.add(data[i].pull);
           this.classes[data[i].id] = data[i];
           const cl_n = this.getClassStr(data[i]);
           if (this.class_names.indexOf(cl_n) < 0) {

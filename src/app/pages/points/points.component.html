@@ -1,7 +1,7 @@
 <app-loading *ngIf="loading"></app-loading>
 <div [ngClass]="loading ? 'container blur' : 'container'">
   <div class="mainTitle">
-    <h1>Wins</h1>
+    <h1>Points</h1>
   </div>
 
   <div class="row center mb-2">
@@ -33,7 +33,12 @@
       </div>
     </div>
     <div class="col-md-6 mb-2">
-      {{ "Pulls: " + pulls.size }}
+      <a
+        href="http://natpa.club/wp-content/uploads/2020/08/NATPA-POINT-SYSTEM2020.pdf"
+        target="_blank"
+      >
+        NATPA Point System
+      </a>
     </div>
   </div>
 
@@ -49,10 +54,7 @@
           </th>
           <th>Class</th>
           <th>Leaders</th>
-          <th>Wins</th>
-          <th>Win %</th>
-          <th>Winners</th>
-          <th>Times Pulled</th>
+          <th>Points</th>
         </tr>
       </thead>
       <tbody>
@@ -66,41 +68,22 @@
             </td>
             <td>{{ cl_n }}</td>
             <td>{{ getPullersStr(data[cl_n].leaders) }}</td>
-            <td [ngClass]="getWinsClass(data[cl_n].max_wins)">
-              {{ data[cl_n].max_wins }}
-            </td>
-            <td [ngClass]="getPercentageClass(data[cl_n].percentage)">
-              {{ data[cl_n].percentage }}
-            </td>
-            <td>{{ data[cl_n].winner_count }}</td>
-            <td>{{ data[cl_n].times_pulled }}</td>
+            <td>{{ data[cl_n].max_points }}</td>
           </tr>
           <tr *ngIf="row_show[cl_n]">
             <td></td>
-            <td colspan="6">
+            <td colspan="3">
               <table *ngIf="data[cl_n]" class="table table-dark">
                 <thead>
                   <tr>
                     <th>Puller</th>
-                    <th>Wins</th>
-                    <th>Win %</th>
+                    <th>Points</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let p_id of data[cl_n].winner_list">
+                  <tr *ngFor="let p_id of data[cl_n].puller_list">
                     <td>{{ getPullerStr(p_id) }}</td>
-                    <td [ngClass]="getWinsClass(data[cl_n].winners[p_id])">
-                      {{ data[cl_n].winners[p_id] }}
-                    </td>
-                    <td
-                      [ngClass]="
-                        getPercentageClass(
-                          getPercentageStr(data[cl_n].winners[p_id], cl_n)
-                        )
-                      "
-                    >
-                      {{ getPercentageStr(data[cl_n].winners[p_id], cl_n) }}
-                    </td>
+                    <td>{{ data[cl_n].pullers[p_id] }}</td>
                   </tr>
                 </tbody>
               </table>
