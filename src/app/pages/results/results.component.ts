@@ -29,16 +29,27 @@ export class ResultsComponent implements OnInit {
   pull_name: string = '';
   pulls: Pull[] = [];
 
-  class_id: string = '';
-  class_name: string = '';
   classes: Class[] = [];
+  hooks: { [cl_id: string]: Hook[] } = {};
 
-  hooks: Hook[] = [];
+  row_show: { [cl_id: string]: boolean } = {};
+  row_show_all: boolean = false;
 
   constructor(private httpService: HttpService) {}
 
   ngOnInit(): void {
     this.getLocations();
+  }
+
+  toggleRowShowAll() {
+    this.row_show_all = !this.row_show_all;
+    for (let id in this.row_show) {
+      this.row_show[id] = this.row_show_all;
+    }
+  }
+
+  toggleRowShow(id: string) {
+    this.row_show[id] = !this.row_show[id];
   }
 
   getDistanceStr(h: Hook): string {
@@ -129,10 +140,19 @@ export class ResultsComponent implements OnInit {
 
   getHooks(): void {
     this.httpService
-      .get('/api/pulling/hooks/class/' + this.class_id)
+      .get('/api/pulling/hooks/pull/' + this.pull_id)
       .subscribe((data: any) => {
-        this.hooks = data;
-        this.hooks.sort(this.sortByPos);
+        this.hooks = {};
+        for (let i in data) {
+          const cl = data[i].class;
+          if (!this.hooks[cl]) {
+            this.hooks[cl] = [];
+          }
+          this.hooks[cl].push(data[i]);
+        }
+        for (let cl in this.hooks) {
+          this.hooks[cl].sort(this.sortByPos);
+        }
         this.loading = false;
       });
   }
@@ -143,10 +163,10 @@ export class ResultsComponent implements OnInit {
       .subscribe((data: any) => {
         this.classes = data;
         this.classes.sort(this.sortByWeight);
-        if (this.classes.length) {
-          const first_class = this.classes[0];
-          this.class_id = first_class.id;
-          this.class_name = this.getClassStr(first_class);
+        for (let i in this.classes) {
+          if (!this.row_show[this.classes[i].id]) {
+            this.row_show[this.classes[i].id] = false;
+          }
         }
         this.getHooks();
       });
@@ -205,13 +225,6 @@ export class ResultsComponent implements OnInit {
       }
       this.getPullers();
     });
-  }
-
-  setClass(option: any): void {
-    this.loading = true;
-    this.class_id = option.id;
-    this.class_name = this.getClassStr(option);
-    this.getHooks();
   }
 
   setPull(option: any): void {

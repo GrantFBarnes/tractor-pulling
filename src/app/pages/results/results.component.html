@@ -5,7 +5,7 @@
   </div>
 
   <div class="row center mb-2">
-    <div class="col-md-2 mb-2">
+    <div class="col-md-6 mb-2">
       <div class="dropdown">
         <button
           class="btn btn-secondary dropdown-toggle"
@@ -32,7 +32,7 @@
         </ul>
       </div>
     </div>
-    <div class="col-md-5 mb-2">
+    <div class="col-md-6 mb-2">
       <div class="dropdown">
         <button
           class="btn btn-secondary dropdown-toggle"
@@ -59,52 +59,56 @@
         </ul>
       </div>
     </div>
-    <div class="col-md-5 mb-2">
-      <div class="dropdown">
-        <button
-          class="btn btn-secondary dropdown-toggle"
-          type="button"
-          data-bs-toggle="dropdown"
-        >
-          {{ class_name }}
-        </button>
-        <ul class="dropdown-menu dropdown-menu-dark">
-          <ng-container *ngFor="let option of classes">
-            <li>
-              <a
-                [ngClass]="
-                  class_id == option.id
-                    ? 'dropdown-item active'
-                    : 'dropdown-item'
-                "
-                (click)="setClass(option)"
-              >
-                {{ getClassStr(option) }}
-              </a>
-            </li>
-          </ng-container>
-        </ul>
-      </div>
-    </div>
   </div>
 
   <div class="row">
     <table class="table table-dark table-hover">
       <thead>
         <tr>
-          <th>Pos</th>
-          <th>Puller</th>
-          <th>Tractor</th>
-          <th>Distance</th>
+          <th class="center">
+            <div class="clickable" (click)="toggleRowShowAll()">
+              <i *ngIf="!row_show_all" class="bi bi-chevron-down"></i>
+              <i *ngIf="row_show_all" class="bi bi-chevron-up"></i>
+            </div>
+          </th>
+          <th>Class</th>
+          <th>Hooks</th>
         </tr>
       </thead>
       <tbody>
-        <ng-container *ngFor="let hook of hooks">
-          <tr class="align-middle">
-            <td>{{ hook.position }}</td>
-            <td>{{ getPullerStr(hook) }}</td>
-            <td>{{ getTractorStr(hook) }}</td>
-            <td>{{ getDistanceStr(hook) }}</td>
+        <ng-container *ngFor="let cl of classes">
+          <tr>
+            <td class="center">
+              <div class="clickable" (click)="toggleRowShow(cl.id)">
+                <i *ngIf="!row_show[cl.id]" class="bi bi-chevron-down"></i>
+                <i *ngIf="row_show[cl.id]" class="bi bi-chevron-up"></i>
+              </div>
+            </td>
+            <td>{{ getClassStr(cl) }}</td>
+            <td>{{ hooks[cl.id].length }}</td>
+          </tr>
+          <tr *ngIf="row_show[cl.id]">
+            <td></td>
+            <td colspan="2">
+              <table *ngIf="hooks[cl.id]" class="table table-dark">
+                <thead>
+                  <tr>
+                    <th>Pos</th>
+                    <th>Puller</th>
+                    <th>Tractor</th>
+                    <th>Distance</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let hook of hooks[cl.id]">
+                    <td>{{ hook.position }}</td>
+                    <td>{{ getPullerStr(hook) }}</td>
+                    <td>{{ getTractorStr(hook) }}</td>
+                    <td>{{ getDistanceStr(hook) }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
           </tr>
         </ng-container>
       </tbody>
