@@ -7,9 +7,6 @@
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#navButtons"
-        aria-controls="navButtons"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
       >
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -27,18 +24,21 @@
             routerLinkActive="active"
             >Results</a
           >
-          <a
-            class="nav-link"
-            routerLink="/pulling/wins"
-            routerLinkActive="active"
-            >Wins</a
-          >
-          <a
-            class="nav-link"
-            routerLink="/pulling/points"
-            routerLinkActive="active"
-            >Points</a
-          >
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              role="button"
+              data-bs-toggle="dropdown"
+            >
+              Class Analysis
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="/pulling/wins">Wins</a></li>
+              <li>
+                <a class="dropdown-item" href="/pulling/points">Points</a>
+              </li>
+            </ul>
+          </li>
         </div>
       </div>
     </div>
