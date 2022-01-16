@@ -130,6 +130,11 @@ router.get("/api/pulling/hooks", (request, response) => {
   returnPromiseResponse(response, main.getHooks());
 });
 
+// Get all hooks of winners
+router.get("/api/pulling/hooks/winners", (request, response) => {
+  returnPromiseResponse(response, main.getHooksOfWinners(request.params.id));
+});
+
 // Get hooks by class
 router.get("/api/pulling/hooks/class/:id", (request, response) => {
   returnPromiseResponse(response, main.getHooksByClass(request.params.id));

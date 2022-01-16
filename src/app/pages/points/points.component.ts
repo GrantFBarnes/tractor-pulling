@@ -139,14 +139,11 @@ export class PointsComponent implements OnInit {
       }
     }
     for (let cl_n in this.data) {
-      let pullers_inverse: any = {};
+      let sorted_puller_list: any[] = [];
       for (let i in this.data[cl_n].pullers) {
         const points = this.data[cl_n].pullers[i];
 
-        if (!pullers_inverse[points]) {
-          pullers_inverse[points] = [];
-        }
-        pullers_inverse[points].push(i);
+        sorted_puller_list.push([i, points]);
 
         if (points > this.data[cl_n].max_points) {
           this.data[cl_n].max_points = points;
@@ -156,59 +153,60 @@ export class PointsComponent implements OnInit {
           this.data[cl_n].leaders.push(i);
         }
       }
-      const sorted_points = Object.keys(pullers_inverse).sort(
-        this.sortByHighestNum
-      );
-      for (let i in sorted_points) {
-        const points = sorted_points[i];
-        for (let p in pullers_inverse[points]) {
-          this.data[cl_n].puller_list.push(pullers_inverse[points][p]);
-        }
+      this.data[cl_n].puller_list = [];
+      sorted_puller_list.sort((a, b) => b[1] - a[1]);
+      for (let i in sorted_puller_list) {
+        this.data[cl_n].puller_list.push(sorted_puller_list[i][0]);
       }
     }
     this.loading = false;
   }
 
   getHooks(): void {
-    this.httpService
-      .get('/api/pulling/hooks/season/' + this.season_id)
-      .subscribe((data: any) => {
-        this.hooks = {};
-        for (let i in data) {
-          const cl = this.classes[data[i].class];
-          const cl_n = this.getClassStr(cl);
-          if (!this.hooks[cl_n]) {
-            this.hooks[cl_n] = [];
-          }
-          this.hooks[cl_n].push(data[i]);
+    let api = '/api/pulling/hooks';
+    if (this.season_id) {
+      api += '/season/' + this.season_id;
+    }
+    this.httpService.get(api).subscribe((data: any) => {
+      this.hooks = {};
+      for (let i in data) {
+        const cl = this.classes[data[i].class];
+        const cl_n = this.getClassStr(cl);
+        if (!this.hooks[cl_n]) {
+          this.hooks[cl_n] = [];
         }
-        this.getPoints();
-      });
+        this.hooks[cl_n].push(data[i]);
+      }
+      this.getPoints();
+    });
   }
 
   getClasses(): void {
-    this.httpService
-      .get('/api/pulling/classes/season/' + this.season_id)
-      .subscribe((data: any) => {
-        this.classes = {};
-        this.class_names = [];
-        for (let i in data) {
-          this.classes[data[i].id] = data[i];
-          const cl_n = this.getClassStr(data[i]);
-          if (this.class_names.indexOf(cl_n) < 0) {
-            this.class_names.push(cl_n);
-          }
-          if (!this.row_show[cl_n]) {
-            this.row_show[cl_n] = false;
-          }
+    let api = '/api/pulling/classes';
+    if (this.season_id) {
+      api += '/season/' + this.season_id;
+    }
+    this.httpService.get(api).subscribe((data: any) => {
+      this.classes = {};
+      this.class_names = [];
+      for (let i in data) {
+        this.classes[data[i].id] = data[i];
+        const cl_n = this.getClassStr(data[i]);
+        if (this.class_names.indexOf(cl_n) < 0) {
+          this.class_names.push(cl_n);
         }
-        this.getHooks();
-      });
+        if (!this.row_show[cl_n]) {
+          this.row_show[cl_n] = false;
+        }
+      }
+      this.getHooks();
+    });
   }
 
   getSeasons(): void {
     this.httpService.get('/api/pulling/seasons').subscribe((data: any) => {
       this.seasons = data;
+      this.seasons.push({ id: '', year: 'All' });
       this.seasons.sort(this.sortByYear);
       if (this.seasons.length) {
         const last_season = this.seasons[0];

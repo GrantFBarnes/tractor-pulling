@@ -178,6 +178,21 @@ function getHooks() {
   });
 }
 
+function getHooksOfWinners() {
+  return new Promise((resolve) => {
+    database
+      .select("*", "hooks", "position", [1])
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to get hooks of winners" });
+        return;
+      });
+  });
+}
+
 function getHooksByClass(id) {
   return new Promise((resolve) => {
     if (!id) {
@@ -348,6 +363,7 @@ module.exports.getClassesByPull = getClassesByPull;
 module.exports.getClassesBySeason = getClassesBySeason;
 
 module.exports.getHooks = getHooks;
+module.exports.getHooksOfWinners = getHooksOfWinners;
 module.exports.getHooksByClass = getHooksByClass;
 module.exports.getHooksByPull = getHooksByPull;
 module.exports.getHooksBySeason = getHooksBySeason;

@@ -159,14 +159,11 @@ export class WinsComponent implements OnInit {
       }
     }
     for (let cl_n in this.data) {
-      let winners_inverse: any = {};
+      let sorted_winner_list: any[] = [];
       for (let w in this.data[cl_n].winners) {
         const win_count = this.data[cl_n].winners[w];
 
-        if (!winners_inverse[win_count]) {
-          winners_inverse[win_count] = [];
-        }
-        winners_inverse[win_count].push(w);
+        sorted_winner_list.push([w, win_count]);
 
         if (win_count > this.data[cl_n].max_wins) {
           this.data[cl_n].max_wins = win_count;
@@ -176,14 +173,10 @@ export class WinsComponent implements OnInit {
           this.data[cl_n].leaders.push(w);
         }
       }
-      const sorted_wins = Object.keys(winners_inverse).sort(
-        this.sortByHighestNum
-      );
-      for (let i in sorted_wins) {
-        const win_count = sorted_wins[i];
-        for (let p in winners_inverse[win_count]) {
-          this.data[cl_n].winner_list.push(winners_inverse[win_count][p]);
-        }
+      this.data[cl_n].winner_list = [];
+      sorted_winner_list.sort((a, b) => b[1] - a[1]);
+      for (let i in sorted_winner_list) {
+        this.data[cl_n].winner_list.push(sorted_winner_list[i][0]);
       }
       this.data[cl_n].percentage = this.getPercentageStr(
         this.data[cl_n].max_wins,
@@ -194,47 +187,53 @@ export class WinsComponent implements OnInit {
   }
 
   getHooks(): void {
-    this.httpService
-      .get('/api/pulling/hooks/season/' + this.season_id + '/winners')
-      .subscribe((data: any) => {
-        this.hooks = {};
-        for (let i in data) {
-          const cl = this.classes[data[i].class];
-          const cl_n = this.getClassStr(cl);
-          if (!this.hooks[cl_n]) {
-            this.hooks[cl_n] = [];
-          }
-          this.hooks[cl_n].push(data[i]);
+    let api = '/api/pulling/hooks';
+    if (this.season_id) {
+      api += '/season/' + this.season_id;
+    }
+    api += '/winners';
+    this.httpService.get(api).subscribe((data: any) => {
+      this.hooks = {};
+      for (let i in data) {
+        const cl = this.classes[data[i].class];
+        const cl_n = this.getClassStr(cl);
+        if (!this.hooks[cl_n]) {
+          this.hooks[cl_n] = [];
         }
-        this.getWins();
-      });
+        this.hooks[cl_n].push(data[i]);
+      }
+      this.getWins();
+    });
   }
 
   getClasses(): void {
-    this.httpService
-      .get('/api/pulling/classes/season/' + this.season_id)
-      .subscribe((data: any) => {
-        this.classes = {};
-        this.class_names = [];
-        this.pulls = new Set();
-        for (let i in data) {
-          this.pulls.add(data[i].pull);
-          this.classes[data[i].id] = data[i];
-          const cl_n = this.getClassStr(data[i]);
-          if (this.class_names.indexOf(cl_n) < 0) {
-            this.class_names.push(cl_n);
-          }
-          if (!this.row_show[cl_n]) {
-            this.row_show[cl_n] = false;
-          }
+    let api = '/api/pulling/classes';
+    if (this.season_id) {
+      api += '/season/' + this.season_id;
+    }
+    this.httpService.get(api).subscribe((data: any) => {
+      this.classes = {};
+      this.class_names = [];
+      this.pulls = new Set();
+      for (let i in data) {
+        this.pulls.add(data[i].pull);
+        this.classes[data[i].id] = data[i];
+        const cl_n = this.getClassStr(data[i]);
+        if (this.class_names.indexOf(cl_n) < 0) {
+          this.class_names.push(cl_n);
         }
-        this.getHooks();
-      });
+        if (!this.row_show[cl_n]) {
+          this.row_show[cl_n] = false;
+        }
+      }
+      this.getHooks();
+    });
   }
 
   getSeasons(): void {
     this.httpService.get('/api/pulling/seasons').subscribe((data: any) => {
       this.seasons = data;
+      this.seasons.push({ id: '', year: 'All' });
       this.seasons.sort(this.sortByYear);
       if (this.seasons.length) {
         const last_season = this.seasons[0];
