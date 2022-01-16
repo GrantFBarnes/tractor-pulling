@@ -75,7 +75,7 @@ export class WinsComponent implements OnInit {
   }
 
   getPercentageStr(per: any, cl_n: string): string {
-    return ((per / this.data[cl_n].times_pulled) * 100).toFixed(0);
+    return ((per / this.data[cl_n].times_pulled) * 100).toFixed(0) + '%';
   }
 
   getPullerStr(id: any): string {

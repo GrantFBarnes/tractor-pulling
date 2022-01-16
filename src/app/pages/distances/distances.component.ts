@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../shared/services/http/http.service';
 import { Season } from '../../shared/interfaces/season';
 import { Pull } from '../../shared/interfaces/pull';
+import { Class } from '../../shared/interfaces/class';
 import { Hook } from '../../shared/interfaces/hook';
 import { Location } from '../../shared/interfaces/location';
 import { Puller } from '../../shared/interfaces/puller';
@@ -19,6 +20,9 @@ export class DistancesComponent implements OnInit {
   subject: string = 'Puller';
   subject_options: string[] = ['Puller', 'Puller/Tractor', 'Tractor', 'Brand'];
 
+  category: string = 'All';
+  category_options: string[] = ['All', 'Farm Stock', 'Antique Modified'];
+
   data: {
     [id: string]: {
       subject: string;
@@ -33,6 +37,7 @@ export class DistancesComponent implements OnInit {
   locations: { [id: string]: Location } = {};
   pullers: { [id: string]: Puller } = {};
   tractors: { [id: string]: Tractor } = {};
+  classes: { [id: string]: Class } = {};
 
   season_id: string = '';
   season_year: string = '';
@@ -122,6 +127,11 @@ export class DistancesComponent implements OnInit {
     this.data = {};
     for (let h in this.hooks) {
       const hook = this.hooks[h];
+      if (this.category !== 'All') {
+        if (this.category !== this.classes[hook.class].category) {
+          continue;
+        }
+      }
 
       let id = '';
       let subject_str = '';
@@ -193,12 +203,28 @@ export class DistancesComponent implements OnInit {
     });
   }
 
+  getClasses(): void {
+    let api = '/api/pulling/classes';
+    if (this.pull_id) {
+      api += '/pull/' + this.pull_id;
+    } else if (this.season_id) {
+      api += '/season/' + this.season_id;
+    }
+    this.httpService.get(api).subscribe((data: any) => {
+      this.classes = {};
+      for (let i in data) {
+        this.classes[data[i].id] = data[i];
+      }
+      this.getHooks();
+    });
+  }
+
   getPulls(): void {
     if (!this.season_id) {
       this.pulls = [];
       this.pull_id = '';
       this.pull_name = 'All';
-      this.getHooks();
+      this.getClasses();
       return;
     }
     this.httpService
@@ -218,7 +244,7 @@ export class DistancesComponent implements OnInit {
           this.pull_id = last_pull.id;
           this.pull_name = this.getPullStr(last_pull);
         }
-        this.getHooks();
+        this.getClasses();
       });
   }
 
@@ -263,17 +289,11 @@ export class DistancesComponent implements OnInit {
     });
   }
 
-  setSubject(option: string): void {
-    this.loading = true;
-    this.subject = option;
-    this.getDistances();
-  }
-
   setPull(option: any): void {
     this.loading = true;
     this.pull_id = option.id;
     this.pull_name = this.getPullStr(option);
-    this.getHooks();
+    this.getClasses();
   }
 
   setSeason(option: any): void {
@@ -281,5 +301,17 @@ export class DistancesComponent implements OnInit {
     this.season_id = option.id;
     this.season_year = option.year;
     this.getPulls();
+  }
+
+  setCategory(option: string): void {
+    this.loading = true;
+    this.category = option;
+    this.getDistances();
+  }
+
+  setSubject(option: string): void {
+    this.loading = true;
+    this.subject = option;
+    this.getDistances();
   }
 }

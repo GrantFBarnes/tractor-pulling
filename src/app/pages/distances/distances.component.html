@@ -5,7 +5,7 @@
   </div>
 
   <div class="row center mb-2">
-    <div class="col-md-4 mb-2">
+    <div class="col-md-3 mb-2">
       <div class="dropdown">
         <button
           class="btn btn-secondary dropdown-toggle"
@@ -30,7 +30,32 @@
         </ul>
       </div>
     </div>
-    <div class="col-md-4 mb-2">
+    <div class="col-md-3 mb-2">
+      <div class="dropdown">
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+        >
+          {{ category }}
+        </button>
+        <ul class="dropdown-menu dropdown-menu-dark">
+          <ng-container *ngFor="let option of category_options">
+            <li>
+              <a
+                [ngClass]="
+                  category == option ? 'dropdown-item active' : 'dropdown-item'
+                "
+                (click)="setCategory(option)"
+              >
+                {{ option }}
+              </a>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-3 mb-2">
       <div class="dropdown">
         <button
           class="btn btn-secondary dropdown-toggle"
@@ -57,7 +82,7 @@
         </ul>
       </div>
     </div>
-    <div class="col-md-4 mb-2">
+    <div class="col-md-3 mb-2">
       <div class="dropdown">
         <button
           class="btn btn-secondary dropdown-toggle"
