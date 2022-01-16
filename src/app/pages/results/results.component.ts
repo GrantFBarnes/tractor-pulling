@@ -139,6 +139,8 @@ export class ResultsComponent implements OnInit {
   }
 
   getHooks(): void {
+    this.hooks = {};
+
     this.httpService
       .get('/api/pulling/hooks/pull/' + this.pull_id)
       .subscribe((data: any) => {
@@ -158,6 +160,9 @@ export class ResultsComponent implements OnInit {
   }
 
   getClasses(): void {
+    this.classes = [];
+    this.row_show = {};
+
     this.httpService
       .get('/api/pulling/classes/pull/' + this.pull_id)
       .subscribe((data: any) => {
@@ -173,6 +178,10 @@ export class ResultsComponent implements OnInit {
   }
 
   getPulls(): void {
+    this.pulls = [];
+    this.pull_id = '';
+    this.pull_name = 'All';
+
     this.httpService
       .get('/api/pulling/pulls/season/' + this.season_id)
       .subscribe((data: any) => {
@@ -188,6 +197,10 @@ export class ResultsComponent implements OnInit {
   }
 
   getSeasons(): void {
+    this.seasons = [];
+    this.season_id = '';
+    this.season_year = '';
+
     this.httpService.get('/api/pulling/seasons').subscribe((data: any) => {
       this.seasons = data;
       this.seasons.sort(this.sortByYear);
@@ -201,6 +214,8 @@ export class ResultsComponent implements OnInit {
   }
 
   getTractors(): void {
+    this.tractors = {};
+
     this.httpService.get('/api/pulling/tractors').subscribe((data: any) => {
       for (let i in data) {
         this.tractors[data[i].id] = data[i];
@@ -210,6 +225,8 @@ export class ResultsComponent implements OnInit {
   }
 
   getPullers(): void {
+    this.pullers = {};
+
     this.httpService.get('/api/pulling/pullers').subscribe((data: any) => {
       for (let i in data) {
         this.pullers[data[i].id] = data[i];
@@ -219,6 +236,8 @@ export class ResultsComponent implements OnInit {
   }
 
   getLocations(): void {
+    this.locations = {};
+
     this.httpService.get('/api/pulling/locations').subscribe((data: any) => {
       for (let i in data) {
         this.locations[data[i].id] = data[i];

@@ -191,6 +191,8 @@ export class DistancesComponent implements OnInit {
   }
 
   getHooks(): void {
+    this.hooks = [];
+
     let api = '/api/pulling/hooks';
     if (this.pull_id) {
       api += '/pull/' + this.pull_id;
@@ -204,6 +206,8 @@ export class DistancesComponent implements OnInit {
   }
 
   getClasses(): void {
+    this.classes = {};
+
     let api = '/api/pulling/classes';
     if (this.pull_id) {
       api += '/pull/' + this.pull_id;
@@ -211,7 +215,6 @@ export class DistancesComponent implements OnInit {
       api += '/season/' + this.season_id;
     }
     this.httpService.get(api).subscribe((data: any) => {
-      this.classes = {};
       for (let i in data) {
         this.classes[data[i].id] = data[i];
       }
@@ -220,10 +223,11 @@ export class DistancesComponent implements OnInit {
   }
 
   getPulls(): void {
+    this.pulls = [];
+    this.pull_id = '';
+    this.pull_name = 'All';
+
     if (!this.season_id) {
-      this.pulls = [];
-      this.pull_id = '';
-      this.pull_name = 'All';
       this.getClasses();
       return;
     }
@@ -249,6 +253,10 @@ export class DistancesComponent implements OnInit {
   }
 
   getSeasons(): void {
+    this.seasons = [];
+    this.season_id = '';
+    this.season_year = '';
+
     this.httpService.get('/api/pulling/seasons').subscribe((data: any) => {
       this.seasons = data;
       this.seasons.push({ id: '', year: 'All' });
@@ -263,6 +271,8 @@ export class DistancesComponent implements OnInit {
   }
 
   getTractors(): void {
+    this.tractors = {};
+
     this.httpService.get('/api/pulling/tractors').subscribe((data: any) => {
       for (let i in data) {
         this.tractors[data[i].id] = data[i];
@@ -272,6 +282,8 @@ export class DistancesComponent implements OnInit {
   }
 
   getPullers(): void {
+    this.pullers = {};
+
     this.httpService.get('/api/pulling/pullers').subscribe((data: any) => {
       for (let i in data) {
         this.pullers[data[i].id] = data[i];
@@ -281,6 +293,8 @@ export class DistancesComponent implements OnInit {
   }
 
   getLocations(): void {
+    this.locations = {};
+
     this.httpService.get('/api/pulling/locations').subscribe((data: any) => {
       for (let i in data) {
         this.locations[data[i].id] = data[i];

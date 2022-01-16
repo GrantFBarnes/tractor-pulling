@@ -187,13 +187,14 @@ export class WinsComponent implements OnInit {
   }
 
   getHooks(): void {
+    this.hooks = {};
+
     let api = '/api/pulling/hooks';
     if (this.season_id) {
       api += '/season/' + this.season_id;
     }
     api += '/winners';
     this.httpService.get(api).subscribe((data: any) => {
-      this.hooks = {};
       for (let i in data) {
         const cl = this.classes[data[i].class];
         const cl_n = this.getClassStr(cl);
@@ -207,14 +208,16 @@ export class WinsComponent implements OnInit {
   }
 
   getClasses(): void {
+    this.pulls = new Set();
+    this.classes = {};
+    this.class_names = [];
+    this.row_show = {};
+
     let api = '/api/pulling/classes';
     if (this.season_id) {
       api += '/season/' + this.season_id;
     }
     this.httpService.get(api).subscribe((data: any) => {
-      this.classes = {};
-      this.class_names = [];
-      this.pulls = new Set();
       for (let i in data) {
         this.pulls.add(data[i].pull);
         this.classes[data[i].id] = data[i];
@@ -231,6 +234,10 @@ export class WinsComponent implements OnInit {
   }
 
   getSeasons(): void {
+    this.seasons = [];
+    this.season_id = '';
+    this.season_year = '';
+
     this.httpService.get('/api/pulling/seasons').subscribe((data: any) => {
       this.seasons = data;
       this.seasons.push({ id: '', year: 'All' });
@@ -245,6 +252,8 @@ export class WinsComponent implements OnInit {
   }
 
   getPullers(): void {
+    this.pullers = {};
+
     this.httpService.get('/api/pulling/pullers').subscribe((data: any) => {
       for (let i in data) {
         this.pullers[data[i].id] = data[i];
