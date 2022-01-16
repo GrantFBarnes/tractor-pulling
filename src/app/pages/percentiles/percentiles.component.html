@@ -8,13 +8,13 @@
     <div class="col-md-3 mb-2">
       <div class="dropdown">
         <button
-          class="btn btn-secondary dropdown-toggle"
+          class="btn btn-ghost dropdown-toggle"
           type="button"
           data-bs-toggle="dropdown"
         >
           {{ subject }}
         </button>
-        <ul class="dropdown-menu dropdown-menu-dark">
+        <ul class="dropdown-menu">
           <ng-container *ngFor="let option of subject_options">
             <li>
               <a
@@ -33,13 +33,13 @@
     <div class="col-md-3 mb-2">
       <div class="dropdown">
         <button
-          class="btn btn-secondary dropdown-toggle"
+          class="btn btn-ghost dropdown-toggle"
           type="button"
           data-bs-toggle="dropdown"
         >
           {{ category }}
         </button>
-        <ul class="dropdown-menu dropdown-menu-dark">
+        <ul class="dropdown-menu">
           <ng-container *ngFor="let option of category_options">
             <li>
               <a
@@ -58,13 +58,13 @@
     <div class="col-md-3 mb-2">
       <div class="dropdown">
         <button
-          class="btn btn-secondary dropdown-toggle"
+          class="btn btn-ghost dropdown-toggle"
           type="button"
           data-bs-toggle="dropdown"
         >
           {{ season_year }}
         </button>
-        <ul class="dropdown-menu dropdown-menu-dark">
+        <ul class="dropdown-menu">
           <ng-container *ngFor="let option of seasons">
             <li>
               <a
@@ -85,13 +85,13 @@
     <div class="col-md-3 mb-2">
       <div class="dropdown">
         <button
-          class="btn btn-secondary dropdown-toggle"
+          class="btn btn-ghost dropdown-toggle"
           type="button"
           data-bs-toggle="dropdown"
         >
           {{ pull_name }}
         </button>
-        <ul class="dropdown-menu dropdown-menu-dark">
+        <ul class="dropdown-menu">
           <ng-container *ngFor="let option of pulls">
             <li>
               <a
@@ -112,7 +112,7 @@
   </div>
 
   <div class="row">
-    <table class="table table-dark table-hover">
+    <table class="table table-light table-hover">
       <thead>
         <tr>
           <th>{{ subject }}</th>

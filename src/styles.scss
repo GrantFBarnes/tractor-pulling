@@ -1,8 +1,5 @@
 /* Global Styling */
 
-$body-color: white;
-$body-bg: #343a40;
-
 @import "node_modules/bootstrap/scss/bootstrap.scss";
 
 .total-center {
@@ -26,19 +23,19 @@ $body-bg: #343a40;
 }
 
 .red-text {
-  color: red;
+  color: #800000;
 }
 
 .orange-text {
-  color: #ffa400;
+  color: #804d00;
 }
 
 .yellow-text {
-  color: yellow;
+  color: #698000;
 }
 
 .green-text {
-  color: #00ff1f;
+  color: #0b8000;
 }
 
 .clickable {
