@@ -136,13 +136,28 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row center mb-2">
     <div class="col-12 mb-2">
+      <h2>Bar Chart</h2>
       <canvas
         baseChart
-        [datasets]="barChartData"
-        [labels]="barChartLabels"
+        [datasets]="chart_data"
+        [labels]="chart_labels"
         [legend]="false"
+        type="bar"
+      >
+      </canvas>
+    </div>
+  </div>
+  <div class="row center mb-2">
+    <div class="col-12 mb-2">
+      <h2>Pie Chart</h2>
+      <canvas
+        baseChart
+        [datasets]="chart_data"
+        [labels]="chart_labels"
+        [legend]="true"
+        type="pie"
       >
       </canvas>
     </div>

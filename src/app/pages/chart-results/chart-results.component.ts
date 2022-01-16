@@ -27,8 +27,8 @@ export class ChartResultsComponent implements OnInit {
   metric: string = 'Wins';
   metric_options: string[] = ['Wins', 'Hooks', 'Distance'];
 
-  barChartLabels: string[] = [];
-  barChartData: ChartDataset[] = [];
+  chart_labels: string[] = [];
+  chart_data: ChartDataset[] = [];
 
   locations: { [id: string]: Location } = {};
   pullers: { [id: string]: Puller } = {};
@@ -178,19 +178,19 @@ export class ChartResultsComponent implements OnInit {
     sorted_data_rows.sort((a, b) => b[1] - a[1]);
 
     let col_count = 0;
-    let bar_chart_data = [];
-    this.barChartLabels = [];
+    let chart_data = [];
+    this.chart_labels = [];
     for (let i in sorted_data_rows) {
       col_count += 1;
       if (col_count === 10) break;
 
       const subject = data[sorted_data_rows[i][0]];
-      this.barChartLabels.push(subject.subject);
-      bar_chart_data.push(subject.count);
+      this.chart_labels.push(subject.subject);
+      chart_data.push(subject.count);
     }
-    this.barChartData = [
+    this.chart_data = [
       {
-        data: bar_chart_data,
+        data: chart_data,
         label: this.metric,
       },
     ];
