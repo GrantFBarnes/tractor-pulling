@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NgChartsModule } from 'ng2-charts';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { PointsComponent } from './pages/points/points.component';
 import { PercentilesComponent } from './pages/percentiles/percentiles.component';
 import { DistancesComponent } from './pages/distances/distances.component';
 import { RivalsComponent } from './pages/rivals/rivals.component';
+import { ChartResultsComponent } from './pages/chart-results/chart-results.component';
 
 @NgModule({
   declarations: [
@@ -31,8 +33,15 @@ import { RivalsComponent } from './pages/rivals/rivals.component';
     PercentilesComponent,
     DistancesComponent,
     RivalsComponent,
+    ChartResultsComponent,
   ],
-  imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    AppRoutingModule,
+    NgChartsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
