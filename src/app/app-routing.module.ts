@@ -7,6 +7,7 @@ import { WinsComponent } from './pages/wins/wins.component';
 import { PointsComponent } from './pages/points/points.component';
 import { PercentilesComponent } from './pages/percentiles/percentiles.component';
 import { DistancesComponent } from './pages/distances/distances.component';
+import { RivalsComponent } from './pages/rivals/rivals.component';
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'pulling/points', component: PointsComponent },
   { path: 'pulling/percentiles', component: PercentilesComponent },
   { path: 'pulling/distances', component: DistancesComponent },
+  { path: 'pulling/rivals', component: RivalsComponent },
   { path: 'pulling', redirectTo: '/pulling/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

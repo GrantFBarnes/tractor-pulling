@@ -15,6 +15,7 @@ import { WinsComponent } from './pages/wins/wins.component';
 import { PointsComponent } from './pages/points/points.component';
 import { PercentilesComponent } from './pages/percentiles/percentiles.component';
 import { DistancesComponent } from './pages/distances/distances.component';
+import { RivalsComponent } from './pages/rivals/rivals.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { DistancesComponent } from './pages/distances/distances.component';
     PointsComponent,
     PercentilesComponent,
     DistancesComponent,
+    RivalsComponent,
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
   providers: [],

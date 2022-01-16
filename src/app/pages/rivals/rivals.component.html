@@ -1,0 +1,144 @@
+<app-loading *ngIf="loading"></app-loading>
+<div [ngClass]="loading ? 'container blur' : 'container'">
+  <div class="mainTitle">
+    <h1>Rivals</h1>
+  </div>
+
+  <div class="row center mb-2">
+    <div class="col-md-3 mb-2">
+      <div class="dropdown">
+        <button
+          class="btn btn-ghost dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+        >
+          {{ subject }}
+        </button>
+        <ul class="dropdown-menu">
+          <ng-container *ngFor="let option of subject_options">
+            <li>
+              <a
+                [ngClass]="
+                  subject == option ? 'dropdown-item active' : 'dropdown-item'
+                "
+                (click)="setSubject(option)"
+              >
+                {{ option }}
+              </a>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-3 mb-2">
+      <div class="dropdown">
+        <button
+          class="btn btn-ghost dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+        >
+          {{ category }}
+        </button>
+        <ul class="dropdown-menu">
+          <ng-container *ngFor="let option of category_options">
+            <li>
+              <a
+                [ngClass]="
+                  category == option ? 'dropdown-item active' : 'dropdown-item'
+                "
+                (click)="setCategory(option)"
+              >
+                {{ option }}
+              </a>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-3 mb-2">
+      <div class="dropdown">
+        <button
+          class="btn btn-ghost dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+        >
+          {{ season_year }}
+        </button>
+        <ul class="dropdown-menu">
+          <ng-container *ngFor="let option of seasons">
+            <li>
+              <a
+                [ngClass]="
+                  season_id == option.id
+                    ? 'dropdown-item active'
+                    : 'dropdown-item'
+                "
+                (click)="setSeason(option)"
+              >
+                {{ option.year }}
+              </a>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-3 mb-2">
+      <div class="dropdown">
+        <button
+          class="btn btn-ghost dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+        >
+          {{ pull_name }}
+        </button>
+        <ul class="dropdown-menu">
+          <ng-container *ngFor="let option of pulls">
+            <li>
+              <a
+                [ngClass]="
+                  pull_id == option.id
+                    ? 'dropdown-item active'
+                    : 'dropdown-item'
+                "
+                (click)="setPull(option)"
+              >
+                {{ getPullStr(option) }}
+              </a>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <table class="table table-light table-hover">
+      <thead>
+        <tr>
+          <th>Wins</th>
+          <th>{{ subject }}</th>
+          <th>{{ subject }}</th>
+          <th>Wins</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let id of data_rows">
+          <tr>
+            <td [ngClass]="getColorClass(id.winsA, id.winsB)">
+              {{ id.winsA }}
+            </td>
+            <td [ngClass]="getColorClass(id.winsA, id.winsB)">
+              {{ id.subjectA }}
+            </td>
+            <td [ngClass]="getColorClass(id.winsB, id.winsA)">
+              {{ id.subjectB }}
+            </td>
+            <td [ngClass]="getColorClass(id.winsB, id.winsA)">
+              {{ id.winsB }}
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>
