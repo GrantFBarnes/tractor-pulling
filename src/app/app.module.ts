@@ -13,6 +13,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ResultsComponent } from './pages/results/results.component';
 import { WinsComponent } from './pages/wins/wins.component';
 import { PointsComponent } from './pages/points/points.component';
+import { DistancesComponent } from './pages/distances/distances.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { PointsComponent } from './pages/points/points.component';
     ResultsComponent,
     WinsComponent,
     PointsComponent,
+    DistancesComponent,
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
   providers: [],
