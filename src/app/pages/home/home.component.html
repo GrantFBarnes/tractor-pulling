@@ -4,63 +4,164 @@
   </div>
 
   <div class="row mb-2">
+    <div class="col-lg-6 mb-2">
+      <div class="card bg-dark mb-2">
+        <div class="card-body">
+          <div class="row mb-2">
+            <div class="col-lg-6 mb-2">
+              <h3 class="card-title">Results</h3>
+              <p class="card-text">View results from previous pulls.</p>
+            </div>
+            <div class="col-lg-6 mb-2">
+              <div class="row mb-2 center">
+                <div class="col-12 mb-2">
+                  <br />
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    routerLink="/pulling/results"
+                  >
+                    Go to Results
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card bg-dark">
+        <div class="card-body">
+          <div class="row mb-2">
+            <div class="col-lg-6 mb-2">
+              <h3 class="card-title">Class Analysis</h3>
+              <p class="card-text">
+                Analyze results of pullers on a per class basis.
+              </p>
+            </div>
+            <div class="col-lg-6 mb-2">
+              <div class="row mb-2 center">
+                <div class="col-12 mb-2">
+                  View which pullers have the most wins in each class
+                  <br />
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    routerLink="/pulling/wins"
+                  >
+                    Go to Wins
+                  </button>
+                </div>
+              </div>
+              <div class="row mb-2 center">
+                <div class="col-12 mb-2">
+                  View which pullers have the most points in each class
+                  <br />
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    routerLink="/pulling/points"
+                  >
+                    Go to Points
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 mb-2">
+      <div class="card bg-dark max-height">
+        <div class="card-body">
+          <div class="row mb-2x">
+            <div class="col-lg-6 mb-2">
+              <h3 class="card-title">Puller Analysis</h3>
+              <p class="card-text">
+                Analyze results of pullers or their tractors regardless of what
+                class they are in.
+              </p>
+            </div>
+            <div class="col-lg-6 mb-2">
+              <div class="row mb-2 center">
+                <div class="col-12 mb-2">
+                  View which pullers/tractors have the best percentiles
+                  <br />
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    routerLink="/pulling/percentiles"
+                  >
+                    Go to Percentiles
+                  </button>
+                </div>
+              </div>
+              <div class="row mb-2 center">
+                <div class="col-12 mb-2">
+                  View which pullers/tractors go the longest distance
+                  <br />
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    routerLink="/pulling/distances"
+                  >
+                    Go to Distances
+                  </button>
+                </div>
+              </div>
+              <div class="row mb-2 center">
+                <div class="col-12 mb-2">
+                  View how pullers/tractors stand head-to-head
+                  <br />
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    routerLink="/pulling/rivals"
+                  >
+                    Go to Rivals
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mb-2">
     <div class="col-12 mb-2">
-      <div class="center">
-        <button
-          type="button"
-          class="btn btn-primary"
-          routerLink="/pulling/results"
-        >
-          Results
-        </button>
-      </div>
-    </div>
-  </div>
-  <div class="row mb-2">
-    <div class="col-md-6 mb-2">
-      <div class="center">
-        <button
-          type="button"
-          class="btn btn-secondary"
-          routerLink="/pulling/wins"
-        >
-          Wins
-        </button>
-      </div>
-    </div>
-    <div class="col-md-6 mb-2">
-      <div class="center">
-        <button
-          type="button"
-          class="btn btn-secondary"
-          routerLink="/pulling/points"
-        >
-          Points
-        </button>
-      </div>
-    </div>
-  </div>
-  <div class="row mb-2">
-    <div class="col-md-6 mb-2">
-      <div class="center">
-        <button
-          type="button"
-          class="btn btn-secondary"
-          routerLink="/pulling/percentiles"
-        >
-          Percentiles
-        </button>
-      </div>
-    </div>
-    <div class="col-md-6 mb-2">
-      <div class="center">
-        <button
-          type="button"
-          class="btn btn-secondary"
-          routerLink="/pulling/distances"
-        >
-          Distances
-        </button>
+      <div class="card bg-dark">
+        <div class="card-body">
+          <div class="row mb-2">
+            <div class="col-lg-4 mb-2">
+              <h3 class="card-title">Chart Analysis</h3>
+              <p class="card-text">
+                Visualize results and analysis through charts.
+              </p>
+            </div>
+            <div class="col-lg-4 mb-2 center">
+              View previous pull results through charts
+              <br />
+              <button
+                type="button"
+                class="btn btn-primary"
+                routerLink="/pulling/charts/results"
+              >
+                Go to Results
+              </button>
+            </div>
+            <div class="col-lg-4 mb-2 center">
+              View puller/tractor results through charts
+              <br />
+              <button
+                type="button"
+                class="btn btn-primary"
+                routerLink="/pulling/charts/pullers"
+              >
+                Go to Pullers
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
