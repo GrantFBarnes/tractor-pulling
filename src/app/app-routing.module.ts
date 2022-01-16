@@ -9,6 +9,7 @@ import { PercentilesComponent } from './pages/percentiles/percentiles.component'
 import { DistancesComponent } from './pages/distances/distances.component';
 import { RivalsComponent } from './pages/rivals/rivals.component';
 import { ChartResultsComponent } from './pages/chart-results/chart-results.component';
+import { ChartPullersComponent } from './pages/chart-pullers/chart-pullers.component';
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'pulling/distances', component: DistancesComponent },
   { path: 'pulling/rivals', component: RivalsComponent },
   { path: 'pulling/charts/results', component: ChartResultsComponent },
+  { path: 'pulling/charts/pullers', component: ChartPullersComponent },
   { path: 'pulling', redirectTo: '/pulling/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

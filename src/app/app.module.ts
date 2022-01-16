@@ -18,6 +18,7 @@ import { PercentilesComponent } from './pages/percentiles/percentiles.component'
 import { DistancesComponent } from './pages/distances/distances.component';
 import { RivalsComponent } from './pages/rivals/rivals.component';
 import { ChartResultsComponent } from './pages/chart-results/chart-results.component';
+import { ChartPullersComponent } from './pages/chart-pullers/chart-pullers.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ChartResultsComponent } from './pages/chart-results/chart-results.compo
     DistancesComponent,
     RivalsComponent,
     ChartResultsComponent,
+    ChartPullersComponent,
   ],
   imports: [
     BrowserModule,

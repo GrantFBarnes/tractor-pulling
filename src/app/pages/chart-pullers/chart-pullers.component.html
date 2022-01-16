@@ -1,0 +1,130 @@
+<app-loading *ngIf="loading"></app-loading>
+<div [ngClass]="loading ? 'container blur' : 'container'">
+  <div class="mainTitle">
+    <h1>Pullers</h1>
+  </div>
+
+  <div class="row center mb-2">
+    <div class="col-md-3 mb-2">
+      <div class="dropdown">
+        <button
+          class="btn btn-ghost dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+        >
+          {{ puller_name }}
+        </button>
+        <ul class="dropdown-menu">
+          <ng-container *ngFor="let option of pullers">
+            <li>
+              <a
+                [ngClass]="
+                  puller_id == option.id
+                    ? 'dropdown-item active'
+                    : 'dropdown-item'
+                "
+                (click)="setPuller(option)"
+              >
+                {{ getPullerStr(option) }}
+              </a>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-3 mb-2">
+      <div class="dropdown">
+        <button
+          class="btn btn-ghost dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+        >
+          {{ metric }}
+        </button>
+        <ul class="dropdown-menu">
+          <ng-container *ngFor="let option of metric_options">
+            <li>
+              <a
+                [ngClass]="
+                  metric == option ? 'dropdown-item active' : 'dropdown-item'
+                "
+                (click)="setMetric(option)"
+              >
+                {{ option }}
+              </a>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-3 mb-2">
+      <div class="dropdown">
+        <button
+          class="btn btn-ghost dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+        >
+          {{ category }}
+        </button>
+        <ul class="dropdown-menu">
+          <ng-container *ngFor="let option of category_options">
+            <li>
+              <a
+                [ngClass]="
+                  category == option ? 'dropdown-item active' : 'dropdown-item'
+                "
+                (click)="setCategory(option)"
+              >
+                {{ option }}
+              </a>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-3 mb-2">
+      <div class="dropdown">
+        <button
+          class="btn btn-ghost dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+        >
+          {{ season_year }}
+        </button>
+        <ul class="dropdown-menu">
+          <ng-container *ngFor="let option of seasons">
+            <li>
+              <a
+                [ngClass]="
+                  season_id == option.id
+                    ? 'dropdown-item active'
+                    : 'dropdown-item'
+                "
+                (click)="setSeason(option)"
+              >
+                {{ option.year }}
+              </a>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="row center mb-2">
+    <div class="col-12 mb-2">
+      <canvas
+        *ngIf="chart_labels.length > 0"
+        baseChart
+        [datasets]="chart_data"
+        [labels]="chart_labels"
+        type="line"
+      >
+      </canvas>
+      <p *ngIf="chart_labels.length === 0">
+        There is no data with the specified settings. Please change the options
+        until there is any information to show.
+      </p>
+    </div>
+  </div>
+</div>
