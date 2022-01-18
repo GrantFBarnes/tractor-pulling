@@ -47,11 +47,6 @@ function returnPromiseResponse(response, promise) {
 ////////////////////////////////////////////////////////////////////////////////
 // Generic
 
-// Heartbeat to make sure server is running
-router.get("/api/pulling/heartbeat", (request, response) => {
-  returnSuccess(response);
-});
-
 // Get all data from table
 router.get("/api/pulling/dump/:table", (request, response) => {
   if (!authentication.isAuthorized(request)) {
@@ -59,28 +54,6 @@ router.get("/api/pulling/dump/:table", (request, response) => {
     return;
   }
   returnPromiseResponse(response, main.getDataDump(request.params.table));
-});
-
-////////////////////////////////////////////////////////////////////////////////
-// Authorization
-
-// Check if user is authenticated
-router.get("/api/pulling/authenticated", (request, response) => {
-  if (authentication.isAuthorized(request)) {
-    returnSuccess(response);
-  } else {
-    rejectUnauthorized(response);
-  }
-});
-
-// Get edit token if body is correct
-router.post("/api/pulling/token", (request, response) => {
-  if (authentication.requestToken(request.body)) {
-    authentication.setTokenCookie(response);
-    returnSuccess(response);
-  } else {
-    rejectUnauthorized(response);
-  }
 });
 
 ////////////////////////////////////////////////////////////////////////////////
