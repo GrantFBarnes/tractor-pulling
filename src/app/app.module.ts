@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 
 import { LoadingComponent } from './shared/components/loading/loading.component';
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
+import { UnauthorizedComponent } from './shared/components/unauthorized/unauthorized.component';
 
 import { HomeComponent } from './pages/home/home.component';
 import { ResultsComponent } from './pages/results/results.component';
@@ -26,6 +27,7 @@ import { ChartPullersComponent } from './pages/chart-pullers/chart-pullers.compo
 
     LoadingComponent,
     PageNotFoundComponent,
+    UnauthorizedComponent,
 
     HomeComponent,
     ResultsComponent,
