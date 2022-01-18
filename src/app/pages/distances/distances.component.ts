@@ -56,10 +56,10 @@ export class DistancesComponent implements OnInit {
   }
 
   getDistanceClass(distance: number): string {
-    if (distance >= 300) return 'green-text';
-    if (distance >= 200) return 'yellow-text';
-    if (distance >= 100) return 'orange-text';
-    return 'red-text';
+    if (distance >= 300) return 'green-bg';
+    if (distance >= 200) return 'yellow-bg';
+    if (distance >= 100) return 'orange-bg';
+    return 'red-bg';
   }
 
   getDistanceStr(distance: number): string {

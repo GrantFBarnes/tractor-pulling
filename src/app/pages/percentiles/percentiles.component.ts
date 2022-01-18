@@ -59,10 +59,10 @@ export class PercentilesComponent implements OnInit {
   }
 
   getPercentageClass(percent: number): string {
-    if (percent >= 75) return 'green-text';
-    if (percent >= 50) return 'yellow-text';
-    if (percent >= 25) return 'orange-text';
-    return 'red-text';
+    if (percent >= 75) return 'green-bg';
+    if (percent >= 50) return 'yellow-bg';
+    if (percent >= 25) return 'orange-bg';
+    return 'red-bg';
   }
 
   getPercentageStr(percent: number): string {

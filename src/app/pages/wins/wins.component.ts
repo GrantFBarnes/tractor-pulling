@@ -60,18 +60,18 @@ export class WinsComponent implements OnInit {
   }
 
   getWinsClass(wins: number): string {
-    if (wins >= 7) return 'green-text';
-    if (wins >= 5) return 'yellow-text';
-    if (wins >= 3) return 'orange-text';
-    return 'red-text';
+    if (wins >= 7) return 'green-bg';
+    if (wins >= 5) return 'yellow-bg';
+    if (wins >= 3) return 'orange-bg';
+    return 'red-bg';
   }
 
   getPercentageClass(per: string): string {
     const percent = parseInt(per);
-    if (percent >= 55) return 'green-text';
-    if (percent >= 40) return 'yellow-text';
-    if (percent >= 20) return 'orange-text';
-    return 'red-text';
+    if (percent >= 55) return 'green-bg';
+    if (percent >= 40) return 'yellow-bg';
+    if (percent >= 20) return 'orange-bg';
+    return 'red-bg';
   }
 
   getPercentageStr(per: any, cl_n: string): string {

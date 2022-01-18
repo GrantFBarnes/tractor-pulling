@@ -53,11 +53,11 @@ export class RivalsComponent implements OnInit {
 
   getColorClass(wins: number, other_wins: number): string {
     const gap = (wins - other_wins) / (wins + other_wins);
-    if (gap >= 0.5) return 'green-text';
-    if (gap > 0.0) return 'yellow-text';
+    if (gap >= 0.5) return 'green-bg';
+    if (gap > 0.0) return 'yellow-bg';
     if (gap === 0) return '';
-    if (gap >= -0.25) return 'orange-text';
-    return 'red-text';
+    if (gap > -0.5) return 'orange-bg';
+    return 'red-bg';
   }
 
   getTractorStr(h: Hook): string {
