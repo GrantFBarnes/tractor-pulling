@@ -1,41 +1,7 @@
 const database = require("./database.js");
 
-////////////////////////////////////////////////////////////////////////////////
-// Generic
-
-function getDataDump(table) {
-  return new Promise((resolve) => {
-    if (!table) {
-      resolve({ statusCode: 500, data: "table not provided" });
-      return;
-    }
-
-    const tables = new Set([
-      "tractors",
-      "pullers",
-      "locations",
-      "seasons",
-      "pulls",
-      "classes",
-      "hooks",
-    ]);
-    if (!tables.has(table)) {
-      resolve({ statusCode: 500, data: "table not valid" });
-      return;
-    }
-
-    database
-      .select("*", table, null, null)
-      .then((result) => {
-        resolve({ statusCode: 200, data: result });
-        return;
-      })
-      .catch(() => {
-        resolve({ statusCode: 400, data: "failed to get data" });
-        return;
-      });
-  });
-}
+const id_regex =
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
 
 ////////////////////////////////////////////////////////////////////////////////
 // Seasons
@@ -80,6 +46,11 @@ function getPullsBySeason(id) {
       return;
     }
 
+    if (!id_regex.test(id)) {
+      resolve({ statusCode: 500, data: "id not valid" });
+      return;
+    }
+
     database
       .select("*", "pulls", "season", [id])
       .then((result) => {
@@ -121,6 +92,11 @@ function getClassesByPull(id) {
       return;
     }
 
+    if (!id_regex.test(id)) {
+      resolve({ statusCode: 500, data: "id not valid" });
+      return;
+    }
+
     database
       .select("*", "classes", "pull", [id])
       .then((result) => {
@@ -141,6 +117,11 @@ function getClassesBySeason(id) {
   return new Promise((resolve) => {
     if (!id) {
       resolve({ statusCode: 500, data: "id not provided" });
+      return;
+    }
+
+    if (!id_regex.test(id)) {
+      resolve({ statusCode: 500, data: "id not valid" });
       return;
     }
 
@@ -200,6 +181,11 @@ function getHooksByClass(id) {
       return;
     }
 
+    if (!id_regex.test(id)) {
+      resolve({ statusCode: 500, data: "id not valid" });
+      return;
+    }
+
     database
       .select("*", "hooks", "class", [id])
       .then((result) => {
@@ -223,6 +209,11 @@ function getHooksByPull(id) {
       return;
     }
 
+    if (!id_regex.test(id)) {
+      resolve({ statusCode: 500, data: "id not valid" });
+      return;
+    }
+
     database
       .selectChain(["hooks", "classes"], ["class", "pull"], [id])
       .then((result) => {
@@ -243,6 +234,11 @@ function getHooksBySeason(id) {
   return new Promise((resolve) => {
     if (!id) {
       resolve({ statusCode: 500, data: "id not provided" });
+      return;
+    }
+
+    if (!id_regex.test(id)) {
+      resolve({ statusCode: 500, data: "id not valid" });
       return;
     }
 
@@ -270,6 +266,11 @@ function getHooksBySeasonOfWinners(id) {
   return new Promise((resolve) => {
     if (!id) {
       resolve({ statusCode: 500, data: "id not provided" });
+      return;
+    }
+
+    if (!id_regex.test(id)) {
+      resolve({ statusCode: 500, data: "id not valid" });
       return;
     }
 
@@ -350,8 +351,6 @@ function getLocations() {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-
-module.exports.getDataDump = getDataDump;
 
 module.exports.getSeasons = getSeasons;
 

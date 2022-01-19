@@ -45,18 +45,6 @@ function returnPromiseResponse(response, promise) {
 // APIs defined here
 
 ////////////////////////////////////////////////////////////////////////////////
-// Generic
-
-// Get all data from table
-router.get("/api/pulling/dump/:table", (request, response) => {
-  if (!authentication.isAuthorized(request)) {
-    rejectUnauthorized(response);
-    return;
-  }
-  returnPromiseResponse(response, main.getDataDump(request.params.table));
-});
-
-////////////////////////////////////////////////////////////////////////////////
 // Seasons
 
 // Get all seasons
