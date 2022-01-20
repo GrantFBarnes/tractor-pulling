@@ -44,7 +44,7 @@ export class ChartPullersComponent implements OnInit {
   constructor(private httpService: HttpService) {}
 
   ngOnInit(): void {
-    this.getPullers();
+    this.getTractors();
   }
 
   getTractorStr(id: string): string {
@@ -232,6 +232,20 @@ export class ChartPullersComponent implements OnInit {
     });
   }
 
+  getPullers(): void {
+    this.pullers = [];
+
+    let api = '/api/pulling/pullers';
+    if (this.season_id) {
+      api += '/season/' + this.season_id;
+    }
+    this.httpService.get(api).subscribe((data: any) => {
+      this.pullers = data;
+      this.pullers.sort(this.sortByName);
+      this.getPulls();
+    });
+  }
+
   getSeasons(): void {
     this.seasons = [];
     this.season_id = '';
@@ -249,7 +263,7 @@ export class ChartPullersComponent implements OnInit {
         this.season_id = last_season.id;
         this.season_year = last_season.year;
       }
-      this.getPulls();
+      this.getPullers();
     });
   }
 
@@ -264,21 +278,11 @@ export class ChartPullersComponent implements OnInit {
     });
   }
 
-  getPullers(): void {
-    this.pullers = [];
-
-    this.httpService.get('/api/pulling/pullers').subscribe((data: any) => {
-      this.pullers = data;
-      this.pullers.sort(this.sortByName);
-      this.getTractors();
-    });
-  }
-
   setSeason(option: any): void {
     this.loading = true;
     this.season_id = option.id;
     this.season_year = option.year;
-    this.getPulls();
+    this.getPullers();
   }
 
   setCategory(option: string): void {

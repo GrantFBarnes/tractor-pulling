@@ -148,7 +148,7 @@ function getClassesBySeason(id) {
     database
       .run(
         `
-        SELECT c.* FROM classes c
+        SELECT DISTINCT c.* FROM classes c
           INNER JOIN pulls p ON c.pull = p.id
             WHERE p.season = '${id}';
         `
@@ -255,7 +255,7 @@ function getHooksByPull(id) {
     database
       .run(
         `
-        SELECT h.* FROM hooks h
+        SELECT DISTINCT h.* FROM hooks h
           INNER JOIN classes c ON h.class = c.id
             WHERE c.pull = '${id}';
         `
@@ -289,7 +289,7 @@ function getHooksBySeason(id) {
     database
       .run(
         `
-        SELECT h.* FROM hooks h
+        SELECT DISTINCT h.* FROM hooks h
           INNER JOIN classes c ON h.class = c.id
           INNER JOIN pulls p ON c.pull = p.id
             WHERE p.season = '${id}';
@@ -324,7 +324,7 @@ function getHooksBySeasonOfWinners(id) {
     database
       .run(
         `
-        SELECT h.* FROM hooks h
+        SELECT DISTINCT h.* FROM hooks h
           INNER JOIN classes c ON h.class = c.id
           INNER JOIN pulls p ON c.pull = p.id
             WHERE p.season = '${id}'
@@ -382,7 +382,7 @@ function getPullersByClass(id) {
     database
       .run(
         `
-        SELECT pullers.* FROM pullers
+        SELECT DISTINCT pullers.* FROM pullers
           INNER JOIN hooks h ON pullers.id = h.puller
             WHERE h.class = '${id}';
         `
@@ -416,7 +416,7 @@ function getPullersByPull(id) {
     database
       .run(
         `
-        SELECT pullers.* FROM pullers
+        SELECT DISTINCT pullers.* FROM pullers
           INNER JOIN hooks h ON pullers.id = h.puller
           INNER JOIN classes c ON h.class = c.id
             WHERE c.pull = '${id}';
@@ -451,7 +451,7 @@ function getPullersBySeason(id) {
     database
       .run(
         `
-        SELECT pullers.* FROM pullers
+        SELECT DISTINCT pullers.* FROM pullers
           INNER JOIN hooks h ON pullers.id = h.puller
           INNER JOIN classes c ON h.class = c.id
           INNER JOIN pulls p ON c.pull = p.id
@@ -509,7 +509,7 @@ function getTractorsByClass(id) {
     database
       .run(
         `
-        SELECT tractors.* FROM tractors
+        SELECT DISTINCT tractors.* FROM tractors
           INNER JOIN hooks h ON tractors.id = h.tractor
             WHERE h.class = '${id}';
         `
@@ -543,7 +543,7 @@ function getTractorsByPull(id) {
     database
       .run(
         `
-        SELECT tractors.* FROM tractors
+        SELECT DISTINCT tractors.* FROM tractors
           INNER JOIN hooks h ON tractors.id = h.tractor
           INNER JOIN classes c ON h.class = c.id
             WHERE c.pull = '${id}';
@@ -578,7 +578,7 @@ function getTractorsBySeason(id) {
     database
       .run(
         `
-        SELECT tractors.* FROM tractors
+        SELECT DISTINCT tractors.* FROM tractors
           INNER JOIN hooks h ON tractors.id = h.tractor
           INNER JOIN classes c ON h.class = c.id
           INNER JOIN pulls p ON c.pull = p.id
