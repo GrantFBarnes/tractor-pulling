@@ -9,7 +9,11 @@ const id_regex =
 function getSeasons() {
   return new Promise((resolve) => {
     database
-      .select("*", "seasons", null, null)
+      .run(
+        `
+        SELECT * FROM seasons;
+        `
+      )
       .then((result) => {
         resolve({ statusCode: 200, data: result });
         return;
@@ -27,7 +31,11 @@ function getSeasons() {
 function getPulls() {
   return new Promise((resolve) => {
     database
-      .select("*", "pulls", null, null)
+      .run(
+        `
+        SELECT * FROM pulls;
+        `
+      )
       .then((result) => {
         resolve({ statusCode: 200, data: result });
         return;
@@ -52,7 +60,11 @@ function getPullsBySeason(id) {
     }
 
     database
-      .select("*", "pulls", "season", [id])
+      .run(
+        `
+        SELECT * FROM pulls WHERE season = '${id}';
+        `
+      )
       .then((result) => {
         resolve({ statusCode: 200, data: result });
         return;
@@ -73,7 +85,11 @@ function getPullsBySeason(id) {
 function getClasses() {
   return new Promise((resolve) => {
     database
-      .select("*", "classes", null, null)
+      .run(
+        `
+        SELECT * FROM classes;
+        `
+      )
       .then((result) => {
         resolve({ statusCode: 200, data: result });
         return;
@@ -98,7 +114,11 @@ function getClassesByPull(id) {
     }
 
     database
-      .select("*", "classes", "pull", [id])
+      .run(
+        `
+        SELECT * FROM classes WHERE pull = '${id}';
+        `
+      )
       .then((result) => {
         resolve({ statusCode: 200, data: result });
         return;
@@ -126,7 +146,13 @@ function getClassesBySeason(id) {
     }
 
     database
-      .selectChain(["classes", "pulls"], ["pull", "season"], [id])
+      .run(
+        `
+        SELECT c.* FROM classes c
+          INNER JOIN pulls p ON c.pull = p.id
+            WHERE p.season = '${id}';
+        `
+      )
       .then((result) => {
         resolve({ statusCode: 200, data: result });
         return;
@@ -147,7 +173,11 @@ function getClassesBySeason(id) {
 function getHooks() {
   return new Promise((resolve) => {
     database
-      .select("*", "hooks", null, null)
+      .run(
+        `
+        SELECT * FROM hooks;
+        `
+      )
       .then((result) => {
         resolve({ statusCode: 200, data: result });
         return;
@@ -162,7 +192,11 @@ function getHooks() {
 function getHooksOfWinners() {
   return new Promise((resolve) => {
     database
-      .select("*", "hooks", "position", [1])
+      .run(
+        `
+        SELECT * FROM hooks WHERE position = 1;
+        `
+      )
       .then((result) => {
         resolve({ statusCode: 200, data: result });
         return;
@@ -187,7 +221,11 @@ function getHooksByClass(id) {
     }
 
     database
-      .select("*", "hooks", "class", [id])
+      .run(
+        `
+        SELECT * FROM hooks WHERE class = '${id}';
+        `
+      )
       .then((result) => {
         resolve({ statusCode: 200, data: result });
         return;
@@ -215,7 +253,13 @@ function getHooksByPull(id) {
     }
 
     database
-      .selectChain(["hooks", "classes"], ["class", "pull"], [id])
+      .run(
+        `
+        SELECT h.* FROM hooks h
+          INNER JOIN classes c ON h.class = c.id
+            WHERE c.pull = '${id}';
+        `
+      )
       .then((result) => {
         resolve({ statusCode: 200, data: result });
         return;
@@ -243,10 +287,13 @@ function getHooksBySeason(id) {
     }
 
     database
-      .selectChain(
-        ["hooks", "classes", "pulls"],
-        ["class", "pull", "season"],
-        [id]
+      .run(
+        `
+        SELECT h.* FROM hooks h
+          INNER JOIN classes c ON h.class = c.id
+          INNER JOIN pulls p ON c.pull = p.id
+            WHERE p.season = '${id}';
+        `
       )
       .then((result) => {
         resolve({ statusCode: 200, data: result });
@@ -275,12 +322,14 @@ function getHooksBySeasonOfWinners(id) {
     }
 
     database
-      .selectChain(
-        ["hooks", "classes", "pulls"],
-        ["class", "pull", "season"],
-        [id],
-        "position",
-        1
+      .run(
+        `
+        SELECT h.* FROM hooks h
+          INNER JOIN classes c ON h.class = c.id
+          INNER JOIN pulls p ON c.pull = p.id
+            WHERE p.season = '${id}'
+            AND h.position = 1;
+        `
       )
       .then((result) => {
         resolve({ statusCode: 200, data: result });
@@ -302,7 +351,11 @@ function getHooksBySeasonOfWinners(id) {
 function getPullers() {
   return new Promise((resolve) => {
     database
-      .select("*", "pullers", null, null)
+      .run(
+        `
+        SELECT * FROM pullers;
+        `
+      )
       .then((result) => {
         resolve({ statusCode: 200, data: result });
         return;
@@ -314,13 +367,122 @@ function getPullers() {
   });
 }
 
+function getPullersByClass(id) {
+  return new Promise((resolve) => {
+    if (!id) {
+      resolve({ statusCode: 500, data: "id not provided" });
+      return;
+    }
+
+    if (!id_regex.test(id)) {
+      resolve({ statusCode: 500, data: "id not valid" });
+      return;
+    }
+
+    database
+      .run(
+        `
+        SELECT pullers.* FROM pullers
+          INNER JOIN hooks h ON pullers.id = h.puller
+            WHERE h.class = '${id}';
+        `
+      )
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({
+          statusCode: 400,
+          data: "failed to get pullers for class: " + id,
+        });
+        return;
+      });
+  });
+}
+
+function getPullersByPull(id) {
+  return new Promise((resolve) => {
+    if (!id) {
+      resolve({ statusCode: 500, data: "id not provided" });
+      return;
+    }
+
+    if (!id_regex.test(id)) {
+      resolve({ statusCode: 500, data: "id not valid" });
+      return;
+    }
+
+    database
+      .run(
+        `
+        SELECT pullers.* FROM pullers
+          INNER JOIN hooks h ON pullers.id = h.puller
+          INNER JOIN classes c ON h.class = c.id
+            WHERE c.pull = '${id}';
+        `
+      )
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({
+          statusCode: 400,
+          data: "failed to get pullers for pull: " + id,
+        });
+        return;
+      });
+  });
+}
+
+function getPullersBySeason(id) {
+  return new Promise((resolve) => {
+    if (!id) {
+      resolve({ statusCode: 500, data: "id not provided" });
+      return;
+    }
+
+    if (!id_regex.test(id)) {
+      resolve({ statusCode: 500, data: "id not valid" });
+      return;
+    }
+
+    database
+      .run(
+        `
+        SELECT pullers.* FROM pullers
+          INNER JOIN hooks h ON pullers.id = h.puller
+          INNER JOIN classes c ON h.class = c.id
+          INNER JOIN pulls p ON c.pull = p.id
+            WHERE p.season = '${id}';
+        `
+      )
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({
+          statusCode: 400,
+          data: "failed to get pullers for season: " + id,
+        });
+        return;
+      });
+  });
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // Tractors
 
 function getTractors() {
   return new Promise((resolve) => {
     database
-      .select("*", "tractors", null, null)
+      .run(
+        `
+        SELECT * FROM tractors;
+        `
+      )
       .then((result) => {
         resolve({ statusCode: 200, data: result });
         return;
@@ -332,13 +494,122 @@ function getTractors() {
   });
 }
 
+function getTractorsByClass(id) {
+  return new Promise((resolve) => {
+    if (!id) {
+      resolve({ statusCode: 500, data: "id not provided" });
+      return;
+    }
+
+    if (!id_regex.test(id)) {
+      resolve({ statusCode: 500, data: "id not valid" });
+      return;
+    }
+
+    database
+      .run(
+        `
+        SELECT tractors.* FROM tractors
+          INNER JOIN hooks h ON tractors.id = h.tractor
+            WHERE h.class = '${id}';
+        `
+      )
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({
+          statusCode: 400,
+          data: "failed to get tractors for class: " + id,
+        });
+        return;
+      });
+  });
+}
+
+function getTractorsByPull(id) {
+  return new Promise((resolve) => {
+    if (!id) {
+      resolve({ statusCode: 500, data: "id not provided" });
+      return;
+    }
+
+    if (!id_regex.test(id)) {
+      resolve({ statusCode: 500, data: "id not valid" });
+      return;
+    }
+
+    database
+      .run(
+        `
+        SELECT tractors.* FROM tractors
+          INNER JOIN hooks h ON tractors.id = h.tractor
+          INNER JOIN classes c ON h.class = c.id
+            WHERE c.pull = '${id}';
+        `
+      )
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({
+          statusCode: 400,
+          data: "failed to get tractors for pull: " + id,
+        });
+        return;
+      });
+  });
+}
+
+function getTractorsBySeason(id) {
+  return new Promise((resolve) => {
+    if (!id) {
+      resolve({ statusCode: 500, data: "id not provided" });
+      return;
+    }
+
+    if (!id_regex.test(id)) {
+      resolve({ statusCode: 500, data: "id not valid" });
+      return;
+    }
+
+    database
+      .run(
+        `
+        SELECT tractors.* FROM tractors
+          INNER JOIN hooks h ON tractors.id = h.tractor
+          INNER JOIN classes c ON h.class = c.id
+          INNER JOIN pulls p ON c.pull = p.id
+            WHERE p.season = '${id}';
+        `
+      )
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({
+          statusCode: 400,
+          data: "failed to get tractors for season: " + id,
+        });
+        return;
+      });
+  });
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // Locations
 
 function getLocations() {
   return new Promise((resolve) => {
     database
-      .select("*", "locations", null, null)
+      .run(
+        `
+        SELECT * FROM locations;
+        `
+      )
       .then((result) => {
         resolve({ statusCode: 200, data: result });
         return;
@@ -369,7 +640,13 @@ module.exports.getHooksBySeason = getHooksBySeason;
 module.exports.getHooksBySeasonOfWinners = getHooksBySeasonOfWinners;
 
 module.exports.getPullers = getPullers;
+module.exports.getPullersByClass = getPullersByClass;
+module.exports.getPullersByPull = getPullersByPull;
+module.exports.getPullersBySeason = getPullersBySeason;
 
 module.exports.getTractors = getTractors;
+module.exports.getTractorsByClass = getTractorsByClass;
+module.exports.getTractorsByPull = getTractorsByPull;
+module.exports.getTractorsBySeason = getTractorsBySeason;
 
 module.exports.getLocations = getLocations;

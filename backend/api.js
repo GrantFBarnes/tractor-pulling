@@ -127,12 +127,42 @@ router.get("/api/pulling/pullers", (request, response) => {
   returnPromiseResponse(response, main.getPullers());
 });
 
+// Get pullers by class
+router.get("/api/pulling/pullers/class/:id", (request, response) => {
+  returnPromiseResponse(response, main.getPullersByClass(request.params.id));
+});
+
+// Get pullers by pull
+router.get("/api/pulling/pullers/pull/:id", (request, response) => {
+  returnPromiseResponse(response, main.getPullersByPull(request.params.id));
+});
+
+// Get pullers by season
+router.get("/api/pulling/pullers/season/:id", (request, response) => {
+  returnPromiseResponse(response, main.getPullersBySeason(request.params.id));
+});
+
 ////////////////////////////////////////////////////////////////////////////////
 // Tractors
 
 // Get all tractors
 router.get("/api/pulling/tractors", (request, response) => {
   returnPromiseResponse(response, main.getTractors());
+});
+
+// Get tractors by class
+router.get("/api/pulling/tractors/class/:id", (request, response) => {
+  returnPromiseResponse(response, main.getTractorsByClass(request.params.id));
+});
+
+// Get tractors by pull
+router.get("/api/pulling/tractors/pull/:id", (request, response) => {
+  returnPromiseResponse(response, main.getTractorsByPull(request.params.id));
+});
+
+// Get tractors by season
+router.get("/api/pulling/tractors/season/:id", (request, response) => {
+  returnPromiseResponse(response, main.getTractorsBySeason(request.params.id));
 });
 
 ////////////////////////////////////////////////////////////////////////////////
