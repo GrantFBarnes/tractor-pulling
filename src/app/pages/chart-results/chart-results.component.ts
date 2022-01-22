@@ -36,12 +36,12 @@ export class ChartResultsComponent implements OnInit {
   classes: { [id: string]: Class } = {};
 
   season_id: string = '';
-  season_year: string = '';
-  seasons: Season[] = [];
+  season_name: string = '';
+  season_options: Season[] = [];
 
   pull_id: string = '';
   pull_name: string = '';
-  pulls: Pull[] = [];
+  pull_options: Pull[] = [];
 
   hooks: Hook[] = [];
 
@@ -103,6 +103,8 @@ export class ChartResultsComponent implements OnInit {
   sortByYear(a: any, b: any): number {
     const a_year = parseInt(a.year);
     const b_year = parseInt(b.year);
+    if (isNaN(a_year)) return -1;
+    if (isNaN(b_year)) return 1;
     if (a_year < b_year) return 1;
     if (a_year > b_year) return -1;
     return 0;
@@ -230,9 +232,9 @@ export class ChartResultsComponent implements OnInit {
   }
 
   getPulls(): void {
-    this.pulls = [];
     this.pull_id = '';
     this.pull_name = 'All';
+    this.pull_options = [];
 
     if (!this.season_id) {
       this.getClasses();
@@ -241,17 +243,17 @@ export class ChartResultsComponent implements OnInit {
     this.httpService
       .get('/api/pulling/pulls/season/' + this.season_id)
       .subscribe((data: any) => {
-        this.pulls = data;
-        this.pulls.push({
+        this.pull_options = data;
+        this.pull_options.push({
           id: '',
           season: '',
           location: '',
           date: '',
           youtube: '',
         });
-        this.pulls.sort(this.sortByDate);
-        if (this.pulls.length) {
-          const last_pull = this.pulls[this.pulls.length - 1];
+        this.pull_options.sort(this.sortByDate);
+        if (this.pull_options.length) {
+          const last_pull = this.pull_options[this.pull_options.length - 1];
           this.pull_id = last_pull.id;
           this.pull_name = this.getPullStr(last_pull);
         }
@@ -260,18 +262,18 @@ export class ChartResultsComponent implements OnInit {
   }
 
   getSeasons(): void {
-    this.seasons = [];
     this.season_id = '';
-    this.season_year = '';
+    this.season_name = '';
+    this.season_options = [];
 
     this.httpService.get('/api/pulling/seasons').subscribe((data: any) => {
-      this.seasons = data;
-      this.seasons.push({ id: '', year: 'All' });
-      this.seasons.sort(this.sortByYear);
-      if (this.seasons.length) {
-        const last_season = this.seasons[0];
+      this.season_options = data;
+      this.season_options.push({ id: '', year: 'All' });
+      this.season_options.sort(this.sortByYear);
+      if (this.season_options.length) {
+        const last_season = this.season_options[0];
         this.season_id = last_season.id;
-        this.season_year = last_season.year;
+        this.season_name = last_season.year;
       }
       this.getPulls();
     });
@@ -320,7 +322,7 @@ export class ChartResultsComponent implements OnInit {
   setSeason(option: any): void {
     this.loading = true;
     this.season_id = option.id;
-    this.season_year = option.year;
+    this.season_name = option.year;
     this.getPulls();
   }
 

@@ -12,10 +12,10 @@
           type="button"
           data-bs-toggle="dropdown"
         >
-          {{ season_year }}
+          {{ season_name }}
         </button>
         <ul class="dropdown-menu">
-          <ng-container *ngFor="let option of seasons">
+          <ng-container *ngFor="let option of season_options">
             <li>
               <a
                 [ngClass]="

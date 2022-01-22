@@ -127,8 +127,8 @@ export class ManageComponent implements OnInit {
     const b_year = parseInt(b.year);
     if (isNaN(a_year)) return -1;
     if (isNaN(b_year)) return 1;
-    if (a_year < b_year) return -1;
-    if (a_year > b_year) return 1;
+    if (a_year < b_year) return 1;
+    if (a_year > b_year) return -1;
     return 0;
   }
 

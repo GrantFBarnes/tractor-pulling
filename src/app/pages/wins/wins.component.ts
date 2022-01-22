@@ -31,8 +31,8 @@ export class WinsComponent implements OnInit {
   pullers: { [id: string]: Puller } = {};
 
   season_id: string = '';
-  season_year: string = '';
-  seasons: Season[] = [];
+  season_name: string = '';
+  season_options: Season[] = [];
 
   classes: { [id: string]: Class } = {};
   class_names: string[] = [];
@@ -128,6 +128,8 @@ export class WinsComponent implements OnInit {
   sortByYear(a: any, b: any): number {
     const a_year = parseInt(a.year);
     const b_year = parseInt(b.year);
+    if (isNaN(a_year)) return -1;
+    if (isNaN(b_year)) return 1;
     if (a_year < b_year) return 1;
     if (a_year > b_year) return -1;
     return 0;
@@ -234,18 +236,18 @@ export class WinsComponent implements OnInit {
   }
 
   getSeasons(): void {
-    this.seasons = [];
     this.season_id = '';
-    this.season_year = '';
+    this.season_name = '';
+    this.season_options = [];
 
     this.httpService.get('/api/pulling/seasons').subscribe((data: any) => {
-      this.seasons = data;
-      this.seasons.push({ id: '', year: 'All' });
-      this.seasons.sort(this.sortByYear);
-      if (this.seasons.length) {
-        const last_season = this.seasons[0];
+      this.season_options = data;
+      this.season_options.push({ id: '', year: 'All' });
+      this.season_options.sort(this.sortByYear);
+      if (this.season_options.length) {
+        const last_season = this.season_options[0];
         this.season_id = last_season.id;
-        this.season_year = last_season.year;
+        this.season_name = last_season.year;
       }
       this.getClasses();
     });
@@ -265,7 +267,7 @@ export class WinsComponent implements OnInit {
   setSeason(option: any): void {
     this.loading = true;
     this.season_id = option.id;
-    this.season_year = option.year;
+    this.season_name = option.year;
     this.getClasses();
   }
 }

@@ -62,10 +62,10 @@
           type="button"
           data-bs-toggle="dropdown"
         >
-          {{ season_year }}
+          {{ season_name }}
         </button>
         <ul class="dropdown-menu">
-          <ng-container *ngFor="let option of seasons">
+          <ng-container *ngFor="let option of season_options">
             <li>
               <a
                 [ngClass]="
@@ -83,7 +83,7 @@
       </div>
     </div>
     <div class="col-md-3 mb-2">
-      <div class="dropdown">
+      <div class="dropdown" *ngIf="season_id">
         <button
           class="btn btn-ghost dropdown-toggle"
           type="button"
@@ -92,7 +92,7 @@
           {{ pull_name }}
         </button>
         <ul class="dropdown-menu">
-          <ng-container *ngFor="let option of pulls">
+          <ng-container *ngFor="let option of pull_options">
             <li>
               <a
                 [ngClass]="

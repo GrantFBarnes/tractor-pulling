@@ -35,9 +35,9 @@ export class ChartPullersComponent implements OnInit {
   classes: { [id: string]: Class } = {};
 
   season_id: string = '';
-  season_year: string = '';
-  seasons: Season[] = [];
-  seasons_map: { [id: string]: Season } = {};
+  season_name: string = '';
+  season_options: Season[] = [];
+  seasons: { [id: string]: Season } = {};
 
   hooks: Hook[] = [];
 
@@ -94,6 +94,8 @@ export class ChartPullersComponent implements OnInit {
   sortByYear(a: any, b: any): number {
     const a_year = parseInt(a.year);
     const b_year = parseInt(b.year);
+    if (isNaN(a_year)) return -1;
+    if (isNaN(b_year)) return 1;
     if (a_year < b_year) return 1;
     if (a_year > b_year) return -1;
     return 0;
@@ -129,7 +131,7 @@ export class ChartPullersComponent implements OnInit {
         time_id = pull.date;
         time_id = this.getDateStr(time_id);
       } else {
-        const season = this.seasons_map[pull.season];
+        const season = this.seasons[pull.season];
         time_id = season.year;
       }
 
@@ -247,21 +249,21 @@ export class ChartPullersComponent implements OnInit {
   }
 
   getSeasons(): void {
-    this.seasons = [];
     this.season_id = '';
-    this.season_year = '';
+    this.season_name = '';
+    this.season_options = [];
 
     this.httpService.get('/api/pulling/seasons').subscribe((data: any) => {
       for (let i in data) {
-        this.seasons_map[data[i].id] = data[i];
+        this.seasons[data[i].id] = data[i];
       }
-      this.seasons = data;
-      this.seasons.push({ id: '', year: 'All' });
-      this.seasons.sort(this.sortByYear);
-      if (this.seasons.length) {
-        const last_season = this.seasons[0];
+      this.season_options = data;
+      this.season_options.push({ id: '', year: 'All' });
+      this.season_options.sort(this.sortByYear);
+      if (this.season_options.length) {
+        const last_season = this.season_options[0];
         this.season_id = last_season.id;
-        this.season_year = last_season.year;
+        this.season_name = last_season.year;
       }
       this.getPullers();
     });
@@ -281,7 +283,7 @@ export class ChartPullersComponent implements OnInit {
   setSeason(option: any): void {
     this.loading = true;
     this.season_id = option.id;
-    this.season_year = option.year;
+    this.season_name = option.year;
     this.getPullers();
   }
 
