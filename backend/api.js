@@ -128,6 +128,15 @@ router.get("/api/pulling/hooks/season/:id/winners", (request, response) => {
   );
 });
 
+// Update hook with new values
+router.put("/api/pulling/hooks", (request, response) => {
+  if (!authentication.isAuthorized(request)) {
+    rejectUnauthorized(response);
+    return;
+  }
+  returnPromiseResponse(response, main.updateHook(request.body));
+});
+
 ////////////////////////////////////////////////////////////////////////////////
 // Pullers
 

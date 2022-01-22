@@ -402,6 +402,36 @@ function getHooksBySeasonOfWinners(id) {
   });
 }
 
+function updateHook(data) {
+  return new Promise((resolve) => {
+    if (!dataIsValid("hooks", data)) {
+      resolve({ statusCode: 500, data: "data not valid" });
+      return;
+    }
+
+    database
+      .run(
+        `
+        UPDATE hooks
+        SET
+          class = '${data.class}',
+          puller = '${data.puller}',
+          tractor = '${data.tractor}',
+          distance = ${data.distance}
+        WHERE id = '${data.id}';
+        `
+      )
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to update hook" });
+        return;
+      });
+  });
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // Pullers
 
@@ -666,6 +696,7 @@ module.exports.getHooksByClass = getHooksByClass;
 module.exports.getHooksByPull = getHooksByPull;
 module.exports.getHooksBySeason = getHooksBySeason;
 module.exports.getHooksBySeasonOfWinners = getHooksBySeasonOfWinners;
+module.exports.updateHook = updateHook;
 
 module.exports.getPullers = getPullers;
 module.exports.getPullersByClass = getPullersByClass;
