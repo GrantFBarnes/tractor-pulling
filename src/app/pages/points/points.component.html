@@ -59,36 +59,38 @@
       </thead>
       <tbody>
         <ng-container *ngFor="let cl_n of class_names">
-          <tr class="align-middle">
-            <td class="center">
-              <div class="clickable" (click)="toggleRowShow(cl_n)">
-                <i *ngIf="!row_show[cl_n]" class="bi bi-chevron-down"></i>
-                <i *ngIf="row_show[cl_n]" class="bi bi-chevron-up"></i>
-              </div>
-            </td>
-            <td>{{ cl_n }}</td>
-            <td>{{ getPullersStr(data[cl_n].leaders) }}</td>
-            <td>{{ data[cl_n].max_points }}</td>
-          </tr>
-          <tr *ngIf="row_show[cl_n]">
-            <td></td>
-            <td colspan="3">
-              <table *ngIf="data[cl_n]" class="table table-light">
-                <thead>
-                  <tr>
-                    <th>Puller</th>
-                    <th>Points</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let p_id of data[cl_n].puller_list">
-                    <td>{{ getPullerStr(p_id) }}</td>
-                    <td>{{ data[cl_n].pullers[p_id] }}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
+          <ng-container *ngIf="data[cl_n]">
+            <tr class="align-middle">
+              <td class="center">
+                <div class="clickable" (click)="toggleRowShow(cl_n)">
+                  <i *ngIf="!row_show[cl_n]" class="bi bi-chevron-down"></i>
+                  <i *ngIf="row_show[cl_n]" class="bi bi-chevron-up"></i>
+                </div>
+              </td>
+              <td>{{ cl_n }}</td>
+              <td>{{ getPullersStr(data[cl_n].leaders) }}</td>
+              <td>{{ data[cl_n].max_points }}</td>
+            </tr>
+            <tr *ngIf="row_show[cl_n]">
+              <td></td>
+              <td colspan="3">
+                <table class="table table-light">
+                  <thead>
+                    <tr>
+                      <th>Puller</th>
+                      <th>Points</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let p_id of data[cl_n].puller_list">
+                      <td>{{ getPullerStr(p_id) }}</td>
+                      <td>{{ data[cl_n].pullers[p_id] }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </ng-container>
         </ng-container>
       </tbody>
     </table>

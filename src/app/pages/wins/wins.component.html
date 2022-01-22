@@ -57,55 +57,57 @@
       </thead>
       <tbody>
         <ng-container *ngFor="let cl_n of class_names">
-          <tr class="align-middle">
-            <td class="center">
-              <div class="clickable" (click)="toggleRowShow(cl_n)">
-                <i *ngIf="!row_show[cl_n]" class="bi bi-chevron-down"></i>
-                <i *ngIf="row_show[cl_n]" class="bi bi-chevron-up"></i>
-              </div>
-            </td>
-            <td>{{ cl_n }}</td>
-            <td>{{ getPullersStr(data[cl_n].leaders) }}</td>
-            <td [ngClass]="getWinsClass(data[cl_n].max_wins)">
-              {{ data[cl_n].max_wins }}
-            </td>
-            <td [ngClass]="getPercentageClass(data[cl_n].percentage)">
-              {{ data[cl_n].percentage }}
-            </td>
-            <td>{{ data[cl_n].winner_count }}</td>
-            <td>{{ data[cl_n].times_pulled }}</td>
-          </tr>
-          <tr *ngIf="row_show[cl_n]">
-            <td></td>
-            <td colspan="6">
-              <table *ngIf="data[cl_n]" class="table table-light">
-                <thead>
-                  <tr>
-                    <th>Puller</th>
-                    <th>Wins</th>
-                    <th>Win %</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let p_id of data[cl_n].winner_list">
-                    <td>{{ getPullerStr(p_id) }}</td>
-                    <td [ngClass]="getWinsClass(data[cl_n].winners[p_id])">
-                      {{ data[cl_n].winners[p_id] }}
-                    </td>
-                    <td
-                      [ngClass]="
-                        getPercentageClass(
-                          getPercentageStr(data[cl_n].winners[p_id], cl_n)
-                        )
-                      "
-                    >
-                      {{ getPercentageStr(data[cl_n].winners[p_id], cl_n) }}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </td>
-          </tr>
+          <ng-container *ngIf="data[cl_n]">
+            <tr class="align-middle">
+              <td class="center">
+                <div class="clickable" (click)="toggleRowShow(cl_n)">
+                  <i *ngIf="!row_show[cl_n]" class="bi bi-chevron-down"></i>
+                  <i *ngIf="row_show[cl_n]" class="bi bi-chevron-up"></i>
+                </div>
+              </td>
+              <td>{{ cl_n }}</td>
+              <td>{{ getPullersStr(data[cl_n].leaders) }}</td>
+              <td [ngClass]="getWinsClass(data[cl_n].max_wins)">
+                {{ data[cl_n].max_wins }}
+              </td>
+              <td [ngClass]="getPercentageClass(data[cl_n].percentage)">
+                {{ data[cl_n].percentage }}
+              </td>
+              <td>{{ data[cl_n].winner_count }}</td>
+              <td>{{ data[cl_n].times_pulled }}</td>
+            </tr>
+            <tr *ngIf="row_show[cl_n]">
+              <td></td>
+              <td colspan="6">
+                <table class="table table-light">
+                  <thead>
+                    <tr>
+                      <th>Puller</th>
+                      <th>Wins</th>
+                      <th>Win %</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let p_id of data[cl_n].winner_list">
+                      <td>{{ getPullerStr(p_id) }}</td>
+                      <td [ngClass]="getWinsClass(data[cl_n].winners[p_id])">
+                        {{ data[cl_n].winners[p_id] }}
+                      </td>
+                      <td
+                        [ngClass]="
+                          getPercentageClass(
+                            getPercentageStr(data[cl_n].winners[p_id], cl_n)
+                          )
+                        "
+                      >
+                        {{ getPercentageStr(data[cl_n].winners[p_id], cl_n) }}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </ng-container>
         </ng-container>
       </tbody>
     </table>
