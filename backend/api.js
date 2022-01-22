@@ -52,6 +52,15 @@ router.get("/api/pulling/seasons", (request, response) => {
   returnPromiseResponse(response, main.getSeasons());
 });
 
+// Update season with new values
+router.put("/api/pulling/seasons", (request, response) => {
+  if (!authentication.isAuthorized(request)) {
+    rejectUnauthorized(response);
+    return;
+  }
+  returnPromiseResponse(response, main.updateSeason(request.body));
+});
+
 ////////////////////////////////////////////////////////////////////////////////
 // Pulls
 

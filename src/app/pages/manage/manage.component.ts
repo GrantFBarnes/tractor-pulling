@@ -70,6 +70,15 @@ export class ManageComponent implements OnInit {
     });
   }
 
+  fieldChange(id: string): void {
+    this.httpService
+      .put('/api/pulling/' + this.table, this.data[id])
+      .subscribe({
+        next: () => this.authorize(),
+        error: () => alert('Failed to save changes!'),
+      });
+  }
+
   getClassStr(c: Class): string {
     if (!c.id) return 'All';
     let str = c.weight + ' ' + c.category;
@@ -134,44 +143,37 @@ export class ManageComponent implements OnInit {
     switch (this.table) {
       case 'locations':
         this.data = this.locations;
-        this.columns = ['id', 'town', 'state'];
+        this.columns = ['town', 'state'];
         break;
 
       case 'pullers':
         this.data = this.pullers;
-        this.columns = ['id', 'first_name', 'last_name'];
+        this.columns = ['first_name', 'last_name'];
         break;
 
       case 'tractors':
         this.data = this.tractors;
-        this.columns = ['id', 'brand', 'model'];
+        this.columns = ['brand', 'model'];
         break;
 
       case 'seasons':
         this.data = this.seasons;
-        this.columns = ['id', 'year'];
+        this.columns = ['year'];
         break;
 
       case 'pulls':
         this.data = this.pulls;
-        this.columns = ['id', 'season', 'location', 'date', 'youtube'];
+        this.columns = ['season', 'location', 'date', 'youtube'];
         break;
 
       case 'classes':
         this.data = this.classes;
-        this.columns = ['id', 'pull', 'category', 'weight', 'speed'];
+        this.columns = ['pull', 'category', 'weight', 'speed'];
         break;
 
       case 'hooks':
         this.data = this.hooks;
-        this.columns = [
-          'id',
-          'class',
-          'puller',
-          'tractor',
-          'distance',
-          'position',
-        ];
+        this.columns = ['class', 'puller', 'tractor', 'distance', 'position'];
         break;
 
       default:

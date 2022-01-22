@@ -4,6 +4,71 @@ const id_regex =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
 
 ////////////////////////////////////////////////////////////////////////////////
+// Common
+
+function idIsValid(id) {
+  if (!id || !id_regex.test(id)) {
+    return false;
+  }
+  return true;
+}
+
+function dataIsValid(table, data) {
+  if (!data || !data.id || !id_regex.test(data.id)) {
+    return false;
+  }
+
+  let columns = [];
+  switch (table) {
+    case "locations":
+      columns = ["id", "town", "state"];
+      break;
+
+    case "pullers":
+      columns = ["id", "first_name", "last_name"];
+      break;
+
+    case "tractors":
+      columns = ["id", "brand", "model"];
+      break;
+
+    case "seasons":
+      columns = ["id", "year"];
+      break;
+
+    case "pulls":
+      columns = ["id", "season", "location", "date", "youtube"];
+      break;
+
+    case "classes":
+      columns = ["id", "pull", "category", "weight", "speed"];
+      break;
+
+    case "hooks":
+      columns = ["id", "class", "puller", "tractor", "distance", "position"];
+      break;
+
+    default:
+      return false;
+  }
+
+  for (let field in data) {
+    if (columns.indexOf(field) < 0) {
+      return false;
+    }
+  }
+
+  const keys = Object.keys(data);
+  for (let column of columns) {
+    if (keys.indexOf(column) < 0) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+////////////////////////////////////////////////////////////////////////////////
 // Seasons
 
 function getSeasons() {
@@ -20,6 +85,33 @@ function getSeasons() {
       })
       .catch(() => {
         resolve({ statusCode: 400, data: "failed to get seasons" });
+        return;
+      });
+  });
+}
+
+function updateSeason(data) {
+  return new Promise((resolve) => {
+    if (!dataIsValid("seasons", data)) {
+      resolve({ statusCode: 500, data: "data not valid" });
+      return;
+    }
+
+    database
+      .run(
+        `
+        UPDATE seasons
+        SET
+          year = ${data.year}
+        WHERE id = '${data.id}';
+        `
+      )
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to update season" });
         return;
       });
   });
@@ -49,12 +141,7 @@ function getPulls() {
 
 function getPullsBySeason(id) {
   return new Promise((resolve) => {
-    if (!id) {
-      resolve({ statusCode: 500, data: "id not provided" });
-      return;
-    }
-
-    if (!id_regex.test(id)) {
+    if (!idIsValid(id)) {
       resolve({ statusCode: 500, data: "id not valid" });
       return;
     }
@@ -103,12 +190,7 @@ function getClasses() {
 
 function getClassesByPull(id) {
   return new Promise((resolve) => {
-    if (!id) {
-      resolve({ statusCode: 500, data: "id not provided" });
-      return;
-    }
-
-    if (!id_regex.test(id)) {
+    if (!idIsValid(id)) {
       resolve({ statusCode: 500, data: "id not valid" });
       return;
     }
@@ -135,12 +217,7 @@ function getClassesByPull(id) {
 
 function getClassesBySeason(id) {
   return new Promise((resolve) => {
-    if (!id) {
-      resolve({ statusCode: 500, data: "id not provided" });
-      return;
-    }
-
-    if (!id_regex.test(id)) {
+    if (!idIsValid(id)) {
       resolve({ statusCode: 500, data: "id not valid" });
       return;
     }
@@ -210,12 +287,7 @@ function getHooksOfWinners() {
 
 function getHooksByClass(id) {
   return new Promise((resolve) => {
-    if (!id) {
-      resolve({ statusCode: 500, data: "id not provided" });
-      return;
-    }
-
-    if (!id_regex.test(id)) {
+    if (!idIsValid(id)) {
       resolve({ statusCode: 500, data: "id not valid" });
       return;
     }
@@ -242,12 +314,7 @@ function getHooksByClass(id) {
 
 function getHooksByPull(id) {
   return new Promise((resolve) => {
-    if (!id) {
-      resolve({ statusCode: 500, data: "id not provided" });
-      return;
-    }
-
-    if (!id_regex.test(id)) {
+    if (!idIsValid(id)) {
       resolve({ statusCode: 500, data: "id not valid" });
       return;
     }
@@ -276,12 +343,7 @@ function getHooksByPull(id) {
 
 function getHooksBySeason(id) {
   return new Promise((resolve) => {
-    if (!id) {
-      resolve({ statusCode: 500, data: "id not provided" });
-      return;
-    }
-
-    if (!id_regex.test(id)) {
+    if (!idIsValid(id)) {
       resolve({ statusCode: 500, data: "id not valid" });
       return;
     }
@@ -311,12 +373,7 @@ function getHooksBySeason(id) {
 
 function getHooksBySeasonOfWinners(id) {
   return new Promise((resolve) => {
-    if (!id) {
-      resolve({ statusCode: 500, data: "id not provided" });
-      return;
-    }
-
-    if (!id_regex.test(id)) {
+    if (!idIsValid(id)) {
       resolve({ statusCode: 500, data: "id not valid" });
       return;
     }
@@ -369,12 +426,7 @@ function getPullers() {
 
 function getPullersByClass(id) {
   return new Promise((resolve) => {
-    if (!id) {
-      resolve({ statusCode: 500, data: "id not provided" });
-      return;
-    }
-
-    if (!id_regex.test(id)) {
+    if (!idIsValid(id)) {
       resolve({ statusCode: 500, data: "id not valid" });
       return;
     }
@@ -403,12 +455,7 @@ function getPullersByClass(id) {
 
 function getPullersByPull(id) {
   return new Promise((resolve) => {
-    if (!id) {
-      resolve({ statusCode: 500, data: "id not provided" });
-      return;
-    }
-
-    if (!id_regex.test(id)) {
+    if (!idIsValid(id)) {
       resolve({ statusCode: 500, data: "id not valid" });
       return;
     }
@@ -438,12 +485,7 @@ function getPullersByPull(id) {
 
 function getPullersBySeason(id) {
   return new Promise((resolve) => {
-    if (!id) {
-      resolve({ statusCode: 500, data: "id not provided" });
-      return;
-    }
-
-    if (!id_regex.test(id)) {
+    if (!idIsValid(id)) {
       resolve({ statusCode: 500, data: "id not valid" });
       return;
     }
@@ -496,12 +538,7 @@ function getTractors() {
 
 function getTractorsByClass(id) {
   return new Promise((resolve) => {
-    if (!id) {
-      resolve({ statusCode: 500, data: "id not provided" });
-      return;
-    }
-
-    if (!id_regex.test(id)) {
+    if (!idIsValid(id)) {
       resolve({ statusCode: 500, data: "id not valid" });
       return;
     }
@@ -530,12 +567,7 @@ function getTractorsByClass(id) {
 
 function getTractorsByPull(id) {
   return new Promise((resolve) => {
-    if (!id) {
-      resolve({ statusCode: 500, data: "id not provided" });
-      return;
-    }
-
-    if (!id_regex.test(id)) {
+    if (!idIsValid(id)) {
       resolve({ statusCode: 500, data: "id not valid" });
       return;
     }
@@ -565,12 +597,7 @@ function getTractorsByPull(id) {
 
 function getTractorsBySeason(id) {
   return new Promise((resolve) => {
-    if (!id) {
-      resolve({ statusCode: 500, data: "id not provided" });
-      return;
-    }
-
-    if (!id_regex.test(id)) {
+    if (!idIsValid(id)) {
       resolve({ statusCode: 500, data: "id not valid" });
       return;
     }
@@ -624,6 +651,7 @@ function getLocations() {
 ////////////////////////////////////////////////////////////////////////////////
 
 module.exports.getSeasons = getSeasons;
+module.exports.updateSeason = updateSeason;
 
 module.exports.getPulls = getPulls;
 module.exports.getPullsBySeason = getPullsBySeason;

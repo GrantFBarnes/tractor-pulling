@@ -121,6 +121,7 @@
     <table class="table table-light table-hover">
       <thead>
         <tr>
+          <th>id</th>
           <th *ngFor="let column of columns">
             {{ column }}
           </th>
@@ -129,8 +130,14 @@
       <tbody>
         <ng-container *ngFor="let item of data | keyvalue">
           <tr>
+            <td>{{ item.value.id }}</td>
             <td *ngFor="let column of columns">
-              {{ item.value[column] }}
+              <input
+                type="text"
+                class="form-control"
+                (change)="fieldChange(item.key)"
+                [(ngModel)]="data[item.key][column]"
+              />
             </td>
           </tr>
         </ng-container>
