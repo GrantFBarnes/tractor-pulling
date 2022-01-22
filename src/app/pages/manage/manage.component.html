@@ -1,0 +1,140 @@
+<app-unauthorized
+  *ngIf="!authorized"
+  (authorizeEvent)="authorize()"
+></app-unauthorized>
+
+<div *ngIf="authorized" class="container">
+  <div class="mainTitle">
+    <h1>Manage</h1>
+  </div>
+
+  <div class="row center mb-2">
+    <div class="col-md-3 mb-2">
+      <div class="dropdown">
+        <button
+          class="btn btn-ghost dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+        >
+          {{ table }}
+        </button>
+        <ul class="dropdown-menu">
+          <ng-container *ngFor="let option of table_options">
+            <li>
+              <a
+                [ngClass]="
+                  table == option ? 'dropdown-item active' : 'dropdown-item'
+                "
+                (click)="setTable(option)"
+              >
+                {{ option }}
+              </a>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-3 mb-2">
+      <div class="dropdown">
+        <button
+          class="btn btn-ghost dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+        >
+          {{ season_name }}
+        </button>
+        <ul class="dropdown-menu">
+          <ng-container *ngFor="let option of season_options">
+            <li>
+              <a
+                [ngClass]="
+                  season_id == option.id
+                    ? 'dropdown-item active'
+                    : 'dropdown-item'
+                "
+                (click)="setSeason(option)"
+              >
+                {{ option.year }}
+              </a>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-3 mb-2">
+      <div class="dropdown" *ngIf="season_id">
+        <button
+          class="btn btn-ghost dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+        >
+          {{ pull_name }}
+        </button>
+        <ul class="dropdown-menu">
+          <ng-container *ngFor="let option of pull_options">
+            <li>
+              <a
+                [ngClass]="
+                  pull_id == option.id
+                    ? 'dropdown-item active'
+                    : 'dropdown-item'
+                "
+                (click)="setPull(option)"
+              >
+                {{ getPullStr(option) }}
+              </a>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-3 mb-2">
+      <div class="dropdown" *ngIf="pull_id">
+        <button
+          class="btn btn-ghost dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+        >
+          {{ class_name }}
+        </button>
+        <ul class="dropdown-menu">
+          <ng-container *ngFor="let option of class_options">
+            <li>
+              <a
+                [ngClass]="
+                  class_id == option.id
+                    ? 'dropdown-item active'
+                    : 'dropdown-item'
+                "
+                (click)="setClass(option)"
+              >
+                {{ getClassStr(option) }}
+              </a>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <table class="table table-light table-hover">
+      <thead>
+        <tr>
+          <th *ngFor="let column of columns">
+            {{ column }}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let item of data | keyvalue">
+          <tr>
+            <td *ngFor="let column of columns">
+              {{ item.value[column] }}
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -20,6 +20,7 @@ import { DistancesComponent } from './pages/distances/distances.component';
 import { RivalsComponent } from './pages/rivals/rivals.component';
 import { ChartResultsComponent } from './pages/chart-results/chart-results.component';
 import { ChartPullersComponent } from './pages/chart-pullers/chart-pullers.component';
+import { ManageComponent } from './pages/manage/manage.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { ChartPullersComponent } from './pages/chart-pullers/chart-pullers.compo
     RivalsComponent,
     ChartResultsComponent,
     ChartPullersComponent,
+    ManageComponent,
   ],
   imports: [
     BrowserModule,
