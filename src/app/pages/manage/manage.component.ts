@@ -79,6 +79,41 @@ export class ManageComponent implements OnInit {
       });
   }
 
+  selectField(id: string, column: string, value: string): void {
+    this.data[id][column] = value;
+    this.fieldChange(id);
+  }
+
+  getDataColumnStr(id: string, column: string): string {
+    if (!id) return '';
+    if (!column) return '';
+    if (!this.data[id]) return '';
+    if (!this.data[id][column]) return '';
+    switch (column) {
+      case 'puller':
+        const puller = this.pullers[this.data[id][column]];
+        if (!puller) return '';
+        return puller.last_name + ', ' + puller.first_name;
+
+      default:
+        return '';
+    }
+  }
+
+  getOptionStr(id: string, column: string): string {
+    if (!id) return '';
+    if (!column) return '';
+    switch (column) {
+      case 'puller':
+        const puller = this.pullers[id];
+        if (!puller) return '';
+        return puller.last_name + ', ' + puller.first_name;
+
+      default:
+        return '';
+    }
+  }
+
   getClassStr(c: Class): string {
     if (!c.id) return 'All';
     let str = c.weight + ' ' + c.category;
@@ -173,7 +208,7 @@ export class ManageComponent implements OnInit {
 
       case 'hooks':
         this.data = this.hooks;
-        this.columns = ['class', 'puller', 'tractor', 'distance', 'position'];
+        this.columns = ['class', 'puller', 'tractor', 'distance'];
         break;
 
       default:

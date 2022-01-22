@@ -132,12 +132,43 @@
           <tr>
             <td>{{ item.value.id }}</td>
             <td *ngFor="let column of columns">
-              <input
-                type="text"
-                class="form-control"
-                (change)="fieldChange(item.key)"
-                [(ngModel)]="data[item.key][column]"
-              />
+              <ng-container [ngSwitch]="column">
+                <ng-container *ngSwitchCase="'puller'">
+                  <div class="dropdown">
+                    <button
+                      class="btn dropdown-toggle"
+                      type="button"
+                      data-bs-toggle="dropdown"
+                    >
+                      {{ getDataColumnStr(item.key, column) }}
+                    </button>
+                    <ul class="dropdown-menu">
+                      <ng-container *ngFor="let option of pullers | keyvalue">
+                        <li>
+                          <a
+                            [ngClass]="
+                              data[item.key].id == option.value.id
+                                ? 'dropdown-item active'
+                                : 'dropdown-item'
+                            "
+                            (click)="selectField(item.key, column, option.key)"
+                          >
+                            {{ getOptionStr(option.key, column) }}
+                          </a>
+                        </li>
+                      </ng-container>
+                    </ul>
+                  </div>
+                </ng-container>
+                <ng-container *ngSwitchDefault>
+                  <input
+                    type="text"
+                    class="form-control"
+                    (change)="fieldChange(item.key)"
+                    [(ngModel)]="data[item.key][column]"
+                  />
+                </ng-container>
+              </ng-container>
             </td>
           </tr>
         </ng-container>
