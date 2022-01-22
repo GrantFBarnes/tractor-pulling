@@ -125,16 +125,14 @@ export class ResultsComponent implements OnInit {
   sortByDate(a: any, b: any): number {
     const a_date = a.date;
     const b_date = b.date;
-    if (a_date < b_date) return -1;
-    if (a_date > b_date) return 1;
+    if (a_date < b_date) return 1;
+    if (a_date > b_date) return -1;
     return 0;
   }
 
   sortByYear(a: any, b: any): number {
     const a_year = parseInt(a.year);
     const b_year = parseInt(b.year);
-    if (isNaN(a_year)) return -1;
-    if (isNaN(b_year)) return 1;
     if (a_year < b_year) return 1;
     if (a_year > b_year) return -1;
     return 0;
@@ -190,9 +188,9 @@ export class ResultsComponent implements OnInit {
         this.pull_options = data;
         this.pull_options.sort(this.sortByDate);
         if (this.pull_options.length) {
-          const last_pull = this.pull_options[this.pull_options.length - 1];
-          this.pull_id = last_pull.id;
-          this.pull_name = this.getPullStr(last_pull);
+          const select_pull = this.pull_options[0];
+          this.pull_id = select_pull.id;
+          this.pull_name = this.getPullStr(select_pull);
         }
         this.getClasses();
       });
@@ -207,9 +205,9 @@ export class ResultsComponent implements OnInit {
       this.season_options = data;
       this.season_options.sort(this.sortByYear);
       if (this.season_options.length) {
-        const last_season = this.season_options[0];
-        this.season_id = last_season.id;
-        this.season_name = last_season.year;
+        const select_season = this.season_options[0];
+        this.season_id = select_season.id;
+        this.season_name = select_season.year;
       }
       this.getPulls();
     });
