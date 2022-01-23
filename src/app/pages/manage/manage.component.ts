@@ -264,6 +264,8 @@ export class ManageComponent implements OnInit {
   }
 
   getClasses(): void {
+    const prev_id = this.class_id;
+    const prev_name = this.class_name;
     this.classes = {};
     this.class_id = '';
     this.class_name = 'All';
@@ -277,13 +279,17 @@ export class ManageComponent implements OnInit {
     }
     this.httpService.get(api).subscribe((data: any) => {
       for (let i in data) {
+        if (data[i].id === prev_id) {
+          this.class_id = prev_id;
+          this.class_name = prev_name;
+        }
         this.classes[data[i].id] = data[i];
       }
 
       if (this.pull_id) {
         this.class_options = data;
         this.class_options.sort(this.sortByWeight);
-        if (this.class_options.length) {
+        if (this.class_options.length && !this.class_id) {
           const last_class = this.class_options[0];
           this.class_id = last_class.id;
           this.class_name = this.getClassStr(last_class);
@@ -302,6 +308,8 @@ export class ManageComponent implements OnInit {
   }
 
   getPulls(): void {
+    const prev_id = this.pull_id;
+    const prev_name = this.pull_name;
     this.pulls = {};
     this.pull_id = '';
     this.pull_name = 'All';
@@ -313,6 +321,10 @@ export class ManageComponent implements OnInit {
     }
     this.httpService.get(api).subscribe((data: any) => {
       for (let i in data) {
+        if (data[i].id === prev_id) {
+          this.pull_id = prev_id;
+          this.pull_name = prev_name;
+        }
         data[i].date = this.getDateStr(data[i].date);
         this.pulls[data[i].id] = data[i];
       }
@@ -320,7 +332,7 @@ export class ManageComponent implements OnInit {
       if (this.season_id) {
         this.pull_options = data;
         this.pull_options.sort(this.sortByDate);
-        if (this.pull_options.length) {
+        if (this.pull_options.length && !this.pull_id) {
           const select_pull = this.pull_options[0];
           this.pull_id = select_pull.id;
           this.pull_name = this.getPullStr(select_pull);
@@ -339,6 +351,8 @@ export class ManageComponent implements OnInit {
   }
 
   getSeasons(): void {
+    const prev_id = this.season_id;
+    const prev_name = this.season_name;
     this.seasons = {};
     this.season_id = '';
     this.season_name = '';
@@ -346,12 +360,16 @@ export class ManageComponent implements OnInit {
 
     this.httpService.get('/api/pulling/seasons').subscribe((data: any) => {
       for (let i in data) {
+        if (data[i].id === prev_id) {
+          this.season_id = prev_id;
+          this.season_name = prev_name;
+        }
         this.seasons[data[i].id] = data[i];
       }
 
       this.season_options = data;
       this.season_options.sort(this.sortByYear);
-      if (this.season_options.length) {
+      if (this.season_options.length && !this.season_id) {
         const select_season = this.season_options[0];
         this.season_id = select_season.id;
         this.season_name = select_season.year;
