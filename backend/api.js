@@ -74,6 +74,15 @@ router.get("/api/pulling/pulls/season/:id", (request, response) => {
   returnPromiseResponse(response, main.getPullsBySeason(request.params.id));
 });
 
+// Update pull with new values
+router.put("/api/pulling/pulls", (request, response) => {
+  if (!authentication.isAuthorized(request)) {
+    rejectUnauthorized(response);
+    return;
+  }
+  returnPromiseResponse(response, main.updatePull(request.body));
+});
+
 ////////////////////////////////////////////////////////////////////////////////
 // Classes
 
@@ -90,6 +99,15 @@ router.get("/api/pulling/classes/pull/:id", (request, response) => {
 // Get classes by season
 router.get("/api/pulling/classes/season/:id", (request, response) => {
   returnPromiseResponse(response, main.getClassesBySeason(request.params.id));
+});
+
+// Update class with new values
+router.put("/api/pulling/classes", (request, response) => {
+  if (!authentication.isAuthorized(request)) {
+    rejectUnauthorized(response);
+    return;
+  }
+  returnPromiseResponse(response, main.updateClass(request.body));
 });
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -160,6 +178,15 @@ router.get("/api/pulling/pullers/season/:id", (request, response) => {
   returnPromiseResponse(response, main.getPullersBySeason(request.params.id));
 });
 
+// Update puller with new values
+router.put("/api/pulling/pullers", (request, response) => {
+  if (!authentication.isAuthorized(request)) {
+    rejectUnauthorized(response);
+    return;
+  }
+  returnPromiseResponse(response, main.updatePuller(request.body));
+});
+
 ////////////////////////////////////////////////////////////////////////////////
 // Tractors
 
@@ -183,12 +210,30 @@ router.get("/api/pulling/tractors/season/:id", (request, response) => {
   returnPromiseResponse(response, main.getTractorsBySeason(request.params.id));
 });
 
+// Update tractor with new values
+router.put("/api/pulling/tractors", (request, response) => {
+  if (!authentication.isAuthorized(request)) {
+    rejectUnauthorized(response);
+    return;
+  }
+  returnPromiseResponse(response, main.updateTractor(request.body));
+});
+
 ////////////////////////////////////////////////////////////////////////////////
 // Locations
 
 // Get all locations
 router.get("/api/pulling/locations", (request, response) => {
   returnPromiseResponse(response, main.getLocations());
+});
+
+// Update location with new values
+router.put("/api/pulling/locations", (request, response) => {
+  if (!authentication.isAuthorized(request)) {
+    rejectUnauthorized(response);
+    return;
+  }
+  returnPromiseResponse(response, main.updateLocation(request.body));
 });
 
 ////////////////////////////////////////////////////////////////////////////////

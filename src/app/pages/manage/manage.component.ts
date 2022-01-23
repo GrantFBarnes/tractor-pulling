@@ -297,6 +297,7 @@ export class ManageComponent implements OnInit {
     }
     this.httpService.get(api).subscribe((data: any) => {
       for (let i in data) {
+        data[i].date = this.getDateStr(data[i].date);
         this.pulls[data[i].id] = data[i];
       }
 

@@ -102,7 +102,7 @@ function updateSeason(data) {
         `
         UPDATE seasons
         SET
-          year = ${data.year}
+          year = '${data.year}'
         WHERE id = '${data.id}';
         `
       )
@@ -161,6 +161,36 @@ function getPullsBySeason(id) {
           statusCode: 400,
           data: "failed to get pulls for season: " + id,
         });
+        return;
+      });
+  });
+}
+
+function updatePull(data) {
+  return new Promise((resolve) => {
+    if (!dataIsValid("pulls", data)) {
+      resolve({ statusCode: 500, data: "data not valid" });
+      return;
+    }
+
+    database
+      .run(
+        `
+        UPDATE pulls
+        SET
+          season = '${data.season}',
+          location = '${data.location}',
+          date = '${data.date}',
+          youtube = '${data.youtube}'
+        WHERE id = '${data.id}';
+        `
+      )
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to update pull" });
         return;
       });
   });
@@ -239,6 +269,36 @@ function getClassesBySeason(id) {
           statusCode: 400,
           data: "failed to get classes for season: " + id,
         });
+        return;
+      });
+  });
+}
+
+function updateClass(data) {
+  return new Promise((resolve) => {
+    if (!dataIsValid("classes", data)) {
+      resolve({ statusCode: 500, data: "data not valid" });
+      return;
+    }
+
+    database
+      .run(
+        `
+        UPDATE classes
+        SET
+          pull = '${data.pull}',
+          category = '${data.category}',
+          weight = ${data.weight},
+          speed = ${data.speed}
+        WHERE id = '${data.id}';
+        `
+      )
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to update class" });
         return;
       });
   });
@@ -544,6 +604,34 @@ function getPullersBySeason(id) {
   });
 }
 
+function updatePuller(data) {
+  return new Promise((resolve) => {
+    if (!dataIsValid("pullers", data)) {
+      resolve({ statusCode: 500, data: "data not valid" });
+      return;
+    }
+
+    database
+      .run(
+        `
+        UPDATE pullers
+        SET
+          first_name = '${data.first_name}',
+          last_name = '${data.last_name}'
+        WHERE id = '${data.id}';
+        `
+      )
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to update puller" });
+        return;
+      });
+  });
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // Tractors
 
@@ -656,6 +744,34 @@ function getTractorsBySeason(id) {
   });
 }
 
+function updateTractor(data) {
+  return new Promise((resolve) => {
+    if (!dataIsValid("tractors", data)) {
+      resolve({ statusCode: 500, data: "data not valid" });
+      return;
+    }
+
+    database
+      .run(
+        `
+        UPDATE tractors
+        SET
+          brand = '${data.brand}',
+          model = '${data.model}'
+        WHERE id = '${data.id}';
+        `
+      )
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to update tractor" });
+        return;
+      });
+  });
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // Locations
 
@@ -678,6 +794,34 @@ function getLocations() {
   });
 }
 
+function updateLocation(data) {
+  return new Promise((resolve) => {
+    if (!dataIsValid("locations", data)) {
+      resolve({ statusCode: 500, data: "data not valid" });
+      return;
+    }
+
+    database
+      .run(
+        `
+        UPDATE locations
+        SET
+          town = '${data.town}',
+          state = '${data.state}'
+        WHERE id = '${data.id}';
+        `
+      )
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to update location" });
+        return;
+      });
+  });
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 
 module.exports.getSeasons = getSeasons;
@@ -685,10 +829,12 @@ module.exports.updateSeason = updateSeason;
 
 module.exports.getPulls = getPulls;
 module.exports.getPullsBySeason = getPullsBySeason;
+module.exports.updatePull = updatePull;
 
 module.exports.getClasses = getClasses;
 module.exports.getClassesByPull = getClassesByPull;
 module.exports.getClassesBySeason = getClassesBySeason;
+module.exports.updateClass = updateClass;
 
 module.exports.getHooks = getHooks;
 module.exports.getHooksOfWinners = getHooksOfWinners;
@@ -702,10 +848,13 @@ module.exports.getPullers = getPullers;
 module.exports.getPullersByClass = getPullersByClass;
 module.exports.getPullersByPull = getPullersByPull;
 module.exports.getPullersBySeason = getPullersBySeason;
+module.exports.updatePuller = updatePuller;
 
 module.exports.getTractors = getTractors;
 module.exports.getTractorsByClass = getTractorsByClass;
 module.exports.getTractorsByPull = getTractorsByPull;
 module.exports.getTractorsBySeason = getTractorsBySeason;
+module.exports.updateTractor = updateTractor;
 
 module.exports.getLocations = getLocations;
+module.exports.updateLocation = updateLocation;
