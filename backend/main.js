@@ -70,6 +70,13 @@ function dataIsValid(table, data) {
   return true;
 }
 
+function getIdFromData(data, field) {
+  if (data && data[field] && id_regex.test(data[field])) {
+    return data[field];
+  }
+  return "";
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // Seasons
 
@@ -114,6 +121,28 @@ function updateSeason(data) {
       })
       .catch(() => {
         resolve({ statusCode: 400, data: "failed to update season" });
+        return;
+      });
+  });
+}
+
+function createSeason(data) {
+  return new Promise((resolve) => {
+    database
+      .run(
+        `
+        INSERT INTO seasons
+        (id, year)
+        VALUES
+        ('${uuidv4()}', '')
+        `
+      )
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to create season" });
         return;
       });
   });
@@ -193,6 +222,30 @@ function updatePull(data) {
       })
       .catch(() => {
         resolve({ statusCode: 400, data: "failed to update pull" });
+        return;
+      });
+  });
+}
+
+function createPull(data) {
+  return new Promise((resolve) => {
+    const date = new Date().getFullYear() + "-01-01";
+
+    database
+      .run(
+        `
+        INSERT INTO pulls
+        (id, season, location, date, youtube)
+        VALUES
+        ('${uuidv4()}', '${getIdFromData(data, "season")}', '', '${date}', '')
+        `
+      )
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to create pull" });
         return;
       });
   });
@@ -301,6 +354,28 @@ function updateClass(data) {
       })
       .catch(() => {
         resolve({ statusCode: 400, data: "failed to update class" });
+        return;
+      });
+  });
+}
+
+function createClass(data) {
+  return new Promise((resolve) => {
+    database
+      .run(
+        `
+        INSERT INTO classes
+        (id, pull, category, weight, speed)
+        VALUES
+        ('${uuidv4()}', '${getIdFromData(data, "pull")}', '', 0, 3)
+        `
+      )
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to create class" });
         return;
       });
   });
@@ -494,6 +569,28 @@ function updateHook(data) {
   });
 }
 
+function createHook(data) {
+  return new Promise((resolve) => {
+    database
+      .run(
+        `
+        INSERT INTO hooks
+        (id, class, puller, tractor, distance)
+        VALUES
+        ('${uuidv4()}', '${getIdFromData(data, "class")}', '', '', 0)
+        `
+      )
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to create hook" });
+        return;
+      });
+  });
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // Pullers
 
@@ -629,6 +726,28 @@ function updatePuller(data) {
       })
       .catch(() => {
         resolve({ statusCode: 400, data: "failed to update puller" });
+        return;
+      });
+  });
+}
+
+function createPuller(data) {
+  return new Promise((resolve) => {
+    database
+      .run(
+        `
+        INSERT INTO pullers
+        (id, first_name, last_name)
+        VALUES
+        ('${uuidv4()}', '', '')
+        `
+      )
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to create puller" });
         return;
       });
   });
@@ -774,6 +893,28 @@ function updateTractor(data) {
   });
 }
 
+function createTractor(data) {
+  return new Promise((resolve) => {
+    database
+      .run(
+        `
+        INSERT INTO tractors
+        (id, brand, model)
+        VALUES
+        ('${uuidv4()}', '', '')
+        `
+      )
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to create tractor" });
+        return;
+      });
+  });
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // Locations
 
@@ -850,15 +991,18 @@ function createLocation(data) {
 
 module.exports.getSeasons = getSeasons;
 module.exports.updateSeason = updateSeason;
+module.exports.createSeason = createSeason;
 
 module.exports.getPulls = getPulls;
 module.exports.getPullsBySeason = getPullsBySeason;
 module.exports.updatePull = updatePull;
+module.exports.createPull = createPull;
 
 module.exports.getClasses = getClasses;
 module.exports.getClassesByPull = getClassesByPull;
 module.exports.getClassesBySeason = getClassesBySeason;
 module.exports.updateClass = updateClass;
+module.exports.createClass = createClass;
 
 module.exports.getHooks = getHooks;
 module.exports.getHooksOfWinners = getHooksOfWinners;
@@ -867,18 +1011,21 @@ module.exports.getHooksByPull = getHooksByPull;
 module.exports.getHooksBySeason = getHooksBySeason;
 module.exports.getHooksBySeasonOfWinners = getHooksBySeasonOfWinners;
 module.exports.updateHook = updateHook;
+module.exports.createHook = createHook;
 
 module.exports.getPullers = getPullers;
 module.exports.getPullersByClass = getPullersByClass;
 module.exports.getPullersByPull = getPullersByPull;
 module.exports.getPullersBySeason = getPullersBySeason;
 module.exports.updatePuller = updatePuller;
+module.exports.createPuller = createPuller;
 
 module.exports.getTractors = getTractors;
 module.exports.getTractorsByClass = getTractorsByClass;
 module.exports.getTractorsByPull = getTractorsByPull;
 module.exports.getTractorsBySeason = getTractorsBySeason;
 module.exports.updateTractor = updateTractor;
+module.exports.createTractor = createTractor;
 
 module.exports.getLocations = getLocations;
 module.exports.updateLocation = updateLocation;

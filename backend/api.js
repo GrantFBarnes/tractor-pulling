@@ -61,6 +61,15 @@ router.put("/api/pulling/seasons", (request, response) => {
   returnPromiseResponse(response, main.updateSeason(request.body));
 });
 
+// Create new season
+router.post("/api/pulling/seasons", (request, response) => {
+  if (!authentication.isAuthorized(request)) {
+    rejectUnauthorized(response);
+    return;
+  }
+  returnPromiseResponse(response, main.createSeason(request.body));
+});
+
 ////////////////////////////////////////////////////////////////////////////////
 // Pulls
 
@@ -81,6 +90,15 @@ router.put("/api/pulling/pulls", (request, response) => {
     return;
   }
   returnPromiseResponse(response, main.updatePull(request.body));
+});
+
+// Create new pull
+router.post("/api/pulling/pulls", (request, response) => {
+  if (!authentication.isAuthorized(request)) {
+    rejectUnauthorized(response);
+    return;
+  }
+  returnPromiseResponse(response, main.createPull(request.body));
 });
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -108,6 +126,15 @@ router.put("/api/pulling/classes", (request, response) => {
     return;
   }
   returnPromiseResponse(response, main.updateClass(request.body));
+});
+
+// Create new class
+router.post("/api/pulling/classes", (request, response) => {
+  if (!authentication.isAuthorized(request)) {
+    rejectUnauthorized(response);
+    return;
+  }
+  returnPromiseResponse(response, main.createClass(request.body));
 });
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -155,6 +182,15 @@ router.put("/api/pulling/hooks", (request, response) => {
   returnPromiseResponse(response, main.updateHook(request.body));
 });
 
+// Create new hook
+router.post("/api/pulling/hooks", (request, response) => {
+  if (!authentication.isAuthorized(request)) {
+    rejectUnauthorized(response);
+    return;
+  }
+  returnPromiseResponse(response, main.createHook(request.body));
+});
+
 ////////////////////////////////////////////////////////////////////////////////
 // Pullers
 
@@ -187,6 +223,15 @@ router.put("/api/pulling/pullers", (request, response) => {
   returnPromiseResponse(response, main.updatePuller(request.body));
 });
 
+// Create new puller
+router.post("/api/pulling/pullers", (request, response) => {
+  if (!authentication.isAuthorized(request)) {
+    rejectUnauthorized(response);
+    return;
+  }
+  returnPromiseResponse(response, main.createPuller(request.body));
+});
+
 ////////////////////////////////////////////////////////////////////////////////
 // Tractors
 
@@ -217,6 +262,15 @@ router.put("/api/pulling/tractors", (request, response) => {
     return;
   }
   returnPromiseResponse(response, main.updateTractor(request.body));
+});
+
+// Create new tractor
+router.post("/api/pulling/tractors", (request, response) => {
+  if (!authentication.isAuthorized(request)) {
+    rejectUnauthorized(response);
+    return;
+  }
+  returnPromiseResponse(response, main.createTractor(request.body));
 });
 
 ////////////////////////////////////////////////////////////////////////////////
