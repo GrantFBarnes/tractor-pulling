@@ -142,6 +142,51 @@
                     (selectFieldEvent)="selectField($event)"
                   ></app-manage-select-field>
                 </ng-container>
+                <ng-container *ngSwitchCase="'tractor'">
+                  <app-manage-select-field
+                    [id]="item.key"
+                    [column]="column"
+                    [value]="data[item.key][column]"
+                    [objects]="tractors"
+                    (selectFieldEvent)="selectField($event)"
+                  ></app-manage-select-field>
+                </ng-container>
+                <ng-container *ngSwitchCase="'location'">
+                  <app-manage-select-field
+                    [id]="item.key"
+                    [column]="column"
+                    [value]="data[item.key][column]"
+                    [objects]="locations"
+                    (selectFieldEvent)="selectField($event)"
+                  ></app-manage-select-field>
+                </ng-container>
+                <ng-container *ngSwitchCase="'season'">
+                  <app-manage-select-field
+                    [id]="item.key"
+                    [column]="column"
+                    [value]="data[item.key][column]"
+                    [objects]="seasons"
+                    (selectFieldEvent)="selectField($event)"
+                  ></app-manage-select-field>
+                </ng-container>
+                <ng-container *ngSwitchCase="'pull'">
+                  <app-manage-select-field
+                    [id]="item.key"
+                    [column]="column"
+                    [value]="data[item.key][column]"
+                    [objects]="pulls"
+                    (selectFieldEvent)="selectField($event)"
+                  ></app-manage-select-field>
+                </ng-container>
+                <ng-container *ngSwitchCase="'class'">
+                  <app-manage-select-field
+                    [id]="item.key"
+                    [column]="column"
+                    [value]="data[item.key][column]"
+                    [objects]="classes"
+                    (selectFieldEvent)="selectField($event)"
+                  ></app-manage-select-field>
+                </ng-container>
                 <ng-container *ngSwitchDefault>
                   <input
                     type="text"
