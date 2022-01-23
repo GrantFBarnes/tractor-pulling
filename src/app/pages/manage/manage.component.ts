@@ -26,7 +26,7 @@ export class ManageComponent implements OnInit {
   classes: { [id: string]: Class } = {};
   hooks: { [id: string]: Hook } = {};
 
-  table: string = 'Table';
+  table: string = '';
   table_options: string[] = [
     'locations',
     'pullers',
@@ -85,6 +85,18 @@ export class ManageComponent implements OnInit {
     if (!obj.column) return;
     this.data[obj.id][obj.column] = obj.value;
     this.fieldChange(obj.id);
+  }
+
+  addNew(): void {
+    const body = {
+      season: this.season_id,
+      pull: this.pull_id,
+      class: this.class_id,
+    };
+    this.httpService.post('/api/pulling/' + this.table, body).subscribe({
+      next: () => this.authorize(),
+      error: () => alert('Failed to create new!'),
+    });
   }
 
   getClassStr(c: Class): string {

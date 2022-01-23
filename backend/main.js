@@ -1,3 +1,5 @@
+const { v4: uuidv4 } = require("uuid");
+
 const database = require("./database.js");
 
 const id_regex =
@@ -822,6 +824,28 @@ function updateLocation(data) {
   });
 }
 
+function createLocation(data) {
+  return new Promise((resolve) => {
+    database
+      .run(
+        `
+        INSERT INTO locations
+        (id, town, state)
+        VALUES
+        ('${uuidv4()}', '', '')
+        `
+      )
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to create location" });
+        return;
+      });
+  });
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 
 module.exports.getSeasons = getSeasons;
@@ -858,3 +882,4 @@ module.exports.updateTractor = updateTractor;
 
 module.exports.getLocations = getLocations;
 module.exports.updateLocation = updateLocation;
+module.exports.createLocation = createLocation;

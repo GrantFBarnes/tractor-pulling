@@ -236,6 +236,15 @@ router.put("/api/pulling/locations", (request, response) => {
   returnPromiseResponse(response, main.updateLocation(request.body));
 });
 
+// Create new location
+router.post("/api/pulling/locations", (request, response) => {
+  if (!authentication.isAuthorized(request)) {
+    rejectUnauthorized(response);
+    return;
+  }
+  returnPromiseResponse(response, main.createLocation(request.body));
+});
+
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
