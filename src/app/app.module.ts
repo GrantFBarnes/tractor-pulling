@@ -21,6 +21,7 @@ import { RivalsComponent } from './pages/rivals/rivals.component';
 import { ChartResultsComponent } from './pages/chart-results/chart-results.component';
 import { ChartPullersComponent } from './pages/chart-pullers/chart-pullers.component';
 import { ManageComponent } from './pages/manage/manage.component';
+import { ManageSelectFieldComponent } from './pages/manage/manage-select-field/manage-select-field.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { ManageComponent } from './pages/manage/manage.component';
     ChartResultsComponent,
     ChartPullersComponent,
     ManageComponent,
+    ManageSelectFieldComponent,
   ],
   imports: [
     BrowserModule,
