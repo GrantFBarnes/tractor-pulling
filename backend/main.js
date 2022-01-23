@@ -539,6 +539,35 @@ function getHooksBySeasonOfWinners(id) {
   });
 }
 
+function updateHookPositionsOfClass(id) {
+  return new Promise((resolve) => {
+    if (!idIsValid(id)) {
+      resolve({ statusCode: 500, data: "id not valid" });
+      return;
+    }
+
+    database
+      .run(
+        `
+        UPDATE hooks
+        INNER JOIN (
+            SELECT id, ROW_NUMBER() OVER (PARTITION BY class ORDER BY distance DESC) AS new_position FROM hooks WHERE class = '${id}'
+        ) AS new_hooks
+        ON hooks.id = new_hooks.id
+        SET hooks.position = new_hooks.new_position;
+        `
+      )
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to update hook positions" });
+        return;
+      });
+  });
+}
+
 function updateHook(data) {
   return new Promise((resolve) => {
     if (!dataIsValid("hooks", data)) {
@@ -559,6 +588,7 @@ function updateHook(data) {
         `
       )
       .then((result) => {
+        updateHookPositionsOfClass(data.class);
         resolve({ statusCode: 200, data: result });
         return;
       })
@@ -571,16 +601,18 @@ function updateHook(data) {
 
 function createHook(data) {
   return new Promise((resolve) => {
+    const cl = getIdFromData(data, "class");
     database
       .run(
         `
         INSERT INTO hooks
         (id, class, puller, tractor, distance)
         VALUES
-        ('${uuidv4()}', '${getIdFromData(data, "class")}', '', '', 0)
+        ('${uuidv4()}', '${cl}', '', '', 0)
         `
       )
       .then((result) => {
+        updateHookPositionsOfClass(cl);
         resolve({ statusCode: 200, data: result });
         return;
       })
