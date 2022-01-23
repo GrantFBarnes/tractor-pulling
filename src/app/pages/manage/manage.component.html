@@ -117,8 +117,87 @@
     </div>
   </div>
 
-  <div class="row mb-2" *ngIf="table">
-    <div class="col-12 mb-2 right">
+  <div class="row mb-2" *ngIf="showAddNew()">
+    <div class="col-lg-4 mb-2 center">
+      <div class="dropdown" *ngIf="table == 'hooks'">
+        <button
+          class="btn btn-success dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+        >
+          {{ puller_name }}
+        </button>
+        <ul class="dropdown-menu">
+          <ng-container *ngFor="let option of puller_options">
+            <li>
+              <a
+                [ngClass]="
+                  puller_id == option.id
+                    ? 'dropdown-item active'
+                    : 'dropdown-item'
+                "
+                (click)="setPuller(option)"
+              >
+                {{ getPullerStr(option) }}
+              </a>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-4 mb-2 center">
+      <div class="dropdown" *ngIf="table == 'hooks'">
+        <button
+          class="btn btn-success dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+        >
+          {{ tractor_name }}
+        </button>
+        <ul class="dropdown-menu">
+          <ng-container *ngFor="let option of tractor_options">
+            <li>
+              <a
+                [ngClass]="
+                  tractor_id == option.id
+                    ? 'dropdown-item active'
+                    : 'dropdown-item'
+                "
+                (click)="setTractor(option)"
+              >
+                {{ getTractorStr(option) }}
+              </a>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+      <div class="dropdown" *ngIf="table == 'pulls'">
+        <button
+          class="btn btn-success dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+        >
+          {{ location_name }}
+        </button>
+        <ul class="dropdown-menu">
+          <ng-container *ngFor="let option of location_options">
+            <li>
+              <a
+                [ngClass]="
+                  location_id == option.id
+                    ? 'dropdown-item active'
+                    : 'dropdown-item'
+                "
+                (click)="setLocation(option)"
+              >
+                {{ getLocationStr(option) }}
+              </a>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-4 mb-2 right">
       <button type="button" class="btn btn-success" (click)="addNew()">
         Add New
       </button>

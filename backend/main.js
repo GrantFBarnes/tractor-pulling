@@ -237,7 +237,13 @@ function createPull(data) {
         INSERT INTO pulls
         (id, season, location, date, youtube)
         VALUES
-        ('${uuidv4()}', '${getIdFromData(data, "season")}', '', '${date}', '')
+        (
+          '${uuidv4()}',
+          '${getIdFromData(data, "season")}',
+          '${getIdFromData(data, "location")}',
+          '${date}',
+          ''
+        )
         `
       )
       .then((result) => {
@@ -608,7 +614,13 @@ function createHook(data) {
         INSERT INTO hooks
         (id, class, puller, tractor, distance)
         VALUES
-        ('${uuidv4()}', '${cl}', '', '', 0)
+        (
+          '${uuidv4()}',
+          '${cl}',
+          '${getIdFromData(data, "puller")}',
+          '${getIdFromData(data, "tractor")}',
+          0
+        )
         `
       )
       .then((result) => {

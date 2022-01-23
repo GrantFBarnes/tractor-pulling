@@ -49,6 +49,18 @@ export class ManageComponent implements OnInit {
   class_name: string = '';
   class_options: Class[] = [];
 
+  location_id: string = '';
+  location_name: string = '';
+  location_options: Location[] = [];
+
+  puller_id: string = '';
+  puller_name: string = '';
+  puller_options: Puller[] = [];
+
+  tractor_id: string = '';
+  tractor_name: string = '';
+  tractor_options: Tractor[] = [];
+
   data: { [id: string]: any } = {};
   columns: string[] = [];
 
@@ -92,11 +104,48 @@ export class ManageComponent implements OnInit {
       season: this.season_id,
       pull: this.pull_id,
       class: this.class_id,
+      location: this.location_id,
+      puller: this.puller_id,
+      tractor: this.tractor_id,
     };
     this.httpService.post('/api/pulling/' + this.table, body).subscribe({
       next: () => this.authorize(),
       error: () => alert('Failed to create new!'),
     });
+  }
+
+  showAddNew(): boolean {
+    switch (this.table) {
+      case '':
+        return false;
+
+      case 'pulls':
+        if (!this.season_id) return false;
+        return true;
+
+      case 'classes':
+        if (!this.pull_id) return false;
+        return true;
+
+      case 'hooks':
+        if (!this.class_id) return false;
+        return true;
+
+      default:
+        return true;
+    }
+  }
+
+  getTractorStr(tractor: Tractor): string {
+    return tractor.brand + ' ' + tractor.model;
+  }
+
+  getPullerStr(puller: Puller): string {
+    return puller.last_name + ', ' + puller.first_name;
+  }
+
+  getLocationStr(location: Location): string {
+    return location.town + ', ' + location.state;
   }
 
   getClassStr(c: Class): string {
@@ -129,6 +178,30 @@ export class ManageComponent implements OnInit {
       str += ' - ' + loc.town + ', ' + loc.state;
     }
     return str;
+  }
+
+  sortByTractor(a: any, b: any): number {
+    const a_name = a.brand + ' ' + a.model;
+    const b_name = b.brand + ' ' + b.model;
+    if (a_name < b_name) return -1;
+    if (a_name > b_name) return 1;
+    return 0;
+  }
+
+  sortByPuller(a: any, b: any): number {
+    const a_name = a.last_name + ', ' + a.first_name;
+    const b_name = b.last_name + ', ' + b.first_name;
+    if (a_name < b_name) return -1;
+    if (a_name > b_name) return 1;
+    return 0;
+  }
+
+  sortByLocation(a: any, b: any): number {
+    const a_name = a.town + ', ' + a.state;
+    const b_name = b.town + ', ' + b.state;
+    if (a_name < b_name) return -1;
+    if (a_name > b_name) return 1;
+    return 0;
   }
 
   sortByWeight(a: any, b: any): number {
@@ -204,6 +277,9 @@ export class ManageComponent implements OnInit {
 
   getTractors(): void {
     this.tractors = {};
+    this.tractor_id = '';
+    this.tractor_name = 'Pick a Tractor';
+    this.tractor_options = [];
 
     let api = '/api/pulling/tractors';
     if (this.table !== 'hooks') {
@@ -219,12 +295,17 @@ export class ManageComponent implements OnInit {
       for (let i in data) {
         this.tractors[data[i].id] = data[i];
       }
+      this.tractor_options = data;
+      this.tractor_options.sort(this.sortByTractor);
       this.getData();
     });
   }
 
   getPullers(): void {
     this.pullers = {};
+    this.puller_id = '';
+    this.puller_name = 'Pick a Puller';
+    this.puller_options = [];
 
     let api = '/api/pulling/pullers';
     if (this.table !== 'hooks') {
@@ -240,6 +321,8 @@ export class ManageComponent implements OnInit {
       for (let i in data) {
         this.pullers[data[i].id] = data[i];
       }
+      this.puller_options = data;
+      this.puller_options.sort(this.sortByPuller);
       this.getTractors();
     });
   }
@@ -382,11 +465,16 @@ export class ManageComponent implements OnInit {
 
   getLocations(): void {
     this.locations = {};
+    this.location_id = '';
+    this.location_name = 'Pick a Location';
+    this.location_options = [];
 
     this.httpService.get('/api/pulling/locations').subscribe((data: any) => {
       for (let i in data) {
         this.locations[data[i].id] = data[i];
       }
+      this.location_options = data;
+      this.location_options.sort(this.sortByLocation);
       this.getSeasons();
     });
   }
@@ -394,6 +482,21 @@ export class ManageComponent implements OnInit {
   authorize(): void {
     this.authorized = true;
     this.getLocations();
+  }
+
+  setTractor(option: any): void {
+    this.tractor_id = option.id;
+    this.tractor_name = this.getTractorStr(option);
+  }
+
+  setPuller(option: any): void {
+    this.puller_id = option.id;
+    this.puller_name = this.getPullerStr(option);
+  }
+
+  setLocation(option: any): void {
+    this.location_id = option.id;
+    this.location_name = this.getLocationStr(option);
   }
 
   setClass(option: any): void {
