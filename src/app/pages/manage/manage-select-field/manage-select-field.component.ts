@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { KeyValue } from '@angular/common';
 
 @Component({
   selector: 'app-manage-select-field',
@@ -80,4 +81,12 @@ export class ManageSelectFieldComponent implements OnInit {
         return '';
     }
   }
+
+  sortMethod = (a: KeyValue<string, any>, b: KeyValue<string, any>): number => {
+    const a_val = this.getOptionStr(a.key);
+    const b_val = this.getOptionStr(b.key);
+    if (a_val < b_val) return -1;
+    if (a_val > b_val) return 1;
+    return 0;
+  };
 }

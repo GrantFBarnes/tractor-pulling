@@ -3,7 +3,7 @@
     {{ getOptionStr(value) }}
   </button>
   <ul class="dropdown-menu">
-    <ng-container *ngFor="let option of objects | keyvalue">
+    <ng-container *ngFor="let option of objects | keyvalue: sortMethod">
       <li>
         <a
           [ngClass]="

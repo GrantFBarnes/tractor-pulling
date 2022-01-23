@@ -194,12 +194,14 @@ export class ManageComponent implements OnInit {
     this.tractors = {};
 
     let api = '/api/pulling/tractors';
-    if (this.class_id) {
-      api += '/class/' + this.class_id;
-    } else if (this.pull_id) {
-      api += '/pull/' + this.pull_id;
-    } else if (this.season_id) {
-      api += '/season/' + this.season_id;
+    if (this.table !== 'hooks') {
+      if (this.class_id) {
+        api += '/class/' + this.class_id;
+      } else if (this.pull_id) {
+        api += '/pull/' + this.pull_id;
+      } else if (this.season_id) {
+        api += '/season/' + this.season_id;
+      }
     }
     this.httpService.get(api).subscribe((data: any) => {
       for (let i in data) {
@@ -213,12 +215,14 @@ export class ManageComponent implements OnInit {
     this.pullers = {};
 
     let api = '/api/pulling/pullers';
-    if (this.class_id) {
-      api += '/class/' + this.class_id;
-    } else if (this.pull_id) {
-      api += '/pull/' + this.pull_id;
-    } else if (this.season_id) {
-      api += '/season/' + this.season_id;
+    if (this.table !== 'hooks') {
+      if (this.class_id) {
+        api += '/class/' + this.class_id;
+      } else if (this.pull_id) {
+        api += '/pull/' + this.pull_id;
+      } else if (this.season_id) {
+        api += '/season/' + this.season_id;
+      }
     }
     this.httpService.get(api).subscribe((data: any) => {
       for (let i in data) {
@@ -386,6 +390,12 @@ export class ManageComponent implements OnInit {
   setTable(option: any): void {
     this.loading = true;
     this.table = option;
-    this.getData();
+    if (this.table === 'pullers' || this.table === 'hooks') {
+      this.getPullers();
+    } else if (this.table === 'tractors') {
+      this.getTractors();
+    } else {
+      this.getData();
+    }
   }
 }
