@@ -61,6 +61,6 @@
 }
 
 .dropdown-menu {
-  overflow: scroll;
+  overflow-y: auto;
   max-height: 40vh;
 }
