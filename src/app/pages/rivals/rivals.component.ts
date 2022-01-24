@@ -85,7 +85,7 @@ export class RivalsComponent implements OnInit {
     return (
       d.getUTCFullYear() +
       '-' +
-      this.padDate(d.getMonth()) +
+      this.padDate(d.getMonth() + 1) +
       '-' +
       this.padDate(d.getDate())
     );

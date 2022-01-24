@@ -59,3 +59,8 @@
   padding-bottom: 20px;
   text-align: center;
 }
+
+.dropdown-menu {
+  overflow: scroll;
+  max-height: 40vh;
+}
