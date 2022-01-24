@@ -10,192 +10,77 @@
 
   <div class="row center mb-2">
     <div class="col-lg-2 mb-2">
-      <div class="dropdown">
-        <button
-          class="btn btn-ghost dropdown-toggle"
-          type="button"
-          data-bs-toggle="dropdown"
-        >
-          {{ table }}
-        </button>
-        <ul class="dropdown-menu">
-          <ng-container *ngFor="let option of table_options">
-            <li>
-              <a
-                [ngClass]="
-                  table == option ? 'dropdown-item active' : 'dropdown-item'
-                "
-                (click)="setTable(option)"
-              >
-                {{ option }}
-              </a>
-            </li>
-          </ng-container>
-        </ul>
-      </div>
+      <app-manage-filter
+        [filter]="'table'"
+        [selected_id]="table"
+        [selected_name]="table"
+        [options]="table_options"
+        (setOptionEvent)="setTable($event)"
+      ></app-manage-filter>
     </div>
     <div class="col-lg-2 mb-2">
-      <div class="dropdown">
-        <button
-          class="btn btn-ghost dropdown-toggle"
-          type="button"
-          data-bs-toggle="dropdown"
-        >
-          {{ season_name }}
-        </button>
-        <ul class="dropdown-menu">
-          <ng-container *ngFor="let option of season_options">
-            <li>
-              <a
-                [ngClass]="
-                  season_id == option.id
-                    ? 'dropdown-item active'
-                    : 'dropdown-item'
-                "
-                (click)="setSeason(option)"
-              >
-                {{ option.year }}
-              </a>
-            </li>
-          </ng-container>
-        </ul>
-      </div>
+      <app-manage-filter
+        [filter]="'season'"
+        [selected_id]="season_id"
+        [selected_name]="season_name"
+        [options]="season_options"
+        (setOptionEvent)="setSeason($event)"
+      ></app-manage-filter>
     </div>
     <div class="col-lg-4 mb-2">
-      <div class="dropdown" *ngIf="season_id">
-        <button
-          class="btn btn-ghost dropdown-toggle"
-          type="button"
-          data-bs-toggle="dropdown"
-        >
-          {{ pull_name }}
-        </button>
-        <ul class="dropdown-menu">
-          <ng-container *ngFor="let option of pull_options">
-            <li>
-              <a
-                [ngClass]="
-                  pull_id == option.id
-                    ? 'dropdown-item active'
-                    : 'dropdown-item'
-                "
-                (click)="setPull(option)"
-              >
-                {{ getPullStr(option) }}
-              </a>
-            </li>
-          </ng-container>
-        </ul>
-      </div>
+      <app-manage-filter
+        *ngIf="season_id"
+        [filter]="'pull'"
+        [selected_id]="pull_id"
+        [selected_name]="pull_name"
+        [options]="pull_options"
+        [locations]="locations"
+        (setOptionEvent)="setPull($event)"
+      ></app-manage-filter>
     </div>
     <div class="col-lg-4 mb-2">
-      <div class="dropdown" *ngIf="pull_id">
-        <button
-          class="btn btn-ghost dropdown-toggle"
-          type="button"
-          data-bs-toggle="dropdown"
-        >
-          {{ class_name }}
-        </button>
-        <ul class="dropdown-menu">
-          <ng-container *ngFor="let option of class_options">
-            <li>
-              <a
-                [ngClass]="
-                  class_id == option.id
-                    ? 'dropdown-item active'
-                    : 'dropdown-item'
-                "
-                (click)="setClass(option)"
-              >
-                {{ getClassStr(option) }}
-              </a>
-            </li>
-          </ng-container>
-        </ul>
-      </div>
+      <app-manage-filter
+        *ngIf="pull_id"
+        [filter]="'class'"
+        [selected_id]="class_id"
+        [selected_name]="class_name"
+        [options]="class_options"
+        (setOptionEvent)="setClass($event)"
+      ></app-manage-filter>
     </div>
   </div>
 
   <div class="row mb-2" *ngIf="showAddNew()">
     <div class="col-lg-4 mb-2 center">
-      <div class="dropdown" *ngIf="table == 'hooks'">
-        <button
-          class="btn btn-success dropdown-toggle"
-          type="button"
-          data-bs-toggle="dropdown"
-        >
-          {{ puller_name }}
-        </button>
-        <ul class="dropdown-menu">
-          <ng-container *ngFor="let option of puller_options">
-            <li>
-              <a
-                [ngClass]="
-                  puller_id == option.id
-                    ? 'dropdown-item active'
-                    : 'dropdown-item'
-                "
-                (click)="setPuller(option)"
-              >
-                {{ getPullerStr(option) }}
-              </a>
-            </li>
-          </ng-container>
-        </ul>
-      </div>
+      <app-manage-filter
+        *ngIf="table == 'hooks'"
+        [filter]="'puller'"
+        [button]="'btn-success'"
+        [selected_id]="puller_id"
+        [selected_name]="puller_name"
+        [options]="puller_options"
+        (setOptionEvent)="setPuller($event)"
+      ></app-manage-filter>
     </div>
     <div class="col-lg-4 mb-2 center">
-      <div class="dropdown" *ngIf="table == 'hooks'">
-        <button
-          class="btn btn-success dropdown-toggle"
-          type="button"
-          data-bs-toggle="dropdown"
-        >
-          {{ tractor_name }}
-        </button>
-        <ul class="dropdown-menu">
-          <ng-container *ngFor="let option of tractor_options">
-            <li>
-              <a
-                [ngClass]="
-                  tractor_id == option.id
-                    ? 'dropdown-item active'
-                    : 'dropdown-item'
-                "
-                (click)="setTractor(option)"
-              >
-                {{ getTractorStr(option) }}
-              </a>
-            </li>
-          </ng-container>
-        </ul>
-      </div>
-      <div class="dropdown" *ngIf="table == 'pulls'">
-        <button
-          class="btn btn-success dropdown-toggle"
-          type="button"
-          data-bs-toggle="dropdown"
-        >
-          {{ location_name }}
-        </button>
-        <ul class="dropdown-menu">
-          <ng-container *ngFor="let option of location_options">
-            <li>
-              <a
-                [ngClass]="
-                  location_id == option.id
-                    ? 'dropdown-item active'
-                    : 'dropdown-item'
-                "
-                (click)="setLocation(option)"
-              >
-                {{ getLocationStr(option) }}
-              </a>
-            </li>
-          </ng-container>
-        </ul>
-      </div>
+      <app-manage-filter
+        *ngIf="table == 'hooks'"
+        [filter]="'tractor'"
+        [button]="'btn-success'"
+        [selected_id]="tractor_id"
+        [selected_name]="tractor_name"
+        [options]="tractor_options"
+        (setOptionEvent)="setTractor($event)"
+      ></app-manage-filter>
+      <app-manage-filter
+        *ngIf="table == 'pulls'"
+        [filter]="'location'"
+        [button]="'btn-success'"
+        [selected_id]="location_id"
+        [selected_name]="location_name"
+        [options]="location_options"
+        (setOptionEvent)="setLocation($event)"
+      ></app-manage-filter>
     </div>
     <div class="col-lg-4 mb-2 right">
       <button type="button" class="btn btn-success" (click)="addNew()">

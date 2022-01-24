@@ -22,6 +22,7 @@ import { ChartResultsComponent } from './pages/chart-results/chart-results.compo
 import { ChartPullersComponent } from './pages/chart-pullers/chart-pullers.component';
 import { ManageComponent } from './pages/manage/manage.component';
 import { ManageSelectFieldComponent } from './pages/manage/manage-select-field/manage-select-field.component';
+import { ManageFilterComponent } from './pages/manage/manage-filter/manage-filter.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { ManageSelectFieldComponent } from './pages/manage/manage-select-field/m
     ChartPullersComponent,
     ManageComponent,
     ManageSelectFieldComponent,
+    ManageFilterComponent,
   ],
   imports: [
     BrowserModule,

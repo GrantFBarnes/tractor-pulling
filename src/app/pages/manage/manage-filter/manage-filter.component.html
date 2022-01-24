@@ -1,0 +1,23 @@
+<div class="dropdown">
+  <button
+    [ngClass]="'btn ' + button + ' dropdown-toggle'"
+    type="button"
+    data-bs-toggle="dropdown"
+  >
+    {{ selected_name }}
+  </button>
+  <ul class="dropdown-menu">
+    <ng-container *ngFor="let option of options">
+      <li>
+        <a
+          [ngClass]="
+            selected_id == option.id ? 'dropdown-item active' : 'dropdown-item'
+          "
+          (click)="setOption(option)"
+        >
+          {{ getOptionStr(option) }}
+        </a>
+      </li>
+    </ng-container>
+  </ul>
+</div>
