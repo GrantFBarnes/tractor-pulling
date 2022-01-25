@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { KeyValue } from '@angular/common';
 import { HttpService } from '../../shared/services/http/http.service';
 import { Season } from '../../shared/interfaces/season';
 import { Pull } from '../../shared/interfaces/pull';
@@ -180,6 +181,35 @@ export class ManageComponent implements OnInit {
     return str;
   }
 
+  getRowStr(obj: any): string {
+    if (!obj) return '';
+    switch (this.table) {
+      case 'pullers':
+        return this.getPullerStr(obj);
+
+      case 'tractors':
+        return this.getTractorStr(obj);
+
+      case 'locations':
+        return this.getLocationStr(obj);
+
+      case 'seasons':
+        return obj.year;
+
+      case 'pulls':
+        return this.getPullStr(obj);
+
+      case 'classes':
+        return this.getClassStr(obj);
+
+      case 'hooks':
+        return obj.position;
+
+      default:
+        return '';
+    }
+  }
+
   sortByTractor(a: any, b: any): number {
     const a_name = a.brand + ' ' + a.model;
     const b_name = b.brand + ' ' + b.model;
@@ -231,6 +261,14 @@ export class ManageComponent implements OnInit {
     if (a_year > b_year) return -1;
     return 0;
   }
+
+  sortMethod = (a: KeyValue<string, any>, b: KeyValue<string, any>): number => {
+    const a_val = this.getRowStr(a.value);
+    const b_val = this.getRowStr(b.value);
+    if (a_val < b_val) return -1;
+    if (a_val > b_val) return 1;
+    return 0;
+  };
 
   getData(): void {
     switch (this.table) {
@@ -362,9 +400,11 @@ export class ManageComponent implements OnInit {
     }
     this.httpService.get(api).subscribe((data: any) => {
       for (let i in data) {
-        if (data[i].id === prev_id) {
-          this.class_id = prev_id;
-          this.class_name = prev_name;
+        if (this.pull_id) {
+          if (data[i].id === prev_id) {
+            this.class_id = prev_id;
+            this.class_name = prev_name;
+          }
         }
         this.classes[data[i].id] = data[i];
       }
@@ -404,9 +444,11 @@ export class ManageComponent implements OnInit {
     }
     this.httpService.get(api).subscribe((data: any) => {
       for (let i in data) {
-        if (data[i].id === prev_id) {
-          this.pull_id = prev_id;
-          this.pull_name = prev_name;
+        if (this.season_id) {
+          if (data[i].id === prev_id) {
+            this.pull_id = prev_id;
+            this.pull_name = prev_name;
+          }
         }
         data[i].date = this.getDateStr(data[i].date);
         this.pulls[data[i].id] = data[i];

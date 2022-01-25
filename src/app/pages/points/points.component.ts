@@ -94,8 +94,8 @@ export class PointsComponent implements OnInit {
     const b_weight = parseInt(b_split[0]);
     if (a_weight < b_weight) return -1;
     if (a_weight > b_weight) return 1;
-    const a_category = parseInt(a_split[1]);
-    const b_category = parseInt(b_split[1]);
+    const a_category = a_split[1];
+    const b_category = b_split[1];
     if (a_category < b_category) return 1;
     if (a_category > b_category) return -1;
     return 0;
