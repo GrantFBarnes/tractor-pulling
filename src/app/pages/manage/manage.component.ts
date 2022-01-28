@@ -304,7 +304,7 @@ export class ManageComponent implements OnInit {
 
       case 'hooks':
         this.data = this.hooks;
-        this.columns = ['class', 'puller', 'tractor', 'distance'];
+        this.columns = ['class', 'puller', 'tractor', 'distance', 'position'];
         break;
 
       default:

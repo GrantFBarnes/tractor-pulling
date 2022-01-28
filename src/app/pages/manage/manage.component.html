@@ -105,6 +105,9 @@
             <td>{{ item.value.id }}</td>
             <td *ngFor="let column of columns">
               <ng-container [ngSwitch]="column">
+                <ng-container *ngSwitchCase="'position'">
+                  {{ item.value[column] }}
+                </ng-container>
                 <ng-container *ngSwitchCase="'puller'">
                   <app-manage-select-field
                     [id]="item.key"
