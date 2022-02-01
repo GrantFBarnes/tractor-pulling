@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { LoadingComponent } from './shared/components/loading/loading.component';
+import { DropdownFilterComponent } from './shared/components/dropdown-filter/dropdown-filter.component';
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 import { UnauthorizedComponent } from './shared/components/unauthorized/unauthorized.component';
 
@@ -22,13 +23,13 @@ import { ChartResultsComponent } from './pages/chart-results/chart-results.compo
 import { ChartPullersComponent } from './pages/chart-pullers/chart-pullers.component';
 import { ManageComponent } from './pages/manage/manage.component';
 import { ManageSelectFieldComponent } from './pages/manage/manage-select-field/manage-select-field.component';
-import { ManageFilterComponent } from './pages/manage/manage-filter/manage-filter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
 
     LoadingComponent,
+    DropdownFilterComponent,
     PageNotFoundComponent,
     UnauthorizedComponent,
 
@@ -43,7 +44,6 @@ import { ManageFilterComponent } from './pages/manage/manage-filter/manage-filte
     ChartPullersComponent,
     ManageComponent,
     ManageSelectFieldComponent,
-    ManageFilterComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-manage-filter',
-  templateUrl: './manage-filter.component.html',
-  styleUrls: ['./manage-filter.component.css'],
+  selector: 'app-dropdown-filter',
+  templateUrl: './dropdown-filter.component.html',
+  styleUrls: ['./dropdown-filter.component.css'],
 })
-export class ManageFilterComponent implements OnInit {
+export class DropdownFilterComponent implements OnInit {
   @Input() filter: string = '';
   @Input() button: string = 'btn-ghost';
   @Input() selected_id: string = '';
