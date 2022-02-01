@@ -6,58 +6,24 @@
 
   <div class="row center mb-2">
     <div class="col-md-6 mb-2">
-      <div class="dropdown">
-        <button
-          class="btn btn-ghost dropdown-toggle"
-          type="button"
-          data-bs-toggle="dropdown"
-        >
-          {{ season_name }}
-        </button>
-        <ul class="dropdown-menu">
-          <ng-container *ngFor="let option of season_options">
-            <li>
-              <a
-                [ngClass]="
-                  season_id == option.id
-                    ? 'dropdown-item active'
-                    : 'dropdown-item'
-                "
-                (click)="setSeason(option)"
-              >
-                {{ option.year }}
-              </a>
-            </li>
-          </ng-container>
-        </ul>
-      </div>
+      <app-dropdown-filter
+        [filter]="'season'"
+        [selected_id]="season_id"
+        [selected_name]="season_name"
+        [options]="season_options"
+        (setOptionEvent)="setSeason($event)"
+      ></app-dropdown-filter>
     </div>
     <div class="col-md-6 mb-2">
-      <div class="dropdown" *ngIf="season_id">
-        <button
-          class="btn btn-ghost dropdown-toggle"
-          type="button"
-          data-bs-toggle="dropdown"
-        >
-          {{ pull_name }}
-        </button>
-        <ul class="dropdown-menu">
-          <ng-container *ngFor="let option of pull_options">
-            <li>
-              <a
-                [ngClass]="
-                  pull_id == option.id
-                    ? 'dropdown-item active'
-                    : 'dropdown-item'
-                "
-                (click)="setPull(option)"
-              >
-                {{ getPullStr(option) }}
-              </a>
-            </li>
-          </ng-container>
-        </ul>
-      </div>
+      <app-dropdown-filter
+        *ngIf="season_id"
+        [filter]="'pull'"
+        [selected_id]="pull_id"
+        [selected_name]="pull_name"
+        [options]="pull_options"
+        [locations]="locations"
+        (setOptionEvent)="setPull($event)"
+      ></app-dropdown-filter>
     </div>
   </div>
 

@@ -6,108 +6,40 @@
 
   <div class="row center mb-2">
     <div class="col-lg-3 mb-2">
-      <div class="dropdown">
-        <button
-          class="btn btn-ghost dropdown-toggle"
-          type="button"
-          data-bs-toggle="dropdown"
-        >
-          {{ puller_name }}
-        </button>
-        <ul class="dropdown-menu">
-          <ng-container *ngFor="let option of pullers">
-            <li>
-              <a
-                [ngClass]="
-                  puller_id == option.id
-                    ? 'dropdown-item active'
-                    : 'dropdown-item'
-                "
-                (click)="setPuller(option)"
-              >
-                {{ getPullerStr(option) }}
-              </a>
-            </li>
-          </ng-container>
-        </ul>
-      </div>
+      <app-dropdown-filter
+        [filter]="'puller'"
+        [selected_id]="puller_id"
+        [selected_name]="puller_name"
+        [options]="pullers"
+        (setOptionEvent)="setPuller($event)"
+      ></app-dropdown-filter>
     </div>
     <div class="col-lg-3 mb-2">
-      <div class="dropdown">
-        <button
-          class="btn btn-ghost dropdown-toggle"
-          type="button"
-          data-bs-toggle="dropdown"
-        >
-          {{ metric }}
-        </button>
-        <ul class="dropdown-menu">
-          <ng-container *ngFor="let option of metric_options">
-            <li>
-              <a
-                [ngClass]="
-                  metric == option ? 'dropdown-item active' : 'dropdown-item'
-                "
-                (click)="setMetric(option)"
-              >
-                {{ option }}
-              </a>
-            </li>
-          </ng-container>
-        </ul>
-      </div>
+      <app-dropdown-filter
+        [filter]="'option'"
+        [selected_id]="metric"
+        [selected_name]="metric"
+        [options]="metric_options"
+        (setOptionEvent)="setMetric($event)"
+      ></app-dropdown-filter>
     </div>
     <div class="col-lg-3 mb-2">
-      <div class="dropdown">
-        <button
-          class="btn btn-ghost dropdown-toggle"
-          type="button"
-          data-bs-toggle="dropdown"
-        >
-          {{ category }}
-        </button>
-        <ul class="dropdown-menu">
-          <ng-container *ngFor="let option of category_options">
-            <li>
-              <a
-                [ngClass]="
-                  category == option ? 'dropdown-item active' : 'dropdown-item'
-                "
-                (click)="setCategory(option)"
-              >
-                {{ option }}
-              </a>
-            </li>
-          </ng-container>
-        </ul>
-      </div>
+      <app-dropdown-filter
+        [filter]="'option'"
+        [selected_id]="category"
+        [selected_name]="category"
+        [options]="category_options"
+        (setOptionEvent)="setCategory($event)"
+      ></app-dropdown-filter>
     </div>
     <div class="col-lg-3 mb-2">
-      <div class="dropdown">
-        <button
-          class="btn btn-ghost dropdown-toggle"
-          type="button"
-          data-bs-toggle="dropdown"
-        >
-          {{ season_name }}
-        </button>
-        <ul class="dropdown-menu">
-          <ng-container *ngFor="let option of season_options">
-            <li>
-              <a
-                [ngClass]="
-                  season_id == option.id
-                    ? 'dropdown-item active'
-                    : 'dropdown-item'
-                "
-                (click)="setSeason(option)"
-              >
-                {{ option.year }}
-              </a>
-            </li>
-          </ng-container>
-        </ul>
-      </div>
+      <app-dropdown-filter
+        [filter]="'season'"
+        [selected_id]="season_id"
+        [selected_name]="season_name"
+        [options]="season_options"
+        (setOptionEvent)="setSeason($event)"
+      ></app-dropdown-filter>
     </div>
   </div>
 

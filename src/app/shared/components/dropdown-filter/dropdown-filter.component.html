@@ -11,7 +11,9 @@
       <li>
         <a
           [ngClass]="
-            selected_id == option.id ? 'dropdown-item active' : 'dropdown-item'
+            selected_id == option || selected_id == option.id
+              ? 'dropdown-item active'
+              : 'dropdown-item'
           "
           (click)="setOption(option)"
         >

@@ -40,7 +40,7 @@ export class DropdownFilterComponent implements OnInit {
   getOptionStr(option: any): string {
     let str = '';
     switch (this.filter) {
-      case 'table':
+      case 'option':
         return option;
 
       case 'season':
