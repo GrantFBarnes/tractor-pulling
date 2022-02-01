@@ -137,6 +137,17 @@ export class ManageComponent implements OnInit {
     }
   }
 
+  deleteRow(id: string): void {
+    if (window.confirm('Are you sure you want to delete ' + id + '?')) {
+      this.httpService
+        .delete('/api/pulling/' + this.table + '/' + id)
+        .subscribe({
+          next: () => this.authorize(),
+          error: () => alert('Failed to delete row!'),
+        });
+    }
+  }
+
   getTractorStr(tractor: Tractor): string {
     return tractor.brand + ' ' + tractor.model;
   }

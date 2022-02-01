@@ -97,6 +97,7 @@
           <th *ngFor="let column of columns">
             {{ column }}
           </th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -171,6 +172,11 @@
                   />
                 </ng-container>
               </ng-container>
+            </td>
+            <td class="center">
+              <button class="btn btn-danger" (click)="deleteRow(item.value.id)">
+                <i class="bi bi-trash-fill"></i>
+              </button>
             </td>
           </tr>
         </ng-container>

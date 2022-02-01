@@ -70,6 +70,15 @@ router.post("/api/pulling/seasons", (request, response) => {
   returnPromiseResponse(response, main.createSeason(request.body));
 });
 
+// Delete season by id
+router.delete("/api/pulling/seasons/:id", (request, response) => {
+  if (!authentication.isAuthorized(request)) {
+    rejectUnauthorized(response);
+    return;
+  }
+  returnPromiseResponse(response, main.deleteSeason(request.params.id));
+});
+
 ////////////////////////////////////////////////////////////////////////////////
 // Pulls
 
@@ -99,6 +108,15 @@ router.post("/api/pulling/pulls", (request, response) => {
     return;
   }
   returnPromiseResponse(response, main.createPull(request.body));
+});
+
+// Delete pull by id
+router.delete("/api/pulling/pulls/:id", (request, response) => {
+  if (!authentication.isAuthorized(request)) {
+    rejectUnauthorized(response);
+    return;
+  }
+  returnPromiseResponse(response, main.deletePull(request.params.id));
 });
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -135,6 +153,15 @@ router.post("/api/pulling/classes", (request, response) => {
     return;
   }
   returnPromiseResponse(response, main.createClass(request.body));
+});
+
+// Delete class by id
+router.delete("/api/pulling/classes/:id", (request, response) => {
+  if (!authentication.isAuthorized(request)) {
+    rejectUnauthorized(response);
+    return;
+  }
+  returnPromiseResponse(response, main.deleteClass(request.params.id));
 });
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -191,6 +218,15 @@ router.post("/api/pulling/hooks", (request, response) => {
   returnPromiseResponse(response, main.createHook(request.body));
 });
 
+// Delete hook by id
+router.delete("/api/pulling/hooks/:id", (request, response) => {
+  if (!authentication.isAuthorized(request)) {
+    rejectUnauthorized(response);
+    return;
+  }
+  returnPromiseResponse(response, main.deleteHook(request.params.id));
+});
+
 ////////////////////////////////////////////////////////////////////////////////
 // Pullers
 
@@ -230,6 +266,15 @@ router.post("/api/pulling/pullers", (request, response) => {
     return;
   }
   returnPromiseResponse(response, main.createPuller(request.body));
+});
+
+// Delete puller by id
+router.delete("/api/pulling/pullers/:id", (request, response) => {
+  if (!authentication.isAuthorized(request)) {
+    rejectUnauthorized(response);
+    return;
+  }
+  returnPromiseResponse(response, main.deletePuller(request.params.id));
 });
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -273,6 +318,15 @@ router.post("/api/pulling/tractors", (request, response) => {
   returnPromiseResponse(response, main.createTractor(request.body));
 });
 
+// Delete tractor by id
+router.delete("/api/pulling/tractors/:id", (request, response) => {
+  if (!authentication.isAuthorized(request)) {
+    rejectUnauthorized(response);
+    return;
+  }
+  returnPromiseResponse(response, main.deleteTractor(request.params.id));
+});
+
 ////////////////////////////////////////////////////////////////////////////////
 // Locations
 
@@ -297,6 +351,15 @@ router.post("/api/pulling/locations", (request, response) => {
     return;
   }
   returnPromiseResponse(response, main.createLocation(request.body));
+});
+
+// Delete location by id
+router.delete("/api/pulling/locations/:id", (request, response) => {
+  if (!authentication.isAuthorized(request)) {
+    rejectUnauthorized(response);
+    return;
+  }
+  returnPromiseResponse(response, main.deleteLocation(request.params.id));
 });
 
 ////////////////////////////////////////////////////////////////////////////////

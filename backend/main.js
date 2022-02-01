@@ -148,6 +148,30 @@ function createSeason(data) {
   });
 }
 
+function deleteSeason(id) {
+  return new Promise((resolve) => {
+    if (!idIsValid(id)) {
+      resolve({ statusCode: 500, data: "id not valid" });
+      return;
+    }
+
+    database
+      .run(
+        `
+        DELETE FROM seasons WHERE id = '${id}';
+        `
+      )
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to delete season: " + id });
+        return;
+      });
+  });
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // Pulls
 
@@ -252,6 +276,30 @@ function createPull(data) {
       })
       .catch(() => {
         resolve({ statusCode: 400, data: "failed to create pull" });
+        return;
+      });
+  });
+}
+
+function deletePull(id) {
+  return new Promise((resolve) => {
+    if (!idIsValid(id)) {
+      resolve({ statusCode: 500, data: "id not valid" });
+      return;
+    }
+
+    database
+      .run(
+        `
+        DELETE FROM pulls WHERE id = '${id}';
+        `
+      )
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to delete pull: " + id });
         return;
       });
   });
@@ -382,6 +430,30 @@ function createClass(data) {
       })
       .catch(() => {
         resolve({ statusCode: 400, data: "failed to create class" });
+        return;
+      });
+  });
+}
+
+function deleteClass(id) {
+  return new Promise((resolve) => {
+    if (!idIsValid(id)) {
+      resolve({ statusCode: 500, data: "id not valid" });
+      return;
+    }
+
+    database
+      .run(
+        `
+        DELETE FROM classes WHERE id = '${id}';
+        `
+      )
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to delete class: " + id });
         return;
       });
   });
@@ -545,6 +617,30 @@ function getHooksBySeasonOfWinners(id) {
   });
 }
 
+function updateHookPositions() {
+  return new Promise((resolve) => {
+    database
+      .run(
+        `
+        UPDATE hooks
+        INNER JOIN (
+            SELECT id, ROW_NUMBER() OVER (PARTITION BY class ORDER BY distance DESC) AS new_position FROM hooks
+        ) AS new_hooks
+        ON hooks.id = new_hooks.id
+        SET hooks.position = new_hooks.new_position;
+        `
+      )
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to update hook positions" });
+        return;
+      });
+  });
+}
+
 function updateHookPositionsOfClass(id) {
   return new Promise((resolve) => {
     if (!idIsValid(id)) {
@@ -630,6 +726,31 @@ function createHook(data) {
       })
       .catch(() => {
         resolve({ statusCode: 400, data: "failed to create hook" });
+        return;
+      });
+  });
+}
+
+function deleteHook(id) {
+  return new Promise((resolve) => {
+    if (!idIsValid(id)) {
+      resolve({ statusCode: 500, data: "id not valid" });
+      return;
+    }
+
+    database
+      .run(
+        `
+        DELETE FROM hooks WHERE id = '${id}';
+        `
+      )
+      .then((result) => {
+        updateHookPositions();
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to delete hook: " + id });
         return;
       });
   });
@@ -797,6 +918,30 @@ function createPuller(data) {
   });
 }
 
+function deletePuller(id) {
+  return new Promise((resolve) => {
+    if (!idIsValid(id)) {
+      resolve({ statusCode: 500, data: "id not valid" });
+      return;
+    }
+
+    database
+      .run(
+        `
+        DELETE FROM pullers WHERE id = '${id}';
+        `
+      )
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to delete puller: " + id });
+        return;
+      });
+  });
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // Tractors
 
@@ -959,6 +1104,30 @@ function createTractor(data) {
   });
 }
 
+function deleteTractor(id) {
+  return new Promise((resolve) => {
+    if (!idIsValid(id)) {
+      resolve({ statusCode: 500, data: "id not valid" });
+      return;
+    }
+
+    database
+      .run(
+        `
+        DELETE FROM tractors WHERE id = '${id}';
+        `
+      )
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to delete tractor: " + id });
+        return;
+      });
+  });
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 // Locations
 
@@ -1031,22 +1200,49 @@ function createLocation(data) {
   });
 }
 
+function deleteLocation(id) {
+  return new Promise((resolve) => {
+    if (!idIsValid(id)) {
+      resolve({ statusCode: 500, data: "id not valid" });
+      return;
+    }
+
+    database
+      .run(
+        `
+        DELETE FROM locations WHERE id = '${id}';
+        `
+      )
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to delete location: " + id });
+        return;
+      });
+  });
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 
 module.exports.getSeasons = getSeasons;
 module.exports.updateSeason = updateSeason;
 module.exports.createSeason = createSeason;
+module.exports.deleteSeason = deleteSeason;
 
 module.exports.getPulls = getPulls;
 module.exports.getPullsBySeason = getPullsBySeason;
 module.exports.updatePull = updatePull;
 module.exports.createPull = createPull;
+module.exports.deletePull = deletePull;
 
 module.exports.getClasses = getClasses;
 module.exports.getClassesByPull = getClassesByPull;
 module.exports.getClassesBySeason = getClassesBySeason;
 module.exports.updateClass = updateClass;
 module.exports.createClass = createClass;
+module.exports.deleteClass = deleteClass;
 
 module.exports.getHooks = getHooks;
 module.exports.getHooksOfWinners = getHooksOfWinners;
@@ -1056,6 +1252,7 @@ module.exports.getHooksBySeason = getHooksBySeason;
 module.exports.getHooksBySeasonOfWinners = getHooksBySeasonOfWinners;
 module.exports.updateHook = updateHook;
 module.exports.createHook = createHook;
+module.exports.deleteHook = deleteHook;
 
 module.exports.getPullers = getPullers;
 module.exports.getPullersByClass = getPullersByClass;
@@ -1063,6 +1260,7 @@ module.exports.getPullersByPull = getPullersByPull;
 module.exports.getPullersBySeason = getPullersBySeason;
 module.exports.updatePuller = updatePuller;
 module.exports.createPuller = createPuller;
+module.exports.deletePuller = deletePuller;
 
 module.exports.getTractors = getTractors;
 module.exports.getTractorsByClass = getTractorsByClass;
@@ -1070,7 +1268,9 @@ module.exports.getTractorsByPull = getTractorsByPull;
 module.exports.getTractorsBySeason = getTractorsBySeason;
 module.exports.updateTractor = updateTractor;
 module.exports.createTractor = createTractor;
+module.exports.deleteTractor = deleteTractor;
 
 module.exports.getLocations = getLocations;
 module.exports.updateLocation = updateLocation;
 module.exports.createLocation = createLocation;
+module.exports.deleteLocation = deleteLocation;

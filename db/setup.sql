@@ -44,7 +44,7 @@ CREATE TABLE pulls (
     date DATE DEFAULT NOW(),
     youtube CHAR(11) DEFAULT "",
     PRIMARY KEY (id),
-    FOREIGN KEY (season) REFERENCES seasons(id),
+    FOREIGN KEY (season) REFERENCES seasons(id) ON DELETE CASCADE,
     FOREIGN KEY (location) REFERENCES locations(id),
     CONSTRAINT pull_unique UNIQUE (season, location, date)
 );
@@ -56,7 +56,7 @@ CREATE TABLE classes (
     weight INT DEFAULT 0,
     speed INT DEFAULT 3,
     PRIMARY KEY (id),
-    FOREIGN KEY (pull) REFERENCES pulls(id),
+    FOREIGN KEY (pull) REFERENCES pulls(id) ON DELETE CASCADE,
     CONSTRAINT class_unique UNIQUE (pull, category, weight, speed)
 );
 
@@ -68,7 +68,7 @@ CREATE TABLE hooks (
     distance FLOAT(5, 2) DEFAULT 0.00,
     position INT DEFAULT 0,
     PRIMARY KEY (id),
-    FOREIGN KEY (class) REFERENCES classes(id),
+    FOREIGN KEY (class) REFERENCES classes(id) ON DELETE CASCADE,
     FOREIGN KEY (puller) REFERENCES pullers(id),
     FOREIGN KEY (tractor) REFERENCES tractors(id),
     CONSTRAINT hook_unique UNIQUE (class, puller, tractor, distance)

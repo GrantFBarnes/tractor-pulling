@@ -30,7 +30,7 @@ CREATE TABLE `classes` (
   `speed` int(11) DEFAULT 3,
   PRIMARY KEY (`id`),
   UNIQUE KEY `class_unique` (`pull`,`category`,`weight`,`speed`),
-  CONSTRAINT `classes_ibfk_1` FOREIGN KEY (`pull`) REFERENCES `pulls` (`id`)
+  CONSTRAINT `classes_ibfk_1` FOREIGN KEY (`pull`) REFERENCES `pulls` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -62,7 +62,7 @@ CREATE TABLE `hooks` (
   UNIQUE KEY `hook_unique` (`class`,`puller`,`tractor`,`distance`),
   KEY `puller` (`puller`),
   KEY `tractor` (`tractor`),
-  CONSTRAINT `hooks_ibfk_1` FOREIGN KEY (`class`) REFERENCES `classes` (`id`),
+  CONSTRAINT `hooks_ibfk_1` FOREIGN KEY (`class`) REFERENCES `classes` (`id`) ON DELETE CASCADE,
   CONSTRAINT `hooks_ibfk_2` FOREIGN KEY (`puller`) REFERENCES `pullers` (`id`),
   CONSTRAINT `hooks_ibfk_3` FOREIGN KEY (`tractor`) REFERENCES `tractors` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -147,7 +147,7 @@ CREATE TABLE `pulls` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `pull_unique` (`season`,`location`,`date`),
   KEY `location` (`location`),
-  CONSTRAINT `pulls_ibfk_1` FOREIGN KEY (`season`) REFERENCES `seasons` (`id`),
+  CONSTRAINT `pulls_ibfk_1` FOREIGN KEY (`season`) REFERENCES `seasons` (`id`) ON DELETE CASCADE,
   CONSTRAINT `pulls_ibfk_2` FOREIGN KEY (`location`) REFERENCES `locations` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
