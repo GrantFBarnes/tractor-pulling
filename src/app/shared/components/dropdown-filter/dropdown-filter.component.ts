@@ -53,6 +53,9 @@ export class DropdownFilterComponent implements OnInit {
         if (loc) {
           str += ' - ' + loc.town + ', ' + loc.state;
         }
+        if (option.youtube) {
+          str += ' - (video)';
+        }
         return str;
 
       case 'class':

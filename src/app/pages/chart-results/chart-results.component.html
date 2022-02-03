@@ -51,6 +51,16 @@
         [locations]="locations"
         (setOptionEvent)="setPull($event)"
       ></app-dropdown-filter>
+      <div *ngIf="pull_youtube">
+        <a
+          class="btn btn-danger"
+          href="{{ 'https://www.youtube.com/watch?v=' + pull_youtube }}"
+          target="_blank"
+        >
+          YouTube
+          <i class="bi bi-play-btn"></i>
+        </a>
+      </div>
     </div>
   </div>
 

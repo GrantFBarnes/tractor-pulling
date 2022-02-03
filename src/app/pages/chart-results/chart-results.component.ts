@@ -43,6 +43,7 @@ export class ChartResultsComponent implements OnInit {
 
   pull_id: string = '';
   pull_name: string = '';
+  pull_youtube: string = '';
   pull_options: Pull[] = [];
 
   hooks: Hook[] = [];
@@ -245,6 +246,7 @@ export class ChartResultsComponent implements OnInit {
   getPulls(): void {
     this.pull_id = '';
     this.pull_name = 'All';
+    this.pull_youtube = '';
     this.pull_options = [];
 
     if (!this.season_id) {
@@ -260,6 +262,7 @@ export class ChartResultsComponent implements OnInit {
           const select_pull = this.pull_options[0];
           this.pull_id = select_pull.id;
           this.pull_name = this.getPullStr(select_pull);
+          this.pull_youtube = select_pull.youtube;
         }
         this.pull_options.unshift({
           id: '',
@@ -327,6 +330,7 @@ export class ChartResultsComponent implements OnInit {
     this.loading = true;
     this.pull_id = option.id;
     this.pull_name = this.getPullStr(option);
+    this.pull_youtube = option.youtube;
     this.getClasses();
   }
 
