@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from '../../shared/services/http/http.service';
-import { Season } from '../../shared/interfaces/season';
-import { Class } from '../../shared/interfaces/class';
-import { Hook } from '../../shared/interfaces/hook';
-import { Puller } from '../../shared/interfaces/puller';
+import { HttpService } from 'src/app/shared/services/http/http.service';
+import { Season } from 'src/app/shared/interfaces/season';
+import { Class } from 'src/app/shared/interfaces/class';
+import { Hook } from 'src/app/shared/interfaces/hook';
+import { Puller } from 'src/app/shared/interfaces/puller';
 
 import * as sort from 'src/app/shared/methods/sort';
 import * as stringify from 'src/app/shared/methods/stringify';

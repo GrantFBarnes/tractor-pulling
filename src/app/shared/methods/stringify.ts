@@ -1,9 +1,9 @@
-import { Tractor } from '../interfaces/tractor';
-import { Puller } from '../interfaces/puller';
-import { Location } from '../interfaces/location';
-import { Season } from '../interfaces/season';
-import { Pull } from '../interfaces/pull';
-import { Class } from '../interfaces/class';
+import { Tractor } from 'src/app/shared/interfaces/tractor';
+import { Puller } from 'src/app/shared/interfaces/puller';
+import { Location } from 'src/app/shared/interfaces/location';
+import { Season } from 'src/app/shared/interfaces/season';
+import { Pull } from 'src/app/shared/interfaces/pull';
+import { Class } from 'src/app/shared/interfaces/class';
 
 export function getTractorStr(tractor: Tractor): string {
   if (!tractor) return '(Unknown)';

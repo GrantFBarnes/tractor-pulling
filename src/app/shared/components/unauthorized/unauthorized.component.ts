@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { HttpService } from '../../services/http/http.service';
+import { HttpService } from 'src/app/shared/services/http/http.service';
 
 @Component({
   selector: 'app-unauthorized',

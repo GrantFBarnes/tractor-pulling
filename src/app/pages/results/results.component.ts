@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from '../../shared/services/http/http.service';
-import { Season } from '../../shared/interfaces/season';
-import { Pull } from '../../shared/interfaces/pull';
-import { Class } from '../../shared/interfaces/class';
-import { Hook } from '../../shared/interfaces/hook';
-import { Location } from '../../shared/interfaces/location';
-import { Puller } from '../../shared/interfaces/puller';
-import { Tractor } from '../../shared/interfaces/tractor';
+import { HttpService } from 'src/app/shared/services/http/http.service';
+import { Season } from 'src/app/shared/interfaces/season';
+import { Pull } from 'src/app/shared/interfaces/pull';
+import { Class } from 'src/app/shared/interfaces/class';
+import { Hook } from 'src/app/shared/interfaces/hook';
+import { Location } from 'src/app/shared/interfaces/location';
+import { Puller } from 'src/app/shared/interfaces/puller';
+import { Tractor } from 'src/app/shared/interfaces/tractor';
 
 import * as sort from 'src/app/shared/methods/sort';
 import * as stringify from 'src/app/shared/methods/stringify';
