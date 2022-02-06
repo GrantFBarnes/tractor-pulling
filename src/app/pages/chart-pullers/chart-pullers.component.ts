@@ -8,6 +8,7 @@ import { Hook } from '../../shared/interfaces/hook';
 import { Puller } from '../../shared/interfaces/puller';
 import { Tractor } from '../../shared/interfaces/tractor';
 
+import * as sort from 'src/app/shared/methods/sort';
 import * as stringify from 'src/app/shared/methods/stringify';
 
 @Component({
@@ -55,30 +56,6 @@ export class ChartPullersComponent implements OnInit {
 
   getPullerStr(p: Puller): string {
     return stringify.getPullerStr(p);
-  }
-
-  sortByTime(a: any, b: any): number {
-    const a_time = new Date(a);
-    const b_time = new Date(b);
-    if (a_time < b_time) return -1;
-    if (a_time > b_time) return 1;
-    return 0;
-  }
-
-  sortByName(a: any, b: any): number {
-    const a_name = a.last_name + ', ' + a.first_name;
-    const b_name = b.last_name + ', ' + b.first_name;
-    if (a_name < b_name) return -1;
-    if (a_name > b_name) return 1;
-    return 0;
-  }
-
-  sortByYear(a: any, b: any): number {
-    const a_year = parseInt(a.year);
-    const b_year = parseInt(b.year);
-    if (a_year < b_year) return 1;
-    if (a_year > b_year) return -1;
-    return 0;
   }
 
   getData(): void {
@@ -141,7 +118,7 @@ export class ChartPullersComponent implements OnInit {
         times.add(time_id);
       }
     }
-    this.chart_labels = [...times].sort(this.sortByTime);
+    this.chart_labels = [...times].sort(sort.time);
 
     let tractor_data: { [id: string]: number[] } = {};
     for (let id in data) {
@@ -219,7 +196,7 @@ export class ChartPullersComponent implements OnInit {
     }
     this.httpService.get(api).subscribe((data: any) => {
       this.pullers = data;
-      this.pullers.sort(this.sortByName);
+      this.pullers.sort(sort.puller);
       this.getPulls();
     });
   }
@@ -234,7 +211,7 @@ export class ChartPullersComponent implements OnInit {
         this.seasons[data[i].id] = data[i];
       }
       this.season_options = data;
-      this.season_options.sort(this.sortByYear);
+      this.season_options.sort(sort.season);
       if (this.season_options.length) {
         const select_season = this.season_options[0];
         this.season_id = select_season.id;

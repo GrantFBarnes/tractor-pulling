@@ -1,0 +1,94 @@
+import { Tractor } from '../interfaces/tractor';
+import { Puller } from '../interfaces/puller';
+import { Location } from '../interfaces/location';
+import { Season } from '../interfaces/season';
+import { Pull } from '../interfaces/pull';
+import { Class } from '../interfaces/class';
+import { Hook } from '../interfaces/hook';
+
+export function time(a: any, b: any): number {
+  const a_val = new Date(a);
+  const b_val = new Date(b);
+  if (a_val < b_val) return -1;
+  if (a_val > b_val) return 1;
+  return 0;
+}
+
+export function tractor(a: Tractor, b: Tractor): number {
+  const a_val = a.brand + ' ' + a.model;
+  const b_val = b.brand + ' ' + b.model;
+  if (a_val < b_val) return -1;
+  if (a_val > b_val) return 1;
+  return 0;
+}
+
+export function puller(a: Puller, b: Puller): number {
+  const a_val = a.last_name + ', ' + a.first_name;
+  const b_val = b.last_name + ', ' + b.first_name;
+  if (a_val < b_val) return -1;
+  if (a_val > b_val) return 1;
+  return 0;
+}
+
+export function location(a: Location, b: Location): number {
+  const a_val = a.town + ', ' + a.state;
+  const b_val = b.town + ', ' + b.state;
+  if (a_val < b_val) return -1;
+  if (a_val > b_val) return 1;
+  return 0;
+}
+
+export function season(a: Season, b: Season): number {
+  const a_val = parseInt(a.year);
+  const b_val = parseInt(b.year);
+  if (a_val < b_val) return 1;
+  if (a_val > b_val) return -1;
+  return 0;
+}
+
+export function pull(a: Pull, b: Pull): number {
+  const a_val = a.date;
+  const b_val = b.date;
+  if (a_val < b_val) return 1;
+  if (a_val > b_val) return -1;
+  return 0;
+}
+
+function sortClass(
+  a_weight: number,
+  b_weight: number,
+  a_category: string,
+  b_category: string
+): number {
+  if (a_weight < b_weight) return -1;
+  if (a_weight > b_weight) return 1;
+  if (a_category < b_category) return 1;
+  if (a_category > b_category) return -1;
+  return 0;
+}
+
+export function className(a: string, b: string): number {
+  const a_split = a.split(' ');
+  const b_split = b.split(' ');
+  const a_weight = parseInt(a_split[0]);
+  const b_weight = parseInt(b_split[0]);
+  const a_category = a_split[1];
+  const b_category = b_split[1];
+  return sortClass(a_weight, b_weight, a_category, b_category);
+}
+
+export function classObj(a: Class, b: Class): number {
+  const a_weight = a.weight;
+  const b_weight = b.weight;
+  const a_category = a.category;
+  const b_category = b.category;
+  return sortClass(a_weight, b_weight, a_category, b_category);
+}
+
+export function hook(a: Hook, b: Hook): number {
+  const a_val = a.position;
+  const b_val = b.position;
+  if (a_val < b_val) return -1;
+  if (a_val > b_val) return 1;
+  return 0;
+}

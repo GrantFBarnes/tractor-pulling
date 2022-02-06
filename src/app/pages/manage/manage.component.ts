@@ -9,6 +9,7 @@ import { Location } from '../../shared/interfaces/location';
 import { Puller } from '../../shared/interfaces/puller';
 import { Tractor } from '../../shared/interfaces/tractor';
 
+import * as sort from 'src/app/shared/methods/sort';
 import * as stringify from 'src/app/shared/methods/stringify';
 
 @Component({
@@ -199,58 +200,6 @@ export class ManageComponent implements OnInit {
     }
   }
 
-  sortByTractor(a: any, b: any): number {
-    const a_name = a.brand + ' ' + a.model;
-    const b_name = b.brand + ' ' + b.model;
-    if (a_name < b_name) return -1;
-    if (a_name > b_name) return 1;
-    return 0;
-  }
-
-  sortByPuller(a: any, b: any): number {
-    const a_name = a.last_name + ', ' + a.first_name;
-    const b_name = b.last_name + ', ' + b.first_name;
-    if (a_name < b_name) return -1;
-    if (a_name > b_name) return 1;
-    return 0;
-  }
-
-  sortByLocation(a: any, b: any): number {
-    const a_name = a.town + ', ' + a.state;
-    const b_name = b.town + ', ' + b.state;
-    if (a_name < b_name) return -1;
-    if (a_name > b_name) return 1;
-    return 0;
-  }
-
-  sortByWeight(a: any, b: any): number {
-    const a_weight = parseInt(a.weight);
-    const b_weight = parseInt(b.weight);
-    if (a_weight < b_weight) return -1;
-    if (a_weight > b_weight) return 1;
-    const a_category = a.category;
-    const b_category = b.category;
-    if (a_category < b_category) return 1;
-    if (a_category > b_category) return -1;
-    return 0;
-  }
-
-  sortByDate(a: any, b: any): number {
-    const a_date = a.date;
-    const b_date = b.date;
-    if (a_date < b_date) return 1;
-    if (a_date > b_date) return -1;
-    return 0;
-  }
-
-  sortByYear(a: any, b: any): number {
-    const a_year = parseInt(a.year);
-    const b_year = parseInt(b.year);
-    if (a_year < b_year) return 1;
-    if (a_year > b_year) return -1;
-    return 0;
-  }
-
   sortMethod = (a: KeyValue<string, any>, b: KeyValue<string, any>): number => {
     const a_val = this.getRowStr(a.value);
     const b_val = this.getRowStr(b.value);
@@ -323,7 +272,7 @@ export class ManageComponent implements OnInit {
         this.tractors[data[i].id] = data[i];
       }
       this.tractor_options = data;
-      this.tractor_options.sort(this.sortByTractor);
+      this.tractor_options.sort(sort.tractor);
       this.getData();
     });
   }
@@ -349,7 +298,7 @@ export class ManageComponent implements OnInit {
         this.pullers[data[i].id] = data[i];
       }
       this.puller_options = data;
-      this.puller_options.sort(this.sortByPuller);
+      this.puller_options.sort(sort.puller);
       this.getTractors();
     });
   }
@@ -400,7 +349,7 @@ export class ManageComponent implements OnInit {
 
       if (this.pull_id) {
         this.class_options = data;
-        this.class_options.sort(this.sortByWeight);
+        this.class_options.sort(sort.classObj);
         if (this.class_options.length && !this.class_id) {
           const last_class = this.class_options[0];
           this.class_id = last_class.id;
@@ -445,7 +394,7 @@ export class ManageComponent implements OnInit {
 
       if (this.season_id) {
         this.pull_options = data;
-        this.pull_options.sort(this.sortByDate);
+        this.pull_options.sort(sort.pull);
         if (this.pull_options.length && !this.pull_id) {
           const select_pull = this.pull_options[0];
           this.pull_id = select_pull.id;
@@ -482,7 +431,7 @@ export class ManageComponent implements OnInit {
       }
 
       this.season_options = data;
-      this.season_options.sort(this.sortByYear);
+      this.season_options.sort(sort.season);
       if (this.season_options.length && !this.season_id) {
         const select_season = this.season_options[0];
         this.season_id = select_season.id;
@@ -505,7 +454,7 @@ export class ManageComponent implements OnInit {
         this.locations[data[i].id] = data[i];
       }
       this.location_options = data;
-      this.location_options.sort(this.sortByLocation);
+      this.location_options.sort(sort.location);
       this.getSeasons();
     });
   }

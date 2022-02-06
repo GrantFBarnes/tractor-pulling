@@ -8,6 +8,7 @@ import { Location } from '../../shared/interfaces/location';
 import { Puller } from '../../shared/interfaces/puller';
 import { Tractor } from '../../shared/interfaces/tractor';
 
+import * as sort from 'src/app/shared/methods/sort';
 import * as stringify from 'src/app/shared/methods/stringify';
 
 @Component({
@@ -82,22 +83,6 @@ export class PercentilesComponent implements OnInit {
 
   getPullStr(p: Pull): string {
     return stringify.getPullStr(p, this.locations);
-  }
-
-  sortByDate(a: any, b: any): number {
-    const a_date = a.date;
-    const b_date = b.date;
-    if (a_date < b_date) return 1;
-    if (a_date > b_date) return -1;
-    return 0;
-  }
-
-  sortByYear(a: any, b: any): number {
-    const a_year = parseInt(a.year);
-    const b_year = parseInt(b.year);
-    if (a_year < b_year) return 1;
-    if (a_year > b_year) return -1;
-    return 0;
   }
 
   getPercentiles(): void {
@@ -249,7 +234,7 @@ export class PercentilesComponent implements OnInit {
       .get('/api/pulling/pulls/season/' + this.season_id)
       .subscribe((data: any) => {
         this.pull_options = data;
-        this.pull_options.sort(this.sortByDate);
+        this.pull_options.sort(sort.pull);
         if (this.pull_options.length) {
           const select_pull = this.pull_options[0];
           this.pull_id = select_pull.id;
@@ -274,7 +259,7 @@ export class PercentilesComponent implements OnInit {
 
     this.httpService.get('/api/pulling/seasons').subscribe((data: any) => {
       this.season_options = data;
-      this.season_options.sort(this.sortByYear);
+      this.season_options.sort(sort.season);
       if (this.season_options.length) {
         const select_season = this.season_options[0];
         this.season_id = select_season.id;

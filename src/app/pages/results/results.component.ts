@@ -8,6 +8,7 @@ import { Location } from '../../shared/interfaces/location';
 import { Puller } from '../../shared/interfaces/puller';
 import { Tractor } from '../../shared/interfaces/tractor';
 
+import * as sort from 'src/app/shared/methods/sort';
 import * as stringify from 'src/app/shared/methods/stringify';
 
 @Component({
@@ -75,42 +76,6 @@ export class ResultsComponent implements OnInit {
     return stringify.getPullStr(p, this.locations);
   }
 
-  sortByPos(a: any, b: any): number {
-    const a_position = a.position;
-    const b_position = b.position;
-    if (a_position < b_position) return -1;
-    if (a_position > b_position) return 1;
-    return 0;
-  }
-
-  sortByWeight(a: any, b: any): number {
-    const a_weight = parseInt(a.weight);
-    const b_weight = parseInt(b.weight);
-    if (a_weight < b_weight) return -1;
-    if (a_weight > b_weight) return 1;
-    const a_category = a.category;
-    const b_category = b.category;
-    if (a_category < b_category) return 1;
-    if (a_category > b_category) return -1;
-    return 0;
-  }
-
-  sortByDate(a: any, b: any): number {
-    const a_date = a.date;
-    const b_date = b.date;
-    if (a_date < b_date) return 1;
-    if (a_date > b_date) return -1;
-    return 0;
-  }
-
-  sortByYear(a: any, b: any): number {
-    const a_year = parseInt(a.year);
-    const b_year = parseInt(b.year);
-    if (a_year < b_year) return 1;
-    if (a_year > b_year) return -1;
-    return 0;
-  }
-
   getHooks(): void {
     this.hooks = {};
 
@@ -126,7 +91,7 @@ export class ResultsComponent implements OnInit {
           this.hooks[cl].push(data[i]);
         }
         for (let cl in this.hooks) {
-          this.hooks[cl].sort(this.sortByPos);
+          this.hooks[cl].sort(sort.hook);
         }
         this.loading = false;
       });
@@ -140,7 +105,7 @@ export class ResultsComponent implements OnInit {
       .get('/api/pulling/classes/pull/' + this.pull_id)
       .subscribe((data: any) => {
         this.classes = data;
-        this.classes.sort(this.sortByWeight);
+        this.classes.sort(sort.classObj);
         for (let i in this.classes) {
           if (!this.row_show[this.classes[i].id]) {
             this.row_show[this.classes[i].id] = false;
@@ -160,7 +125,7 @@ export class ResultsComponent implements OnInit {
       .get('/api/pulling/pulls/season/' + this.season_id)
       .subscribe((data: any) => {
         this.pull_options = data;
-        this.pull_options.sort(this.sortByDate);
+        this.pull_options.sort(sort.pull);
         if (this.pull_options.length) {
           const select_pull = this.pull_options[0];
           this.pull_id = select_pull.id;
@@ -178,7 +143,7 @@ export class ResultsComponent implements OnInit {
 
     this.httpService.get('/api/pulling/seasons').subscribe((data: any) => {
       this.season_options = data;
-      this.season_options.sort(this.sortByYear);
+      this.season_options.sort(sort.season);
       if (this.season_options.length) {
         const select_season = this.season_options[0];
         this.season_id = select_season.id;

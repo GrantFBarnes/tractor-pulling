@@ -5,6 +5,7 @@ import { Class } from '../../shared/interfaces/class';
 import { Hook } from '../../shared/interfaces/hook';
 import { Puller } from '../../shared/interfaces/puller';
 
+import * as sort from 'src/app/shared/methods/sort';
 import * as stringify from 'src/app/shared/methods/stringify';
 
 @Component({
@@ -75,36 +76,6 @@ export class PointsComponent implements OnInit {
     return stringify.getClassStr(c);
   }
 
-  sortByHighestNum(a: any, b: any): number {
-    const a_num = parseInt(a);
-    const b_num = parseInt(b);
-    if (a_num < b_num) return 1;
-    if (a_num > b_num) return -1;
-    return 0;
-  }
-
-  sortByClassName(a: any, b: any): number {
-    const a_split = a.split(' ');
-    const b_split = b.split(' ');
-    const a_weight = parseInt(a_split[0]);
-    const b_weight = parseInt(b_split[0]);
-    if (a_weight < b_weight) return -1;
-    if (a_weight > b_weight) return 1;
-    const a_category = a_split[1];
-    const b_category = b_split[1];
-    if (a_category < b_category) return 1;
-    if (a_category > b_category) return -1;
-    return 0;
-  }
-
-  sortByYear(a: any, b: any): number {
-    const a_year = parseInt(a.year);
-    const b_year = parseInt(b.year);
-    if (a_year < b_year) return 1;
-    if (a_year > b_year) return -1;
-    return 0;
-  }
-
   getPullerPoints(position: number): number {
     let points = 0;
     if (position <= 10) points = 11 - position;
@@ -113,7 +84,7 @@ export class PointsComponent implements OnInit {
   }
 
   getPoints(): void {
-    this.class_names = this.class_names.sort(this.sortByClassName);
+    this.class_names = this.class_names.sort(sort.className);
     for (let i in this.class_names) {
       const cl_n = this.class_names[i];
       this.data[cl_n] = {
@@ -209,7 +180,7 @@ export class PointsComponent implements OnInit {
 
     this.httpService.get('/api/pulling/seasons').subscribe((data: any) => {
       this.season_options = data;
-      this.season_options.sort(this.sortByYear);
+      this.season_options.sort(sort.season);
       if (this.season_options.length) {
         const select_season = this.season_options[0];
         this.season_id = select_season.id;
