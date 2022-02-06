@@ -5,6 +5,8 @@ import { Class } from '../../shared/interfaces/class';
 import { Hook } from '../../shared/interfaces/hook';
 import { Puller } from '../../shared/interfaces/puller';
 
+import * as stringify from 'src/app/shared/methods/stringify';
+
 @Component({
   selector: 'app-wins',
   templateUrl: './wins.component.html',
@@ -79,11 +81,7 @@ export class WinsComponent implements OnInit {
   }
 
   getPullerStr(id: any): string {
-    const puller = this.pullers[id];
-    if (puller) {
-      return puller.first_name + ' ' + puller.last_name;
-    }
-    return '';
+    return stringify.getPullerStr(this.pullers[id]);
   }
 
   getPullersStr(pullers: string[]): string {
@@ -98,9 +96,7 @@ export class WinsComponent implements OnInit {
   }
 
   getClassStr(c: Class): string {
-    let str = c.weight + ' ' + c.category;
-    if (c.speed != 3) str += ' (' + c.speed + ')';
-    return str;
+    return stringify.getClassStr(c);
   }
 
   sortByHighestNum(a: any, b: any): number {

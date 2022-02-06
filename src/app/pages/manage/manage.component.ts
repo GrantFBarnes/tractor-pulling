@@ -9,6 +9,8 @@ import { Location } from '../../shared/interfaces/location';
 import { Puller } from '../../shared/interfaces/puller';
 import { Tractor } from '../../shared/interfaces/tractor';
 
+import * as stringify from 'src/app/shared/methods/stringify';
+
 @Component({
   selector: 'app-manage',
   templateUrl: './manage.component.html',
@@ -149,47 +151,23 @@ export class ManageComponent implements OnInit {
   }
 
   getTractorStr(tractor: Tractor): string {
-    return tractor.brand + ' ' + tractor.model;
+    return stringify.getTractorStr(tractor);
   }
 
   getPullerStr(puller: Puller): string {
-    return puller.last_name + ', ' + puller.first_name;
+    return stringify.getPullerStr(puller);
   }
 
   getLocationStr(location: Location): string {
-    return location.town + ', ' + location.state;
+    return stringify.getLocationStr(location);
   }
 
   getClassStr(c: Class): string {
-    if (!c.id) return 'All';
-    let str = c.weight + ' ' + c.category;
-    if (c.speed != 3) str += ' (' + c.speed + ')';
-    return str;
-  }
-
-  padDate(i: number): string {
-    return i < 10 ? '0' + i : '' + i;
-  }
-
-  getDateStr(ds: string): string {
-    const d = new Date(ds);
-    return (
-      d.getUTCFullYear() +
-      '-' +
-      this.padDate(d.getMonth() + 1) +
-      '-' +
-      this.padDate(d.getDate())
-    );
+    return stringify.getClassStr(c);
   }
 
   getPullStr(p: Pull): string {
-    if (!p.id) return 'All';
-    let str = this.getDateStr(p.date);
-    const loc = this.locations[p.location];
-    if (loc) {
-      str += ' - ' + loc.town + ', ' + loc.state;
-    }
-    return str;
+    return stringify.getPullStr(p, this.locations);
   }
 
   getRowStr(obj: any): string {
@@ -461,7 +439,7 @@ export class ManageComponent implements OnInit {
             this.pull_name = prev_name;
           }
         }
-        data[i].date = this.getDateStr(data[i].date);
+        data[i].date = stringify.getDateStr(data[i].date);
         this.pulls[data[i].id] = data[i];
       }
 

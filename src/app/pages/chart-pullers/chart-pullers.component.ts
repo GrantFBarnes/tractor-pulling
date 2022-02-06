@@ -8,6 +8,8 @@ import { Hook } from '../../shared/interfaces/hook';
 import { Puller } from '../../shared/interfaces/puller';
 import { Tractor } from '../../shared/interfaces/tractor';
 
+import * as stringify from 'src/app/shared/methods/stringify';
+
 @Component({
   selector: 'app-chart-pullers',
   templateUrl: './chart-pullers.component.html',
@@ -48,31 +50,11 @@ export class ChartPullersComponent implements OnInit {
   }
 
   getTractorStr(id: string): string {
-    const tractor = this.tractors[id];
-    if (tractor) {
-      return tractor.brand + ' ' + tractor.model;
-    }
-    return '(Unknown)';
+    return stringify.getTractorStr(this.tractors[id]);
   }
 
   getPullerStr(p: Puller): string {
-    if (!p.id) return '';
-    return p.last_name + ', ' + p.first_name;
-  }
-
-  padDate(i: number): string {
-    return i < 10 ? '0' + i : '' + i;
-  }
-
-  getDateStr(ds: string): string {
-    const d = new Date(ds);
-    return (
-      d.getUTCFullYear() +
-      '-' +
-      this.padDate(d.getMonth() + 1) +
-      '-' +
-      this.padDate(d.getDate())
-    );
+    return stringify.getPullerStr(p);
   }
 
   sortByTime(a: any, b: any): number {
@@ -100,11 +82,7 @@ export class ChartPullersComponent implements OnInit {
   }
 
   getData(): void {
-    let data: {
-      [tractor_id: string]: {
-        [time_id: string]: number;
-      };
-    } = {};
+    let data: { [tractor_id: string]: { [time_id: string]: number } } = {};
     for (let h in this.hooks) {
       const hook = this.hooks[h];
 
@@ -127,7 +105,7 @@ export class ChartPullersComponent implements OnInit {
       let time_id: string = '';
       if (this.season_id) {
         time_id = pull.date;
-        time_id = this.getDateStr(time_id);
+        time_id = stringify.getDateStr(time_id);
       } else {
         const season = this.seasons[pull.season];
         time_id = season.year;
