@@ -91,7 +91,7 @@ export class ResultsComponent implements OnInit {
           this.hooks[cl].push(data[i]);
         }
         for (let cl in this.hooks) {
-          this.hooks[cl].sort(sort.hook);
+          this.hooks[cl].sort(sort.hookObj);
         }
         this.loading = false;
       });

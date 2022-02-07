@@ -51,16 +51,13 @@
         [locations]="locations"
         (setOptionEvent)="setPull($event)"
       ></app-dropdown-filter>
-      <div *ngIf="pull_youtube">
-        <a
-          class="btn btn-danger"
-          href="{{ 'https://www.youtube.com/watch?v=' + pull_youtube }}"
-          target="_blank"
-        >
-          YouTube
-          <i class="bi bi-play-btn"></i>
-        </a>
-      </div>
+      <app-excel-download
+        [pull_id]="pull_id"
+        [pull_name]="pull_name"
+        [pullers]="pullers"
+        [tractors]="tractors"
+      ></app-excel-download>
+      <app-youtube-pull [pull_youtube]="pull_youtube"></app-youtube-pull>
     </div>
   </div>
 

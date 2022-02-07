@@ -77,6 +77,10 @@ export function className(a: string, b: string): number {
   return sortClass(a_weight, b_weight, a_category, b_category);
 }
 
+export function classExcel(a: any, b: any): number {
+  return className(a.name, b.name);
+}
+
 export function classObj(a: Class, b: Class): number {
   const a_weight = a.weight;
   const b_weight = b.weight;
@@ -85,10 +89,16 @@ export function classObj(a: Class, b: Class): number {
   return sortClass(a_weight, b_weight, a_category, b_category);
 }
 
-export function hook(a: Hook, b: Hook): number {
-  const a_val = a.position;
-  const b_val = b.position;
-  if (a_val < b_val) return -1;
-  if (a_val > b_val) return 1;
+function sortHook(a_position: number, b_position: number): number {
+  if (a_position < b_position) return -1;
+  if (a_position > b_position) return 1;
   return 0;
+}
+
+export function hookExcel(a: any, b: any): number {
+  return sortHook(a.position, b.position);
+}
+
+export function hookObj(a: Hook, b: Hook): number {
+  return sortHook(a.position, b.position);
 }

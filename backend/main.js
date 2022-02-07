@@ -1,6 +1,7 @@
 const { v4: uuidv4 } = require("uuid");
 
 const database = require("./database.js");
+const excel = require("./excel.js");
 
 const id_regex =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
@@ -302,6 +303,20 @@ function deletePull(id) {
         resolve({ statusCode: 400, data: "failed to delete pull: " + id });
         return;
       });
+  });
+}
+
+function downloadExcel(json) {
+  return new Promise((resolve) => {
+    if (!json || !json.name || !json.classes) {
+      resolve({ statusCode: 500, data: "json not valid" });
+      return;
+    }
+
+    excel.createExcel(json).then((buffer) => {
+      resolve({ statusCode: 200, data: buffer.toString("base64") });
+      return;
+    });
   });
 }
 
@@ -1236,6 +1251,7 @@ module.exports.getPullsBySeason = getPullsBySeason;
 module.exports.updatePull = updatePull;
 module.exports.createPull = createPull;
 module.exports.deletePull = deletePull;
+module.exports.downloadExcel = downloadExcel;
 
 module.exports.getClasses = getClasses;
 module.exports.getClassesByPull = getClassesByPull;
