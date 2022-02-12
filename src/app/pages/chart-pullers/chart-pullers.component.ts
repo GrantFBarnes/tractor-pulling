@@ -55,7 +55,7 @@ export class ChartPullersComponent implements OnInit {
   }
 
   getPullerStr(p: Puller): string {
-    return stringify.getPullerStr(p);
+    return stringify.getPullerStr(p, false);
   }
 
   getData(): void {

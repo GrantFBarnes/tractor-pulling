@@ -10,9 +10,10 @@ export function getTractorStr(tractor: Tractor): string {
   return tractor.brand + ' ' + tractor.model;
 }
 
-export function getPullerStr(puller: Puller): string {
+export function getPullerStr(puller: Puller, inverse: boolean): string {
   if (!puller) return '(Unknown)';
-  return puller.last_name + ', ' + puller.first_name;
+  if (inverse) return puller.last_name + ', ' + puller.first_name;
+  return puller.first_name + ' ' + puller.last_name;
 }
 
 export function getLocationStr(location: Location): string {

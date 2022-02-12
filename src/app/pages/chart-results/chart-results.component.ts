@@ -62,7 +62,7 @@ export class ChartResultsComponent implements OnInit {
   }
 
   getPullerStr(h: Hook): string {
-    return stringify.getPullerStr(this.pullers[h.puller]);
+    return stringify.getPullerStr(this.pullers[h.puller], false);
   }
 
   getPullStr(p: Pull): string {

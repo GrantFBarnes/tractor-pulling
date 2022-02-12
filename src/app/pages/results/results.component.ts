@@ -65,7 +65,7 @@ export class ResultsComponent implements OnInit {
   }
 
   getPullerStr(h: Hook): string {
-    return stringify.getPullerStr(this.pullers[h.puller]);
+    return stringify.getPullerStr(this.pullers[h.puller], false);
   }
 
   getClassStr(c: Class): string {

@@ -75,7 +75,7 @@ export class ExcelDownloadComponent implements OnInit {
   } {
     return {
       position: hook.position,
-      puller: stringify.getPullerStr(this.pullers[hook.puller]),
+      puller: stringify.getPullerStr(this.pullers[hook.puller], false),
       tractor: stringify.getTractorStr(this.tractors[hook.tractor]),
       distance: hook.distance,
     };

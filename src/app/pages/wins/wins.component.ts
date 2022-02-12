@@ -82,7 +82,7 @@ export class WinsComponent implements OnInit {
   }
 
   getPullerStr(id: any): string {
-    return stringify.getPullerStr(this.pullers[id]);
+    return stringify.getPullerStr(this.pullers[id], false);
   }
 
   getPullersStr(pullers: string[]): string {

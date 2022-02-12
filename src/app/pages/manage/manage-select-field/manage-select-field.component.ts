@@ -33,7 +33,7 @@ export class ManageSelectFieldComponent implements OnInit {
     let str = '';
     switch (this.column) {
       case 'puller':
-        return stringify.getPullerStr(this.objects[id]);
+        return stringify.getPullerStr(this.objects[id], false);
 
       case 'tractor':
         return stringify.getTractorStr(this.objects[id]);

@@ -43,7 +43,7 @@ export class DropdownFilterComponent implements OnInit {
         return stringify.getLocationStr(option);
 
       case 'puller':
-        return stringify.getPullerStr(option);
+        return stringify.getPullerStr(option, true);
 
       case 'tractor':
         return stringify.getTractorStr(option);
