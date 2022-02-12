@@ -100,6 +100,25 @@ function getSeasons() {
   });
 }
 
+function getSeasonIdFromValues(year) {
+  return new Promise((resolve, reject) => {
+    database
+      .run(
+        `
+        SELECT id FROM seasons WHERE year = '${year}';
+        `
+      )
+      .then((result) => {
+        resolve(result);
+        return;
+      })
+      .catch(() => {
+        reject("failed to get season id");
+        return;
+      });
+  });
+}
+
 function updateSeason(data) {
   return new Promise((resolve) => {
     if (!dataIsValid("seasons", data)) {
@@ -222,6 +241,28 @@ function getPullsBySeason(id) {
   });
 }
 
+function getPullIdFromValues(season, location, date) {
+  return new Promise((resolve, reject) => {
+    database
+      .run(
+        `
+        SELECT id FROM pulls
+        WHERE season = '${season}'
+          AND location = '${location}'
+          AND date = '${date}';
+        `
+      )
+      .then((result) => {
+        resolve(result);
+        return;
+      })
+      .catch(() => {
+        reject("failed to get pull id");
+        return;
+      });
+  });
+}
+
 function updatePull(data) {
   return new Promise((resolve) => {
     if (!dataIsValid("pulls", data)) {
@@ -303,20 +344,6 @@ function deletePull(id) {
         resolve({ statusCode: 400, data: "failed to delete pull: " + id });
         return;
       });
-  });
-}
-
-function downloadExcel(json) {
-  return new Promise((resolve) => {
-    if (!json || !json.name || !json.classes) {
-      resolve({ statusCode: 500, data: "json not valid" });
-      return;
-    }
-
-    excel.createExcel(json).then((buffer) => {
-      resolve({ statusCode: 200, data: buffer.toString("base64") });
-      return;
-    });
   });
 }
 
@@ -436,7 +463,13 @@ function createClass(data) {
         INSERT INTO classes
         (id, pull, category, weight, speed)
         VALUES
-        ('${uuidv4()}', '${getIdFromData(data, "pull")}', '', 0, 3)
+        (
+          '${data.id ? data.id : uuidv4()}',
+          '${getIdFromData(data, "pull")}',
+          '${data.category ? data.category : ""}',
+          ${data.weight ? data.weight : 0},
+          ${data.speed ? data.speed : 3}
+        )
         `
       )
       .then((result) => {
@@ -730,7 +763,7 @@ function createHook(data) {
           '${cl}',
           '${getIdFromData(data, "puller")}',
           '${getIdFromData(data, "tractor")}',
-          0
+          ${data.distance ? data.distance : 0}
         )
         `
       )
@@ -1165,6 +1198,27 @@ function getLocations() {
   });
 }
 
+function getLocationIdFromValues(town, state) {
+  return new Promise((resolve, reject) => {
+    database
+      .run(
+        `
+        SELECT id FROM locations
+        WHERE town = '${town}'
+          AND state = '${state}';
+        `
+      )
+      .then((result) => {
+        resolve(result);
+        return;
+      })
+      .catch(() => {
+        reject("failed to get location id");
+        return;
+      });
+  });
+}
+
 function updateLocation(data) {
   return new Promise((resolve) => {
     if (!dataIsValid("locations", data)) {
@@ -1240,6 +1294,264 @@ function deleteLocation(id) {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+// Excel
+
+function downloadExcel(json) {
+  return new Promise((resolve) => {
+    if (!json || !json.name || !json.classes) {
+      resolve({ statusCode: 500, data: "json not valid" });
+      return;
+    }
+
+    excel.createExcel(json).then((buffer) => {
+      resolve({ statusCode: 200, data: buffer.toString("base64") });
+      return;
+    });
+  });
+}
+
+function getIdFromTableValues(table, values) {
+  return new Promise((resolve, reject) => {
+    switch (table) {
+      case "season":
+        getSeasonIdFromValues(values.year)
+          .then((result) => {
+            if (!result || !result.length) {
+              console.log("Invalid Season (Must be created before)");
+              console.log(values);
+              reject("season not valid");
+              return;
+            }
+            resolve(result[0].id);
+            return;
+          })
+          .catch(() => {
+            reject("failed to upload");
+            return;
+          });
+        break;
+
+      case "pull":
+        getPullIdFromValues(values.season, values.location, values.date)
+          .then((result) => {
+            if (!result || !result.length) {
+              console.log("Invalid Pull (Must be created before)");
+              console.log(values);
+              reject("pull not valid");
+              return;
+            }
+            resolve(result[0].id);
+            return;
+          })
+          .catch(() => {
+            reject("failed to upload");
+            return;
+          });
+        break;
+
+      case "location":
+        getLocationIdFromValues(values.town, values.state)
+          .then((result) => {
+            if (!result || !result.length) {
+              console.log("Invalid Location (Must be created before)");
+              console.log(values);
+              reject("location not valid");
+              return;
+            }
+            resolve(result[0].id);
+            return;
+          })
+          .catch(() => {
+            reject("failed to upload");
+            return;
+          });
+        break;
+
+      default:
+        reject("table not valid");
+        break;
+    }
+  });
+}
+
+function getHookIdsFromExcel(data) {
+  return new Promise((resolve, reject) => {
+    getPullers()
+      .then((puller_rows) => {
+        let pullers = {};
+        for (let i in puller_rows.data) {
+          const puller = puller_rows.data[i];
+          pullers[puller.first_name + puller.last_name] = puller.id;
+        }
+
+        getTractors()
+          .then((tractor_rows) => {
+            let tractors = {};
+            for (let i in tractor_rows.data) {
+              const tractor = tractor_rows.data[i];
+              tractors[tractor.brand + tractor.model] = tractor.id;
+            }
+
+            for (let r in data.rows) {
+              const row = data.rows[r];
+
+              if (!pullers[row.first_name + row.last_name]) {
+                console.log("Invalid Puller (Must be created before)");
+                console.log(row);
+                reject("puller not valid");
+                return;
+              }
+              data.rows[r].puller = pullers[row.first_name + row.last_name];
+              delete data.rows[r].first_name;
+              delete data.rows[r].last_name;
+
+              if (!tractors[row.brand + row.model]) {
+                console.log("Invalid Tractor (Must be created before)");
+                console.log(row);
+                reject("tractor not valid");
+                return;
+              }
+              data.rows[r].tractor = tractors[row.brand + row.model];
+              delete data.rows[r].brand;
+              delete data.rows[r].model;
+            }
+
+            resolve(data);
+            return;
+          })
+          .catch(() => {
+            reject("failed to get ids from excel");
+            return;
+          });
+      })
+      .catch(() => {
+        reject("failed to get ids from excel");
+        return;
+      });
+  });
+}
+
+function getIdsFromExcel(readResult) {
+  return new Promise((resolve, reject) => {
+    const data = readResult.data;
+    const date = new Date(data.date);
+    getIdFromTableValues("season", { year: date.getFullYear() })
+      .then((season_id) => {
+        data.season = season_id;
+
+        getIdFromTableValues("location", { town: data.town, state: data.state })
+          .then((location_id) => {
+            data.location = location_id;
+
+            getIdFromTableValues("pull", {
+              season: data.season,
+              location: data.location,
+              date: data.date,
+            })
+              .then((pull_id) => {
+                data.pull = pull_id;
+
+                getHookIdsFromExcel(data)
+                  .then((hook_results) => {
+                    resolve(hook_results);
+                    return;
+                  })
+                  .catch(() => {
+                    reject("failed to get ids from excel");
+                    return;
+                  });
+              })
+              .catch(() => {
+                reject("failed to get ids from excel");
+                return;
+              });
+          })
+          .catch(() => {
+            reject("failed to get ids from excel");
+            return;
+          });
+      })
+      .catch(() => {
+        reject("failed to get ids from excel");
+        return;
+      });
+  });
+}
+
+function processExcel(readResult) {
+  return new Promise((resolve, reject) => {
+    let data = {};
+    getIdsFromExcel(readResult)
+      .then((id_results) => {
+        data = id_results;
+
+        let newClasses = {};
+        for (let i in data.rows) {
+          const hook = data.rows[i];
+          const classKey = hook.weight + hook.category + hook.speed;
+          if (!newClasses[classKey]) {
+            newClasses[classKey] = {
+              id: uuidv4(),
+              pull: data.pull,
+              weight: hook.weight,
+              category: hook.category,
+              speed: hook.speed,
+              hooks: [],
+            };
+          }
+          newClasses[classKey].hooks.push({
+            class: newClasses[classKey].id,
+            puller: hook.puller,
+            tractor: hook.tractor,
+            distance: hook.distance,
+          });
+        }
+
+        for (let i in newClasses) {
+          createClass(newClasses[i]).then(() => {
+            for (let h in newClasses[i].hooks) {
+              createHook(newClasses[i].hooks[h]);
+            }
+          });
+        }
+
+        resolve("done");
+        return;
+      })
+      .catch(() => {
+        reject("failed to process excel");
+        return;
+      });
+  });
+}
+
+function uploadExcel(json) {
+  return new Promise((resolve) => {
+    if (!json || !json.file_binary) {
+      resolve({ statusCode: 400, data: "json not valid" });
+      return;
+    }
+
+    const readResult = excel.readExcel(json.file_binary);
+    if (readResult.statusCode !== 200) {
+      console.log(readResult);
+      resolve(readResult);
+      return;
+    }
+
+    processExcel(readResult)
+      .then(() => {
+        resolve(readResult);
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 500, data: "failed to upload" });
+        return;
+      });
+  });
+}
+
+////////////////////////////////////////////////////////////////////////////////
 
 module.exports.getSeasons = getSeasons;
 module.exports.updateSeason = updateSeason;
@@ -1251,7 +1563,6 @@ module.exports.getPullsBySeason = getPullsBySeason;
 module.exports.updatePull = updatePull;
 module.exports.createPull = createPull;
 module.exports.deletePull = deletePull;
-module.exports.downloadExcel = downloadExcel;
 
 module.exports.getClasses = getClasses;
 module.exports.getClassesByPull = getClassesByPull;
@@ -1290,3 +1601,6 @@ module.exports.getLocations = getLocations;
 module.exports.updateLocation = updateLocation;
 module.exports.createLocation = createLocation;
 module.exports.deleteLocation = deleteLocation;
+
+module.exports.downloadExcel = downloadExcel;
+module.exports.uploadExcel = uploadExcel;

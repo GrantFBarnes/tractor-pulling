@@ -370,6 +370,11 @@ router.post("/api/pulling/excel/download", (request, response) => {
   returnPromiseResponse(response, main.downloadExcel(request.body));
 });
 
+// Upload excel to create pull
+router.post("/api/pulling/excel/upload", (request, response) => {
+  returnPromiseResponse(response, main.uploadExcel(request.body));
+});
+
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 

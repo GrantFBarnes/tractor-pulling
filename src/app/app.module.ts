@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 
 import { LoadingComponent } from './shared/components/loading/loading.component';
 import { DropdownFilterComponent } from './shared/components/dropdown-filter/dropdown-filter.component';
+import { ExcelUploadComponent } from './pages/manage/excel-upload/excel-upload.component';
 import { ExcelDownloadComponent } from 'src/app/shared/components/excel-download/excel-download.component';
 import { YoutubePullComponent } from './shared/components/youtube-pull/youtube-pull.component';
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
@@ -32,6 +33,7 @@ import { ManageSelectFieldComponent } from './pages/manage/manage-select-field/m
 
     LoadingComponent,
     DropdownFilterComponent,
+    ExcelUploadComponent,
     ExcelDownloadComponent,
     YoutubePullComponent,
     PageNotFoundComponent,
