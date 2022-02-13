@@ -1,6 +1,6 @@
 -- Run to create db
--- mysql -u grant -p < setup.sql
--- mysqldump -u grant tractor_pulling > backup.sql
+-- mariadb -u grant -p < setup.sql
+-- mariadb-dump tractor_pulling > backup.sql
 
 DROP DATABASE IF EXISTS tractor_pulling;
 CREATE DATABASE tractor_pulling;
