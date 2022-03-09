@@ -52,19 +52,23 @@
     </div>
   </div>
 
+  <div class="row center mb-2" *ngIf="!pull_id">
+    <h5>{{ "Total Pulls: " + pulls.size }}</h5>
+  </div>
+
   <div class="row">
     <table class="table table-light table-hover">
       <thead>
         <tr>
           <th>{{ subject }}</th>
-          <th>Attendance</th>
+          <th *ngIf="!pull_id">Pulls Attended</th>
         </tr>
       </thead>
       <tbody>
         <ng-container *ngFor="let id of data_rows">
           <tr>
             <td>{{ data[id].subject }}</td>
-            <td>{{ data[id].pulls.size }}</td>
+            <td *ngIf="!pull_id">{{ data[id].pulls.size }}</td>
           </tr>
         </ng-container>
       </tbody>

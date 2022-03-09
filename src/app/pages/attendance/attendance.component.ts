@@ -45,6 +45,7 @@ export class AttendanceComponent implements OnInit {
   pull_name: string = '';
   pull_youtube: string = '';
   pull_options: Pull[] = [];
+  pulls: Set<string> = new Set();
 
   hooks: Hook[] = [];
 
@@ -152,6 +153,7 @@ export class AttendanceComponent implements OnInit {
   }
 
   getClasses(): void {
+    this.pulls = new Set();
     this.classes = {};
 
     let api = '/api/pulling/classes';
@@ -162,6 +164,7 @@ export class AttendanceComponent implements OnInit {
     }
     this.httpService.get(api).subscribe((data: any) => {
       for (let i in data) {
+        this.pulls.add(data[i].pull);
         this.classes[data[i].id] = data[i];
       }
       this.getHooks();
