@@ -19,6 +19,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ResultsComponent } from './pages/results/results.component';
 import { WinsComponent } from './pages/wins/wins.component';
 import { PointsComponent } from './pages/points/points.component';
+import { AttendanceComponent } from './pages/attendance/attendance.component';
 import { PercentilesComponent } from './pages/percentiles/percentiles.component';
 import { DistancesComponent } from './pages/distances/distances.component';
 import { RivalsComponent } from './pages/rivals/rivals.component';
@@ -43,6 +44,7 @@ import { ManageSelectFieldComponent } from './pages/manage/manage-select-field/m
     ResultsComponent,
     WinsComponent,
     PointsComponent,
+    AttendanceComponent,
     PercentilesComponent,
     DistancesComponent,
     RivalsComponent,

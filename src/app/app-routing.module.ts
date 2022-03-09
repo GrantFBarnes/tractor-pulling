@@ -5,6 +5,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ResultsComponent } from './pages/results/results.component';
 import { WinsComponent } from './pages/wins/wins.component';
 import { PointsComponent } from './pages/points/points.component';
+import { AttendanceComponent } from './pages/attendance/attendance.component';
 import { PercentilesComponent } from './pages/percentiles/percentiles.component';
 import { DistancesComponent } from './pages/distances/distances.component';
 import { RivalsComponent } from './pages/rivals/rivals.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'pulling/results', component: ResultsComponent },
   { path: 'pulling/wins', component: WinsComponent },
   { path: 'pulling/points', component: PointsComponent },
+  { path: 'pulling/attendance', component: AttendanceComponent },
   { path: 'pulling/percentiles', component: PercentilesComponent },
   { path: 'pulling/distances', component: DistancesComponent },
   { path: 'pulling/rivals', component: RivalsComponent },

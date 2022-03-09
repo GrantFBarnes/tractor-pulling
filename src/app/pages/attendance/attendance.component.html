@@ -1,0 +1,73 @@
+<app-loading *ngIf="loading"></app-loading>
+<div [ngClass]="loading ? 'container blur' : 'container'">
+  <div class="mainTitle">
+    <h1>Attendance</h1>
+  </div>
+
+  <div class="row center mb-2">
+    <div class="col-lg-3 mb-2">
+      <app-dropdown-filter
+        [filter]="'option'"
+        [selected_id]="subject"
+        [selected_name]="subject"
+        [options]="subject_options"
+        (setOptionEvent)="setSubject($event)"
+      ></app-dropdown-filter>
+    </div>
+    <div class="col-lg-3 mb-2">
+      <app-dropdown-filter
+        [filter]="'option'"
+        [selected_id]="category"
+        [selected_name]="category"
+        [options]="category_options"
+        (setOptionEvent)="setCategory($event)"
+      ></app-dropdown-filter>
+    </div>
+    <div class="col-lg-2 mb-2">
+      <app-dropdown-filter
+        [filter]="'season'"
+        [selected_id]="season_id"
+        [selected_name]="season_name"
+        [options]="season_options"
+        (setOptionEvent)="setSeason($event)"
+      ></app-dropdown-filter>
+    </div>
+    <div class="col-lg-4 mb-2">
+      <app-dropdown-filter
+        *ngIf="season_id"
+        [filter]="'pull'"
+        [selected_id]="pull_id"
+        [selected_name]="pull_name"
+        [options]="pull_options"
+        [locations]="locations"
+        (setOptionEvent)="setPull($event)"
+      ></app-dropdown-filter>
+      <app-excel-download
+        [pull_id]="pull_id"
+        [pull_name]="pull_name"
+        [pullers]="pullers"
+        [tractors]="tractors"
+      ></app-excel-download>
+      <app-youtube-pull [pull_youtube]="pull_youtube"></app-youtube-pull>
+    </div>
+  </div>
+
+  <div class="row">
+    <table class="table table-light table-hover">
+      <thead>
+        <tr>
+          <th>{{ subject }}</th>
+          <th>Attendance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let id of data_rows">
+          <tr>
+            <td>{{ data[id].subject }}</td>
+            <td>{{ data[id].pulls.size }}</td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>
