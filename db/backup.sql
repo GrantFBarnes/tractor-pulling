@@ -1,8 +1,8 @@
--- MariaDB dump 10.19  Distrib 10.5.12-MariaDB, for debian-linux-gnu (x86_64)
+-- MariaDB dump 10.19  Distrib 10.5.15-MariaDB, for Linux (x86_64)
 --
 -- Host: localhost    Database: tractor_pulling
 -- ------------------------------------------------------
--- Server version	10.5.12-MariaDB-0+deb11u1
+-- Server version	10.5.15-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -31,7 +31,7 @@ CREATE TABLE `classes` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `class_unique` (`pull`,`category`,`weight`,`speed`),
   CONSTRAINT `classes_ibfk_1` FOREIGN KEY (`pull`) REFERENCES `pulls` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -65,7 +65,7 @@ CREATE TABLE `hooks` (
   CONSTRAINT `hooks_ibfk_1` FOREIGN KEY (`class`) REFERENCES `classes` (`id`) ON DELETE CASCADE,
   CONSTRAINT `hooks_ibfk_2` FOREIGN KEY (`puller`) REFERENCES `pullers` (`id`),
   CONSTRAINT `hooks_ibfk_3` FOREIGN KEY (`tractor`) REFERENCES `tractors` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -92,7 +92,7 @@ CREATE TABLE `locations` (
   `state` char(2) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `location_unique` (`town`,`state`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -118,7 +118,7 @@ CREATE TABLE `pullers` (
   `last_name` varchar(50) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `puller_unique` (`first_name`,`last_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -149,7 +149,7 @@ CREATE TABLE `pulls` (
   KEY `location` (`location`),
   CONSTRAINT `pulls_ibfk_1` FOREIGN KEY (`season`) REFERENCES `seasons` (`id`) ON DELETE CASCADE,
   CONSTRAINT `pulls_ibfk_2` FOREIGN KEY (`location`) REFERENCES `locations` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -174,7 +174,7 @@ CREATE TABLE `seasons` (
   `year` char(4) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `season_unique` (`year`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -200,7 +200,7 @@ CREATE TABLE `tractors` (
   `model` varchar(50) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `tractor_unique` (`brand`,`model`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -222,4 +222,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-01-23 16:44:01
+-- Dump completed on 2022-05-25  7:45:44
