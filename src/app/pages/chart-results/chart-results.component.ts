@@ -25,7 +25,12 @@ export class ChartResultsComponent implements OnInit {
   subject_options: string[] = ['Puller', 'Puller/Tractor', 'Tractor', 'Brand'];
 
   category: string = 'All';
-  category_options: string[] = ['All', 'Farm Stock', 'Antique Modified'];
+  category_options: string[] = [
+    'All',
+    'Farm Stock',
+    'Farm Plus',
+    'Antique Modified',
+  ];
 
   metric: string = 'Wins';
   metric_options: string[] = ['Wins', 'Hooks', 'Distance'];

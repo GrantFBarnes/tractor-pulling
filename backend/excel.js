@@ -47,6 +47,7 @@ function checkTractor(tractor, brand) {
         break;
 
       case "MM":
+      case "Moline":
         brand = "Minneapolis Moline";
         break;
 
@@ -86,8 +87,17 @@ function getTractor(tractor) {
     tractor = "Allis " + tractor;
   }
 
-  if (tractor === "Super M" || tractor === "Super H") {
+  if (
+    tractor === "Super M" ||
+    tractor === "Super H" ||
+    tractor == "450" ||
+    tractor == "560"
+  ) {
     tractor = "Farmall " + tractor;
+  }
+
+  if (tractor === "LA") {
+    tractor = "Case " + tractor;
   }
 
   for (let brand of [
@@ -107,6 +117,7 @@ function getTractor(tractor) {
     "MF",
     "MH",
     "Minneapolis Moline",
+    "Moline",
     "MM",
     "Oliver",
     "Rumley",
@@ -198,6 +209,11 @@ function getPuller(puller) {
 
     case "Goelbel":
       json.last_name = "Goebel";
+      break;
+
+    case "Hageman":
+    case "Hagamen":
+      json.last_name = "Hageman";
       break;
 
     case "Humphry":
@@ -339,6 +355,11 @@ function getPuller(puller) {
       json.last_name = "Wikener";
       break;
 
+    case "Wyss":
+    case "Wise":
+      json.last_name = "Wyss";
+      break;
+
     case "Zoelick":
       json.last_name = "Zoellick";
       break;
@@ -371,7 +392,13 @@ function cleanUpRows(rows) {
       }
       row["Class"] = row["Class"].replace(c_split[0], "").toLowerCase();
 
-      if (row["Class"].includes("farm")) {
+      if (row["Class"].includes("plus")) {
+        lastClass.category = "Farm Plus";
+        lastClass.speed = 3;
+      } else if (
+        row["Class"].includes("stock") ||
+        row["Class"].includes("farm")
+      ) {
         lastClass.category = "Farm Stock";
         lastClass.speed = 3;
       } else if (row["Class"].includes("antique")) {

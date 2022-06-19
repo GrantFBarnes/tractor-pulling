@@ -24,7 +24,12 @@ export class AttendanceComponent implements OnInit {
   subject_options: string[] = ['Puller', 'Puller/Tractor', 'Tractor', 'Brand'];
 
   category: string = 'All';
-  category_options: string[] = ['All', 'Farm Stock', 'Antique Modified'];
+  category_options: string[] = [
+    'All',
+    'Farm Stock',
+    'Farm Plus',
+    'Antique Modified',
+  ];
 
   data: {
     [id: string]: { id: string; subject: string; pulls: Set<string> };
