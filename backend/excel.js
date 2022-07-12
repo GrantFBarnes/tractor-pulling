@@ -270,6 +270,7 @@ function getPuller(puller) {
       break;
 
     case "McCutcheon":
+    case "McCutheon":
     case "McCutchin":
       json.last_name = "McCutcheon";
       break;
@@ -290,6 +291,12 @@ function getPuller(puller) {
       json.last_name = "Riech";
       if (json.first_name === "Steve") {
         json.first_name = "Steven";
+      }
+      break;
+
+    case "Rollie":
+      if (json.first_name === "Dereck") {
+        json.first_name = "Derick";
       }
       break;
 
@@ -392,9 +399,13 @@ function cleanUpRows(rows) {
       const c_split = row["Class"].split(" ");
       lastClass.weight = parseInt(c_split[0]);
       if (isNaN(lastClass.weight)) {
-        console.log("Invalid Weight:");
-        console.log(row);
-        return null;
+        if (c_split[0] == "Heavy") {
+          lastClass.weight = 10000;
+        } else {
+          console.log("Invalid Weight:");
+          console.log(row);
+          return null;
+        }
       }
       row["Class"] = row["Class"].replace(c_split[0], "").toLowerCase();
 
