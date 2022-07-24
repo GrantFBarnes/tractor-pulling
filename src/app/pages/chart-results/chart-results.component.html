@@ -73,7 +73,7 @@
       >
       </canvas>
     </div>
-    <div class="col-lg-6 mb-2">
+    <div *ngIf="this.metric != 'Position Percentile'" class="col-lg-6 mb-2">
       <h2>Pie Chart</h2>
       <canvas
         baseChart

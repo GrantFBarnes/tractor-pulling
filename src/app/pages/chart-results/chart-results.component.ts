@@ -33,7 +33,12 @@ export class ChartResultsComponent implements OnInit {
   ];
 
   metric: string = 'Wins';
-  metric_options: string[] = ['Wins', 'Hooks', 'Distance'];
+  metric_options: string[] = [
+    'Wins',
+    'Hooks',
+    'Distance',
+    'Position Percentile',
+  ];
 
   bar_chart_labels: string[] = [];
   bar_chart_data: ChartDataset[] = [];
@@ -75,7 +80,9 @@ export class ChartResultsComponent implements OnInit {
   }
 
   getData(): void {
-    let data: { [id: string]: { subject: string; count: number } } = {};
+    let data: {
+      [id: string]: { subject: string; hooks: number; value: number };
+    } = {};
     for (let h in this.hooks) {
       const hook = this.hooks[h];
       if (this.category !== 'All') {
@@ -114,22 +121,28 @@ export class ChartResultsComponent implements OnInit {
       }
 
       if (!data[id]) {
-        data[id] = { subject: subject_str, count: 0 };
+        data[id] = { subject: subject_str, hooks: 0, value: 0 };
       }
+
+      data[id].hooks += 1;
 
       switch (this.metric) {
         case 'Wins':
           if (hook.position === 1) {
-            data[id].count += 1;
+            data[id].value += 1;
           }
           break;
 
         case 'Hooks':
-          data[id].count += 1;
+          data[id].value += 1;
           break;
 
         case 'Distance':
-          data[id].count += hook.distance;
+          data[id].value += hook.distance;
+          break;
+
+        case 'Position Percentile':
+          data[id].value += hook.position_percentile;
           break;
 
         default:
@@ -137,9 +150,15 @@ export class ChartResultsComponent implements OnInit {
       }
     }
 
+    if (this.metric == 'Position Percentile') {
+      for (let id in data) {
+        data[id].value = data[id].value / data[id].hooks;
+      }
+    }
+
     let sorted_data_rows: any[] = [];
     for (let id in data) {
-      sorted_data_rows.push([id, data[id].count]);
+      sorted_data_rows.push([id, data[id].value]);
     }
     sorted_data_rows.sort((a, b) => b[1] - a[1]);
 
@@ -154,10 +173,10 @@ export class ChartResultsComponent implements OnInit {
 
       col_count += 1;
       if (col_count >= 10) {
-        remaining += subject.count;
+        remaining += subject.value;
       } else {
-        bar_chart_data.push(subject.count);
-        pie_chart_data.push(subject.count);
+        bar_chart_data.push(subject.value);
+        pie_chart_data.push(subject.value);
         this.bar_chart_labels.push(subject.subject);
         this.pie_chart_labels.push(subject.subject);
       }
