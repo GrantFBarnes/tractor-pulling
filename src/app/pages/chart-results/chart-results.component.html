@@ -61,7 +61,10 @@
     </div>
   </div>
 
-  <div class="row center mb-2">
+  <div
+    *ngIf="!metric.includes('Average') && !metric.includes('Percentile')"
+    class="row center mb-2"
+  >
     <div class="col-lg-6 mb-2">
       <h2>Bar Chart</h2>
       <canvas
@@ -73,7 +76,7 @@
       >
       </canvas>
     </div>
-    <div *ngIf="this.metric != 'Position Percentile'" class="col-lg-6 mb-2">
+    <div class="col-lg-6 mb-2">
       <h2>Pie Chart</h2>
       <canvas
         baseChart
@@ -84,5 +87,20 @@
       >
       </canvas>
     </div>
+  </div>
+
+  <div
+    *ngIf="metric.includes('Average') || metric.includes('Percentile')"
+    class="row center mb-2"
+  >
+    <h2>Bar Chart</h2>
+    <canvas
+      baseChart
+      [datasets]="bar_chart_data"
+      [labels]="bar_chart_labels"
+      [legend]="false"
+      type="bar"
+    >
+    </canvas>
   </div>
 </div>

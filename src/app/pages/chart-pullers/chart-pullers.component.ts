@@ -36,8 +36,7 @@ export class ChartPullersComponent implements OnInit {
   metric_options: string[] = [
     'Wins',
     'Hooks',
-    'Distance',
-    'Distance Percentile',
+    'Average Distance',
     'Position Percentile',
   ];
 
@@ -120,12 +119,8 @@ export class ChartPullersComponent implements OnInit {
           data[hook.tractor][time_id].value += 1;
           break;
 
-        case 'Distance':
+        case 'Average Distance':
           data[hook.tractor][time_id].value += hook.distance;
-          break;
-
-        case 'Distance Percentile':
-          data[hook.tractor][time_id].value += hook.distance_percentile;
           break;
 
         case 'Position Percentile':
@@ -137,7 +132,7 @@ export class ChartPullersComponent implements OnInit {
       }
     }
 
-    if (this.metric.includes('Percentile')) {
+    if (this.metric.includes('Average') || this.metric.includes('Percentile')) {
       for (let tractor_id in data) {
         for (let time_id in data[tractor_id]) {
           data[tractor_id][time_id].value =

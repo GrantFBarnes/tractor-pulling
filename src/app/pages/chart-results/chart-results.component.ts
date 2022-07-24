@@ -36,7 +36,7 @@ export class ChartResultsComponent implements OnInit {
   metric_options: string[] = [
     'Wins',
     'Hooks',
-    'Distance',
+    'Average Distance',
     'Position Percentile',
   ];
 
@@ -137,7 +137,7 @@ export class ChartResultsComponent implements OnInit {
           data[id].value += 1;
           break;
 
-        case 'Distance':
+        case 'Average Distance':
           data[id].value += hook.distance;
           break;
 
@@ -150,7 +150,7 @@ export class ChartResultsComponent implements OnInit {
       }
     }
 
-    if (this.metric == 'Position Percentile') {
+    if (this.metric.includes('Average') || this.metric.includes('Percentile')) {
       for (let id in data) {
         data[id].value = data[id].value / data[id].hooks;
       }
