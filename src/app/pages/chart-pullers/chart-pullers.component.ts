@@ -33,7 +33,13 @@ export class ChartPullersComponent implements OnInit {
   ];
 
   metric: string = 'Wins';
-  metric_options: string[] = ['Wins', 'Hooks', 'Distance'];
+  metric_options: string[] = [
+    'Wins',
+    'Hooks',
+    'Distance',
+    'Distance Percentile',
+    'Position Percentile',
+  ];
 
   chart_labels: any[] = [];
   chart_data: ChartDataset[] = [];
@@ -64,7 +70,11 @@ export class ChartPullersComponent implements OnInit {
   }
 
   getData(): void {
-    let data: { [tractor_id: string]: { [time_id: string]: number } } = {};
+    let data: {
+      [tractor_id: string]: {
+        [time_id: string]: { hooks: number; value: number };
+      };
+    } = {};
     for (let h in this.hooks) {
       const hook = this.hooks[h];
 
@@ -94,26 +104,45 @@ export class ChartPullersComponent implements OnInit {
       }
 
       if (!data[hook.tractor][time_id]) {
-        data[hook.tractor][time_id] = 0;
+        data[hook.tractor][time_id] = { hooks: 0, value: 0 };
       }
+
+      data[hook.tractor][time_id].hooks += 1;
 
       switch (this.metric) {
         case 'Wins':
           if (hook.position === 1) {
-            data[hook.tractor][time_id] += 1;
+            data[hook.tractor][time_id].value += 1;
           }
           break;
 
         case 'Hooks':
-          data[hook.tractor][time_id] += 1;
+          data[hook.tractor][time_id].value += 1;
           break;
 
         case 'Distance':
-          data[hook.tractor][time_id] += hook.distance;
+          data[hook.tractor][time_id].value += hook.distance;
+          break;
+
+        case 'Distance Percentile':
+          data[hook.tractor][time_id].value += hook.distance_percentile;
+          break;
+
+        case 'Position Percentile':
+          data[hook.tractor][time_id].value += hook.position_percentile;
           break;
 
         default:
           break;
+      }
+    }
+
+    if (this.metric.includes('Percentile')) {
+      for (let tractor_id in data) {
+        for (let time_id in data[tractor_id]) {
+          data[tractor_id][time_id].value =
+            data[tractor_id][time_id].value / data[tractor_id][time_id].hooks;
+        }
       }
     }
 
@@ -130,8 +159,8 @@ export class ChartPullersComponent implements OnInit {
       tractor_data[id] = [];
       for (let i in this.chart_labels) {
         const time_id = this.chart_labels[i];
-        if (data[id][time_id]) {
-          tractor_data[id].push(data[id][time_id]);
+        if (data[id][time_id] && data[id][time_id].value) {
+          tractor_data[id].push(data[id][time_id].value);
         } else {
           tractor_data[id].push(0);
         }
