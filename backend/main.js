@@ -48,7 +48,7 @@ function dataIsValid(table, data) {
       break;
 
     case "hooks":
-      columns = ["id", "class", "puller", "tractor", "distance", "position"];
+      columns = ["id", "class", "puller", "tractor", "distance"];
       break;
 
     default:
@@ -665,17 +665,35 @@ function getHooksBySeasonOfWinners(id) {
   });
 }
 
-function updateHookPositions() {
+function updateHookStats() {
   return new Promise((resolve) => {
     database
       .run(
         `
         UPDATE hooks
         INNER JOIN (
-            SELECT id, ROW_NUMBER() OVER (PARTITION BY class ORDER BY distance DESC) AS new_position FROM hooks
+            SELECT hooks.id,
+                ROW_NUMBER() OVER (PARTITION BY class ORDER BY distance DESC) AS position,
+                CAST(
+                    (hooks.distance / calculated.max_distance) * 100.0 AS INT
+                ) AS distance_percentile,
+                CAST(
+                    ((calculated.hook_count - hooks.position) / calculated.hook_count) * 100.0 AS INT
+                ) AS position_percentile
+            FROM classes
+                INNER JOIN hooks ON hooks.class = classes.id
+                INNER JOIN (
+                    SELECT classes.id, COUNT(*) AS hook_count, MAX(hooks.distance) AS max_distance
+                    FROM classes
+                        INNER JOIN hooks ON hooks.class = classes.id
+                    GROUP BY classes.id
+                ) AS calculated
+                ON classes.id = calculated.id
         ) AS new_hooks
         ON hooks.id = new_hooks.id
-        SET hooks.position = new_hooks.new_position;
+        SET hooks.position = new_hooks.position,
+            hooks.distance_percentile = new_hooks.distance_percentile,
+            hooks.position_percentile = new_hooks.position_percentile;
         `
       )
       .then((result) => {
@@ -689,7 +707,7 @@ function updateHookPositions() {
   });
 }
 
-function updateHookPositionsOfClass(id) {
+function updateHookStatsOfClass(id) {
   return new Promise((resolve) => {
     if (!idIsValid(id)) {
       resolve({ statusCode: 500, data: "id not valid" });
@@ -701,10 +719,29 @@ function updateHookPositionsOfClass(id) {
         `
         UPDATE hooks
         INNER JOIN (
-            SELECT id, ROW_NUMBER() OVER (PARTITION BY class ORDER BY distance DESC) AS new_position FROM hooks WHERE class = '${id}'
+            SELECT hooks.id,
+                ROW_NUMBER() OVER (PARTITION BY class ORDER BY distance DESC) AS position,
+                CAST(
+                    (hooks.distance / calculated.max_distance) * 100.0 AS INT
+                ) AS distance_percentile,
+                CAST(
+                    ((calculated.hook_count - hooks.position) / calculated.hook_count) * 100.0 AS INT
+                ) AS position_percentile
+            FROM classes
+                INNER JOIN hooks ON hooks.class = classes.id
+                INNER JOIN (
+                    SELECT classes.id, COUNT(*) AS hook_count, MAX(hooks.distance) AS max_distance
+                    FROM classes
+                        INNER JOIN hooks ON hooks.class = classes.id
+                    WHERE classes.id = '${id}'
+                    GROUP BY classes.id
+                ) AS calculated
+                ON classes.id = calculated.id
         ) AS new_hooks
         ON hooks.id = new_hooks.id
-        SET hooks.position = new_hooks.new_position;
+        SET hooks.position = new_hooks.position,
+            hooks.distance_percentile = new_hooks.distance_percentile,
+            hooks.position_percentile = new_hooks.position_percentile;
         `
       )
       .then((result) => {
@@ -738,7 +775,7 @@ function updateHook(data) {
         `
       )
       .then((result) => {
-        updateHookPositionsOfClass(data.class);
+        updateHookStatsOfClass(data.class);
         resolve({ statusCode: 200, data: result });
         return;
       })
@@ -768,7 +805,7 @@ function createHook(data) {
         `
       )
       .then((result) => {
-        updateHookPositionsOfClass(cl);
+        updateHookStatsOfClass(cl);
         resolve({ statusCode: 200, data: result });
         return;
       })
@@ -793,7 +830,7 @@ function deleteHook(id) {
         `
       )
       .then((result) => {
-        updateHookPositions();
+        updateHookStats();
         resolve({ statusCode: 200, data: result });
         return;
       })

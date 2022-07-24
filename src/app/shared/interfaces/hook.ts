@@ -5,4 +5,6 @@ export interface Hook {
   tractor: string;
   distance: number;
   position: number;
+  distance_percentile: number;
+  position_percentile: number;
 }

@@ -66,11 +66,11 @@
         <ng-container *ngFor="let id of data_rows">
           <tr>
             <td>{{ data[id].subject }}</td>
-            <td [ngClass]="getPercentageClass(data[id].position_percentile)">
-              {{ getPercentageStr(data[id].position_percentile) }}
+            <td [ngClass]="getPercentageClass(data[id].avg_pos_per)">
+              {{ getPercentageStr(data[id].avg_pos_per) }}
             </td>
-            <td [ngClass]="getPercentageClass(data[id].distance_percentile)">
-              {{ getPercentageStr(data[id].distance_percentile) }}
+            <td [ngClass]="getPercentageClass(data[id].avg_dist_per)">
+              {{ getPercentageStr(data[id].avg_dist_per) }}
             </td>
             <td>{{ data[id].total_hooks }}</td>
           </tr>

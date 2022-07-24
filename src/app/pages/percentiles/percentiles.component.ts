@@ -34,11 +34,10 @@ export class PercentilesComponent implements OnInit {
   data: {
     [id: string]: {
       subject: string;
-      classes: string[];
-      positions: number[];
-      distances: number[];
-      position_percentile: number;
-      distance_percentile: number;
+      avg_dist_per: number;
+      total_dist_per: number;
+      avg_pos_per: number;
+      total_pos_per: number;
       total_hooks: number;
     };
   } = {};
@@ -92,9 +91,6 @@ export class PercentilesComponent implements OnInit {
 
   getPercentiles(): void {
     this.data = {};
-    let classDetails: {
-      [id: string]: { max_distance: number; total_hooks: number };
-    } = {};
     for (let h in this.hooks) {
       const hook = this.hooks[h];
       if (this.category !== 'All') {
@@ -135,54 +131,29 @@ export class PercentilesComponent implements OnInit {
       if (!this.data[id]) {
         this.data[id] = {
           subject: subject_str,
-          classes: [],
-          positions: [],
-          distances: [],
-          position_percentile: 0,
-          distance_percentile: 0,
+          avg_dist_per: 0,
+          total_dist_per: 0,
+          avg_pos_per: 0,
+          total_pos_per: 0,
           total_hooks: 0,
         };
       }
-
-      this.data[id].classes.push(hook.class);
-      this.data[id].positions.push(hook.position);
-      this.data[id].distances.push(hook.distance);
+      this.data[id].total_dist_per += hook.distance_percentile;
+      this.data[id].total_pos_per += hook.position_percentile;
       this.data[id].total_hooks += 1;
-
-      if (!classDetails[hook.class]) {
-        classDetails[hook.class] = { max_distance: 0, total_hooks: 0 };
-      }
-      if (hook.distance > classDetails[hook.class].max_distance) {
-        classDetails[hook.class].max_distance = hook.distance;
-      }
-      classDetails[hook.class].total_hooks += 1;
-    }
-
-    for (let id in this.data) {
-      for (let i in this.data[id].classes) {
-        const hookCount = classDetails[this.data[id].classes[i]].total_hooks;
-
-        this.data[id].position_percentile =
-          this.data[id].position_percentile +
-          (hookCount - this.data[id].positions[i]) / hookCount;
-
-        this.data[id].distance_percentile =
-          this.data[id].distance_percentile +
-          this.data[id].distances[i] /
-            classDetails[this.data[id].classes[i]].max_distance;
-      }
-    }
-
-    for (let id in this.data) {
-      this.data[id].position_percentile =
-        (this.data[id].position_percentile / this.data[id].total_hooks) * 100;
-      this.data[id].distance_percentile =
-        (this.data[id].distance_percentile / this.data[id].total_hooks) * 100;
     }
 
     let sorted_data_rows: any[] = [];
     for (let id in this.data) {
-      sorted_data_rows.push([id, this.data[id].position_percentile]);
+      this.data[id].total_dist_per = Math.floor(this.data[id].total_dist_per);
+      this.data[id].avg_dist_per =
+        this.data[id].total_dist_per / this.data[id].total_hooks;
+
+      this.data[id].total_pos_per = Math.floor(this.data[id].total_pos_per);
+      this.data[id].avg_pos_per =
+        this.data[id].total_pos_per / this.data[id].total_hooks;
+
+      sorted_data_rows.push([id, this.data[id].avg_pos_per]);
     }
 
     this.data_rows = [];

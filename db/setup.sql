@@ -67,6 +67,8 @@ CREATE TABLE hooks (
     tractor CHAR(36) NOT NULL,
     distance FLOAT(5, 2) DEFAULT 0.00,
     position INT DEFAULT 0,
+    distance_percentile INT DEFAULT 0,
+    position_percentile INT DEFAULT 0,
     PRIMARY KEY (id),
     FOREIGN KEY (class) REFERENCES classes(id) ON DELETE CASCADE,
     FOREIGN KEY (puller) REFERENCES pullers(id),
