@@ -149,7 +149,7 @@ export class ChartPullersComponent implements OnInit {
     }
     this.chart_labels = [...times].sort(sort.time);
 
-    let tractor_data: { [id: string]: number[] } = {};
+    let tractor_data: { [id: string]: any[] } = {};
     for (let id in data) {
       tractor_data[id] = [];
       for (let i in this.chart_labels) {
@@ -157,7 +157,7 @@ export class ChartPullersComponent implements OnInit {
         if (data[id][time_id] && data[id][time_id].value) {
           tractor_data[id].push(data[id][time_id].value);
         } else {
-          tractor_data[id].push(0);
+          tractor_data[id].push(null);
         }
       }
     }
@@ -167,6 +167,11 @@ export class ChartPullersComponent implements OnInit {
       this.chart_data.push({
         data: tractor_data[id],
         label: this.getTractorStr(id),
+        pointRadius: 8,
+        pointBorderColor: 'black',
+        pointBorderWidth: 1,
+        spanGaps: true,
+        tension: 0.2,
       });
     }
 
