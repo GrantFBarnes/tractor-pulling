@@ -42,6 +42,7 @@ export class ChartPullersComponent implements OnInit {
 
   chart_labels: any[] = [];
   chart_data: ChartDataset[] = [];
+  chart_options = { scales: { y: { beginAtZero: true } } };
 
   tractors: { [id: string]: Tractor } = {};
   pulls: { [id: string]: Pull } = {};

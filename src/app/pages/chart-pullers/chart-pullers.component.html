@@ -48,8 +48,9 @@
       <canvas
         *ngIf="chart_labels.length > 0"
         baseChart
-        [datasets]="chart_data"
         [labels]="chart_labels"
+        [datasets]="chart_data"
+        [options]="chart_options"
         type="line"
       >
       </canvas>
