@@ -8,6 +8,7 @@ import { Hook } from 'src/app/shared/interfaces/hook';
 import { Puller } from 'src/app/shared/interfaces/puller';
 import { Tractor } from 'src/app/shared/interfaces/tractor';
 
+import * as color from 'src/app/shared/methods/color';
 import * as sort from 'src/app/shared/methods/sort';
 import * as stringify from 'src/app/shared/methods/stringify';
 
@@ -165,10 +166,15 @@ export class ChartPullersComponent implements OnInit {
 
     this.chart_data = [];
     for (let id in tractor_data) {
+      const tractor = this.getTractorStr(id);
+      const tractor_color = color.determineColor(tractor, true);
       this.chart_data.push({
         data: tractor_data[id],
-        label: this.getTractorStr(id),
+        label: tractor,
+        backgroundColor: tractor_color,
+        borderColor: tractor_color,
         pointRadius: 8,
+        pointBackgroundColor: tractor_color,
         pointBorderColor: 'black',
         pointBorderWidth: 1,
         spanGaps: true,

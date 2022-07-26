@@ -9,6 +9,7 @@ import { Location } from 'src/app/shared/interfaces/location';
 import { Puller } from 'src/app/shared/interfaces/puller';
 import { Tractor } from 'src/app/shared/interfaces/tractor';
 
+import * as color from 'src/app/shared/methods/color';
 import * as sort from 'src/app/shared/methods/sort';
 import * as stringify from 'src/app/shared/methods/stringify';
 
@@ -168,6 +169,7 @@ export class ChartResultsComponent implements OnInit {
     let pie_chart_data = [];
     this.bar_chart_labels = [];
     this.pie_chart_labels = [];
+    let backgroundColors = [];
     for (let i in sorted_data_rows) {
       const subject = data[sorted_data_rows[i][0]];
 
@@ -179,16 +181,35 @@ export class ChartResultsComponent implements OnInit {
         pie_chart_data.push(subject.value);
         this.bar_chart_labels.push(subject.subject);
         this.pie_chart_labels.push(subject.subject);
+        backgroundColors.push(color.determineColor(subject.subject, false));
       }
     }
 
-    this.bar_chart_data = [{ data: bar_chart_data, label: this.metric }];
+    this.bar_chart_data = [
+      {
+        data: bar_chart_data,
+        label: this.metric,
+        backgroundColor: backgroundColors,
+        borderColor: 'white',
+        hoverBackgroundColor: 'rgb(60, 60, 60)',
+        hoverBorderColor: 'black',
+      },
+    ];
 
     if (remaining) {
       pie_chart_data.push(remaining);
       this.pie_chart_labels.push('Other');
     }
-    this.pie_chart_data = [{ data: pie_chart_data, label: this.metric }];
+    this.pie_chart_data = [
+      {
+        data: pie_chart_data,
+        label: this.metric,
+        backgroundColor: backgroundColors,
+        borderColor: 'white',
+        hoverBackgroundColor: 'rgb(60, 60, 60)',
+        hoverBorderColor: 'black',
+      },
+    ];
 
     this.loading = false;
   }
