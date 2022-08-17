@@ -9,6 +9,7 @@ import { AttendanceComponent } from './pages/attendance/attendance.component';
 import { PercentilesComponent } from './pages/percentiles/percentiles.component';
 import { DistancesComponent } from './pages/distances/distances.component';
 import { RivalsComponent } from './pages/rivals/rivals.component';
+import { WinningsComponent } from './pages/winnings/winnings.component';
 import { ChartResultsComponent } from './pages/chart-results/chart-results.component';
 import { ChartPullersComponent } from './pages/chart-pullers/chart-pullers.component';
 import { ManageComponent } from './pages/manage/manage.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'pulling/percentiles', component: PercentilesComponent },
   { path: 'pulling/distances', component: DistancesComponent },
   { path: 'pulling/rivals', component: RivalsComponent },
+  { path: 'pulling/winnings', component: WinningsComponent },
   { path: 'pulling/charts/results', component: ChartResultsComponent },
   { path: 'pulling/charts/pullers', component: ChartPullersComponent },
   { path: 'pulling/manage', component: ManageComponent },

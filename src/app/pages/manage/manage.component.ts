@@ -361,6 +361,7 @@ export class ManageComponent implements OnInit {
           category: '',
           weight: 0,
           speed: 0,
+          hook_count: 0,
         });
       }
 

@@ -23,6 +23,7 @@ import { AttendanceComponent } from './pages/attendance/attendance.component';
 import { PercentilesComponent } from './pages/percentiles/percentiles.component';
 import { DistancesComponent } from './pages/distances/distances.component';
 import { RivalsComponent } from './pages/rivals/rivals.component';
+import { WinningsComponent } from './pages/winnings/winnings.component';
 import { ChartResultsComponent } from './pages/chart-results/chart-results.component';
 import { ChartPullersComponent } from './pages/chart-pullers/chart-pullers.component';
 import { ManageComponent } from './pages/manage/manage.component';
@@ -48,6 +49,7 @@ import { ManageSelectFieldComponent } from './pages/manage/manage-select-field/m
     PercentilesComponent,
     DistancesComponent,
     RivalsComponent,
+    WinningsComponent,
     ChartResultsComponent,
     ChartPullersComponent,
     ManageComponent,

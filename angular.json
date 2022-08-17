@@ -106,5 +106,8 @@
       }
     }
   },
-  "defaultProject": "tractor-pulling"
+  "defaultProject": "tractor-pulling",
+  "cli": {
+    "analytics": false
+  }
 }

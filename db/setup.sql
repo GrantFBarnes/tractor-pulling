@@ -55,6 +55,7 @@ CREATE TABLE classes (
     category VARCHAR(16) DEFAULT "",
     weight INT DEFAULT 0,
     speed INT DEFAULT 3,
+    hook_count INT DEFAULT 0,
     PRIMARY KEY (id),
     FOREIGN KEY (pull) REFERENCES pulls(id) ON DELETE CASCADE,
     CONSTRAINT class_unique UNIQUE (pull, category, weight, speed)

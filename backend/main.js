@@ -425,6 +425,33 @@ function getClassesBySeason(id) {
   });
 }
 
+function updateClassStats() {
+  return new Promise((resolve) => {
+    database
+      .run(
+        `
+        UPDATE classes
+        INNER JOIN (
+            SELECT classes.id, COUNT(*) AS hook_count
+            FROM classes
+                INNER JOIN hooks ON hooks.class = classes.id
+            GROUP BY classes.id
+        ) AS new_classes
+        ON classes.id = new_classes.id
+        SET classes.hook_count = new_classes.hook_count;
+        `
+      )
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 400, data: "failed to update class stats" });
+        return;
+      });
+  });
+}
+
 function updateClass(data) {
   return new Promise((resolve) => {
     if (!dataIsValid("classes", data)) {
@@ -701,7 +728,7 @@ function updateHookStats() {
         return;
       })
       .catch(() => {
-        resolve({ statusCode: 400, data: "failed to update hook positions" });
+        resolve({ statusCode: 400, data: "failed to update hook stats" });
         return;
       });
   });
@@ -749,7 +776,7 @@ function updateHookStatsOfClass(id) {
         return;
       })
       .catch(() => {
-        resolve({ statusCode: 400, data: "failed to update hook positions" });
+        resolve({ statusCode: 400, data: "failed to update hook stats" });
         return;
       });
   });
@@ -775,6 +802,7 @@ function updateHook(data) {
         `
       )
       .then((result) => {
+        updateClassStats();
         updateHookStatsOfClass(data.class);
         resolve({ statusCode: 200, data: result });
         return;
@@ -805,6 +833,7 @@ function createHook(data) {
         `
       )
       .then((result) => {
+        updateClassStats();
         updateHookStatsOfClass(cl);
         resolve({ statusCode: 200, data: result });
         return;
@@ -830,6 +859,7 @@ function deleteHook(id) {
         `
       )
       .then((result) => {
+        updateClassStats();
         updateHookStats();
         resolve({ statusCode: 200, data: result });
         return;

@@ -4,4 +4,5 @@ export interface Class {
   category: string;
   weight: number;
   speed: number;
+  hook_count: number;
 }
