@@ -52,18 +52,32 @@ function checkTractor(tractor, brand) {
         break;
 
       case "Oliver":
-        if (model === "S88 Diesel") {
-          model = "Super 88 Diesel";
-        } else if (model === "NSSS88D") {
-          model = "Super 88 Diesel";
-        } else if (model === "88 (Diesel)") {
-          model = "88 Diesel";
-        } else if (model === "S88") {
-          model = "Super 88";
-        } else if (model === "S77") {
-          model = "Super 77";
-        } else if (model === "70 Standard") {
-          model = "70";
+        switch (model) {
+          case "S88 Diesel":
+          case "NSSS88D":
+            model = "Super 88 Diesel";
+            break;
+
+          case "88 (Diesel)":
+            model = "88 Diesel";
+            break;
+
+          case "S88":
+          case "S 88":
+            model = "Super 88";
+            break;
+
+          case "S77":
+          case "S 77":
+            model = "Super 77";
+            break;
+
+          case "70 Standard":
+            model = "70";
+            break;
+
+          default:
+            break;
         }
         break;
 
