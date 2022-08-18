@@ -31,6 +31,10 @@ export class RivalsComponent implements OnInit {
     'Antique Modified',
   ];
 
+  searchText: string = '';
+  searchTextA: string = '';
+  searchTextB: string = '';
+
   data_rows: {
     winsA: number;
     subjectA: string;
@@ -58,6 +62,31 @@ export class RivalsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getLocations();
+  }
+
+  searchTextInRow(row: any): boolean {
+    const searchText = this.searchText.trim().toLocaleLowerCase();
+    const searchTextA = this.searchTextA.trim().toLocaleLowerCase();
+    const searchTextB = this.searchTextB.trim().toLocaleLowerCase();
+
+    if (searchText) {
+      if (
+        !row.subjectA.toLocaleLowerCase().includes(searchText) &&
+        !row.subjectB.toLocaleLowerCase().includes(searchText)
+      ) {
+        return false;
+      }
+    }
+
+    if (searchTextA) {
+      if (!row.subjectA.toLocaleLowerCase().includes(searchTextA)) return false;
+    }
+
+    if (searchTextB) {
+      if (!row.subjectB.toLocaleLowerCase().includes(searchTextB)) return false;
+    }
+
+    return true;
   }
 
   getColorClass(wins: number, other_wins: number): string {

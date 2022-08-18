@@ -65,11 +65,24 @@
         </tr>
       </thead>
       <tbody>
+        <tr>
+          <td>
+            <input
+              type="text"
+              [placeholder]="'Search ' + subject + '...'"
+              class="form-control"
+              [(ngModel)]="searchText"
+            />
+          </td>
+          <td *ngIf="!pull_id"></td>
+        </tr>
         <ng-container *ngFor="let id of data_rows">
-          <tr>
-            <td>{{ data[id].subject }}</td>
-            <td *ngIf="!pull_id">{{ data[id].pulls.size }}</td>
-          </tr>
+          <ng-container *ngIf="searchTextInRow(data[id])">
+            <tr>
+              <td>{{ data[id].subject }}</td>
+              <td *ngIf="!pull_id">{{ data[id].pulls.size }}</td>
+            </tr>
+          </ng-container>
         </ng-container>
       </tbody>
     </table>

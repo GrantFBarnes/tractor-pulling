@@ -63,21 +63,55 @@
         </tr>
       </thead>
       <tbody>
+        <tr>
+          <td></td>
+          <td colspan="2">
+            <input
+              type="text"
+              [placeholder]="'Search ' + subject + 's...'"
+              class="form-control"
+              [(ngModel)]="searchText"
+            />
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input
+              type="text"
+              [placeholder]="'Search ' + subject + '...'"
+              class="form-control"
+              [(ngModel)]="searchTextA"
+            />
+          </td>
+          <td>
+            <input
+              type="text"
+              [placeholder]="'Search ' + subject + '...'"
+              class="form-control"
+              [(ngModel)]="searchTextB"
+            />
+          </td>
+          <td></td>
+        </tr>
         <ng-container *ngFor="let id of data_rows">
-          <tr>
-            <td [ngClass]="getColorClass(id.winsA, id.winsB)">
-              {{ id.winsA }}
-            </td>
-            <td [ngClass]="getColorClass(id.winsA, id.winsB)">
-              {{ id.subjectA }}
-            </td>
-            <td [ngClass]="getColorClass(id.winsB, id.winsA)">
-              {{ id.subjectB }}
-            </td>
-            <td [ngClass]="getColorClass(id.winsB, id.winsA)">
-              {{ id.winsB }}
-            </td>
-          </tr>
+          <ng-container *ngIf="searchTextInRow(id)">
+            <tr>
+              <td [ngClass]="getColorClass(id.winsA, id.winsB)">
+                {{ id.winsA }}
+              </td>
+              <td [ngClass]="getColorClass(id.winsA, id.winsB)">
+                {{ id.subjectA }}
+              </td>
+              <td [ngClass]="getColorClass(id.winsB, id.winsA)">
+                {{ id.subjectB }}
+              </td>
+              <td [ngClass]="getColorClass(id.winsB, id.winsA)">
+                {{ id.winsB }}
+              </td>
+            </tr>
+          </ng-container>
         </ng-container>
       </tbody>
     </table>

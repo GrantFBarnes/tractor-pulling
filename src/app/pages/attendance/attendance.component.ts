@@ -31,6 +31,8 @@ export class AttendanceComponent implements OnInit {
     'Antique Modified',
   ];
 
+  searchText: string = '';
+
   data: {
     [id: string]: { id: string; subject: string; pulls: Set<string> };
   } = {};
@@ -58,6 +60,15 @@ export class AttendanceComponent implements OnInit {
 
   ngOnInit(): void {
     this.getLocations();
+  }
+
+  searchTextInRow(row: any): boolean {
+    const searchText = this.searchText.trim().toLocaleLowerCase();
+    if (!searchText) return true;
+
+    if (row.subject.toLocaleLowerCase().includes(searchText)) return true;
+
+    return false;
   }
 
   getTractorStr(h: Hook): string {

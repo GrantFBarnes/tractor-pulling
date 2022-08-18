@@ -63,17 +63,30 @@
         </tr>
       </thead>
       <tbody>
+        <tr>
+          <td>
+            <input
+              type="text"
+              [placeholder]="'Search ' + subject + '...'"
+              class="form-control"
+              [(ngModel)]="searchText"
+            />
+          </td>
+          <td colspan="3"></td>
+        </tr>
         <ng-container *ngFor="let id of data_rows">
-          <tr>
-            <td>{{ data[id].subject }}</td>
-            <td [ngClass]="getPercentageClass(data[id].avg_pos_per)">
-              {{ getPercentageStr(data[id].avg_pos_per) }}
-            </td>
-            <td [ngClass]="getPercentageClass(data[id].avg_dist_per)">
-              {{ getPercentageStr(data[id].avg_dist_per) }}
-            </td>
-            <td>{{ data[id].total_hooks }}</td>
-          </tr>
+          <ng-container *ngIf="searchTextInRow(data[id])">
+            <tr>
+              <td>{{ data[id].subject }}</td>
+              <td [ngClass]="getPercentageClass(data[id].avg_pos_per)">
+                {{ getPercentageStr(data[id].avg_pos_per) }}
+              </td>
+              <td [ngClass]="getPercentageClass(data[id].avg_dist_per)">
+                {{ getPercentageStr(data[id].avg_dist_per) }}
+              </td>
+              <td>{{ data[id].total_hooks }}</td>
+            </tr>
+          </ng-container>
         </ng-container>
       </tbody>
     </table>

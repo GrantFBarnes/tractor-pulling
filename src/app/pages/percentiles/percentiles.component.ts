@@ -31,6 +31,8 @@ export class PercentilesComponent implements OnInit {
     'Antique Modified',
   ];
 
+  searchText: string = '';
+
   data: {
     [id: string]: {
       subject: string;
@@ -64,6 +66,15 @@ export class PercentilesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getLocations();
+  }
+
+  searchTextInRow(row: any): boolean {
+    const searchText = this.searchText.trim().toLocaleLowerCase();
+    if (!searchText) return true;
+
+    if (row.subject.toLocaleLowerCase().includes(searchText)) return true;
+
+    return false;
   }
 
   getPercentageClass(percent: number): string {

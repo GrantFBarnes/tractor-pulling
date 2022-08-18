@@ -73,15 +73,28 @@
         </tr>
       </thead>
       <tbody>
+        <tr>
+          <td>
+            <input
+              type="text"
+              [placeholder]="'Search ' + subject + '...'"
+              class="form-control"
+              [(ngModel)]="searchText"
+            />
+          </td>
+          <td colspan="3"></td>
+        </tr>
         <ng-container *ngFor="let id of data_rows">
-          <tr>
-            <td>{{ data[id].subject }}</td>
-            <td>{{ data[id].spent | currency }}</td>
-            <td>{{ data[id].won | currency }}</td>
-            <td [ngClass]="getMoneyClass(data[id].net)">
-              {{ data[id].net | currency }}
-            </td>
-          </tr>
+          <ng-container *ngIf="searchTextInRow(data[id])">
+            <tr>
+              <td>{{ data[id].subject }}</td>
+              <td>{{ data[id].spent | currency }}</td>
+              <td>{{ data[id].won | currency }}</td>
+              <td [ngClass]="getMoneyClass(data[id].net)">
+                {{ data[id].net | currency }}
+              </td>
+            </tr>
+          </ng-container>
         </ng-container>
       </tbody>
     </table>
