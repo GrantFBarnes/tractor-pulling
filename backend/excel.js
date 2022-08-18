@@ -87,6 +87,11 @@ function checkTractor(tractor, brand) {
             model = "Super 77";
             break;
 
+          case "S66":
+          case "S 66":
+            model = "Super 66";
+            break;
+
           case "70 Standard":
             model = "70";
             break;
@@ -111,6 +116,7 @@ function getTractor(tractor) {
     tractor === "D19" ||
     tractor === "WC" ||
     tractor === "WD" ||
+    tractor === "WD45" ||
     tractor === "WD 45"
   ) {
     tractor = "Allis " + tractor;
@@ -281,6 +287,7 @@ function getPuller(puller) {
     case "Loeffelholz":
     case "Loffelholz":
     case "Loeffeholz":
+    case "Loefelholz":
       json.last_name = "Loeffelholz";
       if (json.first_name === "Charles") {
         json.first_name = "Charlie";
