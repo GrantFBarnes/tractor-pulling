@@ -22,14 +22,29 @@ function checkTractor(tractor, brand) {
       case "Farmall":
       case "IH":
         brand = "Farmall";
-        if (model === "SC") {
-          model = "Super C";
-        } else if (model === "SH") {
-          model = "Super H";
-        } else if (model === "SM") {
-          model = "Super M";
-        } else if (model === "SMTA") {
-          model = "Super MTA";
+        switch (model) {
+          case "SC":
+          case "S C":
+            model = "Super C";
+            break;
+
+          case "SH":
+          case "S H":
+            model = "Super H";
+            break;
+
+          case "SM":
+          case "S M":
+            model = "Super M";
+            break;
+
+          case "SMTA":
+          case "S MTA":
+            model = "Super MTA";
+            break;
+
+          default:
+            break;
         }
         break;
 
@@ -242,6 +257,9 @@ function getPuller(puller) {
       json.last_name = "Jenamann";
       if (json.first_name === "Jeremey") {
         json.first_name = "Jeremy";
+      }
+      if (json.first_name === "Joe") {
+        json.first_name = "Joey";
       }
       break;
 
