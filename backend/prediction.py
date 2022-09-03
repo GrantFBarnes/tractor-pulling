@@ -6,9 +6,12 @@
 # - sklearn
 
 # Import Dependencies
-import mysql.connector
 import os
+import sys
+
+import mysql.connector
 import pandas as pd
+
 from sklearn.compose import ColumnTransformer, make_column_selector
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import cross_validate, train_test_split
@@ -83,14 +86,15 @@ def get_statistical_model():
     ])
 
     pipeline = make_pipeline(preprocessor, LogisticRegression(max_iter=50000))
-    data_train, data_test, target_train, target_test = train_test_split(data, target, test_size=0.2)
+    data_train, data_test, target_train, target_test = train_test_split(
+        data, target, test_size=0.2)
     pipeline.fit(data_train, target_train)
 
-    print(f"Model Score: {pipeline.score(data_test, target_test):.3f}")
+    # print(f"Model Score: {pipeline.score(data_test, target_test):.3f}")
 
-    cv_results = cross_validate(pipeline, data, target, cv=5)
-    scores = cv_results["test_score"]
-    print(f"Cross-validation Accuracy: {scores.mean():.3f} ± {scores.std():.3f}")
+    # cv_results = cross_validate(pipeline, data, target, cv=5)
+    # scores = cv_results["test_score"]
+    # print(f"Cross-validation Accuracy: {scores.mean():.3f} ± {scores.std():.3f}")
 
     return pipeline
 
@@ -139,7 +143,20 @@ def main():
     global model
     model = get_statistical_model()
 
-    test()
+    # test()
+
+    year = sys.argv[1]
+    month = sys.argv[2]
+    location = sys.argv[3]
+    puller = sys.argv[4]
+    tractor = sys.argv[5]
+    category = sys.argv[6]
+    weight = sys.argv[7]
+    speed = sys.argv[8]
+    hook_count = sys.argv[9]
+
+    print(chance_of_winning(year, month, location, puller,
+                            tractor, category, weight, speed, hook_count))
 
 
 if __name__ == "__main__":

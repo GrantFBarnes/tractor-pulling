@@ -2,6 +2,7 @@ const { v4: uuidv4 } = require("uuid");
 
 const database = require("./database.js");
 const excel = require("./excel.js");
+const prediction = require("./prediction.js");
 
 const id_regex =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/;
@@ -1619,6 +1620,40 @@ function uploadExcel(json) {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+// Prediction
+
+function predictWinChance(json) {
+  return new Promise((resolve) => {
+    if (
+      !json ||
+      !json.year ||
+      !json.month ||
+      !json.location ||
+      !json.puller ||
+      !json.tractor ||
+      !json.category ||
+      !json.weight ||
+      !json.speed ||
+      !json.hook_count
+    ) {
+      resolve({ statusCode: 500, data: "json not valid" });
+      return;
+    }
+
+    prediction
+      .predictWinChance(json)
+      .then((result) => {
+        resolve({ statusCode: 200, data: result });
+        return;
+      })
+      .catch(() => {
+        resolve({ statusCode: 500, data: "failed to get prediction" });
+        return;
+      });
+  });
+}
+
+////////////////////////////////////////////////////////////////////////////////
 
 module.exports.getSeasons = getSeasons;
 module.exports.updateSeason = updateSeason;
@@ -1671,3 +1706,5 @@ module.exports.deleteLocation = deleteLocation;
 
 module.exports.downloadExcel = downloadExcel;
 module.exports.uploadExcel = uploadExcel;
+
+module.exports.predictWinChance = predictWinChance;
