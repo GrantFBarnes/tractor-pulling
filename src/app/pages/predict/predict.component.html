@@ -1,0 +1,133 @@
+<app-loading *ngIf="loading"></app-loading>
+<div [ngClass]="loading ? 'container blur' : 'container'">
+  <div class="mainTitle">
+    <h1>Predict</h1>
+  </div>
+
+  <div class="row mb-2">
+    <table class="table table-light table-hover">
+      <thead>
+        <tr>
+          <th>Season</th>
+          <th>Location</th>
+          <th>Puller</th>
+          <th>Tractor</th>
+          <th>Category</th>
+          <th>Weight</th>
+          <th>Hooks in Class</th>
+          <th>Calculate</th>
+          <th>Results</th>
+          <th>Duplicate</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let row of rows; index as idx">
+          <tr>
+            <td>
+              <app-select-field
+                [id]="idx.toString()"
+                [column]="'season'"
+                [value]="row.season"
+                [objects]="seasons"
+                (selectFieldEvent)="selectField($event)"
+              ></app-select-field>
+            </td>
+            <td>
+              <app-select-field
+                [id]="idx.toString()"
+                [column]="'location'"
+                [value]="row.location"
+                [objects]="locations"
+                (selectFieldEvent)="selectField($event)"
+              ></app-select-field>
+            </td>
+            <td>
+              <app-select-field
+                [id]="idx.toString()"
+                [column]="'puller'"
+                [value]="row.puller"
+                [objects]="pullers"
+                (selectFieldEvent)="selectField($event)"
+              ></app-select-field>
+            </td>
+            <td>
+              <app-select-field
+                [id]="idx.toString()"
+                [column]="'tractor'"
+                [value]="row.tractor"
+                [objects]="tractors"
+                (selectFieldEvent)="selectField($event)"
+              ></app-select-field>
+            </td>
+            <td>
+              <app-select-field
+                [id]="idx.toString()"
+                [column]="'category'"
+                [value]="row.category"
+                [objects]="categories"
+                (selectFieldEvent)="selectField($event)"
+              ></app-select-field>
+            </td>
+            <td>
+              <input
+                type="number"
+                class="form-control"
+                (change)="fieldChange(idx, 'weight')"
+                [(ngModel)]="row.weight"
+              />
+            </td>
+            <td>
+              <input
+                type="number"
+                class="form-control"
+                (change)="fieldChange(idx, 'hook_count')"
+                [(ngModel)]="row.hook_count"
+              />
+            </td>
+            <td>
+              <button
+                type="button"
+                class="btn btn-primary"
+                [hidden]="
+                  !row.season ||
+                  !row.location ||
+                  !row.puller ||
+                  !row.tractor ||
+                  !row.category
+                    ? true
+                    : false
+                "
+                (click)="calculate(idx)"
+              >
+                <i class="bi bi-calculator"></i>
+              </button>
+            </td>
+            <td>{{ row.calculated ? row.result : "" }}</td>
+            <td>
+              <button
+                type="button"
+                class="btn btn-success"
+                (click)="duplicateRow(idx)"
+              >
+                <i class="bi bi-files"></i>
+              </button>
+            </td>
+            <td>
+              <button
+                type="button"
+                class="btn btn-danger"
+                (click)="deleteRow(idx)"
+              >
+                <i class="bi bi-trash-fill"></i>
+              </button>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+    <button type="button" class="btn btn-success" (click)="addRow()">
+      Add New
+    </button>
+  </div>
+</div>

@@ -4,11 +4,11 @@ import { KeyValue } from '@angular/common';
 import * as stringify from 'src/app/shared/methods/stringify';
 
 @Component({
-  selector: 'app-manage-select-field',
-  templateUrl: './manage-select-field.component.html',
-  styleUrls: ['./manage-select-field.component.css'],
+  selector: 'app-select-field',
+  templateUrl: './select-field.component.html',
+  styleUrls: ['./select-field.component.css'],
 })
-export class ManageSelectFieldComponent implements OnInit {
+export class SelectFieldComponent implements OnInit {
   @Input() id: string = '';
   @Input() column: string = '';
   @Input() value: any = {};
@@ -28,12 +28,9 @@ export class ManageSelectFieldComponent implements OnInit {
   }
 
   getOptionStr(id: any): string {
-    if (!id) return '';
-
-    let str = '';
     switch (this.column) {
       case 'puller':
-        return stringify.getPullerStr(this.objects[id], false);
+        return stringify.getPullerStr(this.objects[id], true);
 
       case 'tractor':
         return stringify.getTractorStr(this.objects[id]);
@@ -50,6 +47,9 @@ export class ManageSelectFieldComponent implements OnInit {
       case 'class':
         return stringify.getClassStr(this.objects[id]);
 
+      case 'category':
+        return stringify.getCategoryStr(id);
+
       default:
         return '';
     }
@@ -58,8 +58,13 @@ export class ManageSelectFieldComponent implements OnInit {
   sortMethod = (a: KeyValue<string, any>, b: KeyValue<string, any>): number => {
     const a_val = this.getOptionStr(a.key);
     const b_val = this.getOptionStr(b.key);
-    if (a_val < b_val) return -1;
-    if (a_val > b_val) return 1;
+    if (this.column === 'season') {
+      if (a_val < b_val) return 1;
+      if (a_val > b_val) return -1;
+    } else {
+      if (a_val < b_val) return -1;
+      if (a_val > b_val) return 1;
+    }
     return 0;
   };
 }

@@ -26,8 +26,9 @@ import { RivalsComponent } from './pages/rivals/rivals.component';
 import { WinningsComponent } from './pages/winnings/winnings.component';
 import { ChartResultsComponent } from './pages/chart-results/chart-results.component';
 import { ChartPullersComponent } from './pages/chart-pullers/chart-pullers.component';
+import { PredictComponent } from './pages/predict/predict.component';
 import { ManageComponent } from './pages/manage/manage.component';
-import { ManageSelectFieldComponent } from './pages/manage/manage-select-field/manage-select-field.component';
+import { SelectFieldComponent } from './shared/components/select-field/select-field.component';
 
 @NgModule({
   declarations: [
@@ -52,8 +53,9 @@ import { ManageSelectFieldComponent } from './pages/manage/manage-select-field/m
     WinningsComponent,
     ChartResultsComponent,
     ChartPullersComponent,
+    PredictComponent,
     ManageComponent,
-    ManageSelectFieldComponent,
+    SelectFieldComponent,
   ],
   imports: [
     BrowserModule,

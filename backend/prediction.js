@@ -4,14 +4,12 @@ function predictWinChance(json) {
   const options = {
     mode: "text",
     args: [
-      json.year,
-      json.month,
+      json.season,
       json.location,
       json.puller,
       json.tractor,
       json.category,
       json.weight,
-      json.speed,
       json.hook_count,
     ],
   };

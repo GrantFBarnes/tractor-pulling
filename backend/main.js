@@ -1624,20 +1624,28 @@ function uploadExcel(json) {
 
 function predictWinChance(json) {
   return new Promise((resolve) => {
-    if (
-      !json ||
-      !json.year ||
-      !json.month ||
-      !json.location ||
-      !json.puller ||
-      !json.tractor ||
-      !json.category ||
-      !json.weight ||
-      !json.speed ||
-      !json.hook_count
-    ) {
-      resolve({ statusCode: 500, data: "json not valid" });
+    if (!json) {
+      resolve({ statusCode: 500, data: "json not provided" });
       return;
+    }
+
+    for (let f of ["season", "location", "puller", "tractor", "category"]) {
+      if (!json[f]) {
+        resolve({ statusCode: 500, data: "json not valid" });
+        return;
+      }
+    }
+
+    for (let f of ["weight", "hook_count"]) {
+      if (isNaN(json[f])) {
+        resolve({ statusCode: 500, data: "json not valid" });
+        return;
+      }
+
+      if (json[f] <= 0) {
+        resolve({ statusCode: 500, data: "json not valid" });
+        return;
+      }
     }
 
     prediction

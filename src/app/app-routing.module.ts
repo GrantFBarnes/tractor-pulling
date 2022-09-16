@@ -12,6 +12,7 @@ import { RivalsComponent } from './pages/rivals/rivals.component';
 import { WinningsComponent } from './pages/winnings/winnings.component';
 import { ChartResultsComponent } from './pages/chart-results/chart-results.component';
 import { ChartPullersComponent } from './pages/chart-pullers/chart-pullers.component';
+import { PredictComponent } from './pages/predict/predict.component';
 import { ManageComponent } from './pages/manage/manage.component';
 import { PageNotFoundComponent } from './shared/components/page-not-found/page-not-found.component';
 
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'pulling/winnings', component: WinningsComponent },
   { path: 'pulling/charts/results', component: ChartResultsComponent },
   { path: 'pulling/charts/pullers', component: ChartPullersComponent },
+  { path: 'pulling/predict', component: PredictComponent },
   { path: 'pulling/manage', component: ManageComponent },
   { path: 'pulling', redirectTo: '/pulling/home', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },

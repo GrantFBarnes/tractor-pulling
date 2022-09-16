@@ -38,17 +38,12 @@ def get_sql_data():
             (CASE
               WHEN h.position = 1 THEN 1 ELSE 0
             END) AS won,
-            CAST(s.year AS int) AS year,
-            EXTRACT(
-                MONTH
-                FROM p.date
-            ) AS month,
+            s.id AS season,
             l.id AS location,
             g.id AS puller,
             t.id AS tractor,
             c.category,
             c.weight,
-            c.speed,
             c.hook_count
         FROM seasons AS s
             INNER JOIN pulls as p ON p.season = s.id
@@ -100,16 +95,14 @@ def get_statistical_model():
 
 
 # Returns percentage change of winning with given criteria
-def chance_of_winning(year, month, location, puller, tractor, category, weight, speed, hook_count):
+def chance_of_winning(season, location, puller, tractor, category, weight, hook_count):
     row = pd.DataFrame({
-        "year": [year],
-        "month": [month],
+        "season": [season],
         "location": [location],
         "puller": [puller],
         "tractor": [tractor],
         "category": [category],
         "weight": [weight],
-        "speed": [speed],
         "hook_count": [hook_count]
     })
 
@@ -132,8 +125,9 @@ def test():
         for tractor in tractors:
             for class_type in class_types:
                 for weight in weights:
-                    print(chance_of_winning(2022, 7, 'd221d855-4779-4079-b9e1-feda95cc17a6', people[person],
-                                            tractors[tractor], class_type, weight, 3, 5))
+                    print(chance_of_winning('4effa23e-ead3-4c35-b093-2a46a8de2556',
+                                            'd221d855-4779-4079-b9e1-feda95cc17a6', people[person],
+                                            tractors[tractor], class_type, weight, 5))
 
 
 def main():
@@ -145,18 +139,16 @@ def main():
 
     # test()
 
-    year = sys.argv[1]
-    month = sys.argv[2]
-    location = sys.argv[3]
-    puller = sys.argv[4]
-    tractor = sys.argv[5]
-    category = sys.argv[6]
-    weight = sys.argv[7]
-    speed = sys.argv[8]
-    hook_count = sys.argv[9]
+    season = sys.argv[1]
+    location = sys.argv[2]
+    puller = sys.argv[3]
+    tractor = sys.argv[4]
+    category = sys.argv[5]
+    weight = sys.argv[6]
+    hook_count = sys.argv[7]
 
-    print(chance_of_winning(year, month, location, puller,
-                            tractor, category, weight, speed, hook_count))
+    print(chance_of_winning(season, location, puller,
+          tractor, category, weight, hook_count))
 
 
 if __name__ == "__main__":

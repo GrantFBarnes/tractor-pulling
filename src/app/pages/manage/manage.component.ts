@@ -156,7 +156,7 @@ export class ManageComponent implements OnInit {
   }
 
   getPullerStr(puller: Puller): string {
-    return stringify.getPullerStr(puller, false);
+    return stringify.getPullerStr(puller, true);
   }
 
   getLocationStr(location: Location): string {
