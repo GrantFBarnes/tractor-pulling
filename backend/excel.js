@@ -149,6 +149,7 @@ function getTractor(tractor) {
     "John Deere",
     "JD",
     "Massey",
+    "McCormick",
     "MF",
     "MH",
     "Minneapolis Moline",
@@ -251,8 +252,10 @@ function getPuller(puller) {
       json.last_name = "Hageman";
       break;
 
+    case "Humphrey":
     case "Humphry":
     case "Humphfry":
+    case "Humprhrey":
     case "Humphery":
       json.last_name = "Humphrey";
       break;
