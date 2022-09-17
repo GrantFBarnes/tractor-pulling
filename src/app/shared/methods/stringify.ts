@@ -65,8 +65,3 @@ export function getClassStr(c: Class): string {
   if (c.speed != 3) str += ' (' + c.speed + ')';
   return str;
 }
-
-export function getCategoryStr(c: string): string {
-  if (!c) return '(Unknown)';
-  return c;
-}

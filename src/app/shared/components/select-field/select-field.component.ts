@@ -27,31 +27,30 @@ export class SelectFieldComponent implements OnInit {
     });
   }
 
-  getOptionStr(id: any): string {
+  getOptionStr(val: any): any {
     switch (this.column) {
       case 'puller':
-        return stringify.getPullerStr(this.objects[id], true);
+        return stringify.getPullerStr(this.objects[val], true);
 
       case 'tractor':
-        return stringify.getTractorStr(this.objects[id]);
+        return stringify.getTractorStr(this.objects[val]);
 
       case 'location':
-        return stringify.getLocationStr(this.objects[id]);
+        return stringify.getLocationStr(this.objects[val]);
 
       case 'season':
-        return stringify.getSeasonStr(this.objects[id]);
+        return stringify.getSeasonStr(this.objects[val]);
 
       case 'pull':
-        return stringify.getPullStr(this.objects[id], {});
+        return stringify.getPullStr(this.objects[val], {});
 
       case 'class':
-        return stringify.getClassStr(this.objects[id]);
-
-      case 'category':
-        return stringify.getCategoryStr(id);
+        return stringify.getClassStr(this.objects[val]);
 
       default:
-        return '';
+        if (!val) return '(Unknown)';
+        if (isNaN(val)) return val;
+        return parseInt(val);
     }
   }
 
@@ -60,7 +59,7 @@ export class SelectFieldComponent implements OnInit {
     return '';
   }
 
-  sortMethod = (a: KeyValue<string, any>, b: KeyValue<string, any>): number => {
+  sortMethod = (a: KeyValue<any, any>, b: KeyValue<any, any>): number => {
     const a_val = this.getOptionStr(a.key);
     const b_val = this.getOptionStr(b.key);
     if (this.column === 'season') {
