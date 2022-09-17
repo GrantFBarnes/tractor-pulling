@@ -19,7 +19,10 @@ function predictWinChance(json) {
         reject(err);
         return;
       }
-      resolve(parseFloat(results[0]));
+      resolve({
+        score: parseFloat(results[0]),
+        chance: parseFloat(results[1]),
+      });
       return;
     });
   });

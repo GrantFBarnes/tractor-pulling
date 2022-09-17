@@ -85,6 +85,8 @@ def get_statistical_model():
         data, target, test_size=0.2)
     pipeline.fit(data_train, target_train)
 
+    print(pipeline.score(data_test, target_test))
+
     # print(f"Model Score: {pipeline.score(data_test, target_test):.3f}")
 
     # cv_results = cross_validate(pipeline, data, target, cv=5)

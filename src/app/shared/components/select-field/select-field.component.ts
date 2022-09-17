@@ -55,6 +55,11 @@ export class SelectFieldComponent implements OnInit {
     }
   }
 
+  getValueClass(): string {
+    if (!this.value) return 'red-border';
+    return '';
+  }
+
   sortMethod = (a: KeyValue<string, any>, b: KeyValue<string, any>): number => {
     const a_val = this.getOptionStr(a.key);
     const b_val = this.getOptionStr(b.key);

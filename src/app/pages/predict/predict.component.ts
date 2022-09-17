@@ -32,8 +32,10 @@ export class PredictComponent implements OnInit {
     category: '',
     weight: 5000,
     hook_count: 5,
+
     calculated: false,
-    result: 0,
+    score: 0,
+    chance: 0,
   };
 
   rows: any[] = [JSON.parse(JSON.stringify(this.defaultRow))];
@@ -42,6 +44,20 @@ export class PredictComponent implements OnInit {
 
   ngOnInit(): void {
     this.getLocations();
+  }
+
+  getPercentageClass(val: number): string {
+    val = val * 100;
+    if (val < 1) return 'red-bg';
+    if (val < 25) return 'orange-bg';
+    if (val < 50) return 'yellow-bg';
+    return 'green-bg';
+  }
+
+  getPercentageStr(val: number): string {
+    val = val * 100;
+    if (val < 1) return '< 1%';
+    return val.toFixed(0) + '%';
   }
 
   selectField(obj: any): void {
@@ -89,7 +105,8 @@ export class PredictComponent implements OnInit {
       .post('/api/predict/winning', row)
       .subscribe((data: any) => {
         this.rows[idx].calculated = true;
-        this.rows[idx].result = data;
+        this.rows[idx].score = data.score;
+        this.rows[idx].chance = data.chance;
         this.loading = false;
       });
   }
