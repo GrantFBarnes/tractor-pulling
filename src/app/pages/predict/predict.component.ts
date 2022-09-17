@@ -101,14 +101,18 @@ export class PredictComponent implements OnInit {
 
     this.loading = true;
 
-    this.httpService
-      .post('/api/predict/winning', row)
-      .subscribe((data: any) => {
+    this.httpService.post('/api/predict/winning', row).subscribe({
+      next: (data: any) => {
         this.rows[idx].calculated = true;
         this.rows[idx].score = data.score;
         this.rows[idx].chance = data.chance;
         this.loading = false;
-      });
+      },
+      error: () => {
+        this.loading = false;
+        alert('Failed to predict model!');
+      },
+    });
   }
 
   duplicateRow(idx: number): void {

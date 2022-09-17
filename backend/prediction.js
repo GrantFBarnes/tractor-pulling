@@ -1,5 +1,7 @@
 let { PythonShell } = require("python-shell");
 
+const pythonFilePath = __filename.replace(".js", ".py");
+
 function predictWinChance(json) {
   const options = {
     mode: "text",
@@ -14,7 +16,7 @@ function predictWinChance(json) {
     ],
   };
   return new Promise((resolve, reject) => {
-    PythonShell.run("backend/prediction.py", options, (err, results) => {
+    PythonShell.run(pythonFilePath, options, (err, results) => {
       if (err) {
         reject(err);
         return;
