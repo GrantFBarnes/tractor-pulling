@@ -123,6 +123,7 @@ function getTractor(tractor) {
   }
 
   if (
+    tractor === "M" ||
     tractor === "Super M" ||
     tractor === "Super H" ||
     tractor == "450" ||
@@ -133,6 +134,14 @@ function getTractor(tractor) {
 
   if (tractor === "LA") {
     tractor = "Case " + tractor;
+  }
+
+  if (tractor === "M5") {
+    tractor = "Minneapolis Moline " + tractor;
+  }
+
+  if (tractor === "WK 40") {
+    tractor = "McCormick " + tractor;
   }
 
   for (let brand of [
