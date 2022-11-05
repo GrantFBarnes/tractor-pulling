@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
 
-# Install the following pip packages
-# - mysql-connector-python
-# - pandas
-# - sklearn
-
 # Import Dependencies
 import os
 import sys
