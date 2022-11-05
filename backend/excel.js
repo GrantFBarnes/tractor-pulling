@@ -202,6 +202,11 @@ function getPuller(puller) {
       json.last_name = "Albright";
       break;
 
+    case "Anderson":
+    case "Andersen":
+      json.last_name = "Anderson";
+      break;
+
     case "Bennet":
     case "Bernet":
       json.last_name = "Bennet";
