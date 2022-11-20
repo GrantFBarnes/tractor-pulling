@@ -5,6 +5,8 @@ const main = require("./main.js");
 
 const router = express.Router();
 
+const managerCookieName = "gfb_manager_token";
+
 function returnSuccess(response) {
   response.writeHead(200, { "Content-Type": "application/json" });
   response.write(JSON.stringify({ status: "ok" }));
@@ -12,7 +14,7 @@ function returnSuccess(response) {
 }
 
 function rejectUnauthorized(response) {
-  authentication.removeTokenCookie(response);
+  authentication.removeAuthentication(response, managerCookieName);
   response.writeHead(401, { "Content-Type": "application/json" });
   response.write(JSON.stringify({ status: "unauthorized" }));
   response.end();
@@ -54,7 +56,7 @@ router.get("/api/pulling/seasons", (request, response) => {
 
 // Update season with new values
 router.put("/api/pulling/seasons", (request, response) => {
-  if (!authentication.isAuthorized(request)) {
+  if (!authentication.getAuthentication(request, managerCookieName)) {
     rejectUnauthorized(response);
     return;
   }
@@ -63,7 +65,7 @@ router.put("/api/pulling/seasons", (request, response) => {
 
 // Create new season
 router.post("/api/pulling/seasons", (request, response) => {
-  if (!authentication.isAuthorized(request)) {
+  if (!authentication.getAuthentication(request, managerCookieName)) {
     rejectUnauthorized(response);
     return;
   }
@@ -72,7 +74,7 @@ router.post("/api/pulling/seasons", (request, response) => {
 
 // Delete season by id
 router.delete("/api/pulling/seasons/:id", (request, response) => {
-  if (!authentication.isAuthorized(request)) {
+  if (!authentication.getAuthentication(request, managerCookieName)) {
     rejectUnauthorized(response);
     return;
   }
@@ -94,7 +96,7 @@ router.get("/api/pulling/pulls/season/:id", (request, response) => {
 
 // Update pull with new values
 router.put("/api/pulling/pulls", (request, response) => {
-  if (!authentication.isAuthorized(request)) {
+  if (!authentication.getAuthentication(request, managerCookieName)) {
     rejectUnauthorized(response);
     return;
   }
@@ -103,7 +105,7 @@ router.put("/api/pulling/pulls", (request, response) => {
 
 // Create new pull
 router.post("/api/pulling/pulls", (request, response) => {
-  if (!authentication.isAuthorized(request)) {
+  if (!authentication.getAuthentication(request, managerCookieName)) {
     rejectUnauthorized(response);
     return;
   }
@@ -112,7 +114,7 @@ router.post("/api/pulling/pulls", (request, response) => {
 
 // Delete pull by id
 router.delete("/api/pulling/pulls/:id", (request, response) => {
-  if (!authentication.isAuthorized(request)) {
+  if (!authentication.getAuthentication(request, managerCookieName)) {
     rejectUnauthorized(response);
     return;
   }
@@ -139,7 +141,7 @@ router.get("/api/pulling/classes/season/:id", (request, response) => {
 
 // Update class with new values
 router.put("/api/pulling/classes", (request, response) => {
-  if (!authentication.isAuthorized(request)) {
+  if (!authentication.getAuthentication(request, managerCookieName)) {
     rejectUnauthorized(response);
     return;
   }
@@ -148,7 +150,7 @@ router.put("/api/pulling/classes", (request, response) => {
 
 // Create new class
 router.post("/api/pulling/classes", (request, response) => {
-  if (!authentication.isAuthorized(request)) {
+  if (!authentication.getAuthentication(request, managerCookieName)) {
     rejectUnauthorized(response);
     return;
   }
@@ -157,7 +159,7 @@ router.post("/api/pulling/classes", (request, response) => {
 
 // Delete class by id
 router.delete("/api/pulling/classes/:id", (request, response) => {
-  if (!authentication.isAuthorized(request)) {
+  if (!authentication.getAuthentication(request, managerCookieName)) {
     rejectUnauthorized(response);
     return;
   }
@@ -202,7 +204,7 @@ router.get("/api/pulling/hooks/season/:id/winners", (request, response) => {
 
 // Update hook with new values
 router.put("/api/pulling/hooks", (request, response) => {
-  if (!authentication.isAuthorized(request)) {
+  if (!authentication.getAuthentication(request, managerCookieName)) {
     rejectUnauthorized(response);
     return;
   }
@@ -211,7 +213,7 @@ router.put("/api/pulling/hooks", (request, response) => {
 
 // Create new hook
 router.post("/api/pulling/hooks", (request, response) => {
-  if (!authentication.isAuthorized(request)) {
+  if (!authentication.getAuthentication(request, managerCookieName)) {
     rejectUnauthorized(response);
     return;
   }
@@ -220,7 +222,7 @@ router.post("/api/pulling/hooks", (request, response) => {
 
 // Delete hook by id
 router.delete("/api/pulling/hooks/:id", (request, response) => {
-  if (!authentication.isAuthorized(request)) {
+  if (!authentication.getAuthentication(request, managerCookieName)) {
     rejectUnauthorized(response);
     return;
   }
@@ -252,7 +254,7 @@ router.get("/api/pulling/pullers/season/:id", (request, response) => {
 
 // Update puller with new values
 router.put("/api/pulling/pullers", (request, response) => {
-  if (!authentication.isAuthorized(request)) {
+  if (!authentication.getAuthentication(request, managerCookieName)) {
     rejectUnauthorized(response);
     return;
   }
@@ -261,7 +263,7 @@ router.put("/api/pulling/pullers", (request, response) => {
 
 // Create new puller
 router.post("/api/pulling/pullers", (request, response) => {
-  if (!authentication.isAuthorized(request)) {
+  if (!authentication.getAuthentication(request, managerCookieName)) {
     rejectUnauthorized(response);
     return;
   }
@@ -270,7 +272,7 @@ router.post("/api/pulling/pullers", (request, response) => {
 
 // Delete puller by id
 router.delete("/api/pulling/pullers/:id", (request, response) => {
-  if (!authentication.isAuthorized(request)) {
+  if (!authentication.getAuthentication(request, managerCookieName)) {
     rejectUnauthorized(response);
     return;
   }
@@ -302,7 +304,7 @@ router.get("/api/pulling/tractors/season/:id", (request, response) => {
 
 // Update tractor with new values
 router.put("/api/pulling/tractors", (request, response) => {
-  if (!authentication.isAuthorized(request)) {
+  if (!authentication.getAuthentication(request, managerCookieName)) {
     rejectUnauthorized(response);
     return;
   }
@@ -311,7 +313,7 @@ router.put("/api/pulling/tractors", (request, response) => {
 
 // Create new tractor
 router.post("/api/pulling/tractors", (request, response) => {
-  if (!authentication.isAuthorized(request)) {
+  if (!authentication.getAuthentication(request, managerCookieName)) {
     rejectUnauthorized(response);
     return;
   }
@@ -320,7 +322,7 @@ router.post("/api/pulling/tractors", (request, response) => {
 
 // Delete tractor by id
 router.delete("/api/pulling/tractors/:id", (request, response) => {
-  if (!authentication.isAuthorized(request)) {
+  if (!authentication.getAuthentication(request, managerCookieName)) {
     rejectUnauthorized(response);
     return;
   }
@@ -337,7 +339,7 @@ router.get("/api/pulling/locations", (request, response) => {
 
 // Update location with new values
 router.put("/api/pulling/locations", (request, response) => {
-  if (!authentication.isAuthorized(request)) {
+  if (!authentication.getAuthentication(request, managerCookieName)) {
     rejectUnauthorized(response);
     return;
   }
@@ -346,7 +348,7 @@ router.put("/api/pulling/locations", (request, response) => {
 
 // Create new location
 router.post("/api/pulling/locations", (request, response) => {
-  if (!authentication.isAuthorized(request)) {
+  if (!authentication.getAuthentication(request, managerCookieName)) {
     rejectUnauthorized(response);
     return;
   }
@@ -355,7 +357,7 @@ router.post("/api/pulling/locations", (request, response) => {
 
 // Delete location by id
 router.delete("/api/pulling/locations/:id", (request, response) => {
-  if (!authentication.isAuthorized(request)) {
+  if (!authentication.getAuthentication(request, managerCookieName)) {
     rejectUnauthorized(response);
     return;
   }
