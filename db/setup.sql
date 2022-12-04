@@ -1,9 +1,7 @@
--- Run to create db
--- mariadb -u grant -p < setup.sql
--- mariadb-dump tractor_pulling > backup.sql
-
 DROP DATABASE IF EXISTS tractor_pulling;
-CREATE DATABASE tractor_pulling;
+CREATE DATABASE tractor_pulling
+  CHARACTER SET = 'utf8mb4'
+  COLLATE = 'utf8mb4_unicode_ci';
 USE tractor_pulling;
 
 CREATE TABLE tractors (
