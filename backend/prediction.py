@@ -21,9 +21,9 @@ model = Pipeline([])
 # Get data from SQL database
 def get_sql_data():
     connection = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password=os.environ['SQL_TU_PASSWORD'],
+        host=os.environ['GFB_SQL_HOST'],
+        user=os.environ['GFB_SQL_USER'],
+        password=os.environ['GFB_SQL_PASSWORD'],
         database="tractor_pulling"
     )
 

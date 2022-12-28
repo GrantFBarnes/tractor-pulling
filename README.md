@@ -26,7 +26,7 @@ Then you will need to build
 npm run build
 ```
 
-This is the same as running `ng build`. You can add the `--prod` flag for a production build.
+This is the same as running `ng build`. You can add the `--omit=dev` flag for a production build.
 
 ## Backend
 
@@ -37,8 +37,6 @@ Have both repositories cloned in the same directory on your system, and then you
 ```
 node ../home-page/backend/server.js
 ```
-
-Instructions to host in production can be found in the other `home-page` repository.
 
 ## Frontend
 

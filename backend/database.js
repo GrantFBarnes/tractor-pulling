@@ -1,9 +1,9 @@
 const mysql = require("mysql");
 
 const connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: process.env.SQL_TU_PASSWORD,
+  host: process.env.GFB_SQL_HOST,
+  user: process.env.GFB_SQL_USER,
+  password: process.env.GFB_SQL_PASSWORD,
   database: "tractor_pulling",
 });
 
