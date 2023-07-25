@@ -122,6 +122,10 @@ function getTractor(tractor) {
     tractor = "Allis " + tractor;
   }
 
+  if (tractor === "LA") {
+    tractor = "Case " + tractor;
+  }
+
   if (
     tractor === "M" ||
     tractor === "SM" ||
@@ -132,16 +136,17 @@ function getTractor(tractor) {
     tractor === "Super C" ||
     tractor == "450" ||
     tractor == "460" ||
-    tractor == "560"
+    tractor == "560" ||
+    tractor == "656"
   ) {
     tractor = "Farmall " + tractor;
   }
 
-  if (tractor === "LA") {
-    tractor = "Case " + tractor;
+  if (tractor == "4010") {
+    tractor = "John Deere " + tractor;
   }
 
-  if (tractor === "M5") {
+  if (tractor === "M5" || tractor === "5 Star") {
     tractor = "Minneapolis Moline " + tractor;
   }
 
