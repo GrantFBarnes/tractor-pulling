@@ -154,6 +154,10 @@ function getTractor(tractor) {
     tractor = "McCormick " + tractor;
   }
 
+  if (tractor === "Super 77" || tractor === "Super 88") {
+    tractor = "Oliver " + tractor;
+  }
+
   for (let brand of [
     "Allis Chalmers",
     "Allis",
