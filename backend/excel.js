@@ -124,9 +124,14 @@ function getTractor(tractor) {
 
   if (
     tractor === "M" ||
+    tractor === "SM" ||
     tractor === "Super M" ||
+    tractor === "H" ||
     tractor === "Super H" ||
+    tractor === "C" ||
+    tractor === "Super C" ||
     tractor == "450" ||
+    tractor == "460" ||
     tractor == "560"
   ) {
     tractor = "Farmall " + tractor;
@@ -291,6 +296,13 @@ function getPuller(puller) {
       json.last_name = "Kerl";
       if (json.first_name === "Ruber") {
         json.first_name = "Rubert";
+      }
+      break;
+
+    case "Lange":
+      json.last_name = "Lange";
+      if (json.first_name === "Tom") {
+        json.first_name = "Thomas";
       }
       break;
 
