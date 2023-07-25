@@ -366,6 +366,13 @@ function getPuller(puller) {
       }
       break;
 
+    case "Presbroten":
+      json.last_name = "Presbroten";
+      if (json.first_name === "Duane") {
+        json.first_name = "Dwayne";
+      }
+      break;
+
     case "Riech":
     case "Rieck":
       json.last_name = "Riech";
