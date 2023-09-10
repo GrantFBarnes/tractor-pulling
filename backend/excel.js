@@ -69,6 +69,7 @@ function checkTractor(tractor, brand) {
       case "Oliver":
         switch (model) {
           case "S88 Diesel":
+          case "S 88 D":
           case "NSSS88D":
             model = "Super 88 Diesel";
             break;
@@ -343,6 +344,7 @@ function getPuller(puller) {
     case "Magsaman":
     case "Magsmen":
     case "Magsman":
+    case "Masgsaman":
       json.last_name = "Maggesmen";
       break;
 

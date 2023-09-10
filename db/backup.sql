@@ -155,7 +155,9 @@ INSERT INTO `classes` VALUES ('0bf40b3e-ac41-4667-a0b4-1aed6be45c5a','cb1ef37b-2
 INSERT INTO `classes` VALUES ('0bff660d-6f7a-4a8c-9a8e-bbf54cc00db9','c47149ee-ca03-4abb-b204-7a8cfb48bad1','Farm Stock',7500,3,2);
 INSERT INTO `classes` VALUES ('0c01ca17-1e10-4b4a-9cd6-d771fb443dd3','6249ec82-4b9f-42cb-94d8-fdf8ea8a9c5a','Antique Modified',3750,4,5);
 INSERT INTO `classes` VALUES ('0c283c42-8e2a-42ec-a819-11f8e6c97658','db1b7df7-9fcc-473c-a316-534f7359c7e0','Antique Modified',5500,4,4);
+INSERT INTO `classes` VALUES ('0c434d01-7205-455f-a680-07666e0f13c8','7fca0c41-d64e-45ae-9cf3-18783b469ad1','Farm Stock',6500,3,4);
 INSERT INTO `classes` VALUES ('0c828b6e-18a4-47f4-9a2c-8cc9b2cf57fe','17583336-0923-490b-b073-ebf6c6875a82','Farm Stock',4000,3,8);
+INSERT INTO `classes` VALUES ('0cae1ab4-d3a0-46ee-b384-f952e1d6afa0','7fca0c41-d64e-45ae-9cf3-18783b469ad1','Farm Plus',7000,3,5);
 INSERT INTO `classes` VALUES ('0cd7afda-acd4-4de9-b24e-d86f485bf375','8bfd2423-d11b-4913-8814-a085b1b0cc6f','Antique Modified',4500,4,3);
 INSERT INTO `classes` VALUES ('0ce8bdf5-ea9d-4ac3-b3f6-f27b2df4529f','a1a98399-51ea-4f4f-b525-590a9a1ba7fd','Farm Stock',7500,3,6);
 INSERT INTO `classes` VALUES ('0cfb7b32-5309-4afb-9a27-445e2f900be1','63b9842a-60bc-4965-987e-ac636cb7f998','Farm Stock',4500,3,9);
@@ -181,6 +183,7 @@ INSERT INTO `classes` VALUES ('0f1eb119-c0b0-4cc9-81ba-8c4a5b74054b','7916d5d1-f
 INSERT INTO `classes` VALUES ('0f4d2ef6-371d-4163-b88a-53313f20a844','4b2538bf-de6b-45a2-9aed-b78b40ceb20b','Farm Stock',4350,3,8);
 INSERT INTO `classes` VALUES ('0f73c272-312f-40f5-a0d6-56f78058051f','8b8b4b01-ed34-447d-9e15-6d32aa37e3cc','Antique Modified',4000,4,7);
 INSERT INTO `classes` VALUES ('0f752d6d-1e4d-4f33-bf97-1237c935a95c','142c6a14-a23e-4b1a-9d57-964e83774e1e','Antique Modified',4500,4,3);
+INSERT INTO `classes` VALUES ('0f9ab65d-9fc0-4052-91cc-38e6057a9985','7fca0c41-d64e-45ae-9cf3-18783b469ad1','Antique Modified',6000,4,4);
 INSERT INTO `classes` VALUES ('0fbaaf53-a5ea-48f7-bc5f-49ee13776e98','e3aaa326-59f4-490e-a37c-72425f226f13','Antique Modified',6000,4,7);
 INSERT INTO `classes` VALUES ('0fbb9042-f415-4547-8ad9-758755a34db5','9cd0bbfd-bfa5-4c94-908e-1f11b2b791a3','Farm Stock',8500,3,3);
 INSERT INTO `classes` VALUES ('0fc4cdc6-ade7-413b-b176-59f3f17260ea','f69284b6-5924-4fa3-a39c-f88fa6eae393','Farm Stock',4000,3,6);
@@ -250,6 +253,7 @@ INSERT INTO `classes` VALUES ('15dcdb7a-4e38-4c70-aa55-8eb3b238f853','7f616fdb-5
 INSERT INTO `classes` VALUES ('160a1a67-3155-45b4-8a9f-8ebf0bc8a494','c6fd9fc8-20e2-423c-9c89-164279c37d93','Farm Plus',5000,3,2);
 INSERT INTO `classes` VALUES ('16172d50-b6a1-4308-948c-4545d6213e39','5969d158-952b-43b4-8e46-6a04a1f3f7db','Antique Modified',4500,6,7);
 INSERT INTO `classes` VALUES ('16295aa7-5cd5-4d72-8ab5-8d078703cdd9','466593f0-6783-4a87-93e4-354b9cc71442','Farm Stock',3750,3,3);
+INSERT INTO `classes` VALUES ('16312c89-0121-4ed4-94b5-e3d48e470c3d','7fca0c41-d64e-45ae-9cf3-18783b469ad1','Farm Stock',5000,3,3);
 INSERT INTO `classes` VALUES ('16368abf-2683-4cee-a253-b73ada00df95','a68ef008-4ea8-45c5-bb1c-490005359128','Farm Stock',7000,3,3);
 INSERT INTO `classes` VALUES ('163b19c2-f17a-40ba-b8c1-1ebf8419f75d','db1b7df7-9fcc-473c-a316-534f7359c7e0','Antique Modified',4500,4,4);
 INSERT INTO `classes` VALUES ('1649ea8f-f3a3-49e8-9c7f-b03ac54b70ee','e5faf0a2-b52a-43aa-a479-ec9d18c7b000','Farm Stock',5500,3,7);
@@ -461,6 +465,7 @@ INSERT INTO `classes` VALUES ('2c7fcc19-6be3-4108-82bd-9a3255a8d4f9','f68bc600-f
 INSERT INTO `classes` VALUES ('2c873d33-c3a9-4698-93be-a53b27fd7fb8','8b8b4b01-ed34-447d-9e15-6d32aa37e3cc','Antique Modified',3750,4,4);
 INSERT INTO `classes` VALUES ('2c9342f7-fef3-4a1d-a123-953a8572bbad','0d7eab0c-f67c-4903-9425-6256d37cecc0','Antique Modified',5500,6,7);
 INSERT INTO `classes` VALUES ('2cb2cf7b-bd88-4506-884d-ac999c8628dd','81a9e230-09cf-4880-a9ca-112269056de6','Farm Stock',8000,3,4);
+INSERT INTO `classes` VALUES ('2cf82ef7-3e1b-48bb-a475-5ff566a540b8','7fca0c41-d64e-45ae-9cf3-18783b469ad1','Antique Modified',5000,4,6);
 INSERT INTO `classes` VALUES ('2d8c5b0c-c981-4c5a-9393-ccd446a35c7d','b7559efb-3a6c-437e-8dde-b9235c56e257','Antique Modified',5000,4,3);
 INSERT INTO `classes` VALUES ('2d98a067-79cc-487a-ab4f-e82397dcba22','21acaffa-65a3-45d6-98a5-f0e46718ad9b','Farm Stock',4000,3,7);
 INSERT INTO `classes` VALUES ('2d9aa9bf-302d-4052-aca5-83a8d2d7c6b4','4253c747-6413-4b8c-875d-ebed5aee77f1','Antique Modified',5000,6,3);
@@ -561,6 +566,7 @@ INSERT INTO `classes` VALUES ('38bac5ad-d052-4743-9cf7-aba4d14c69cd','7ea2f0fa-f
 INSERT INTO `classes` VALUES ('39247d03-aacb-46be-ada2-0ff42c2d73b5','7ea2f0fa-face-452f-ad8f-c14743f084cc','Antique Modified',3750,6,3);
 INSERT INTO `classes` VALUES ('39263b2c-6274-47f7-b0e5-ae3862f8a3a8','d937848e-be7e-447f-9c9a-1217eee765da','Antique Modified',4500,4,2);
 INSERT INTO `classes` VALUES ('394ab897-d29b-4272-8a1c-c7656a3bf793','9fef7934-384b-4259-8914-f97144dc2c58','Antique Modified',6500,6,3);
+INSERT INTO `classes` VALUES ('396fc320-e614-4cb9-851d-6e844721f6ac','7fca0c41-d64e-45ae-9cf3-18783b469ad1','Antique Modified',5500,4,6);
 INSERT INTO `classes` VALUES ('39f13a63-4518-4d53-9127-f4b13a91d93e','8eb2bf28-4c04-4d71-a87b-31f8b05a5e5d','Antique Modified',5500,6,6);
 INSERT INTO `classes` VALUES ('3a159b3b-c5c2-43a6-972d-15b2cef4d43b','0d7eab0c-f67c-4903-9425-6256d37cecc0','Farm Stock',5000,3,10);
 INSERT INTO `classes` VALUES ('3a333d8a-a2ef-47b8-b7fd-7275c44b9bd6','05e7aea0-ae9f-49a4-8784-00268c7dabe9','Antique Modified',5500,6,6);
@@ -740,6 +746,7 @@ INSERT INTO `classes` VALUES ('4e8b53d7-af41-4394-bf65-487fc4e168d0','e3aaa326-5
 INSERT INTO `classes` VALUES ('4eda5de2-5adc-4727-b0f0-d60bab9801fb','c7055327-5368-465e-8462-920c9b43720b','Farm Stock',4000,3,6);
 INSERT INTO `classes` VALUES ('4edef79d-5745-4ce7-b60e-1a750cfbf63c','857aeb70-a938-4ece-87a5-865b28b07ea8','Farm Stock',6000,3,9);
 INSERT INTO `classes` VALUES ('4eed5cee-510e-4b7f-ab09-5f9b4e3907ad','1d32f973-b761-4c64-83da-dd3f7d328aee','Antique Modified',4500,6,3);
+INSERT INTO `classes` VALUES ('4eede0e8-7668-4048-a8bf-d50a295aa8b7','7fca0c41-d64e-45ae-9cf3-18783b469ad1','Farm Plus',6500,3,6);
 INSERT INTO `classes` VALUES ('4ef0fa7c-feeb-4a23-a30e-6f8a7947d9ec','6932990a-02a6-4fbc-81fb-38920e74786b','Farm Stock',4500,3,7);
 INSERT INTO `classes` VALUES ('4f2552b2-56e0-421f-af19-30e59248f41c','b9f5c1ce-2a4c-43b3-833c-d6c7f7762f08','Farm Stock',4000,3,4);
 INSERT INTO `classes` VALUES ('4f377532-154c-406f-b800-2ca901a0b63e','fe10f703-82c7-4d84-a319-e98ddab179ce','Farm Stock',4500,3,3);
@@ -748,6 +755,7 @@ INSERT INTO `classes` VALUES ('4f5b48a3-af57-45a8-b609-d3a6a5686097','e78efe94-9
 INSERT INTO `classes` VALUES ('4f95b7e0-cb77-4aab-b8f6-8f50a810cb3c','f69284b6-5924-4fa3-a39c-f88fa6eae393','Farm Plus',4000,3,2);
 INSERT INTO `classes` VALUES ('4f9b2d8b-fbb4-4875-8f68-2cc3a729474f','6932990a-02a6-4fbc-81fb-38920e74786b','Farm Stock',7500,3,5);
 INSERT INTO `classes` VALUES ('4fc1e388-4d38-40bf-84c3-2384be4fec1a','a02ebfee-90ef-4093-8fdf-4f6865151101','Antique Modified',5000,4,3);
+INSERT INTO `classes` VALUES ('4fccd9d6-582e-4158-b311-9c570cf6c8b7','7fca0c41-d64e-45ae-9cf3-18783b469ad1','Farm Stock',4000,3,2);
 INSERT INTO `classes` VALUES ('5002a2f4-e667-4271-a531-0242e8663253','29313e00-3406-499d-acdd-ded917ed2aef','Farm Stock',4000,3,10);
 INSERT INTO `classes` VALUES ('501a5e51-b1ff-4b25-be10-877344fa20ff','f68bc600-f6ee-428f-9540-ac367e33e5ab','Farm Stock',6000,3,8);
 INSERT INTO `classes` VALUES ('5022827e-5d4f-4272-9121-0b2280b2fee5','b98be6d2-2c0c-4b97-80ca-6f3f3e410022','Farm Stock',5000,3,6);
@@ -849,6 +857,7 @@ INSERT INTO `classes` VALUES ('5af264bf-19fa-4a5d-acc8-45d8fd00ddbb','5969d158-9
 INSERT INTO `classes` VALUES ('5b26d917-3af0-4e7e-8f89-436e623bb96f','33a55094-a96c-4c4f-9cd6-f63f5764fbc9','Antique Modified',5500,6,7);
 INSERT INTO `classes` VALUES ('5b65c5d5-b913-460f-bfa8-2a2674424bdf','9e0eb615-0e28-4398-8c7a-29388a16f944','Antique Modified',5000,4,6);
 INSERT INTO `classes` VALUES ('5b7a7672-6964-4213-be14-937a025768ff','bbc287b1-fd75-4122-86ac-02f76f1e44ee','Antique Modified',6000,4,5);
+INSERT INTO `classes` VALUES ('5b86938a-016d-4911-9141-4f053248bc53','7fca0c41-d64e-45ae-9cf3-18783b469ad1','Farm Plus',5000,3,6);
 INSERT INTO `classes` VALUES ('5b96c03a-6da9-4b91-80db-beaf7d23de81','afb4a77d-543a-41c3-9991-155b545e9e71','Farm Stock',5000,3,2);
 INSERT INTO `classes` VALUES ('5bab0771-2b3a-4d9b-a274-9fda11214580','33d27f11-2b8e-46de-a971-db70b016a449','Antique Modified',5500,4,6);
 INSERT INTO `classes` VALUES ('5bc1e02b-df19-4719-ae7b-091a16892d80','2f260a9f-4eda-498d-ad41-cea05fac3cc5','Farm Stock',5500,3,12);
@@ -866,6 +875,7 @@ INSERT INTO `classes` VALUES ('5d178ef8-2e5a-4178-b3e5-093307fd88db','6ee6a07b-b
 INSERT INTO `classes` VALUES ('5d671a76-4c97-4129-89d2-c45e08a6d289','2dc9dec3-9574-4caf-8c2d-18c8a6e0a133','Farm Stock',5500,3,6);
 INSERT INTO `classes` VALUES ('5d76326d-e138-4379-ba9f-2c13133071ba','59e2f7c7-1730-418a-a291-183f261e476e','Farm Stock',7500,3,4);
 INSERT INTO `classes` VALUES ('5d8ec28b-4db8-4b83-b971-3be38b01c15d','07920b91-9bc3-4d77-b6c7-8a88426f2417','Antique Modified',5500,4,5);
+INSERT INTO `classes` VALUES ('5d95998e-bbbe-4ac6-98f6-334a4ae6eaf0','7fca0c41-d64e-45ae-9cf3-18783b469ad1','Antique Modified',5000,6,2);
 INSERT INTO `classes` VALUES ('5d9637c7-dc17-4293-9272-f961cbb07a6c','6249ec82-4b9f-42cb-94d8-fdf8ea8a9c5a','Farm Stock',5500,3,11);
 INSERT INTO `classes` VALUES ('5dd6b3de-ba36-468a-b04e-86eb25c6f18c','cb1ef37b-28e4-4458-87cb-ec28702ef60e','Farm Stock',6500,3,4);
 INSERT INTO `classes` VALUES ('5dd81570-493c-4ded-a81a-5800b1ecd867','4253c747-6413-4b8c-875d-ebed5aee77f1','Farm Stock',4000,3,4);
@@ -975,6 +985,7 @@ INSERT INTO `classes` VALUES ('69576710-5c0c-49e6-8bf9-9be3e0965175','466593f0-6
 INSERT INTO `classes` VALUES ('698f601d-fd24-46b7-a062-d0d22645db5c','17583336-0923-490b-b073-ebf6c6875a82','Antique Modified',5000,4,4);
 INSERT INTO `classes` VALUES ('69b109a1-9bd4-4dbf-96fe-57f7436774a5','c7055327-5368-465e-8462-920c9b43720b','Antique Modified',6000,4,4);
 INSERT INTO `classes` VALUES ('69b33f0b-c774-4ec8-8929-6e42ab5a3288','b98be6d2-2c0c-4b97-80ca-6f3f3e410022','Antique Modified',6000,4,3);
+INSERT INTO `classes` VALUES ('69b7e25e-b56f-47fc-8de2-852e107e04ed','7fca0c41-d64e-45ae-9cf3-18783b469ad1','Antique Modified',3750,6,2);
 INSERT INTO `classes` VALUES ('69d40d1a-f1f1-46cd-8820-3ccf285b00ab','48586a77-6a10-4a4f-9633-5a84092503d9','Farm Stock',4000,3,3);
 INSERT INTO `classes` VALUES ('69e6f02f-74c3-4742-b3d8-5e348c86f11a','d6b40f55-0a3c-4456-9403-09fce878ccf0','Antique Modified',5000,4,5);
 INSERT INTO `classes` VALUES ('69ee5b0d-d5de-47b2-90f5-cd20e099aba2','df7cef51-312e-4f0b-b99c-c0d507ea3aa5','Farm Plus',6000,3,2);
@@ -1073,6 +1084,7 @@ INSERT INTO `classes` VALUES ('74643b9b-cc43-4390-802b-4bc512a5d535','0d7eab0c-f
 INSERT INTO `classes` VALUES ('746976eb-f69c-4758-87ee-4b135a1d8d8c','a1a98399-51ea-4f4f-b525-590a9a1ba7fd','Farm Stock',4500,3,5);
 INSERT INTO `classes` VALUES ('7474e0ee-c659-4f95-bd2e-65346e0e5138','93dfdf60-d383-4338-95a9-ff6060b13c3c','Antique Modified',6000,4,4);
 INSERT INTO `classes` VALUES ('74cf1eb2-6c48-4f2c-bd86-95224e59b60a','857aeb70-a938-4ece-87a5-865b28b07ea8','Farm Stock',6500,3,8);
+INSERT INTO `classes` VALUES ('74df8428-fd97-4558-aa0c-0b445f545460','7fca0c41-d64e-45ae-9cf3-18783b469ad1','Farm Stock',6000,3,7);
 INSERT INTO `classes` VALUES ('74f58541-4c4d-49ed-a600-6729a6c1b358','5ba834ca-16fc-4477-b62f-eea62cbff3c1','Farm Stock',5000,3,4);
 INSERT INTO `classes` VALUES ('75015b4f-af70-4ecc-a5c9-b2bfd7eb3c37','50e2760a-13f4-4ae5-9ef5-7cbc1e30e4b6','Antique Modified',4500,4,10);
 INSERT INTO `classes` VALUES ('7527b16d-57d0-4fac-90ba-e8e9a5fd3c5e','cf9fdf5b-4bae-4aa9-a5bb-185b6213a4bc','Antique Modified',6000,4,11);
@@ -1244,6 +1256,7 @@ INSERT INTO `classes` VALUES ('878d43f0-dd5d-4ff4-a59d-56884f22332c','b98be6d2-2
 INSERT INTO `classes` VALUES ('87a8cd76-ac39-4fba-91c6-19e8f8c6c7eb','5ccd5823-e2a4-49fe-8d8d-e4f85f37e060','Antique Modified',5000,4,3);
 INSERT INTO `classes` VALUES ('87b8ec39-3b81-45f4-9f1a-43ffac6932f0','59e2f7c7-1730-418a-a291-183f261e476e','Farm Stock',3750,3,4);
 INSERT INTO `classes` VALUES ('87c78068-73b3-4ddb-955d-c29db4b4bae7','4253c747-6413-4b8c-875d-ebed5aee77f1','Antique Modified',6500,6,2);
+INSERT INTO `classes` VALUES ('87cee659-4620-452d-9a81-90c468a530db','7fca0c41-d64e-45ae-9cf3-18783b469ad1','Antique Modified',6000,6,5);
 INSERT INTO `classes` VALUES ('881517b1-8817-4a5c-abb5-9a31c79a7751','b7559efb-3a6c-437e-8dde-b9235c56e257','Farm Stock',6000,3,8);
 INSERT INTO `classes` VALUES ('88459db8-3c53-464b-948d-e81f71f31240','33a55094-a96c-4c4f-9cd6-f63f5764fbc9','Farm Stock',6000,3,4);
 INSERT INTO `classes` VALUES ('88525a44-65a0-45e3-a5fc-b361fdd6f73e','4490381a-7781-4f3a-8bff-96b9545acb49','Farm Stock',7000,3,6);
@@ -1279,6 +1292,7 @@ INSERT INTO `classes` VALUES ('8b4f257c-dd1b-45f2-b8c4-e228aba5066b','f69284b6-5
 INSERT INTO `classes` VALUES ('8b6f8679-e18d-4d09-a1ca-3705080ed656','5ba834ca-16fc-4477-b62f-eea62cbff3c1','Farm Stock',4000,3,3);
 INSERT INTO `classes` VALUES ('8b71af37-3dcb-4e39-97e2-40cdedaab5b8','9cd0bbfd-bfa5-4c94-908e-1f11b2b791a3','Farm Stock',5500,3,7);
 INSERT INTO `classes` VALUES ('8bb6e587-69a1-4eed-a022-8229c8b7c9ce','ad1d180b-d6a6-4c8d-9fe8-7dada7066ae7','Antique Modified',4000,4,2);
+INSERT INTO `classes` VALUES ('8bd10faa-1d0c-4244-8832-080f558ef7ea','7fca0c41-d64e-45ae-9cf3-18783b469ad1','Antique Modified',4500,6,4);
 INSERT INTO `classes` VALUES ('8bdca943-55d3-4bcf-a33d-8fcf1f2282fb','b7559efb-3a6c-437e-8dde-b9235c56e257','Farm Stock',3500,3,3);
 INSERT INTO `classes` VALUES ('8be2993d-d0e4-49ec-bcb0-da6809f36b00','6932990a-02a6-4fbc-81fb-38920e74786b','Antique Modified',5500,6,6);
 INSERT INTO `classes` VALUES ('8becb15c-709c-4b7e-8177-a43ff7f391da','9ffbdcdf-c364-4057-957e-4c168ff5e244','Antique Modified',6000,4,4);
@@ -1467,6 +1481,7 @@ INSERT INTO `classes` VALUES ('a0221fee-d5ab-4edb-9e7a-615d99daa3ad','f57b4893-d
 INSERT INTO `classes` VALUES ('a03deb2e-12b0-460b-961f-0553c70df9e7','142c6a14-a23e-4b1a-9d57-964e83774e1e','Farm Stock',6000,3,5);
 INSERT INTO `classes` VALUES ('a040964d-d8fb-4fdb-8b6d-0c82bc408a6a','c47149ee-ca03-4abb-b204-7a8cfb48bad1','Farm Stock',5500,3,7);
 INSERT INTO `classes` VALUES ('a0bd0b0f-f70b-4c3c-83d3-c95becadadc3','2414d723-f592-4ca6-8fb8-27ccc43e4835','Farm Stock',6000,3,8);
+INSERT INTO `classes` VALUES ('a0bf6ec0-fc32-4724-bf4b-7ebd4c051886','7fca0c41-d64e-45ae-9cf3-18783b469ad1','Antique Modified',6500,6,2);
 INSERT INTO `classes` VALUES ('a0ee8ea0-3879-47f8-b596-43c55dba926b','c3c040dd-a991-4554-8831-f505ab9ed250','Farm Stock',4000,3,4);
 INSERT INTO `classes` VALUES ('a0f24dd4-2244-4812-8b8e-7d4877d9824e','ca43b4ac-0142-4805-8474-46cfa983b600','Farm Stock',4500,3,10);
 INSERT INTO `classes` VALUES ('a0f47d85-64de-4369-84c6-a22da8ffb3a6','2df9d006-48b5-4b9f-9fb6-eacabb92e795','Farm Stock',4000,3,8);
@@ -1603,6 +1618,7 @@ INSERT INTO `classes` VALUES ('af66a562-ec62-4c69-890c-8430dee7e0dd','17d56a48-2
 INSERT INTO `classes` VALUES ('af7f86ca-9a1f-41d5-b63a-0cb98101790d','2df9d006-48b5-4b9f-9fb6-eacabb92e795','Antique Modified',5000,4,14);
 INSERT INTO `classes` VALUES ('afbbe565-ac1e-4bef-b839-27e7b5782087','6249ec82-4b9f-42cb-94d8-fdf8ea8a9c5a','Antique Modified',5500,6,7);
 INSERT INTO `classes` VALUES ('afc9b38f-e440-4a9b-bd7d-d0e60fb8c3f4','f0ce408d-043d-4260-9067-8c47ab5c6112','Farm Stock',4000,3,8);
+INSERT INTO `classes` VALUES ('b003d9bd-a6ab-4b56-8f6c-6b46277a357e','7fca0c41-d64e-45ae-9cf3-18783b469ad1','Farm Stock',4500,3,4);
 INSERT INTO `classes` VALUES ('b0064c96-68ee-4054-b75d-8a5f5b8740d5','329dd1ca-deb8-48f7-82d2-bad63c923391','Farm Stock',4000,3,6);
 INSERT INTO `classes` VALUES ('b0068b14-7a0d-49e6-8251-b36ad036611e','5f72fa80-0523-4086-9eda-b7afd6f5ff21','Farm Stock',4000,3,5);
 INSERT INTO `classes` VALUES ('b00ec0c2-11f6-4efc-8de4-870808a1e102','cb1ef37b-28e4-4458-87cb-ec28702ef60e','Antique Modified',6500,6,2);
@@ -1654,11 +1670,13 @@ INSERT INTO `classes` VALUES ('b658efd9-2148-47bf-a4da-0ce427fc7afd','e3aaa326-5
 INSERT INTO `classes` VALUES ('b668e70c-3fe9-4418-ac59-1863bd546a0b','3447ed6e-4bee-40a0-aae0-53cb7e366201','Antique Modified',4500,6,4);
 INSERT INTO `classes` VALUES ('b675e5bd-c971-438f-8e55-a2b60c978a1d','9fef7934-384b-4259-8914-f97144dc2c58','Farm Stock',6000,3,7);
 INSERT INTO `classes` VALUES ('b68ffa3f-4dc8-4e76-8619-2f23a775d143','c7055327-5368-465e-8462-920c9b43720b','Farm Stock',5000,3,5);
+INSERT INTO `classes` VALUES ('b69daac0-2e34-4617-ad80-9ec8d8c90e10','7fca0c41-d64e-45ae-9cf3-18783b469ad1','Farm Plus',4500,3,5);
 INSERT INTO `classes` VALUES ('b6a2bff0-05a5-4be8-a004-2084d9cc6be9','1d32f973-b761-4c64-83da-dd3f7d328aee','Farm Stock',10000,3,6);
 INSERT INTO `classes` VALUES ('b7006199-bf4c-4944-b6a1-d1f3b728c4b8','cf9fdf5b-4bae-4aa9-a5bb-185b6213a4bc','Farm Stock',4500,3,14);
 INSERT INTO `classes` VALUES ('b72fbbaa-acdc-4408-b538-03b28a2f1a0c','466593f0-6783-4a87-93e4-354b9cc71442','Farm Stock',7000,3,3);
 INSERT INTO `classes` VALUES ('b788d485-6a53-4ef5-8fcc-7f8887cac269','75739f76-90b6-48aa-b8fb-b87f6a009cef','Antique Modified',5500,6,10);
 INSERT INTO `classes` VALUES ('b7de7311-9161-4d43-aec3-6e0caaf5e701','1d32f973-b761-4c64-83da-dd3f7d328aee','Antique Modified',6000,4,2);
+INSERT INTO `classes` VALUES ('b816f4fa-483a-4e67-99ff-4e35bd4fa952','7fca0c41-d64e-45ae-9cf3-18783b469ad1','Antique Modified',5500,6,7);
 INSERT INTO `classes` VALUES ('b818fbb8-1826-4dee-a531-1d03d859b0e9','d937848e-be7e-447f-9c9a-1217eee765da','Farm Stock',3750,3,3);
 INSERT INTO `classes` VALUES ('b8295487-2a95-40b3-aef6-a0e45f0b451c','7360d6a8-a1ae-49be-920d-f4c0bb33dee6','Antique Modified',5500,6,2);
 INSERT INTO `classes` VALUES ('b84c5061-169a-4ee6-9cde-7ef2c5b48294','058abb7b-cc53-4e6f-bf11-fc868a951a3d','Farm Stock',4500,3,9);
@@ -1692,6 +1710,7 @@ INSERT INTO `classes` VALUES ('bb5f978f-eb73-48ea-badb-bbf891bed5c5','33d27f11-2
 INSERT INTO `classes` VALUES ('bb6c0938-2d1b-4876-8136-a70085fc3ad4','42dd6e09-7123-40be-8c47-5a92c8931faa','Farm Stock',5000,3,7);
 INSERT INTO `classes` VALUES ('bb6c095b-33d8-49b0-8446-83d6e0d06347','4253c747-6413-4b8c-875d-ebed5aee77f1','Farm Stock',6500,3,5);
 INSERT INTO `classes` VALUES ('bb8cfaec-95f9-41e1-939b-83619af25c29','ad1d180b-d6a6-4c8d-9fe8-7dada7066ae7','Antique Modified',5000,4,9);
+INSERT INTO `classes` VALUES ('bb99fea8-269c-4b80-a70e-e8041d1ad32a','7fca0c41-d64e-45ae-9cf3-18783b469ad1','Farm Plus',6000,3,7);
 INSERT INTO `classes` VALUES ('bba9037d-0d9d-47a6-859b-e164dbbebd7b','0d7eab0c-f67c-4903-9425-6256d37cecc0','Farm Stock',6500,3,7);
 INSERT INTO `classes` VALUES ('bc078e83-aebf-4cc6-9c3a-198986fb85b6','b9f5c1ce-2a4c-43b3-833c-d6c7f7762f08','Antique Modified',6500,4,5);
 INSERT INTO `classes` VALUES ('bc1a5f46-a255-4c24-884d-3b8d892fcf44','fc2a5ad2-edef-4786-a76b-4e2313f65f7d','Farm Stock',6000,3,7);
@@ -1779,6 +1798,7 @@ INSERT INTO `classes` VALUES ('c4e8f9e5-669f-425b-90ff-1be533dc49de','7916d5d1-f
 INSERT INTO `classes` VALUES ('c4f346d4-c338-4cc5-a79e-40f56a1ea463','42dd6e09-7123-40be-8c47-5a92c8931faa','Antique Modified',4000,4,5);
 INSERT INTO `classes` VALUES ('c51bd5e3-d7af-4054-be76-4badf2317faa','c0f82ba7-4a3c-4010-89b2-ff49229c9b8b','Farm Stock',6000,3,9);
 INSERT INTO `classes` VALUES ('c52b030f-58f9-4b5f-967e-65c450d3381a','7ea2f0fa-face-452f-ad8f-c14743f084cc','Antique Modified',6500,6,2);
+INSERT INTO `classes` VALUES ('c52e1241-8a7e-485e-b96d-a6e4945a7a9c','7fca0c41-d64e-45ae-9cf3-18783b469ad1','Antique Modified',4000,4,2);
 INSERT INTO `classes` VALUES ('c5369ae0-146f-4861-b56f-cea6705762bd','215705f9-45c1-4e19-8a69-a8ffcdb48545','Antique Modified',4500,4,4);
 INSERT INTO `classes` VALUES ('c594254f-ff07-4767-bcf8-7b544659eb76','9fef7934-384b-4259-8914-f97144dc2c58','Farm Stock',7000,3,2);
 INSERT INTO `classes` VALUES ('c5a3c01f-7c5a-4b48-a15b-a24c71a4be3d','dd1976fd-b694-49c7-bd76-ec60436a639b','Farm Stock',4000,3,5);
@@ -1796,6 +1816,7 @@ INSERT INTO `classes` VALUES ('c681e947-d22a-4ca3-9be6-a083aae1d3f2','bbc287b1-f
 INSERT INTO `classes` VALUES ('c693b693-f188-464b-8303-4a6093955055','058abb7b-cc53-4e6f-bf11-fc868a951a3d','Farm Stock',8000,3,2);
 INSERT INTO `classes` VALUES ('c6daae8d-791c-4a83-8c41-6629c8343965','ed59b780-00b6-4d3c-93f1-14fe6d2c7e03','Farm Stock',6000,3,7);
 INSERT INTO `classes` VALUES ('c717ecac-e604-4c18-9ca0-29f9888eac2c','f57b4893-d9c2-4fe6-ae6b-4df1b8577453','Farm Stock',6500,3,9);
+INSERT INTO `classes` VALUES ('c72680dc-c412-40cf-874e-1d911988d5f7','7fca0c41-d64e-45ae-9cf3-18783b469ad1','Farm Stock',5500,3,8);
 INSERT INTO `classes` VALUES ('c7343547-1c8f-424c-aa72-85e6ea42d4d5','8eea0374-0fae-4f22-bbba-c99fc42e4fbb','Antique Modified',6500,6,2);
 INSERT INTO `classes` VALUES ('c7d575f6-8b1f-4faa-979e-96e267fecfdf','7360d6a8-a1ae-49be-920d-f4c0bb33dee6','Farm Stock',4500,3,10);
 INSERT INTO `classes` VALUES ('c8131f93-9a4c-43c4-a7f9-eaccacd520ca','cf9fdf5b-4bae-4aa9-a5bb-185b6213a4bc','Farm Stock',5000,3,15);
@@ -2029,6 +2050,7 @@ INSERT INTO `classes` VALUES ('e61ed768-58ba-4337-b151-f53d0f81f5d4','f57b4893-d
 INSERT INTO `classes` VALUES ('e65e2dac-5cb9-4de1-9c9b-08098e8aeb23','16115a0a-d1df-4620-b64d-5787b5473bd6','Farm Stock',6000,3,7);
 INSERT INTO `classes` VALUES ('e67ccadf-5035-4e73-8ddc-2a7259244fd9','a68ef008-4ea8-45c5-bb1c-490005359128','Antique Modified',4500,4,3);
 INSERT INTO `classes` VALUES ('e6836cd4-e574-447f-991a-785fec84da19','a1a98399-51ea-4f4f-b525-590a9a1ba7fd','Farm Stock',6500,3,9);
+INSERT INTO `classes` VALUES ('e68b7aac-a0c4-4b41-92f4-8053620c8a4c','7fca0c41-d64e-45ae-9cf3-18783b469ad1','Farm Plus',5500,3,9);
 INSERT INTO `classes` VALUES ('e6a6b0a8-3d11-4d06-a72e-88365b7bcea3','59e2f7c7-1730-418a-a291-183f261e476e','Antique Modified',4000,4,9);
 INSERT INTO `classes` VALUES ('e6b2581f-f558-4448-9e8d-0c73fc5c45ed','a61d0c33-655c-4256-8d15-b17dd75cfc61','Antique Modified',4500,4,2);
 INSERT INTO `classes` VALUES ('e6e83fa1-baf4-4726-bc67-cdc44a7efa59','33a55094-a96c-4c4f-9cd6-f63f5764fbc9','Antique Modified',5000,4,8);
@@ -2080,6 +2102,7 @@ INSERT INTO `classes` VALUES ('ebad4780-e7e8-4629-9628-35df93dd827e','5f72fa80-0
 INSERT INTO `classes` VALUES ('ebd5685c-5495-4f89-b7c9-42e1d913b0e0','f6132d80-9ae4-4acc-8b55-deb24bc22ec9','Farm Stock',6000,3,8);
 INSERT INTO `classes` VALUES ('ebdcb258-41d9-4a73-89a3-d332387f2e61','50e2760a-13f4-4ae5-9ef5-7cbc1e30e4b6','Farm Stock',6000,3,11);
 INSERT INTO `classes` VALUES ('ebe1d3fc-a915-467f-8063-33a24233c79c','9e0eb615-0e28-4398-8c7a-29388a16f944','Antique Modified',5500,4,2);
+INSERT INTO `classes` VALUES ('ec1e8edc-3209-4067-b0b5-cfbba4943ebf','7fca0c41-d64e-45ae-9cf3-18783b469ad1','Antique Modified',4500,4,7);
 INSERT INTO `classes` VALUES ('ec473f01-e69e-4665-91fa-9b45873ddcf5','d0575456-dbb5-4abc-9e64-229aaef5cf24','Antique Modified',5500,4,3);
 INSERT INTO `classes` VALUES ('ec5aa95e-8ebc-4af4-809e-b6b70abe2cb7','6ee6a07b-b2fb-4f5f-9602-11e1d1c717f3','Farm Stock',7500,3,6);
 INSERT INTO `classes` VALUES ('ec650141-67aa-4a45-9f71-7208095eeb04','6249ec82-4b9f-42cb-94d8-fdf8ea8a9c5a','Farm Stock',6500,3,10);
@@ -2324,6 +2347,7 @@ INSERT INTO `hooks` VALUES ('0055f43d-76d4-47c1-9a33-22d1d5815a68','30955f0b-edd
 INSERT INTO `hooks` VALUES ('00574405-d8a1-47d4-8f49-97959d7c6606','3517b304-4726-428e-98b4-2209199c62d6','a3fcd2d6-d520-4065-aa1a-6503e3abfe8a','f46b119d-7aa5-454c-b10f-2e04c32304f9',174.83,6,87,50);
 INSERT INTO `hooks` VALUES ('006720e5-3a1a-4208-9646-89acf05cf402','0cfb7b32-5309-4afb-9a27-445e2f900be1','f7d81e20-f579-4052-aa0e-96200f868a5c','a3402d72-6e9c-45e3-9c35-6eac6b5adf13',367.70,2,99,78);
 INSERT INTO `hooks` VALUES ('006de279-1570-4859-b962-6b7d2560c4db','2dd4489c-cf81-4c71-a1ea-ba82b7ebe3d6','3c4de5f6-6595-45b8-8d18-2f5f2b2a9931','214c7844-9a20-441a-89c7-9a8885a70440',238.10,2,79,0);
+INSERT INTO `hooks` VALUES ('006de766-354d-421a-b597-4908222ad749','87cee659-4620-452d-9a81-90c468a530db','03de7025-b9c5-49f3-890b-f6729774c6e2','254a626e-19be-481e-b6e1-5492648db50d',407.83,2,100,60);
 INSERT INTO `hooks` VALUES ('0070f122-df24-4cfe-86d1-e095ed296f6d','3c053c85-9f38-470c-a445-6c03082e2eca','5932cef0-316d-4edb-9982-a1a7179467c3','ffa8662a-067b-435d-af37-fc3fa4897461',173.25,4,86,50);
 INSERT INTO `hooks` VALUES ('0075871d-54e0-4998-b232-c6cb50d73017','4edef79d-5745-4ce7-b60e-1a750cfbf63c','4bb469e8-c8db-4799-b8cf-4db808d1651f','f46b119d-7aa5-454c-b10f-2e04c32304f9',165.40,8,58,11);
 INSERT INTO `hooks` VALUES ('007765b6-2df8-4d70-baf2-aa85407fff60','586755d7-b553-43b8-a944-a45b0d4cd6f2','c39eb255-9486-4703-8855-3cb7a7ddc955','f46b119d-7aa5-454c-b10f-2e04c32304f9',136.00,9,71,0);
@@ -2339,6 +2363,7 @@ INSERT INTO `hooks` VALUES ('0098d068-d3da-4daa-8be6-f7aff51f1b79','7b98477e-8e5
 INSERT INTO `hooks` VALUES ('009ca4ad-8bca-4515-97e9-46a655c0d970','cfc6a1c9-30bd-43f2-9135-d591675d026b','39570e2a-9f2a-4966-924a-63f0126ffc3e','be809735-5b1c-4d1c-a193-ec272a4e2c35',258.50,4,79,0);
 INSERT INTO `hooks` VALUES ('00a40e21-7225-40d3-901e-e8114f6096f4','8d74843f-a080-4e15-be32-8b0a936d767a','93545bca-6455-43de-b0a4-64e4a2fdb17f','d1eabdfd-cb8b-4601-b115-70c8c102b3c3',222.00,3,90,63);
 INSERT INTO `hooks` VALUES ('00a5d5f2-4321-4074-83bf-e787bbf57b2f','e86addb2-cb9c-4ce2-ba7b-83f454ebbf0e','d7a0b032-7445-4e85-bbb7-9eed54fa25ce','05837a49-b1a6-4803-a6fa-5ba8785f7f74',313.08,1,100,83);
+INSERT INTO `hooks` VALUES ('00a92751-7d9a-48c1-afb9-80f7f6a01798','0cae1ab4-d3a0-46ee-b384-f952e1d6afa0','297102b4-1fba-42dd-a627-4cdc359628fd','f46b119d-7aa5-454c-b10f-2e04c32304f9',263.42,1,100,80);
 INSERT INTO `hooks` VALUES ('00b05470-fef8-493b-8623-42efbc1ef1cf','67c56d6b-1b9a-4071-a82c-5e5f062ec16c','d42d0c0c-85c3-4576-8c0b-c4316e4fa31a','82d6b28a-9e07-4e2a-bfe4-ae4f522dacf5',192.00,3,90,75);
 INSERT INTO `hooks` VALUES ('00b147db-7c5b-461c-85b9-58f9ca326c05','da473240-dea4-41b2-8fee-aa9c1a2212e2','13e89edf-8fc6-4cc3-8669-1ca27768e7e5','f46b119d-7aa5-454c-b10f-2e04c32304f9',257.58,4,89,43);
 INSERT INTO `hooks` VALUES ('00c02926-010c-45f9-b904-071cdef7e308','2b75e37b-9915-44b8-8afc-f5925af0a324','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',245.95,6,87,50);
@@ -2381,6 +2406,7 @@ INSERT INTO `hooks` VALUES ('0167303b-a92c-4ab0-a9c8-58d58a7d1d14','f2580b91-d2c
 INSERT INTO `hooks` VALUES ('016767d4-6deb-4c09-9f71-12e1d460b052','e9e26d61-eb20-43f6-b428-9bf906ce3cbb','ee668867-ac4d-4364-99cf-5aece274cf51','3a345595-5af0-440c-a374-6997654b68ed',249.75,7,83,13);
 INSERT INTO `hooks` VALUES ('0168421b-5277-495c-b113-c196c876ce82','aa0395f4-1564-4fa2-9ed7-d351a9e58054','62751ca2-6669-4ce6-be87-9443f1370985','1de0ffff-4bd4-4819-ab5a-601dca685e94',241.83,2,96,33);
 INSERT INTO `hooks` VALUES ('016b44a9-7bd9-40b4-b483-03f3e717e610','5d178ef8-2e5a-4178-b3e5-093307fd88db','62751ca2-6669-4ce6-be87-9443f1370985','1de0ffff-4bd4-4819-ab5a-601dca685e94',193.67,4,95,33);
+INSERT INTO `hooks` VALUES ('016ccc25-799d-4b52-8c36-e73185e898fd','0c434d01-7205-455f-a680-07666e0f13c8','f22fd15f-bf1c-4278-8eaf-32dbe9a37ae1','366d718c-abfb-4ee0-9641-0c75a6b94331',233.67,4,72,0);
 INSERT INTO `hooks` VALUES ('017136e0-2754-4d22-a4b2-05fd6259829d','1c47f832-3cfa-47f0-b6ad-d3b55a42f1e6','5932cef0-316d-4edb-9982-a1a7179467c3','ffa8662a-067b-435d-af37-fc3fa4897461',193.70,2,94,33);
 INSERT INTO `hooks` VALUES ('0176b988-43e5-4bd1-9e48-ae4aea2901f8','d7e9e271-bcc1-4fd3-8242-ea0877327f39','7904e606-d984-4e42-98ed-f786d2ee13f4','dba0f658-b06e-44d1-94bf-64237e6d7ffb',214.50,3,78,0);
 INSERT INTO `hooks` VALUES ('017c5c62-3112-49c4-a162-956acb619cd7','e25840e6-d5cf-4e28-bdca-d49ee433e644','239e2f33-94cf-47d1-90d7-f0eb948392d5','df10f08f-1148-4445-8b6d-9dc20bf11534',324.90,2,87,50);
@@ -2420,6 +2446,7 @@ INSERT INTO `hooks` VALUES ('0210683c-f2cf-42d1-8cf9-c89467c7fcf3','1aae493c-c6b
 INSERT INTO `hooks` VALUES ('02182602-fe7f-4036-8f7b-6e33e91caf03','ec6bf497-a664-437a-91e7-6a87d6cce68c','8a381eca-34bf-450b-9215-5705b51f23a9','0adb98bc-b506-4f97-bfa3-79feb210a569',312.80,2,94,71);
 INSERT INTO `hooks` VALUES ('022b3d92-c157-4f46-b545-8846c865f12f','163b19c2-f17a-40ba-b8c1-1ebf8419f75d','9a6f62bb-9ab3-4a23-bba7-0e82cfe52115','f46b119d-7aa5-454c-b10f-2e04c32304f9',264.83,3,78,25);
 INSERT INTO `hooks` VALUES ('023a2e88-6037-47d3-b967-bebcee428bb7','cf765ef3-3dd3-4cfe-93eb-8f6309d6d7bf','7d55a506-839a-4abd-ab45-09862a2bc9f8','10e37fd5-d99b-42d2-9b5c-059e75fe1ba3',218.00,1,100,91);
+INSERT INTO `hooks` VALUES ('023f185d-417a-4c6f-aa6d-14ee6794251b','87cee659-4620-452d-9a81-90c468a530db','fc17c4d8-e95b-4158-b8f7-d652f897ad46','f46b119d-7aa5-454c-b10f-2e04c32304f9',407.67,3,100,40);
 INSERT INTO `hooks` VALUES ('0242adbb-8481-40db-8f79-03fb0a46efdf','a36e57dc-cf5d-4b4c-a68c-73bc0f13b126','d7a0b032-7445-4e85-bbb7-9eed54fa25ce','f46b119d-7aa5-454c-b10f-2e04c32304f9',181.80,6,73,0);
 INSERT INTO `hooks` VALUES ('0247ce23-2a13-4c9e-9663-80a596e4963f','8d98d5cf-c770-4cfa-ab28-798c1eb28c21','fa9ca141-62cb-4d21-bf4c-b5f70897ba5b','5f48a57a-4d8e-4a92-82c8-5d411c0b6079',189.10,4,99,50);
 INSERT INTO `hooks` VALUES ('024860e9-9617-4131-9e48-f8239e8e2cd8','fec0fa95-83be-4795-9e29-56aca662701c','fc17c4d8-e95b-4158-b8f7-d652f897ad46','f46b119d-7aa5-454c-b10f-2e04c32304f9',171.92,3,73,63);
@@ -2579,6 +2606,7 @@ INSERT INTO `hooks` VALUES ('0594f585-0c06-408e-b345-271a536cfa8e','400571cb-f66
 INSERT INTO `hooks` VALUES ('059526c5-6760-447e-839e-146a719ad408','bb8cfaec-95f9-41e1-939b-83619af25c29','ee668867-ac4d-4364-99cf-5aece274cf51','3a345595-5af0-440c-a374-6997654b68ed',156.10,1,100,89);
 INSERT INTO `hooks` VALUES ('0597f85c-56f9-4e50-aad1-0aae4c04cb68','63bb8f80-acfb-4cd2-b6c8-b3c768b63759','737d77c5-739c-42f2-9db9-fb2177546cf6','f46b119d-7aa5-454c-b10f-2e04c32304f9',189.08,2,92,67);
 INSERT INTO `hooks` VALUES ('059ac4fa-9785-4f23-be15-18e15ed0dabb','93a7ef15-c496-4acd-8adf-2ebedf4377de','fa9ca141-62cb-4d21-bf4c-b5f70897ba5b','5f48a57a-4d8e-4a92-82c8-5d411c0b6079',178.20,1,100,75);
+INSERT INTO `hooks` VALUES ('05a11495-3302-45b0-a5d8-4826f9bf5df9','0f9ab65d-9fc0-4052-91cc-38e6057a9985','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',416.42,1,100,75);
 INSERT INTO `hooks` VALUES ('05a71c39-720e-4a89-85d9-c8599bbcd454','e004ea3c-3874-417c-96ec-88bf3b0392d8','ac5273b8-6655-402c-86de-28749f3bea05','6f37c5cc-dbdd-422d-aa14-9eebeb37b010',290.80,1,100,80);
 INSERT INTO `hooks` VALUES ('05b037a6-aed7-4d5b-a13f-1a33d5a13551','3e447dbc-fedf-493d-bbff-776282960352','94c7425a-262f-49f3-a7ce-aac6436de238','519ae6bf-d347-4a39-9758-76c0c3656280',154.00,5,72,0);
 INSERT INTO `hooks` VALUES ('05b12ced-6e8f-4158-bef7-84fa64f6a86d','7d2e90dd-ba21-4617-b813-b52cd585becf','297102b4-1fba-42dd-a627-4cdc359628fd','214c7844-9a20-441a-89c7-9a8885a70440',155.75,1,100,88);
@@ -2651,6 +2679,7 @@ INSERT INTO `hooks` VALUES ('06e7a27e-db3e-400f-ab89-c9b5fac1b017','69b109a1-9bd
 INSERT INTO `hooks` VALUES ('06ea6f4a-21e2-4078-84b9-9033ba4692fb','adaeba1f-b52e-4aee-9751-d0a8e2af16ed','62751ca2-6669-4ce6-be87-9443f1370985','1de0ffff-4bd4-4819-ab5a-601dca685e94',353.75,2,98,33);
 INSERT INTO `hooks` VALUES ('06ed7bdc-b902-4f8b-baba-368c8a502abb','13973c9f-40c0-40c4-bdd1-a031930111d7','c6508e29-be89-4bac-a4a7-b2f357d2961c','a3402d72-6e9c-45e3-9c35-6eac6b5adf13',186.25,1,100,86);
 INSERT INTO `hooks` VALUES ('06f21173-0fed-4632-aedc-3ea2c6c4ee03','70933ad3-868e-4230-8f20-f47f1cdfa59b','00876a04-693e-4df4-abd2-ef0a68252d99','0d69459f-a2ac-4580-abe8-797a7aa3c615',200.92,2,99,71);
+INSERT INTO `hooks` VALUES ('06f89e76-4f12-48ea-ae1c-0d2c9681bc25','5b86938a-016d-4911-9141-4f053248bc53','5932cef0-316d-4edb-9982-a1a7179467c3','ffa8662a-067b-435d-af37-fc3fa4897461',233.67,1,100,83);
 INSERT INTO `hooks` VALUES ('06fadfb1-9659-48d7-8007-66a1f062c46f','79ba736a-17da-4422-856d-394ae9eb2f05','e22a10d4-1a2b-4c2a-ae40-bb943e7e14c4','c73a06d2-d45d-4a4a-ac04-8d951525c34f',220.90,2,97,78);
 INSERT INTO `hooks` VALUES ('06fdef22-a97a-4ef7-8fde-a862464df1e9','c3c3a3cf-a696-47e9-bf17-538957421be7','88ee7f8c-abd9-478d-bba4-b85b55abe542','f46b119d-7aa5-454c-b10f-2e04c32304f9',240.17,8,74,53);
 INSERT INTO `hooks` VALUES ('070033e1-bf94-4280-838b-14b654420dba','daced804-b391-49f7-9fc2-b03a7b86a627','84c832bb-b2eb-4fd4-8ddb-06b811fe42f7','521ae438-d9bf-4539-a10b-32b32cf3198a',379.17,1,100,86);
@@ -2706,6 +2735,7 @@ INSERT INTO `hooks` VALUES ('085c0531-5321-4d21-8403-ca83eac508e5','59144a29-bed
 INSERT INTO `hooks` VALUES ('0863b22f-b8ec-4978-b20a-da3cdb0164e7','0eaaa1dc-0018-4bd6-95e8-cada9a6be298','5932cef0-316d-4edb-9982-a1a7179467c3','ffa8662a-067b-435d-af37-fc3fa4897461',153.80,5,69,17);
 INSERT INTO `hooks` VALUES ('08658252-357a-4765-819c-69e75295e802','0efdc459-7e4a-4b39-9965-fc3740459eb4','c6508e29-be89-4bac-a4a7-b2f357d2961c','f9338055-df4c-46b2-876d-f226119fa0c1',269.10,5,95,38);
 INSERT INTO `hooks` VALUES ('0865f82d-55b1-48c7-b4c2-e38701e83b28','a8ee677a-846c-44c7-a282-52f8f502c2f0','436fbfab-55f6-428c-b3ad-54a178415f11','214c7844-9a20-441a-89c7-9a8885a70440',342.50,1,100,91);
+INSERT INTO `hooks` VALUES ('08702dd3-443e-4b84-a20a-2748277cbebb','4eede0e8-7668-4048-a8bf-d50a295aa8b7','239e2f33-94cf-47d1-90d7-f0eb948392d5','101ae17c-a3af-4cac-9c2f-21b284762555',341.67,6,83,0);
 INSERT INTO `hooks` VALUES ('0879af9c-0ca7-42e6-ae61-2f121a48d8cf','1cb7b068-e424-4409-bd75-bb4cc85b4efb','427f7000-ee7c-4adb-8750-dcd2d76a9ac3','236d6ef2-8e42-43b6-81a9-fb0315b02594',142.30,5,75,17);
 INSERT INTO `hooks` VALUES ('087b5fc2-411f-45c2-b1ac-ecc8c586f984','386beadd-f861-4795-8b63-a32de87a0809','21833f1a-bffe-44e0-94a9-7e5a1835362b','719f8f7b-3ef5-4764-88f8-acf8250abf89',260.50,4,78,56);
 INSERT INTO `hooks` VALUES ('087b8689-58b3-4762-bd4d-eb4c554fc98a','55352d44-fc22-4fa4-9e05-2fdffd0c2b66','b45924c1-e992-49a5-919d-fa34e2f99046','4752b071-f14a-4d07-8205-b664f24763ad',264.42,3,97,63);
@@ -2836,6 +2866,7 @@ INSERT INTO `hooks` VALUES ('0ae08677-4901-49f6-b36c-8668dfac1553','b1dbc202-e65
 INSERT INTO `hooks` VALUES ('0ae70807-9deb-4439-b720-8f9930ec6dd6','e3e24841-b5db-4fb6-b956-db65c2fd02c8','268a2370-3e27-4885-ba6a-4445f9d22227','289d0316-9f7b-483c-85e5-694a41fff136',240.40,3,62,67);
 INSERT INTO `hooks` VALUES ('0aeb8bb5-444f-4059-9911-93c0e29bea1a','cdbf6214-b063-4370-9529-ab4c1056d681','9f639768-fd30-4304-a53d-aaa94c438efc','236d6ef2-8e42-43b6-81a9-fb0315b02594',244.67,3,92,57);
 INSERT INTO `hooks` VALUES ('0aee8611-dbfd-46f7-9b78-05ad2d67f677','f98d8d3c-6e37-4d23-9890-8c451bc29fbf','56aea5c0-b1cd-4205-a2c6-4f78cc93828f','846671a7-3918-4de4-8bfe-e182a4c651b4',174.30,6,67,0);
+INSERT INTO `hooks` VALUES ('0af4c2ec-bb24-4c67-b78a-78f9bf41b282','b816f4fa-483a-4e67-99ff-4e35bd4fa952','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',391.42,5,96,29);
 INSERT INTO `hooks` VALUES ('0afcf368-4954-40c8-b2e9-def7a5fb2607','4d7d729c-9891-45a5-a8d3-85b0502f4a3e','268a2370-3e27-4885-ba6a-4445f9d22227','ffa8662a-067b-435d-af37-fc3fa4897461',126.40,9,55,0);
 INSERT INTO `hooks` VALUES ('0b0eb803-9e86-40da-afbd-f1bf13101bcd','7ff2b408-e361-4557-9b51-dbc2f54ccd55','5f8228ac-f40c-4323-bf78-6c52c2404361','05837a49-b1a6-4803-a6fa-5ba8785f7f74',296.17,2,92,50);
 INSERT INTO `hooks` VALUES ('0b126836-4960-42f4-bca9-2a04c7a001cf','7f92cb48-1a7a-4035-8db2-8dec970554d6','ee668867-ac4d-4364-99cf-5aece274cf51','3a345595-5af0-440c-a374-6997654b68ed',262.70,2,85,33);
@@ -2850,6 +2881,7 @@ INSERT INTO `hooks` VALUES ('0b44d5a2-c4de-4a68-aa52-d0fb85ac3494','293dab51-f4b
 INSERT INTO `hooks` VALUES ('0b4828ad-707d-4197-924b-c42947e6fb78','089b301a-9fb1-47b9-b6d9-c366dfb94002','62751ca2-6669-4ce6-be87-9443f1370985','289d0316-9f7b-483c-85e5-694a41fff136',212.00,4,79,50);
 INSERT INTO `hooks` VALUES ('0b4d2f82-ccf0-4034-a01c-ddbc71829d14','a3e4fbae-4e9f-4588-b78e-ba390921e989','e22a10d4-1a2b-4c2a-ae40-bb943e7e14c4','521ae438-d9bf-4539-a10b-32b32cf3198a',327.10,1,100,50);
 INSERT INTO `hooks` VALUES ('0b4f3398-07d1-45dd-a3d3-9af9debb401e','d5b31142-e56f-4d1b-8620-b45e11973c9c','fb6f44dc-05d4-49d0-acbf-d4ddc4223a18','a7b1c7c9-d1de-4b3d-80de-b7e445877e8c',361.00,1,100,67);
+INSERT INTO `hooks` VALUES ('0b593795-a6f3-41a9-9fe7-6e4f2121aeab','0f9ab65d-9fc0-4052-91cc-38e6057a9985','737d77c5-739c-42f2-9db9-fb2177546cf6','f46b119d-7aa5-454c-b10f-2e04c32304f9',411.08,3,99,25);
 INSERT INTO `hooks` VALUES ('0b5ef534-7468-4c89-b415-a3d9f4cf7fef','d085d5b1-bd2b-42ea-9a75-ce274df4f7ae','1ebc531a-0f02-467b-99ae-3866f794cd2e','a30906bf-3577-4c3d-b3ee-35df457fd645',184.33,5,80,29);
 INSERT INTO `hooks` VALUES ('0b6b4375-56ff-4525-99fc-c7225b71db4f','efe540e9-e8d5-48d2-9b2e-2efa9e02edf2','13e89edf-8fc6-4cc3-8669-1ca27768e7e5','f46b119d-7aa5-454c-b10f-2e04c32304f9',204.00,3,92,40);
 INSERT INTO `hooks` VALUES ('0b7744d3-fdde-41e5-83ad-e73c1a251ba7','f57969a2-f8af-4d36-9d9f-b0669375fdce','7dedf1b5-dae4-43c2-adbd-cb00437ce29e','236d6ef2-8e42-43b6-81a9-fb0315b02594',210.20,3,95,70);
@@ -3141,6 +3173,7 @@ INSERT INTO `hooks` VALUES ('11aa9ad3-f636-4656-8f62-8ed8caae6f7c','4eda5de2-5ad
 INSERT INTO `hooks` VALUES ('11ae25ec-d599-40b8-b5b5-e61e325227f5','4b70e38f-de71-474c-b1f1-44763ab340c9','d387d3f3-0c56-4939-bf6a-77160084d2e0','4da9998b-82ce-4e51-8d50-85dd9142deaf',176.25,3,96,0);
 INSERT INTO `hooks` VALUES ('11b1b042-3eb2-4c8d-b4e7-9aa376caa559','c5acf996-7fe4-4b1f-9428-ee0e866c7964','297102b4-1fba-42dd-a627-4cdc359628fd','f46b119d-7aa5-454c-b10f-2e04c32304f9',219.90,13,89,0);
 INSERT INTO `hooks` VALUES ('11b93a52-5376-4ae5-8a18-b596c093ac1a','81ee2826-bb15-410b-ae32-7b43a45aec21','f922e380-97b5-479f-a762-36269d163f55','289d0316-9f7b-483c-85e5-694a41fff136',187.60,11,62,0);
+INSERT INTO `hooks` VALUES ('11c166f1-cd23-4dbb-b0ef-e41f8c985d92','ec1e8edc-3209-4067-b0b5-cfbba4943ebf','85f659f9-cff3-4bff-ae78-9d7169b0e066','236d6ef2-8e42-43b6-81a9-fb0315b02594',227.67,6,97,14);
 INSERT INTO `hooks` VALUES ('11c4415e-b76d-43f3-be42-3710291a34a1','81019c60-8c4f-44ad-9b12-80e2660a5e0c','e13f1da0-5487-4648-82e6-09d3d4a1b334','5f48a57a-4d8e-4a92-82c8-5d411c0b6079',242.33,1,100,75);
 INSERT INTO `hooks` VALUES ('11c64c78-d738-4b42-abd1-27751e6ac55c','3e5c52f5-5485-4876-94dd-1649ab6fc7b9','21b23bfd-753d-463c-8cd3-4da040c9243c','236d6ef2-8e42-43b6-81a9-fb0315b02594',184.40,7,68,13);
 INSERT INTO `hooks` VALUES ('11c9edbe-9f33-46e8-8549-b3532b73f14e','b21eed1b-2c00-4cc3-829b-70c11101ecf0','239e2f33-94cf-47d1-90d7-f0eb948392d5','0adb98bc-b506-4f97-bfa3-79feb210a569',219.25,3,90,73);
@@ -3399,6 +3432,7 @@ INSERT INTO `hooks` VALUES ('16ce1eaa-7d71-4cef-a268-a0bb5f8d269d','fbb2fb8a-ce5
 INSERT INTO `hooks` VALUES ('16dabdbd-7aa3-4ae8-9b52-ae156c51eace','17370d21-bae1-4127-b21d-265b4b446be1','297102b4-1fba-42dd-a627-4cdc359628fd','f46b119d-7aa5-454c-b10f-2e04c32304f9',269.30,3,62,40);
 INSERT INTO `hooks` VALUES ('16e829e8-3e8b-4677-b8c1-6a3055035cde','69b33f0b-c774-4ec8-8929-6e42ab5a3288','62751ca2-6669-4ce6-be87-9443f1370985','1de0ffff-4bd4-4819-ab5a-601dca685e94',189.00,1,100,67);
 INSERT INTO `hooks` VALUES ('16ebb2fe-a701-4457-91ee-8a6f9125a1b1','e8880505-022f-4d35-976e-ab9251f274b2','1ebc531a-0f02-467b-99ae-3866f794cd2e','a30906bf-3577-4c3d-b3ee-35df457fd645',284.92,1,100,86);
+INSERT INTO `hooks` VALUES ('16eca85f-3aa2-4c0f-8920-d08f36de6bf5','bb99fea8-269c-4b80-a70e-e8041d1ad32a','1549c831-99a8-4947-947f-dbdc618cd2aa','254a626e-19be-481e-b6e1-5492648db50d',395.33,1,100,86);
 INSERT INTO `hooks` VALUES ('16eea47b-1885-48ae-ae32-f6998624347b','ccf220c2-d1c8-47d2-bae4-b49b86011929','88ee7f8c-abd9-478d-bba4-b85b55abe542','289d0316-9f7b-483c-85e5-694a41fff136',182.10,5,75,29);
 INSERT INTO `hooks` VALUES ('1701b6e5-8934-4972-a2f6-7b3aa3f10f65','935a3e13-3b6a-4962-a0ac-5d2a270cc6ef','f7d81e20-f579-4052-aa0e-96200f868a5c','a3402d72-6e9c-45e3-9c35-6eac6b5adf13',183.60,1,100,86);
 INSERT INTO `hooks` VALUES ('17029238-cad7-42db-942c-536054f7cd9a','cb1a0bb2-aa44-4f71-946f-522da95c81ad','436fbfab-55f6-428c-b3ad-54a178415f11','214c7844-9a20-441a-89c7-9a8885a70440',211.00,1,100,86);
@@ -3505,6 +3539,7 @@ INSERT INTO `hooks` VALUES ('18fe709e-9ca2-4372-a9a2-ced3f23d62a7','cf765ef3-3dd
 INSERT INTO `hooks` VALUES ('19046345-3493-4e1f-be69-f98ed4fb9538','a6263045-301c-4204-97dc-396a88085d98','ab4bcf93-9c38-4469-b66d-79c758422d0f','4da9998b-82ce-4e51-8d50-85dd9142deaf',235.33,7,84,0);
 INSERT INTO `hooks` VALUES ('19061f3a-98d2-4231-b6ea-bb91ac2a8152','f9138af7-532d-4d32-9b2f-cda3f0549d8c','b11fa21b-760d-44ad-baf6-70c457074d8c','f46b119d-7aa5-454c-b10f-2e04c32304f9',223.50,3,95,73);
 INSERT INTO `hooks` VALUES ('190bb92a-1bf5-4b0b-aaf1-1c668203eadc','fdfa0e4e-a353-4038-a89b-54d3fc648445','436fbfab-55f6-428c-b3ad-54a178415f11','214c7844-9a20-441a-89c7-9a8885a70440',200.67,1,100,89);
+INSERT INTO `hooks` VALUES ('190c0b65-8e85-4886-9ba9-1477f27317d8','4eede0e8-7668-4048-a8bf-d50a295aa8b7','93545bca-6455-43de-b0a4-64e4a2fdb17f','bf6ff62f-d42b-48f8-956c-f8dbde4a1555',362.83,5,88,17);
 INSERT INTO `hooks` VALUES ('1910b036-e13e-4200-9088-50dd49a2cf2a','08655566-87b8-455b-87cd-b96be8dfcacb','fa9ca141-62cb-4d21-bf4c-b5f70897ba5b','5f48a57a-4d8e-4a92-82c8-5d411c0b6079',243.25,2,99,33);
 INSERT INTO `hooks` VALUES ('19151388-a65d-4970-bbbd-6c60948a9da6','c8789f6f-afc5-48e7-8584-02dffeb277ec','2961ff3e-255b-4e87-8381-f087abc465e1','a7b1c7c9-d1de-4b3d-80de-b7e445877e8c',280.33,2,95,80);
 INSERT INTO `hooks` VALUES ('191c1544-db3b-4844-b9ac-0caed14f57d4','f0447f7f-99e4-433d-9c0c-de4531bada68','cf997620-1259-41b1-9cd5-60430106ce7a','a3402d72-6e9c-45e3-9c35-6eac6b5adf13',165.00,3,99,73);
@@ -3518,6 +3553,7 @@ INSERT INTO `hooks` VALUES ('192b178b-397c-4330-88bf-4314438dcc38','bace2f56-390
 INSERT INTO `hooks` VALUES ('192c3744-6b09-492d-8c5d-df89a7553bf8','741e9481-184a-411c-ae30-6c526d55dabb','56aea5c0-b1cd-4205-a2c6-4f78cc93828f','0adb98bc-b506-4f97-bfa3-79feb210a569',183.50,2,72,33);
 INSERT INTO `hooks` VALUES ('192efaa6-e6f0-42e8-a547-b14dbf076e04','658e0bb1-7178-4a4a-a868-0007afa7e2d2','1ebc531a-0f02-467b-99ae-3866f794cd2e','a30906bf-3577-4c3d-b3ee-35df457fd645',315.33,2,99,71);
 INSERT INTO `hooks` VALUES ('1946e326-2115-4467-bfb9-d1ba3dfa355f','35c69fa5-2577-4f28-89b4-6a1a6901dd3c','983aef6a-47ce-4bbc-985e-d3668616106f','c3026089-8e7d-4b21-8e49-1a0925de14b0',217.33,1,100,80);
+INSERT INTO `hooks` VALUES ('194b695d-b1e1-4122-b7c4-8a081bd38640','bb99fea8-269c-4b80-a70e-e8041d1ad32a','fe30ccf7-32cb-43c0-b782-69a22f319863','289d0316-9f7b-483c-85e5-694a41fff136',264.17,7,67,0);
 INSERT INTO `hooks` VALUES ('1951f865-3359-46b2-bfba-7420b7f0c754','4a5c861c-a8e6-4f94-94d1-046e98c24ac7','3c4de5f6-6595-45b8-8d18-2f5f2b2a9931','214c7844-9a20-441a-89c7-9a8885a70440',205.42,1,100,50);
 INSERT INTO `hooks` VALUES ('19547d4b-fcfc-4e58-bbb4-03393155e842','2da75e7c-68c0-4ce6-a9bf-28d8105e1268','41638192-f1ac-4131-a1fa-a494b9ac01ca','289d0316-9f7b-483c-85e5-694a41fff136',205.42,6,82,14);
 INSERT INTO `hooks` VALUES ('195e2bc1-2afc-4dfe-80ea-743df33177a2','0ff6ecb4-0642-40ac-ad1e-b2dc6d54b855','2389fb0f-bc36-4cf1-b635-c0ca85dc590b','289d0316-9f7b-483c-85e5-694a41fff136',232.50,5,59,0);
@@ -3559,6 +3595,7 @@ INSERT INTO `hooks` VALUES ('1a13e2ee-45dc-43ea-a339-d205bd889d37','643da99b-7d0
 INSERT INTO `hooks` VALUES ('1a197eb1-ff0e-4500-8768-90c037c6abf2','a3d8a64c-a8d9-457b-9d79-feed8e2df8b2','ab34f8a6-cb72-429f-9350-b7c9cdaf95d6','3a345595-5af0-440c-a374-6997654b68ed',164.30,4,63,0);
 INSERT INTO `hooks` VALUES ('1a2072bc-246d-4856-bc47-98764c681eac','cd548d4d-7654-4073-b361-50622c91a20f','1bb6fb1f-962a-43b9-a155-6af7b8b37ce8','33471483-c347-4f32-a4c1-9d423dff27a2',193.17,4,87,33);
 INSERT INTO `hooks` VALUES ('1a243e5f-b329-4b1a-ac8b-31965816cbe5','063a9bc8-3b02-48c5-b120-4d695722e445','1b50f2a7-3720-45a8-82ba-7c4938348006','254a626e-19be-481e-b6e1-5492648db50d',243.90,7,91,46);
+INSERT INTO `hooks` VALUES ('1a2ca51e-a334-4951-96ca-d41ead52eae3','16312c89-0121-4ed4-94b5-e3d48e470c3d','4cb0374a-6f32-4af6-b287-6a34da530c69','f46b119d-7aa5-454c-b10f-2e04c32304f9',413.08,1,100,67);
 INSERT INTO `hooks` VALUES ('1a3395d7-0ac3-4d5f-854f-526aee496c7e','3a38c4d3-6abc-490d-9125-cb667d0a228f','e22a10d4-1a2b-4c2a-ae40-bb943e7e14c4','10e37fd5-d99b-42d2-9b5c-059e75fe1ba3',272.40,1,100,88);
 INSERT INTO `hooks` VALUES ('1a3519e5-a045-4332-bae5-8507e3a173bb','0134f009-5329-42f9-ad57-b2eb95e5e7a5','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',217.00,1,100,80);
 INSERT INTO `hooks` VALUES ('1a35948a-d250-4bca-8664-5620ededfa85','187abe5d-89b4-4487-9ac8-97c3ff42f21c','239e2f33-94cf-47d1-90d7-f0eb948392d5','0adb98bc-b506-4f97-bfa3-79feb210a569',188.92,3,89,0);
@@ -3608,6 +3645,7 @@ INSERT INTO `hooks` VALUES ('1b377414-d71c-4a9e-9ca7-a9efe0e9631e','cea16c38-715
 INSERT INTO `hooks` VALUES ('1b3b5a22-7e60-4302-b838-8d40599037e7','8216a576-29ed-4b02-9304-74e6a8354ad8','e13f1da0-5487-4648-82e6-09d3d4a1b334','f46b119d-7aa5-454c-b10f-2e04c32304f9',296.00,2,82,60);
 INSERT INTO `hooks` VALUES ('1b413f7d-c71e-41a3-a2d4-13c2c2514890','a9c7c138-9b53-4a47-8ce7-d6a221a1a575','5932cef0-316d-4edb-9982-a1a7179467c3','ffa8662a-067b-435d-af37-fc3fa4897461',172.30,2,100,50);
 INSERT INTO `hooks` VALUES ('1b4a4e9b-baa6-4dd5-b69f-b17a1fe70fd7','f6087e6c-ae5b-49e7-93c4-118e8ab5cf64','cf997620-1259-41b1-9cd5-60430106ce7a','a3402d72-6e9c-45e3-9c35-6eac6b5adf13',333.00,4,95,75);
+INSERT INTO `hooks` VALUES ('1b4bf723-caea-4471-9eea-292dd5351452','4fccd9d6-582e-4158-b311-9c570cf6c8b7','436fbfab-55f6-428c-b3ad-54a178415f11','214c7844-9a20-441a-89c7-9a8885a70440',256.58,1,100,50);
 INSERT INTO `hooks` VALUES ('1b5d900a-763e-46fb-a776-63530e4aad86','07949e74-6853-4ad6-9fb4-5a330b5b4952','d7a0b032-7445-4e85-bbb7-9eed54fa25ce','05837a49-b1a6-4803-a6fa-5ba8785f7f74',330.42,2,100,67);
 INSERT INTO `hooks` VALUES ('1b7c6f3e-c836-4013-89c3-f91a2f227a7c','2cb2cf7b-bd88-4506-884d-ac999c8628dd','9465a7eb-b6f6-4ff6-b89f-e2c0d68e5d6c','541520b9-6151-43c6-8956-31a02acb59bd',210.90,2,97,50);
 INSERT INTO `hooks` VALUES ('1b7e95bf-d2bb-4b1f-9be1-5d6bec843ca0','8f9e03cc-00fc-418d-9a4a-7c80949efaca','b11fa21b-760d-44ad-baf6-70c457074d8c','f46b119d-7aa5-454c-b10f-2e04c32304f9',267.90,3,91,57);
@@ -3724,6 +3762,7 @@ INSERT INTO `hooks` VALUES ('1db88666-891d-413e-9577-9ace05fa4f55','4cf0e121-b8c
 INSERT INTO `hooks` VALUES ('1dc08c5c-4975-435a-a749-f98488ed1f08','5a3b3d5a-863c-417b-ae84-02167cbce5d5','56aea5c0-b1cd-4205-a2c6-4f78cc93828f','846671a7-3918-4de4-8bfe-e182a4c651b4',264.80,2,77,0);
 INSERT INTO `hooks` VALUES ('1dc08e57-6279-4aef-99a0-2f5de5834fe4','b658efd9-2148-47bf-a4da-0ce427fc7afd','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',332.08,1,100,92);
 INSERT INTO `hooks` VALUES ('1dc0c7de-72ea-4c57-95b9-d9f3c5b0e06e','f0cadece-32ad-4110-be68-019cc7a9bb99','370ba84f-5f69-4568-bdaa-fe3993f1646c','8e5420a0-9f00-4ae1-a733-270b3e9e8600',33.83,15,11,0);
+INSERT INTO `hooks` VALUES ('1dc384f3-67e2-4ced-85ec-7a2759281056','4fccd9d6-582e-4158-b311-9c570cf6c8b7','56aea5c0-b1cd-4205-a2c6-4f78cc93828f','0adb98bc-b506-4f97-bfa3-79feb210a569',222.75,2,87,0);
 INSERT INTO `hooks` VALUES ('1dc57b9b-54f3-423c-938a-f726e0e5d95d','9b3eb068-9345-4c5a-ba30-341e0aa04150','e22a10d4-1a2b-4c2a-ae40-bb943e7e14c4','c73a06d2-d45d-4a4a-ac04-8d951525c34f',150.25,7,89,22);
 INSERT INTO `hooks` VALUES ('1dc77e68-4df5-4a08-8f5c-c9e645c29839','248e9ded-ca75-471b-b7a7-e5ee41b4bb8b','b6d32a60-bf6f-4cdd-9407-3273ad24927d','289d0316-9f7b-483c-85e5-694a41fff136',238.42,2,99,50);
 INSERT INTO `hooks` VALUES ('1dc9b3ec-b5a0-4c17-be63-4682dab55da7','21fb9639-2bd3-4d2d-b33b-89e04a8391ff','006727ca-a7bf-4b66-a478-05d9ed8c31d2','f46b119d-7aa5-454c-b10f-2e04c32304f9',262.50,6,71,25);
@@ -4051,6 +4090,7 @@ INSERT INTO `hooks` VALUES ('24e47eb7-d228-425a-8d36-c6c23caf713e','f13ff41d-ca0
 INSERT INTO `hooks` VALUES ('24e550c6-a01b-4193-a04f-92fb1bc17ac7','ef8c6a94-7053-4e14-a582-55305a7c725d','88ee7f8c-abd9-478d-bba4-b85b55abe542','f46b119d-7aa5-454c-b10f-2e04c32304f9',146.60,1,100,92);
 INSERT INTO `hooks` VALUES ('24e7936f-403d-4c9f-8b9d-e7b92f61d8d2','04ac05e1-1fe0-436e-8edc-a0de17e3fd97','239e2f33-94cf-47d1-90d7-f0eb948392d5','0adb98bc-b506-4f97-bfa3-79feb210a569',184.92,6,79,54);
 INSERT INTO `hooks` VALUES ('24ee591d-85e7-46d0-a7f9-410685fd3d00','3e5a8219-ddac-4243-9546-e8eb82e11fd0','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',206.80,1,100,92);
+INSERT INTO `hooks` VALUES ('24f6500d-d54e-4610-bcd2-ac1e4824e580','e68b7aac-a0c4-4b41-92f4-8053620c8a4c','ccfa2af7-bbe1-418e-a356-d4de84e8a486','05837a49-b1a6-4803-a6fa-5ba8785f7f74',291.42,1,100,89);
 INSERT INTO `hooks` VALUES ('24fb25f1-8f9f-4fb4-a065-808a340168c9','0d8d1488-35e8-46f9-8146-7e5a55e8a90c','436fbfab-55f6-428c-b3ad-54a178415f11','214c7844-9a20-441a-89c7-9a8885a70440',193.58,1,100,67);
 INSERT INTO `hooks` VALUES ('24fcc010-a755-433c-988f-e442d75c271d','a0f6de04-1085-48fd-8f34-3306e13e3747','436fbfab-55f6-428c-b3ad-54a178415f11','214c7844-9a20-441a-89c7-9a8885a70440',138.50,4,90,50);
 INSERT INTO `hooks` VALUES ('2502df8e-82d3-4691-a859-6b4dfa9f5712','79da9535-a4d4-4213-a8f2-99f723450825','268a2370-3e27-4885-ba6a-4445f9d22227','ffa8662a-067b-435d-af37-fc3fa4897461',198.50,5,56,38);
@@ -4149,6 +4189,7 @@ INSERT INTO `hooks` VALUES ('27035b6c-83ff-41e7-af58-dfa6f93c7e5c','f2f98bad-530
 INSERT INTO `hooks` VALUES ('2713f8a2-7261-453a-a734-bc262bf48cd0','77886a2c-6d72-406d-ab00-fed54baf29aa','f22fd15f-bf1c-4278-8eaf-32dbe9a37ae1','366d718c-abfb-4ee0-9641-0c75a6b94331',211.08,3,95,63);
 INSERT INTO `hooks` VALUES ('2714ab2f-b517-4b52-b4d4-f8d2f2221470','10448d9e-9f97-4c90-b07a-669ecd5bceaf','c075a7b3-b982-4414-a065-25fef1d53a2d','a30906bf-3577-4c3d-b3ee-35df457fd645',166.00,3,99,67);
 INSERT INTO `hooks` VALUES ('27187a6e-be8a-4733-b14f-af72c150a81a','b788d485-6a53-4ef5-8fcc-7f8887cac269','fa9ca141-62cb-4d21-bf4c-b5f70897ba5b','5f48a57a-4d8e-4a92-82c8-5d411c0b6079',162.60,5,71,50);
+INSERT INTO `hooks` VALUES ('271f900f-1d4d-474d-b8c8-b2a2f2420ad8','b69daac0-2e34-4617-ad80-9ec8d8c90e10','d1b2553b-e296-4fcb-903d-8e6a79300438','05837a49-b1a6-4803-a6fa-5ba8785f7f74',270.92,5,66,0);
 INSERT INTO `hooks` VALUES ('2723696d-931e-4f4d-926e-95b75e3fafbb','59144a29-bed4-48b2-a37a-8ff16821a683','ac5273b8-6655-402c-86de-28749f3bea05','6f37c5cc-dbdd-422d-aa14-9eebeb37b010',273.80,9,95,31);
 INSERT INTO `hooks` VALUES ('27275b5b-654e-4116-8a8f-69e0d84dddbb','e362dbba-697c-4ad5-b366-e89cd8a61fe0','5932cef0-316d-4edb-9982-a1a7179467c3','ffa8662a-067b-435d-af37-fc3fa4897461',170.50,1,100,83);
 INSERT INTO `hooks` VALUES ('272c470c-1529-4d05-8752-a20f45996652','f019800f-4483-4a02-b658-9d4ba00d637f','239e2f33-94cf-47d1-90d7-f0eb948392d5','df10f08f-1148-4445-8b6d-9dc20bf11534',129.40,1,100,80);
@@ -4274,6 +4315,7 @@ INSERT INTO `hooks` VALUES ('29e5fed6-bde8-451a-bce5-d9bde10d3319','6344163c-cac
 INSERT INTO `hooks` VALUES ('29f06ee7-2cf2-4750-8578-42317f213ab2','e78dbf5a-5e1c-473c-9345-874bf1a2bf57','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',197.75,1,100,50);
 INSERT INTO `hooks` VALUES ('29f25741-9d46-49a4-a7ef-0bac38dfcdab','07e5d86f-35f0-490f-8a56-408152771067','b66a65b7-be06-42d0-aed7-29a4fc311e2d','a7b1c7c9-d1de-4b3d-80de-b7e445877e8c',140.67,1,100,89);
 INSERT INTO `hooks` VALUES ('29f985f2-378c-43c6-ab6b-829170a562e8','88c9e395-277d-4bf6-9ae9-3f760d32c707','32b7a057-435f-4d6b-a3e9-f5fa452c840d','ef3c865f-2395-49df-bdc3-f9cf3a188d4b',113.90,7,70,13);
+INSERT INTO `hooks` VALUES ('29fa0ed1-1f90-4d0b-a29f-b75316dcab04','2cf82ef7-3e1b-48bb-a475-5ff566a540b8','b5438e57-c824-4b04-be90-cd790bd9105c','289d0316-9f7b-483c-85e5-694a41fff136',269.08,6,75,0);
 INSERT INTO `hooks` VALUES ('2a017538-f25b-469b-9bcd-eef431a0a20d','824d6c2c-f874-4a49-a719-f578786dfb09','fe30ccf7-32cb-43c0-b782-69a22f319863','289d0316-9f7b-483c-85e5-694a41fff136',253.00,8,82,33);
 INSERT INTO `hooks` VALUES ('2a036608-3c46-491e-a71c-986e2d6e1057','c3c3a3cf-a696-47e9-bf17-538957421be7','074e76b6-9ff0-41db-b49d-8ec0ca2b329a','519ae6bf-d347-4a39-9758-76c0c3656280',238.92,10,74,41);
 INSERT INTO `hooks` VALUES ('2a056ec1-88b6-496a-a982-f6d8bcbf2002','ecd2116c-f614-4844-9acc-e197fd35537e','9465a7eb-b6f6-4ff6-b89f-e2c0d68e5d6c','541520b9-6151-43c6-8956-31a02acb59bd',513.80,1,100,50);
@@ -4488,6 +4530,7 @@ INSERT INTO `hooks` VALUES ('2e0c798d-ea69-45ae-aa26-0ab368e2d739','8caf7368-3a8
 INSERT INTO `hooks` VALUES ('2e239010-7266-4131-bde5-ba951d66a15f','8656b091-0e95-48dc-b7be-673180bd633e','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',281.33,2,97,33);
 INSERT INTO `hooks` VALUES ('2e2b4ee4-ddae-4402-894a-5457c5a1d2ec','501a5e51-b1ff-4b25-be10-877344fa20ff','2389fb0f-bc36-4cf1-b635-c0ca85dc590b','289d0316-9f7b-483c-85e5-694a41fff136',131.90,7,61,13);
 INSERT INTO `hooks` VALUES ('2e33d9bc-d4f7-4f21-a0dc-84e752c83104','d5fe09d5-b4f5-4af6-bc18-2c47e63958ff','56aea5c0-b1cd-4205-a2c6-4f78cc93828f','846671a7-3918-4de4-8bfe-e182a4c651b4',164.90,3,88,50);
+INSERT INTO `hooks` VALUES ('2e38f615-e260-42af-b2d8-130e0c14673d','c72680dc-c412-40cf-874e-1d911988d5f7','4cb0374a-6f32-4af6-b287-6a34da530c69','f46b119d-7aa5-454c-b10f-2e04c32304f9',226.08,3,96,63);
 INSERT INTO `hooks` VALUES ('2e3ff287-69f6-4fe8-b0ff-30f3ebc2aef2','18ff1015-37c8-44ae-9926-1827b884327d','ac5273b8-6655-402c-86de-28749f3bea05','6f37c5cc-dbdd-422d-aa14-9eebeb37b010',263.20,4,83,67);
 INSERT INTO `hooks` VALUES ('2e41f70f-a07a-40b4-bfdc-0cac9d8ed7c4','8771153e-092a-44bb-b4ba-30d206f446e5','e22a10d4-1a2b-4c2a-ae40-bb943e7e14c4','c73a06d2-d45d-4a4a-ac04-8d951525c34f',220.50,10,87,9);
 INSERT INTO `hooks` VALUES ('2e4fb7d0-f507-45a3-906f-4561ec35412f','d5906595-9878-4106-8090-dcf11507f817','6a6537f3-8c69-4a15-8dd3-056d5459db77','a7b1c7c9-d1de-4b3d-80de-b7e445877e8c',163.90,7,94,50);
@@ -4785,6 +4828,7 @@ INSERT INTO `hooks` VALUES ('33f74ef6-d6c3-4bbb-8fd9-65b5c2fa2aae','8373b958-6f8
 INSERT INTO `hooks` VALUES ('3404d668-2548-49c9-aa7f-7e980040b929','7c0b4595-edd3-44b4-a571-28b4639a02b0','a12c49ea-d0e7-4d87-a719-c69d24d4e392','0adb98bc-b506-4f97-bfa3-79feb210a569',196.20,3,76,40);
 INSERT INTO `hooks` VALUES ('3409a6ab-3b69-42b0-b9d1-74f9cd375086','9493a641-ce4b-4102-924a-a0e77705ec0c','93545bca-6455-43de-b0a4-64e4a2fdb17f','d1eabdfd-cb8b-4601-b115-70c8c102b3c3',424.42,1,100,50);
 INSERT INTO `hooks` VALUES ('340e2e80-93a8-4493-8317-ed6d8b951be4','8646a61b-3fed-4812-ac21-20b6d7877360','df6a58e9-55f8-47e7-b89f-2cfff3323375','236d6ef2-8e42-43b6-81a9-fb0315b02594',236.30,2,86,75);
+INSERT INTO `hooks` VALUES ('340fe271-75ae-4c7f-8a08-b317feb76e46','74df8428-fd97-4558-aa0c-0b445f545460','9d162f39-7aa6-460d-96b2-8410f2816448','f46b119d-7aa5-454c-b10f-2e04c32304f9',236.92,4,81,43);
 INSERT INTO `hooks` VALUES ('3412eaf8-6bf6-49aa-9b8a-04a5c469299d','06c0a960-5a6b-439d-90b9-9e2454a7073f','b4a58128-52fb-466e-ae7c-431bbac7a452','254a626e-19be-481e-b6e1-5492648db50d',144.10,6,66,14);
 INSERT INTO `hooks` VALUES ('342fae4f-ee90-41be-a713-807f31f2c792','874afa86-593c-4792-9579-8bdefd8be1d6','1b50f2a7-3720-45a8-82ba-7c4938348006','f46b119d-7aa5-454c-b10f-2e04c32304f9',204.40,2,88,0);
 INSERT INTO `hooks` VALUES ('34349134-d5f2-4f7a-a208-288be33f4362','11cc449b-5eba-475b-a42c-9ba4b5bcc492','4da3caec-885a-4748-816a-800fe07dbc35','4da9998b-82ce-4e51-8d50-85dd9142deaf',240.50,1,100,83);
@@ -4864,6 +4908,7 @@ INSERT INTO `hooks` VALUES ('35d47436-d6df-4008-bded-98337c34615a','48975f2a-046
 INSERT INTO `hooks` VALUES ('35df7a98-48a6-4415-8770-cf338435eba7','629b17fc-ca5f-4099-89be-005605612a4b','e22a10d4-1a2b-4c2a-ae40-bb943e7e14c4','c73a06d2-d45d-4a4a-ac04-8d951525c34f',246.83,10,75,29);
 INSERT INTO `hooks` VALUES ('35f0b783-6d2b-4f83-9fe7-87793b0af8d4','6534f8f0-9360-4bc2-a79f-2020cf623453','7904e606-d984-4e42-98ed-f786d2ee13f4','236d6ef2-8e42-43b6-81a9-fb0315b02594',197.00,1,100,50);
 INSERT INTO `hooks` VALUES ('35f61d46-a36c-4e88-b7a0-edecb9acb42f','a27e781d-62c5-42a2-bc21-597a84380d30','88ee7f8c-abd9-478d-bba4-b85b55abe542','719f8f7b-3ef5-4764-88f8-acf8250abf89',341.33,2,92,71);
+INSERT INTO `hooks` VALUES ('35f7999f-7371-4270-b9f5-fa2d31fa9e2d','b816f4fa-483a-4e67-99ff-4e35bd4fa952','e22a10d4-1a2b-4c2a-ae40-bb943e7e14c4','254a626e-19be-481e-b6e1-5492648db50d',407.92,1,100,86);
 INSERT INTO `hooks` VALUES ('35fd3a3d-1b2a-44d5-b3bc-d569ac8d4135','715690b7-54e0-46c4-be29-9707250d4f17','ac5273b8-6655-402c-86de-28749f3bea05','6f37c5cc-dbdd-422d-aa14-9eebeb37b010',206.00,5,83,44);
 INSERT INTO `hooks` VALUES ('36007d48-6dd2-44d3-b103-472c9c0eeb82','2c137fc7-d886-4820-b4f7-b1ac71a67f66','32b7a057-435f-4d6b-a3e9-f5fa452c840d','ef3c865f-2395-49df-bdc3-f9cf3a188d4b',179.33,2,97,33);
 INSERT INTO `hooks` VALUES ('360331d9-a1e6-4900-9a50-58efd86d0186','c41a86b7-0f84-472f-be2d-020f6f64d72d','9f639768-fd30-4304-a53d-aaa94c438efc','236d6ef2-8e42-43b6-81a9-fb0315b02594',183.00,6,81,0);
@@ -5055,6 +5100,7 @@ INSERT INTO `hooks` VALUES ('39aefe92-1b22-49b4-9914-0669588ab906','fd1f137b-951
 INSERT INTO `hooks` VALUES ('39af089a-7cb8-475c-9607-452b593caa2d','b8a9cb57-845d-4d6c-9cb8-dc6352501979','27f9afb5-5a66-474d-ae4f-cfa3fa2641ce','f46b119d-7aa5-454c-b10f-2e04c32304f9',195.10,1,100,89);
 INSERT INTO `hooks` VALUES ('39b7ee90-61c6-4c77-b23e-72e08d2aedfa','ae62854b-f9b3-46bd-8cc3-7f19d35c7ec8','1d3ca75e-6017-47f5-b673-955cfb8db66b','bf6ff62f-d42b-48f8-956c-f8dbde4a1555',353.33,2,98,60);
 INSERT INTO `hooks` VALUES ('39bde4d4-f9fa-48cc-afd1-78cad4b108e7','174c40b2-ccb8-4672-aef4-2789e1c4192b','3c4de5f6-6595-45b8-8d18-2f5f2b2a9931','a30906bf-3577-4c3d-b3ee-35df457fd645',238.80,3,84,25);
+INSERT INTO `hooks` VALUES ('39c1e834-5fd6-4c58-9a55-762227ea4a58','4eede0e8-7668-4048-a8bf-d50a295aa8b7','297102b4-1fba-42dd-a627-4cdc359628fd','f46b119d-7aa5-454c-b10f-2e04c32304f9',400.92,3,98,50);
 INSERT INTO `hooks` VALUES ('39c39de2-6f83-4631-bd83-cc7860a69920','d3832ea0-f3ff-4097-9157-66b3cc1b6fb3','2435adb1-790e-46bb-8a97-7e9ee44458fc','236d6ef2-8e42-43b6-81a9-fb0315b02594',222.67,10,89,29);
 INSERT INTO `hooks` VALUES ('39ca1683-5c71-41de-829f-2f8e62b53c7e','13edd4ae-68c5-4497-b81c-07abd2869506','297102b4-1fba-42dd-a627-4cdc359628fd','214c7844-9a20-441a-89c7-9a8885a70440',170.60,4,96,56);
 INSERT INTO `hooks` VALUES ('39d04fcd-301a-40f1-a3c4-4d2a0cefc5c1','0b683588-de69-44dc-99c3-4c6f9f0b5b7a','207f9c0f-d1c6-4563-bb5e-1b980c9bd34a','c73a06d2-d45d-4a4a-ac04-8d951525c34f',119.58,6,59,33);
@@ -5118,6 +5164,7 @@ INSERT INTO `hooks` VALUES ('3adfd804-2d74-4263-8396-efe2a187ccf4','f00b4cee-352
 INSERT INTO `hooks` VALUES ('3ae1678a-1451-4a89-94a9-128b69b1647f','6fe5340a-c5a1-4075-97ac-f610b2e330df','737d77c5-739c-42f2-9db9-fb2177546cf6','f46b119d-7aa5-454c-b10f-2e04c32304f9',237.75,6,79,14);
 INSERT INTO `hooks` VALUES ('3ae68f38-277c-4e24-9615-07a89a853e8e','c5aafd46-9448-4139-ba75-97672da71222','c075a7b3-b982-4414-a065-25fef1d53a2d','a30906bf-3577-4c3d-b3ee-35df457fd645',225.50,3,94,79);
 INSERT INTO `hooks` VALUES ('3af393cd-ae08-4441-9d9a-de2bdbd30468','79ba736a-17da-4422-856d-394ae9eb2f05','46b0ce8c-f89e-4214-8f38-498c68e87844','82d6b28a-9e07-4e2a-bfe4-ae4f522dacf5',201.00,5,88,44);
+INSERT INTO `hooks` VALUES ('3b08585d-b987-45b4-9702-a80468931ac9','0f9ab65d-9fc0-4052-91cc-38e6057a9985','e22a10d4-1a2b-4c2a-ae40-bb943e7e14c4','254a626e-19be-481e-b6e1-5492648db50d',398.92,4,96,0);
 INSERT INTO `hooks` VALUES ('3b14d320-1e35-482e-8481-5957f4ad518f','28cc9826-dfa3-4e1e-823c-35f72466b66e','d42d0c0c-85c3-4576-8c0b-c4316e4fa31a','a30906bf-3577-4c3d-b3ee-35df457fd645',203.00,1,100,86);
 INSERT INTO `hooks` VALUES ('3b1706a7-ba84-4c6a-8f51-f6e84c8adee2','959b4993-0d37-4b30-845c-9a60396caa61','b45924c1-e992-49a5-919d-fa34e2f99046','4752b071-f14a-4d07-8205-b664f24763ad',231.50,3,94,63);
 INSERT INTO `hooks` VALUES ('3b188059-356d-4a60-a525-d5ed3cb47e73','acfc05e0-3400-42a9-9d7d-da7d5243f763','d42d0c0c-85c3-4576-8c0b-c4316e4fa31a','a30906bf-3577-4c3d-b3ee-35df457fd645',286.58,1,100,80);
@@ -5135,6 +5182,7 @@ INSERT INTO `hooks` VALUES ('3b46436f-28bf-4821-9626-8a57ef469ac1','b68ffa3f-4dc
 INSERT INTO `hooks` VALUES ('3b4cc2d4-8898-4d30-b3e1-a1bedcfa44b7','69576710-5c0c-49e6-8bf9-9be3e0965175','b2cc1888-10a3-49e4-83fb-ab6ed56181c3','c3026089-8e7d-4b21-8e49-1a0925de14b0',170.90,6,55,33);
 INSERT INTO `hooks` VALUES ('3b4d32ed-efb5-4088-b61d-c5728575413f','53ce7ab3-2f4e-4d79-9dab-ca5ee7c4cdb1','e22a10d4-1a2b-4c2a-ae40-bb943e7e14c4','c73a06d2-d45d-4a4a-ac04-8d951525c34f',151.90,1,100,67);
 INSERT INTO `hooks` VALUES ('3b51eda5-2461-4907-a837-f026b3161fb8','f2580b91-d2c9-4897-a6cf-a38cf7a47edc','df6a58e9-55f8-47e7-b89f-2cfff3323375','3934ef49-3829-46a3-8041-ed401172b8fc',284.40,2,100,75);
+INSERT INTO `hooks` VALUES ('3b6995e5-37e4-410b-b02a-709a4396b9ec','b003d9bd-a6ab-4b56-8f6c-6b46277a357e','56aea5c0-b1cd-4205-a2c6-4f78cc93828f','0adb98bc-b506-4f97-bfa3-79feb210a569',271.33,3,94,25);
 INSERT INTO `hooks` VALUES ('3b7b4b59-ed53-41bc-ab54-23adaece81fb','0ab969d1-c561-4d88-8864-5fa090daa33e','e22a10d4-1a2b-4c2a-ae40-bb943e7e14c4','f46b119d-7aa5-454c-b10f-2e04c32304f9',145.17,1,100,75);
 INSERT INTO `hooks` VALUES ('3b7f5181-71b9-4deb-92b3-1eed4d5d9792','87b8ec39-3b81-45f4-9f1a-43ffac6932f0','4da3caec-885a-4748-816a-800fe07dbc35','4da9998b-82ce-4e51-8d50-85dd9142deaf',153.08,4,76,0);
 INSERT INTO `hooks` VALUES ('3b8e4c6d-c4f0-4dd8-ae2d-1e370f5be0e5','9bc8cbf3-89c5-4998-b37f-8068ba813c02','d42d0c0c-85c3-4576-8c0b-c4316e4fa31a','82d6b28a-9e07-4e2a-bfe4-ae4f522dacf5',220.67,4,81,50);
@@ -5151,6 +5199,7 @@ INSERT INTO `hooks` VALUES ('3bb7096f-4cb3-45b4-8023-e989d879ae15','c62624ab-3f2
 INSERT INTO `hooks` VALUES ('3bba0f46-293f-4109-9651-92aeb7fe560f','b9e3d746-c86c-41d1-a60a-9692c0979a27','3e832cb2-4f4a-4cd4-b079-14cdd5bd63d9','236d6ef2-8e42-43b6-81a9-fb0315b02594',276.80,3,93,0);
 INSERT INTO `hooks` VALUES ('3bbf2ab1-bbcc-4e26-b9d2-d64e1b721c46','b7de7311-9161-4d43-aec3-6e0caaf5e701','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',425.17,1,100,50);
 INSERT INTO `hooks` VALUES ('3bc00e24-bdac-428d-b32a-be3ce238d935','7053fc65-b9d3-4b3e-9d82-127dbea64ec6','e22a10d4-1a2b-4c2a-ae40-bb943e7e14c4','10e37fd5-d99b-42d2-9b5c-059e75fe1ba3',283.20,3,81,50);
+INSERT INTO `hooks` VALUES ('3bc48072-5716-4dfc-a959-c6228fb70ae1','c72680dc-c412-40cf-874e-1d911988d5f7','d70453ce-dd68-4acc-85a3-a1dfa6b397f9','214c7844-9a20-441a-89c7-9a8885a70440',235.50,1,100,88);
 INSERT INTO `hooks` VALUES ('3bd386d6-3e4e-418b-82db-717ebfd6a219','9c959151-551e-4ad8-b465-96f53550cc02','297102b4-1fba-42dd-a627-4cdc359628fd','f46b119d-7aa5-454c-b10f-2e04c32304f9',286.75,1,100,75);
 INSERT INTO `hooks` VALUES ('3bd6187d-3bd3-449e-90f9-a48c2fcbefb0','f07bd152-8fcf-432d-880d-cc107a1d9230','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',201.25,6,76,50);
 INSERT INTO `hooks` VALUES ('3bd83ad2-8309-420e-9c12-1cabc666723b','8e3e1d0b-4352-4c20-8f83-7cf7311928fe','62751ca2-6669-4ce6-be87-9443f1370985','1de0ffff-4bd4-4819-ab5a-601dca685e94',290.58,2,99,0);
@@ -5158,6 +5207,7 @@ INSERT INTO `hooks` VALUES ('3bd96c3c-7e9d-4e7f-b617-3c213efb76a2','1aae493c-c6b
 INSERT INTO `hooks` VALUES ('3bde5978-eb41-465a-9509-0d346873b2d4','11cc449b-5eba-475b-a42c-9ba4b5bcc492','e22a10d4-1a2b-4c2a-ae40-bb943e7e14c4','c73a06d2-d45d-4a4a-ac04-8d951525c34f',222.83,2,93,67);
 INSERT INTO `hooks` VALUES ('3bde756d-391b-4963-ac0b-c297fdfd39c4','b5e022c8-1e3d-46a6-a93d-cc8d56af2eab','b5438e57-c824-4b04-be90-cd790bd9105c','289d0316-9f7b-483c-85e5-694a41fff136',128.67,1,100,88);
 INSERT INTO `hooks` VALUES ('3be0404e-48fe-4426-b8b3-4b4e5f9265c2','5bab0771-2b3a-4d9b-a274-9fda11214580','e13f1da0-5487-4648-82e6-09d3d4a1b334','05837a49-b1a6-4803-a6fa-5ba8785f7f74',318.00,3,98,50);
+INSERT INTO `hooks` VALUES ('3be4b807-3597-4a97-8f02-463fa365f852','b816f4fa-483a-4e67-99ff-4e35bd4fa952','737d77c5-739c-42f2-9db9-fb2177546cf6','f46b119d-7aa5-454c-b10f-2e04c32304f9',328.42,6,81,14);
 INSERT INTO `hooks` VALUES ('3be7d666-9c11-4be6-b5e9-eef7a9a2a670','6b67a4e8-20c6-4675-bd9a-691a5a418b11','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',266.20,4,83,33);
 INSERT INTO `hooks` VALUES ('3be8a273-612e-4bef-b6f5-f1d7d214e076','9b02617d-ca2c-49ca-b229-b08e2e3271e3','d42d0c0c-85c3-4576-8c0b-c4316e4fa31a','a30906bf-3577-4c3d-b3ee-35df457fd645',207.08,1,100,75);
 INSERT INTO `hooks` VALUES ('3bea2222-e7cb-438a-893b-d93671e9c663','1555f1af-69f5-463e-956b-6ec66c681e62','ee206cbf-0133-4f8d-9dd4-bfc01fed5a89','254a626e-19be-481e-b6e1-5492648db50d',192.83,1,100,83);
@@ -5235,6 +5285,7 @@ INSERT INTO `hooks` VALUES ('3d9580cf-83ab-43d7-9ff5-61bfee795a38','db6dc7d8-8cb
 INSERT INTO `hooks` VALUES ('3d95a7e6-f1e3-482b-b334-ee98d1425138','1feaa949-fee5-4974-9805-3fe3903b887d','ac2087a7-a3b6-4d99-8823-41c798697b09','05837a49-b1a6-4803-a6fa-5ba8785f7f74',167.25,3,99,25);
 INSERT INTO `hooks` VALUES ('3d9c7978-bcae-48f2-adb4-7832aa70ad9e','6d73c4b6-5cb9-44c5-880c-26d6f8233455','93545bca-6455-43de-b0a4-64e4a2fdb17f','0f4644cf-e143-4bf4-93d4-1e728e11b4e8',163.92,10,68,44);
 INSERT INTO `hooks` VALUES ('3d9ecac0-95e7-4ae2-b640-86179fb7f9ed','b87d6d07-66c5-4727-85d0-c7e19ed32c9c','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',269.58,4,95,50);
+INSERT INTO `hooks` VALUES ('3da296f2-5a67-4875-bc74-55db022b2d0e','b003d9bd-a6ab-4b56-8f6c-6b46277a357e','ccfa2af7-bbe1-418e-a356-d4de84e8a486','f46b119d-7aa5-454c-b10f-2e04c32304f9',261.75,4,91,0);
 INSERT INTO `hooks` VALUES ('3dafc150-674a-459e-9d8f-4dde26eb8798','50f0664b-31e9-4771-b8ab-c8ec37c55e21','e3f60ae1-1eac-4e7b-8c30-d2aa3a26a01f','289d0316-9f7b-483c-85e5-694a41fff136',176.80,5,97,17);
 INSERT INTO `hooks` VALUES ('3db43bb3-7648-42f9-bb29-010bd05a1fa7','60f3156b-ce2f-45ed-9110-115062d2ba26','1549c831-99a8-4947-947f-dbdc618cd2aa','f46b119d-7aa5-454c-b10f-2e04c32304f9',59.40,8,36,0);
 INSERT INTO `hooks` VALUES ('3db4f585-409d-4300-92c6-76a13c47748b','ed3e34d4-e62c-4783-ae71-de3fbe2462c9','dc988b19-b0c9-4cd2-bc26-019b72a8d670','6f37c5cc-dbdd-422d-aa14-9eebeb37b010',291.17,1,100,83);
@@ -5293,6 +5344,7 @@ INSERT INTO `hooks` VALUES ('3ef48251-7f6f-47cd-bb5f-1ba2e963f0e2','a6f55f5a-530
 INSERT INTO `hooks` VALUES ('3ef71138-49be-43f2-b478-0f4bfe61edb5','4b02df31-e7da-4b42-a3f6-01e427153706','9465a7eb-b6f6-4ff6-b89f-e2c0d68e5d6c','541520b9-6151-43c6-8956-31a02acb59bd',241.40,1,100,67);
 INSERT INTO `hooks` VALUES ('3efc34b4-f2fa-4ec9-8f81-7334da2fffef','6f7f2713-06c0-4159-ba78-a09c0766828b','3c4de5f6-6595-45b8-8d18-2f5f2b2a9931','236d6ef2-8e42-43b6-81a9-fb0315b02594',208.60,4,78,43);
 INSERT INTO `hooks` VALUES ('3f071bb0-6fc4-4cae-9749-090441cfdf44','d6045097-c2b1-411d-8136-2108dd017d03','c075a7b3-b982-4414-a065-25fef1d53a2d','a3402d72-6e9c-45e3-9c35-6eac6b5adf13',177.40,1,100,80);
+INSERT INTO `hooks` VALUES ('3f10abda-e377-46b0-9259-999e96c8c980','74df8428-fd97-4558-aa0c-0b445f545460','03de7025-b9c5-49f3-890b-f6729774c6e2','d6339cf7-1c74-48e7-87ca-3cefc8499096',229.83,7,79,0);
 INSERT INTO `hooks` VALUES ('3f18f685-4f51-4a27-869b-411ea67b158d','bb8cfaec-95f9-41e1-939b-83619af25c29','5932cef0-316d-4edb-9982-a1a7179467c3','ffa8662a-067b-435d-af37-fc3fa4897461',142.20,6,91,33);
 INSERT INTO `hooks` VALUES ('3f1d50d7-16a4-4bd1-85f0-f6f9c4abd6ce','2b864121-6311-4345-9fe7-70c5af1b55bc','32b7a057-435f-4d6b-a3e9-f5fa452c840d','ef3c865f-2395-49df-bdc3-f9cf3a188d4b',298.42,2,93,0);
 INSERT INTO `hooks` VALUES ('3f21e1d6-3365-4b49-b882-66694aaecbfb','69e6f02f-74c3-4742-b3d8-5e348c86f11a','b5438e57-c824-4b04-be90-cd790bd9105c','289d0316-9f7b-483c-85e5-694a41fff136',294.75,3,97,40);
@@ -5471,6 +5523,7 @@ INSERT INTO `hooks` VALUES ('42efb55f-7075-4ab7-a35d-30c25f8de3f5','36d34c1a-5a2
 INSERT INTO `hooks` VALUES ('42efc292-8efa-4899-9cca-8ef00925aef8','f2580b91-d2c9-4897-a6cf-a38cf7a47edc','1b50f2a7-3720-45a8-82ba-7c4938348006','254a626e-19be-481e-b6e1-5492648db50d',230.20,7,81,13);
 INSERT INTO `hooks` VALUES ('42f24ad4-61c1-4e4c-a231-8a7e82315d29','658e0bb1-7178-4a4a-a868-0007afa7e2d2','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',271.08,7,85,0);
 INSERT INTO `hooks` VALUES ('42f6613b-67e2-444d-9750-90f4119f31ab','9805c97b-2da9-4050-8f8e-dfa4fe5f34ff','848c90fd-f856-4cf9-a60f-80fcef39a276','e67b5569-16ba-458b-9021-f68effda1b13',122.90,9,59,18);
+INSERT INTO `hooks` VALUES ('430010b5-a7df-4bb5-a18f-14a68cc56217','5b86938a-016d-4911-9141-4f053248bc53','1ebc531a-0f02-467b-99ae-3866f794cd2e','289d0316-9f7b-483c-85e5-694a41fff136',226.33,5,97,17);
 INSERT INTO `hooks` VALUES ('43012dcd-0422-4093-a4a2-d3a626a792a5','1adf5ad8-ffde-4243-b01a-bb90c0360fdf','fa9ca141-62cb-4d21-bf4c-b5f70897ba5b','5f48a57a-4d8e-4a92-82c8-5d411c0b6079',270.30,4,89,20);
 INSERT INTO `hooks` VALUES ('4306a897-88f6-4d55-91ab-0ab1e24d01fc','7f385998-856d-4e2a-a8ae-5783fbae709c','6ddc85f2-d75d-44fa-8de7-fca379423276','289d0316-9f7b-483c-85e5-694a41fff136',132.25,15,58,0);
 INSERT INTO `hooks` VALUES ('430755f4-6abd-495a-aab0-d9537b4b76bc','a6ded4d0-cbc4-4bc8-9979-6ce3db33f165','63f3d13a-ef2e-4224-bbcd-923db01fd77f','a30906bf-3577-4c3d-b3ee-35df457fd645',136.20,3,73,50);
@@ -5513,6 +5566,7 @@ INSERT INTO `hooks` VALUES ('43aec773-9031-4b08-890b-27de32ace0fe','56a018c0-47f
 INSERT INTO `hooks` VALUES ('43b2aa44-1586-486f-93d2-5eee166afef5','1be31e31-76fa-41be-8e8f-f8c6f6f7049c','bc47f85d-9104-4da8-8252-461ff542faf4','a554bd54-bc36-4788-aa12-47e150878dbc',151.60,6,37,0);
 INSERT INTO `hooks` VALUES ('43bbb259-66b7-4b5a-b4ae-e063a6d1041d','9509fea3-3ef3-43a6-ba90-58eb451c9a55','6a6537f3-8c69-4a15-8dd3-056d5459db77','a7b1c7c9-d1de-4b3d-80de-b7e445877e8c',160.50,3,84,57);
 INSERT INTO `hooks` VALUES ('43be18ee-9ec5-4658-9179-c7a0246c08a0','f73ae5c6-9757-45ad-87c1-47b2ce265413','5c7902db-131a-4de4-883c-e1b614ac19de','254a626e-19be-481e-b6e1-5492648db50d',137.10,1,100,50);
+INSERT INTO `hooks` VALUES ('43cabe4c-72a2-467f-8883-880c486b9929','5d95998e-bbbe-4ac6-98f6-334a4ae6eaf0','1ebc531a-0f02-467b-99ae-3866f794cd2e','a30906bf-3577-4c3d-b3ee-35df457fd645',353.17,1,100,50);
 INSERT INTO `hooks` VALUES ('43d346dd-e3d3-4d13-adea-02ad84bd7590','4127e24c-4b41-4644-b856-be47ac86221e','fa9ca141-62cb-4d21-bf4c-b5f70897ba5b','5f48a57a-4d8e-4a92-82c8-5d411c0b6079',198.00,1,100,89);
 INSERT INTO `hooks` VALUES ('43dda52f-f20a-4183-8310-1ea20a9a224f','265a5abc-b254-45cd-82cb-0f439de11cfa','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',194.30,2,88,67);
 INSERT INTO `hooks` VALUES ('43eee97a-0818-440e-966d-952b65990bd5','ff3de245-6207-49bc-888c-8d8098eaaf3e','13e89edf-8fc6-4cc3-8669-1ca27768e7e5','f46b119d-7aa5-454c-b10f-2e04c32304f9',289.10,2,95,33);
@@ -5572,6 +5626,7 @@ INSERT INTO `hooks` VALUES ('45000e68-5f47-4d69-8b18-92ea70641fa6','79da9535-a4d
 INSERT INTO `hooks` VALUES ('45043a27-af4f-433f-af7b-b67c1da8a7fe','824d6c2c-f874-4a49-a719-f578786dfb09','93545bca-6455-43de-b0a4-64e4a2fdb17f','d1eabdfd-cb8b-4601-b115-70c8c102b3c3',296.17,3,96,75);
 INSERT INTO `hooks` VALUES ('45049dbc-cef8-4abd-9368-112e6162a266','ab6b7dac-c2ea-4780-b063-1ef3b4ae5888','c4022963-02e3-481c-9f9c-7115a6ed5db5','4da9998b-82ce-4e51-8d50-85dd9142deaf',256.67,2,81,0);
 INSERT INTO `hooks` VALUES ('4505a784-d592-4f19-99aa-639b89315d6e','f10a1e8b-559b-4c19-a37a-87f6766dce56','fa9ca141-62cb-4d21-bf4c-b5f70897ba5b','5f48a57a-4d8e-4a92-82c8-5d411c0b6079',263.33,3,80,0);
+INSERT INTO `hooks` VALUES ('45079596-be18-43ad-9608-6bf977e1030c','c72680dc-c412-40cf-874e-1d911988d5f7','03de7025-b9c5-49f3-890b-f6729774c6e2','d6339cf7-1c74-48e7-87ca-3cefc8499096',199.00,6,85,25);
 INSERT INTO `hooks` VALUES ('450a6770-c25c-4e3c-8559-3f2e1a29dade','508d88da-f2eb-460d-be0c-33a50d3a629c','ccfa2af7-bbe1-418e-a356-d4de84e8a486','dba2bdec-2d21-424c-813a-525a13f46080',141.75,3,91,25);
 INSERT INTO `hooks` VALUES ('4510f18b-60c4-4302-93d5-f5cdd06f1b71','cf555c92-ca6d-45e4-ba44-c68871fdd792','7904e606-d984-4e42-98ed-f786d2ee13f4','236d6ef2-8e42-43b6-81a9-fb0315b02594',171.60,7,81,22);
 INSERT INTO `hooks` VALUES ('45137dcd-fb16-48f6-bb89-7cf4ee36c32a','d2e98ee6-72ef-4d1d-9e96-37858bb5f6a2','62751ca2-6669-4ce6-be87-9443f1370985','1de0ffff-4bd4-4819-ab5a-601dca685e94',301.00,1,100,50);
@@ -5759,6 +5814,7 @@ INSERT INTO `hooks` VALUES ('4960b89a-90d0-4b94-a092-d7709057397a','094606ce-ded
 INSERT INTO `hooks` VALUES ('49610a3a-bab9-4ad1-9060-103589cf9e51','7d2e90dd-ba21-4617-b813-b52cd585becf','9ede5bf3-7e98-486c-b019-03fdefb3796a','a7b1c7c9-d1de-4b3d-80de-b7e445877e8c',78.83,8,51,0);
 INSERT INTO `hooks` VALUES ('496adef3-9946-4619-9c5e-3869c96b1fdc','f62bf049-9138-47fe-b128-5e3b6139e428','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',206.90,3,85,40);
 INSERT INTO `hooks` VALUES ('49751539-6024-4f27-820a-4df5c86b3a21','de28f73b-69c7-4d76-87bd-145e8f5e8762','d0938565-ef1e-4d5c-a990-042e59108c76','f46b119d-7aa5-454c-b10f-2e04c32304f9',255.25,4,95,33);
+INSERT INTO `hooks` VALUES ('498265e6-f579-47b0-8fa6-8cb3f1292af9','bb99fea8-269c-4b80-a70e-e8041d1ad32a','93545bca-6455-43de-b0a4-64e4a2fdb17f','bf6ff62f-d42b-48f8-956c-f8dbde4a1555',324.58,5,82,29);
 INSERT INTO `hooks` VALUES ('49833be8-9e95-4c76-a857-e5014704b9b5','ce6433df-b4bb-4d35-9d2f-fe099f7dae2a','297102b4-1fba-42dd-a627-4cdc359628fd','f46b119d-7aa5-454c-b10f-2e04c32304f9',192.17,6,90,33);
 INSERT INTO `hooks` VALUES ('49879c42-3a1b-4c9a-bb57-49e30cb1b158','28cc9826-dfa3-4e1e-823c-35f72466b66e','f922e380-97b5-479f-a762-36269d163f55','289d0316-9f7b-483c-85e5-694a41fff136',111.20,7,55,0);
 INSERT INTO `hooks` VALUES ('49935c27-f66a-4990-8457-d21d57e778c6','ee2fd8da-4ccd-4ec7-9767-82a80046b94c','1ebc531a-0f02-467b-99ae-3866f794cd2e','a30906bf-3577-4c3d-b3ee-35df457fd645',197.08,3,85,71);
@@ -5989,6 +6045,7 @@ INSERT INTO `hooks` VALUES ('4e5a42ca-7c79-46de-906c-51e7a6074ad0','2921cc0d-546
 INSERT INTO `hooks` VALUES ('4e5f65a2-60d8-4d40-b8ce-fcfab593f34f','2921cc0d-5465-47cb-b4d8-0fac05496fed','46b0ce8c-f89e-4214-8f38-498c68e87844','82d6b28a-9e07-4e2a-bfe4-ae4f522dacf5',234.10,5,91,62);
 INSERT INTO `hooks` VALUES ('4e6017f1-a90c-4771-80ad-b49218de6deb','9f6f4e3c-b232-4932-bcf0-ac308da3ebdc','6adf1c0d-bcd8-4835-8d53-a8eba5b95342','0adb98bc-b506-4f97-bfa3-79feb210a569',125.20,5,77,17);
 INSERT INTO `hooks` VALUES ('4e6f3785-8019-4135-a94c-4ff0ee427d50','4eda5de2-5adc-4727-b0f0-d60bab9801fb','ac5273b8-6655-402c-86de-28749f3bea05','6f37c5cc-dbdd-422d-aa14-9eebeb37b010',114.40,6,52,0);
+INSERT INTO `hooks` VALUES ('4e72732b-225b-4e92-8b45-eecf36e8773b','2cf82ef7-3e1b-48bb-a475-5ff566a540b8','85f659f9-cff3-4bff-ae78-9d7169b0e066','236d6ef2-8e42-43b6-81a9-fb0315b02594',288.58,4,80,33);
 INSERT INTO `hooks` VALUES ('4e7303cb-8a3d-4244-aa9f-1c771f9994d2','f6b9334f-67e7-4a62-b583-bd3aa122454b','d7a0b032-7445-4e85-bbb7-9eed54fa25ce','05837a49-b1a6-4803-a6fa-5ba8785f7f74',218.08,2,79,0);
 INSERT INTO `hooks` VALUES ('4e77077a-4944-4d66-b990-674b22d5d51d','53044661-b3e1-491e-9af5-29f5d27c91b3','62751ca2-6669-4ce6-be87-9443f1370985','1de0ffff-4bd4-4819-ab5a-601dca685e94',186.30,3,90,50);
 INSERT INTO `hooks` VALUES ('4e8abc1a-bba5-4cb8-a5a8-f4520d73112e','2e8e23c3-7e2a-4846-a51d-383cb16899d0','c075a7b3-b982-4414-a065-25fef1d53a2d','214c7844-9a20-441a-89c7-9a8885a70440',252.70,2,86,71);
@@ -6104,6 +6161,7 @@ INSERT INTO `hooks` VALUES ('50ac3a59-17c9-460f-8e72-388c35d2cc64','8ad2f113-627
 INSERT INTO `hooks` VALUES ('50b2228b-e43b-42df-893e-cdff54fe47d3','72750e99-9140-4b69-ae2b-6c9a44d16125','fc17c4d8-e95b-4158-b8f7-d652f897ad46','05837a49-b1a6-4803-a6fa-5ba8785f7f74',178.67,3,88,25);
 INSERT INTO `hooks` VALUES ('50c811d6-11be-4a14-bc14-89f3ebefff62','6110d927-c111-4990-948d-8249a235cd42','1ebc531a-0f02-467b-99ae-3866f794cd2e','f46b119d-7aa5-454c-b10f-2e04c32304f9',188.90,3,87,75);
 INSERT INTO `hooks` VALUES ('50d3380b-a56a-457f-974e-573640663f72','816a5408-7037-4111-9531-605679ab9a05','436fbfab-55f6-428c-b3ad-54a178415f11','214c7844-9a20-441a-89c7-9a8885a70440',194.10,1,100,83);
+INSERT INTO `hooks` VALUES ('50dd7391-03cc-4342-a0a5-857fc118a342','e68b7aac-a0c4-4b41-92f4-8053620c8a4c','1d3ca75e-6017-47f5-b673-955cfb8db66b','bf6ff62f-d42b-48f8-956c-f8dbde4a1555',262.08,6,90,33);
 INSERT INTO `hooks` VALUES ('50def6a5-0b45-4262-9928-9dab33871ba0','e362dbba-697c-4ad5-b366-e89cd8a61fe0','4da3caec-885a-4748-816a-800fe07dbc35','4da9998b-82ce-4e51-8d50-85dd9142deaf',146.58,5,86,17);
 INSERT INTO `hooks` VALUES ('50dfa876-ff0f-40f3-b57d-bc2bd33a5a87','edb725f7-65bd-4e51-85f7-cdf990f87968','ab4bcf93-9c38-4469-b66d-79c758422d0f','0adb98bc-b506-4f97-bfa3-79feb210a569',153.17,6,81,0);
 INSERT INTO `hooks` VALUES ('50e77adb-1de1-42ad-874f-e3f746a4e9f7','5af264bf-19fa-4a5d-acc8-45d8fd00ddbb','85f659f9-cff3-4bff-ae78-9d7169b0e066','dba0f658-b06e-44d1-94bf-64237e6d7ffb',168.83,6,87,14);
@@ -6602,6 +6660,7 @@ INSERT INTO `hooks` VALUES ('5ab2102a-e27f-4d61-b459-741aa13ada77','2da75e7c-68c
 INSERT INTO `hooks` VALUES ('5ab3be30-4c3b-4ace-b6a7-f047d0275e7e','c8ee5471-036a-4dcf-b64f-3afa71c6db00','93545bca-6455-43de-b0a4-64e4a2fdb17f','d1eabdfd-cb8b-4601-b115-70c8c102b3c3',227.58,4,72,33);
 INSERT INTO `hooks` VALUES ('5ab609b5-d0bc-4fdc-b83f-60670d0f4871','b788d485-6a53-4ef5-8fcc-7f8887cac269','77322597-7656-4b5c-a373-b45191f6aed2','fa9f9dc5-95d7-4b98-a77c-a7b25df14f6a',123.90,9,54,10);
 INSERT INTO `hooks` VALUES ('5ab7efd3-be43-4fbc-bdb9-af220791dfcf','b788d485-6a53-4ef5-8fcc-7f8887cac269','cf997620-1259-41b1-9cd5-60430106ce7a','a3402d72-6e9c-45e3-9c35-6eac6b5adf13',186.80,3,81,70);
+INSERT INTO `hooks` VALUES ('5ab95dd2-9b22-4a2e-9cc5-958624884a97','8bd10faa-1d0c-4244-8832-080f558ef7ea','9f639768-fd30-4304-a53d-aaa94c438efc','236d6ef2-8e42-43b6-81a9-fb0315b02594',237.92,4,87,0);
 INSERT INTO `hooks` VALUES ('5abbb56a-3159-444c-a3e7-68a64772deec','a5da8605-348e-4bc5-8aa7-c35282033a38','00876a04-693e-4df4-abd2-ef0a68252d99','0d69459f-a2ac-4580-abe8-797a7aa3c615',153.70,17,66,0);
 INSERT INTO `hooks` VALUES ('5abc10c8-62bc-4c0b-88a5-58fa99087447','1710b3ea-48f9-4a81-8626-b07a92b3294d','0e4334a5-857f-4e4b-9842-4c1f6e32707a','f46b119d-7aa5-454c-b10f-2e04c32304f9',198.90,3,77,50);
 INSERT INTO `hooks` VALUES ('5abf1e90-e4c7-4728-9019-7de1310932a4','edd3bc2f-d8ab-4755-883e-8f7269bfd300','cfb42854-1a41-432d-a410-03a95d753492','f46b119d-7aa5-454c-b10f-2e04c32304f9',140.50,8,70,27);
@@ -6886,6 +6945,7 @@ INSERT INTO `hooks` VALUES ('60f2911c-4525-4e68-8634-3aa35f28ee8f','873ba1c2-49e
 INSERT INTO `hooks` VALUES ('60f2bd90-936a-4037-9e65-ceb4177e7027','0eaaa1dc-0018-4bd6-95e8-cada9a6be298','0374a700-cdeb-4308-abb6-041115284728','236d6ef2-8e42-43b6-81a9-fb0315b02594',92.90,6,41,0);
 INSERT INTO `hooks` VALUES ('60f4021d-f465-4ff2-bc3f-936331a4c3ee','b5093d5e-d3ad-41c2-9d82-73b4ac32c721','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',182.80,1,100,88);
 INSERT INTO `hooks` VALUES ('60f7c051-cca6-4b4f-9ccd-8764f9aec064','8a3e2948-1abc-443d-bc5a-49d86f7168cd','6a6537f3-8c69-4a15-8dd3-056d5459db77','a7b1c7c9-d1de-4b3d-80de-b7e445877e8c',197.10,3,90,63);
+INSERT INTO `hooks` VALUES ('60f849b9-a2eb-420c-8f29-b9f42e022904','e68b7aac-a0c4-4b41-92f4-8053620c8a4c','297102b4-1fba-42dd-a627-4cdc359628fd','f46b119d-7aa5-454c-b10f-2e04c32304f9',272.92,5,94,44);
 INSERT INTO `hooks` VALUES ('60f94083-101d-43c4-af26-0827c6fb61ae','a1219e87-a3cf-4ffb-971c-e7cdcb061a1d','93545bca-6455-43de-b0a4-64e4a2fdb17f','d1eabdfd-cb8b-4601-b115-70c8c102b3c3',209.20,3,97,50);
 INSERT INTO `hooks` VALUES ('60fdb977-69ef-4068-ac19-b6993bfc297a','8ad2f113-627d-43e6-9672-d2fa6dd006ae','239e2f33-94cf-47d1-90d7-f0eb948392d5','0adb98bc-b506-4f97-bfa3-79feb210a569',163.42,8,82,33);
 INSERT INTO `hooks` VALUES ('60fef3c5-69a6-412a-bd32-e0550367f9a6','52593fd2-0002-4391-9399-c02a80283a6c','13e89edf-8fc6-4cc3-8669-1ca27768e7e5','f46b119d-7aa5-454c-b10f-2e04c32304f9',196.42,4,76,50);
@@ -6895,6 +6955,7 @@ INSERT INTO `hooks` VALUES ('610bf70c-f739-42a8-a16f-f9c57b23e8d7','1d317319-30a
 INSERT INTO `hooks` VALUES ('61124702-257e-43ad-ac59-2ed0667f63f7','1d5fe195-7b19-4b92-a7d7-2b5fbb2e8005','93545bca-6455-43de-b0a4-64e4a2fdb17f','0f4644cf-e143-4bf4-93d4-1e728e11b4e8',163.17,3,92,40);
 INSERT INTO `hooks` VALUES ('6114c723-e0cc-497f-803f-11f8e230614e','8c804f59-fa07-487d-9fc4-68ab69ee9deb','a04a1ecc-9090-4d0b-af94-3bb6bfb37148','236d6ef2-8e42-43b6-81a9-fb0315b02594',325.90,1,100,75);
 INSERT INTO `hooks` VALUES ('6118b0b9-fa52-43a3-ae41-7461c22a9615','72d107b8-365e-4ebf-b8be-434a05655258','9465a7eb-b6f6-4ff6-b89f-e2c0d68e5d6c','541520b9-6151-43c6-8956-31a02acb59bd',194.80,7,80,22);
+INSERT INTO `hooks` VALUES ('611c2c71-38d2-4143-8a7f-21d13fa36b95','b69daac0-2e34-4617-ad80-9ec8d8c90e10','e13f1da0-5487-4648-82e6-09d3d4a1b334','289d0316-9f7b-483c-85e5-694a41fff136',295.00,4,72,20);
 INSERT INTO `hooks` VALUES ('61231f61-6a8d-4f0f-8390-997e9dae3425','6823933f-1aa0-46af-82d7-5f4d78f9aef6','fe30ccf7-32cb-43c0-b782-69a22f319863','289d0316-9f7b-483c-85e5-694a41fff136',185.00,7,86,22);
 INSERT INTO `hooks` VALUES ('612ed136-9445-4fed-ac72-9ebc02660574','70a3b6bf-de1d-4672-9066-e5c361cedc43','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',351.90,1,100,67);
 INSERT INTO `hooks` VALUES ('613c8ca7-df58-4be3-b1b0-cc6e7f46357e','b8afbc7c-bdd4-4d6f-baa5-c1dc6a159078','4da3caec-885a-4748-816a-800fe07dbc35','0adb98bc-b506-4f97-bfa3-79feb210a569',114.33,5,78,50);
@@ -7084,6 +7145,7 @@ INSERT INTO `hooks` VALUES ('64d5d810-967f-467b-a23e-f1d4f770ce28','8e310e83-b34
 INSERT INTO `hooks` VALUES ('64d5f26a-92ae-4bc1-a9cd-75512c843106','f98d8d3c-6e37-4d23-9890-8c451bc29fbf','ab34f8a6-cb72-429f-9350-b7c9cdaf95d6','3a345595-5af0-440c-a374-6997654b68ed',217.20,4,84,33);
 INSERT INTO `hooks` VALUES ('64da4814-4a10-4d7b-bde4-74ec5c22727b','2a21a998-ab91-4e84-924f-ec3b0bdbb30b','f922e380-97b5-479f-a762-36269d163f55','f46b119d-7aa5-454c-b10f-2e04c32304f9',339.00,1,100,50);
 INSERT INTO `hooks` VALUES ('64dbb8f2-7d8d-4a35-a985-dcb6cabc92ac','ac9780ad-09b3-4705-a8c6-34c084a31db9','9d162f39-7aa6-460d-96b2-8410f2816448','f46b119d-7aa5-454c-b10f-2e04c32304f9',243.92,4,80,43);
+INSERT INTO `hooks` VALUES ('64de3bc3-513c-4fb8-885c-2ae22a1aa992','5d95998e-bbbe-4ac6-98f6-334a4ae6eaf0','e13f1da0-5487-4648-82e6-09d3d4a1b334','5f48a57a-4d8e-4a92-82c8-5d411c0b6079',322.33,2,91,0);
 INSERT INTO `hooks` VALUES ('64ec0de5-4cd6-4229-9f53-001cfe9d8b4c','58321a36-0eb0-4616-ab9d-1a54660fd15b','384ec355-d75b-407b-9961-1507e1d6d9f1','4da9998b-82ce-4e51-8d50-85dd9142deaf',262.20,3,91,50);
 INSERT INTO `hooks` VALUES ('64ef6f1c-00f9-4d79-a392-df0107ec7db8','d79df8ec-450a-44eb-bf94-603707c6a5f0','239e2f33-94cf-47d1-90d7-f0eb948392d5','df10f08f-1148-4445-8b6d-9dc20bf11534',165.80,3,78,25);
 INSERT INTO `hooks` VALUES ('64f61387-a14e-42bb-92a2-0623b94a1c4f','4b9a3524-15e0-4ee0-8abd-9b1cb1dd4e1e','fe30ccf7-32cb-43c0-b782-69a22f319863','289d0316-9f7b-483c-85e5-694a41fff136',147.00,6,71,25);
@@ -7176,6 +7238,7 @@ INSERT INTO `hooks` VALUES ('669bcc97-ef0f-4b5e-b831-cbbeca747438','d4c87e5c-f62
 INSERT INTO `hooks` VALUES ('66a30f1c-4221-496a-aa43-e78067dc8d87','d4bdb0ee-3ee9-4d30-9afc-5e3996021136','5142339e-6aaa-4575-96b2-329d5a533e7a','236d6ef2-8e42-43b6-81a9-fb0315b02594',252.00,1,100,91);
 INSERT INTO `hooks` VALUES ('66a75304-67ef-40db-945f-743735860683','e2f550ad-b181-47c9-b78e-58dc938d92e6','b45924c1-e992-49a5-919d-fa34e2f99046','214c7844-9a20-441a-89c7-9a8885a70440',163.33,5,87,0);
 INSERT INTO `hooks` VALUES ('66adafdf-7d12-4f70-9e8f-f4acc22aea78','c8dfc12f-ad1b-40bd-a97c-cb15b797f0ad','e22a10d4-1a2b-4c2a-ae40-bb943e7e14c4','521ae438-d9bf-4539-a10b-32b32cf3198a',176.30,3,85,0);
+INSERT INTO `hooks` VALUES ('66b79d53-4f2e-478c-9f39-7564df337a4b','4eede0e8-7668-4048-a8bf-d50a295aa8b7','1549c831-99a8-4947-947f-dbdc618cd2aa','254a626e-19be-481e-b6e1-5492648db50d',402.42,2,98,67);
 INSERT INTO `hooks` VALUES ('66bcb257-7050-40c9-8ba1-5633a5aa2796','9610cf57-55f4-43e2-acd8-ce2156e00e03','00876a04-693e-4df4-abd2-ef0a68252d99','0d69459f-a2ac-4580-abe8-797a7aa3c615',232.92,3,84,67);
 INSERT INTO `hooks` VALUES ('66bee19b-4918-4a4e-b9a6-7c6df4160c6c','c62624ab-3f2d-4d8c-9dd0-3a7f07a49347','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',240.08,2,93,82);
 INSERT INTO `hooks` VALUES ('66c4b8e2-5105-4696-95c9-e1e01c6531aa','8f9e03cc-00fc-418d-9a4a-7c80949efaca','93545bca-6455-43de-b0a4-64e4a2fdb17f','d1eabdfd-cb8b-4601-b115-70c8c102b3c3',198.00,4,67,43);
@@ -7284,6 +7347,7 @@ INSERT INTO `hooks` VALUES ('686ba95f-7eaa-45b3-942b-d045717967e3','072aa642-f49
 INSERT INTO `hooks` VALUES ('687ee8b6-1f38-4b41-a38a-44a937743757','f6ce2c83-3545-48e4-bb89-3b45ae1e062c','9d162f39-7aa6-460d-96b2-8410f2816448','f46b119d-7aa5-454c-b10f-2e04c32304f9',175.90,3,98,63);
 INSERT INTO `hooks` VALUES ('688623fb-0308-4a96-a308-b7345b6a97d0','bc35f0c0-5f00-45c5-b93f-7e4f8bd1d06b','ac2087a7-a3b6-4d99-8823-41c798697b09','05837a49-b1a6-4803-a6fa-5ba8785f7f74',218.50,7,96,13);
 INSERT INTO `hooks` VALUES ('688956f5-0217-44b3-a11b-b001053513a4','bda4b40f-4bff-488b-b730-e5eaf0f55a38','c075a7b3-b982-4414-a065-25fef1d53a2d','a30906bf-3577-4c3d-b3ee-35df457fd645',230.08,7,80,46);
+INSERT INTO `hooks` VALUES ('6899d991-0264-4d33-bb80-674d50442815','b69daac0-2e34-4617-ad80-9ec8d8c90e10','fe30ccf7-32cb-43c0-b782-69a22f319863','289d0316-9f7b-483c-85e5-694a41fff136',369.42,2,91,60);
 INSERT INTO `hooks` VALUES ('68b64146-5dbb-43b4-86ab-da26e4ea3fb4','e72104ee-7844-40a4-8da6-261d05b57141','297102b4-1fba-42dd-a627-4cdc359628fd','f46b119d-7aa5-454c-b10f-2e04c32304f9',199.75,1,100,67);
 INSERT INTO `hooks` VALUES ('68b92f58-a16a-48c9-bb77-ee32920072b9','1182973c-8f80-455b-b73f-1f28a0c8ed9d','93545bca-6455-43de-b0a4-64e4a2fdb17f','d1eabdfd-cb8b-4601-b115-70c8c102b3c3',185.83,4,61,50);
 INSERT INTO `hooks` VALUES ('68c63083-ccfb-4496-9be8-be3ba601bc91','074f9f36-eb92-4d38-8a95-de3e8e3a3128','5adee300-5661-40ea-afe6-62ea2531c69e','1c6bd4c2-a3f8-42fd-bfd5-9d2f5018b51e',194.00,6,75,25);
@@ -7439,6 +7503,7 @@ INSERT INTO `hooks` VALUES ('6bbfd65d-3835-4e44-ac60-1a645118936a','5fe1d38f-da3
 INSERT INTO `hooks` VALUES ('6bc63517-7ce8-4996-8e75-9fad178106ad','c029efe9-a0b7-4f5f-ba5b-c7d2b75e3a3a','3c4de5f6-6595-45b8-8d18-2f5f2b2a9931','214c7844-9a20-441a-89c7-9a8885a70440',189.67,5,94,55);
 INSERT INTO `hooks` VALUES ('6bc7352f-141a-45b5-8b00-9e761fa87ee7','d63e1785-805b-47bb-a96a-8578a027f70c','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',209.70,4,68,43);
 INSERT INTO `hooks` VALUES ('6bce17ff-fc77-4fe2-a228-ac54db2d5104','70ef8088-ef42-40e9-9f98-c4d1e17bb4f8','c407017f-14aa-45bb-a495-47ae182569b3','f46b119d-7aa5-454c-b10f-2e04c32304f9',122.92,17,67,6);
+INSERT INTO `hooks` VALUES ('6bcecffd-7169-4644-8cd0-9590adfb2621','e68b7aac-a0c4-4b41-92f4-8053620c8a4c','c075a7b3-b982-4414-a065-25fef1d53a2d','4752b071-f14a-4d07-8205-b664f24763ad',288.50,3,99,67);
 INSERT INTO `hooks` VALUES ('6bd4f110-92ff-4911-bc62-cad41ee18d22','96784990-3c46-4be3-ac39-21a3c7dca531','ac2087a7-a3b6-4d99-8823-41c798697b09','05837a49-b1a6-4803-a6fa-5ba8785f7f74',280.50,2,98,60);
 INSERT INTO `hooks` VALUES ('6bd6a9dc-9306-4d4e-b1b4-d430ed12981d','2b982711-3f03-4e37-8431-ad91066ee10f','ee246cf2-501c-4232-9673-8af4132e0787','f46b119d-7aa5-454c-b10f-2e04c32304f9',187.33,4,62,50);
 INSERT INTO `hooks` VALUES ('6bd949f7-a3af-457c-b752-460a8438387c','f2d1b313-2ba3-4e3f-b8d4-7b9fcadb40b7','b2cc1888-10a3-49e4-83fb-ab6ed56181c3','c3026089-8e7d-4b21-8e49-1a0925de14b0',240.90,4,84,0);
@@ -7567,9 +7632,11 @@ INSERT INTO `hooks` VALUES ('6e69c9bb-977f-4edd-83e9-374008b9885f','f18695b7-cef
 INSERT INTO `hooks` VALUES ('6e6cea66-6e0d-4579-80dc-297f8522e7fb','ce732b3f-e2af-4c9d-8b22-b14e33f6c843','d1b2553b-e296-4fcb-903d-8e6a79300438','05837a49-b1a6-4803-a6fa-5ba8785f7f74',188.75,6,69,14);
 INSERT INTO `hooks` VALUES ('6e7914e2-2ab9-4c7d-83df-cb07ec23ac2a','458753d3-3a78-4af7-addf-74585c0240ee','436fbfab-55f6-428c-b3ad-54a178415f11','214c7844-9a20-441a-89c7-9a8885a70440',209.60,2,82,33);
 INSERT INTO `hooks` VALUES ('6e7b0792-f8c0-4ed4-a793-596fb72cded7','8f9e03cc-00fc-418d-9a4a-7c80949efaca','fc17c4d8-e95b-4158-b8f7-d652f897ad46','f46b119d-7aa5-454c-b10f-2e04c32304f9',285.90,2,97,71);
+INSERT INTO `hooks` VALUES ('6e7ca714-50a0-4eaa-bf62-38d74913077d','0c434d01-7205-455f-a680-07666e0f13c8','03de7025-b9c5-49f3-890b-f6729774c6e2','d6339cf7-1c74-48e7-87ca-3cefc8499096',263.08,3,81,25);
 INSERT INTO `hooks` VALUES ('6e807b05-c106-40f4-bea3-4bafa414b8da','06d2191b-0718-498f-be62-7177f2f22bd0','cfb42854-1a41-432d-a410-03a95d753492','f46b119d-7aa5-454c-b10f-2e04c32304f9',169.33,5,88,38);
 INSERT INTO `hooks` VALUES ('6e8ac997-c117-4e88-9d06-a35f53be8970','01db3a9a-32dc-4a2c-a912-704271da58c9','1d3ca75e-6017-47f5-b673-955cfb8db66b','289d0316-9f7b-483c-85e5-694a41fff136',204.58,5,69,17);
 INSERT INTO `hooks` VALUES ('6e8d9cc5-1fc8-4262-ba4e-ba02d171403a','346454bd-57f7-4efd-8009-902bbfb61421','6a294501-dc0d-4de5-9251-3529b6a13e49','82d6b28a-9e07-4e2a-bfe4-ae4f522dacf5',150.83,3,87,57);
+INSERT INTO `hooks` VALUES ('6e8ec4b9-1a08-4727-948e-9ebae90b5fb0','8bd10faa-1d0c-4244-8832-080f558ef7ea','e13f1da0-5487-4648-82e6-09d3d4a1b334','5f48a57a-4d8e-4a92-82c8-5d411c0b6079',273.25,1,100,75);
 INSERT INTO `hooks` VALUES ('6e966463-5617-470d-8c0c-6406079b741f','784f1be9-ec0c-42f1-8df1-145288c5ff11','62751ca2-6669-4ce6-be87-9443f1370985','1de0ffff-4bd4-4819-ab5a-601dca685e94',232.83,3,92,25);
 INSERT INTO `hooks` VALUES ('6e9a89d1-c207-4147-86a7-93a15d730e77','a3757a97-70c1-4dc8-bffa-eb8121db8bdc','e22a10d4-1a2b-4c2a-ae40-bb943e7e14c4','10e37fd5-d99b-42d2-9b5c-059e75fe1ba3',173.50,1,100,80);
 INSERT INTO `hooks` VALUES ('6e9fa344-77ce-4bbd-a0f6-950a5242c683','4a5c861c-a8e6-4f94-94d1-046e98c24ac7','9d162f39-7aa6-460d-96b2-8410f2816448','bf6ff62f-d42b-48f8-956c-f8dbde4a1555',201.17,2,98,0);
@@ -7739,6 +7806,7 @@ INSERT INTO `hooks` VALUES ('71f60153-8337-48ba-b5cd-cb3007555d39','666f11e6-a04
 INSERT INTO `hooks` VALUES ('71f7010d-5878-45b3-9234-aad46912d383','1acbdbd6-c0d8-4d9a-ad72-3c211c46f1aa','1b61d847-15fc-41a8-a681-cd78c4ec7ecc','6f37c5cc-dbdd-422d-aa14-9eebeb37b010',100.00,8,32,0);
 INSERT INTO `hooks` VALUES ('720175d2-4db2-4786-ad02-9c8d115442c8','05a0b059-eac6-4edc-9886-052f6e1bea61','983aef6a-47ce-4bbc-985e-d3668616106f','c3026089-8e7d-4b21-8e49-1a0925de14b0',138.08,1,100,80);
 INSERT INTO `hooks` VALUES ('7202d9f9-5d70-4740-bdc6-425118859244','6eb801de-2711-4a02-89e7-9348c78f9e0e','6a6537f3-8c69-4a15-8dd3-056d5459db77','a7b1c7c9-d1de-4b3d-80de-b7e445877e8c',285.00,2,100,0);
+INSERT INTO `hooks` VALUES ('7209b7c4-28be-4fdb-96c3-b73ce0e5ba76','b69daac0-2e34-4617-ad80-9ec8d8c90e10','c075a7b3-b982-4414-a065-25fef1d53a2d','4752b071-f14a-4d07-8205-b664f24763ad',407.83,1,100,80);
 INSERT INTO `hooks` VALUES ('7216539e-80dc-4ebc-9517-2a2128d25aa8','ef8ebd41-c574-4a39-ae97-c932a6cf455e','d42d0c0c-85c3-4576-8c0b-c4316e4fa31a','a30906bf-3577-4c3d-b3ee-35df457fd645',288.90,2,96,60);
 INSERT INTO `hooks` VALUES ('721a2831-99ad-47fc-87e6-795a863c2e43','2dc6ed97-dbaa-47dd-a5ab-3ff42ab103af','239e2f33-94cf-47d1-90d7-f0eb948392d5','df10f08f-1148-4445-8b6d-9dc20bf11534',189.90,1,100,91);
 INSERT INTO `hooks` VALUES ('721b8c29-8f24-4db9-8407-657585431236','c4ceac0e-ab8b-45a0-b7e8-c809326bcb1c','4b3231a6-8e76-410d-9203-700648dbcfab','289d0316-9f7b-483c-85e5-694a41fff136',206.90,6,82,57);
@@ -7755,6 +7823,7 @@ INSERT INTO `hooks` VALUES ('725fb09d-0d83-4bb3-8a48-679c9f646f25','2f965aed-c7b
 INSERT INTO `hooks` VALUES ('7266208e-0041-4c57-bb6a-6fd18ceaa344','2f1546ba-b9aa-4cd7-9dba-ae24ad535430','22bfea51-5bf6-4c96-b61b-6f62367046c7','f46b119d-7aa5-454c-b10f-2e04c32304f9',206.10,6,92,33);
 INSERT INTO `hooks` VALUES ('726aefb3-f09e-47cf-b415-55353b523dfb','c51bd5e3-d7af-4054-be76-4badf2317faa','b45924c1-e992-49a5-919d-fa34e2f99046','4752b071-f14a-4d07-8205-b664f24763ad',182.75,9,75,0);
 INSERT INTO `hooks` VALUES ('727788ff-e898-47a8-9974-c36af1c23172','540d3f74-edea-46fd-96c2-36403fc3923a','d42d0c0c-85c3-4576-8c0b-c4316e4fa31a','82d6b28a-9e07-4e2a-bfe4-ae4f522dacf5',239.00,2,93,71);
+INSERT INTO `hooks` VALUES ('72914187-59df-4ba1-a321-d0e4d3507f53','396fc320-e614-4cb9-851d-6e844721f6ac','b5438e57-c824-4b04-be90-cd790bd9105c','289d0316-9f7b-483c-85e5-694a41fff136',322.42,4,80,33);
 INSERT INTO `hooks` VALUES ('72969c81-f59c-4f5a-9bda-f96272e0c995','92d22db8-f45a-49ed-acb0-e4a2f845b8e3','95fdc7aa-45a9-4316-b7c2-a5a2a617d2d4','0f4644cf-e143-4bf4-93d4-1e728e11b4e8',182.60,4,80,0);
 INSERT INTO `hooks` VALUES ('729af821-389c-40cb-8ccf-6d656a90d1d9','11fc8f87-9a27-4fd7-80a1-f3bfae481691','63f3d13a-ef2e-4224-bbcd-923db01fd77f','214c7844-9a20-441a-89c7-9a8885a70440',139.67,12,86,8);
 INSERT INTO `hooks` VALUES ('729d61a2-f556-4be0-958a-244c637f4fc9','ef62909c-5404-42bf-a58e-88071afe6c26','d7a0b032-7445-4e85-bbb7-9eed54fa25ce','254a626e-19be-481e-b6e1-5492648db50d',235.58,2,81,50);
@@ -7847,6 +7916,7 @@ INSERT INTO `hooks` VALUES ('74b0ba63-ccde-49e4-8c49-0783eb50cf2c','857f3a73-cfa
 INSERT INTO `hooks` VALUES ('74b2d45f-ef61-4e9e-be16-15d8d39ca985','936bfa90-eb27-453c-b99a-4157c2ce9fc2','fc17c4d8-e95b-4158-b8f7-d652f897ad46','f46b119d-7aa5-454c-b10f-2e04c32304f9',176.17,2,91,0);
 INSERT INTO `hooks` VALUES ('74b38330-a2f5-4f80-a9da-870dd58daaba','2774c588-169e-48e6-8a2c-6a173637f079','3c4de5f6-6595-45b8-8d18-2f5f2b2a9931','a30906bf-3577-4c3d-b3ee-35df457fd645',279.50,4,94,43);
 INSERT INTO `hooks` VALUES ('74b40434-2fc3-4c68-8712-01a23eb869ba','7f229e97-19c9-4737-a196-c28787bc5251','9d162f39-7aa6-460d-96b2-8410f2816448','f46b119d-7aa5-454c-b10f-2e04c32304f9',264.92,4,80,33);
+INSERT INTO `hooks` VALUES ('74be1cec-e6d4-49dc-a0e7-a9aa62afea6e','74df8428-fd97-4558-aa0c-0b445f545460','1ebc531a-0f02-467b-99ae-3866f794cd2e','289d0316-9f7b-483c-85e5-694a41fff136',235.00,5,81,29);
 INSERT INTO `hooks` VALUES ('74c31cf8-4d51-4bd5-adba-4a8c939d0381','bb6c095b-33d8-49b0-8446-83d6e0d06347','d0e8e68f-a6ca-4d72-ad41-74a67b0fdecf','0d69459f-a2ac-4580-abe8-797a7aa3c615',172.25,3,70,40);
 INSERT INTO `hooks` VALUES ('74c638b7-334f-4fa2-955a-aaf449b77ee6','c1a46852-6025-4829-a38d-4643bb847f40','88ee7f8c-abd9-478d-bba4-b85b55abe542','f46b119d-7aa5-454c-b10f-2e04c32304f9',234.90,2,98,80);
 INSERT INTO `hooks` VALUES ('74c6b26b-6073-4437-971e-f6cba3aae283','8fd042cf-a421-4f59-9f55-69fa2ae99713','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',128.20,2,95,67);
@@ -7866,6 +7936,7 @@ INSERT INTO `hooks` VALUES ('751ba4b5-684a-4552-88a4-834335ff6c9d','c0537abe-aa9
 INSERT INTO `hooks` VALUES ('751fc954-8d14-4494-a62c-ed6393c3b2f4','b075646d-f7c3-4889-903d-c3c4a9b1fd44','b45924c1-e992-49a5-919d-fa34e2f99046','4752b071-f14a-4d07-8205-b664f24763ad',121.50,1,100,89);
 INSERT INTO `hooks` VALUES ('7525a889-18f4-4912-a938-d3806d1cfa22','21fb9639-2bd3-4d2d-b33b-89e04a8391ff','77322597-7656-4b5c-a373-b45191f6aed2','fa9f9dc5-95d7-4b98-a77c-a7b25df14f6a',239.08,8,65,0);
 INSERT INTO `hooks` VALUES ('75300e18-ea0e-4dae-854a-ceb1f17b89c9','525a6dfd-0733-4558-b80b-60e828a8f681','1ebc531a-0f02-467b-99ae-3866f794cd2e','a30906bf-3577-4c3d-b3ee-35df457fd645',321.17,6,87,0);
+INSERT INTO `hooks` VALUES ('75396190-0a4e-4be6-947f-268bedcd7bd6','74df8428-fd97-4558-aa0c-0b445f545460','88ee7f8c-abd9-478d-bba4-b85b55abe542','719f8f7b-3ef5-4764-88f8-acf8250abf89',262.25,3,90,57);
 INSERT INTO `hooks` VALUES ('753fdb58-c8d3-46d5-8bdf-768455ad1806','16172d50-b6a1-4308-948c-4545d6213e39','9f639768-fd30-4304-a53d-aaa94c438efc','236d6ef2-8e42-43b6-81a9-fb0315b02594',215.08,3,94,57);
 INSERT INTO `hooks` VALUES ('754002b6-5027-4ddb-bd69-730e9c3f9eda','cddb9118-aecb-4197-8653-0c8b83f3ea69','58d36857-0967-454d-8ca1-6443c42ae494','a3402d72-6e9c-45e3-9c35-6eac6b5adf13',243.33,6,82,14);
 INSERT INTO `hooks` VALUES ('7541f1e0-d5be-471f-aa23-ebd47b4438a2','1fbe61f0-bd4b-44cf-a293-555ebbd0c863','fa9ca141-62cb-4d21-bf4c-b5f70897ba5b','5f48a57a-4d8e-4a92-82c8-5d411c0b6079',157.95,4,91,33);
@@ -7916,6 +7987,7 @@ INSERT INTO `hooks` VALUES ('7621ae15-f858-47b8-af63-89eb83f8a3bf','25798aa5-78a
 INSERT INTO `hooks` VALUES ('762faca4-cd6e-4291-9d0e-d67c739af2a6','1ba54b31-f947-40bc-acc5-d582d3a56b4d','93545bca-6455-43de-b0a4-64e4a2fdb17f','d1eabdfd-cb8b-4601-b115-70c8c102b3c3',281.17,5,87,17);
 INSERT INTO `hooks` VALUES ('76385212-3f03-4f27-8ff3-6caf4a807c6f','8b4f257c-dd1b-45f2-b8c4-e228aba5066b','cc47d3ce-c831-4a9c-85f2-eed1c464b16e','236d6ef2-8e42-43b6-81a9-fb0315b02594',196.42,2,100,80);
 INSERT INTO `hooks` VALUES ('7643e5a6-2c73-4862-b90a-bb9ccacbade2','f7be8595-7f06-48cf-b277-67504b286969','2961ff3e-255b-4e87-8381-f087abc465e1','a7b1c7c9-d1de-4b3d-80de-b7e445877e8c',323.58,1,100,88);
+INSERT INTO `hooks` VALUES ('76477821-32f0-4021-8afa-edeb8fa47b58','ec1e8edc-3209-4067-b0b5-cfbba4943ebf','6065dfa4-a26b-490c-b29a-7e191eac18b4','4da9998b-82ce-4e51-8d50-85dd9142deaf',227.67,5,97,29);
 INSERT INTO `hooks` VALUES ('764ace04-4e0b-4452-ae3d-8c01f6b6fd30','8f4a1855-ca9f-4efa-80aa-2338c6b24f5a','a3b89c5f-578a-492e-a4a2-5f8124d197a6','236d6ef2-8e42-43b6-81a9-fb0315b02594',199.75,3,82,0);
 INSERT INTO `hooks` VALUES ('764ea412-3514-42f3-9105-6a15eb160c83','371543a4-cc38-4ef1-9f5f-e4da15b28526','7d090c6e-3f00-408a-beba-29a3e98efd95','719f8f7b-3ef5-4764-88f8-acf8250abf89',267.90,1,100,92);
 INSERT INTO `hooks` VALUES ('7651a3ed-e4aa-477a-8f15-08217b45931e','7902b08d-e007-45e6-bfea-220af9d85b69','95fdc7aa-45a9-4316-b7c2-a5a2a617d2d4','0f4644cf-e143-4bf4-93d4-1e728e11b4e8',223.60,3,89,25);
@@ -7955,6 +8027,7 @@ INSERT INTO `hooks` VALUES ('76fb509e-6f62-4f0c-9bba-dd357c12d97f','f4337826-679
 INSERT INTO `hooks` VALUES ('76fd8520-c7f5-4f80-956a-5b4f897dced9','88734621-47e8-49e4-8d6a-a68f7a96327c','e13f1da0-5487-4648-82e6-09d3d4a1b334','f46b119d-7aa5-454c-b10f-2e04c32304f9',245.83,2,99,75);
 INSERT INTO `hooks` VALUES ('7706d883-cd2d-4878-a09d-16696fe3e150','344f9a45-54fe-4764-915f-f36eeed5fd11','88ee7f8c-abd9-478d-bba4-b85b55abe542','f46b119d-7aa5-454c-b10f-2e04c32304f9',209.90,3,80,67);
 INSERT INTO `hooks` VALUES ('770ac725-9fd5-4871-bf2d-1740e56291bb','bd908b98-0252-4509-b4f4-cac713b1fddb','239e2f33-94cf-47d1-90d7-f0eb948392d5','dc294ec1-72cd-4b6f-9b9a-0332a7af6bfa',226.08,6,86,14);
+INSERT INTO `hooks` VALUES ('770ef7b7-531e-420d-af0c-7d63819324ca','8bd10faa-1d0c-4244-8832-080f558ef7ea','e22a10d4-1a2b-4c2a-ae40-bb943e7e14c4','236d6ef2-8e42-43b6-81a9-fb0315b02594',254.50,2,93,50);
 INSERT INTO `hooks` VALUES ('77103840-6c03-45e7-a86f-57f1818350a8','aa0395f4-1564-4fa2-9ed7-d351a9e58054','3e832cb2-4f4a-4cd4-b079-14cdd5bd63d9','236d6ef2-8e42-43b6-81a9-fb0315b02594',253.17,1,100,67);
 INSERT INTO `hooks` VALUES ('7713ec44-b18b-4968-8795-ead7e11f1d8c','e2f550ad-b181-47c9-b78e-58dc938d92e6','3c4de5f6-6595-45b8-8d18-2f5f2b2a9931','214c7844-9a20-441a-89c7-9a8885a70440',163.33,4,87,20);
 INSERT INTO `hooks` VALUES ('771586d3-cf2e-48ea-9ee1-ca31ea571544','d31e4f05-70ac-4ad0-a290-44ec048bde1c','436fbfab-55f6-428c-b3ad-54a178415f11','214c7844-9a20-441a-89c7-9a8885a70440',206.40,1,100,88);
@@ -8011,6 +8084,8 @@ INSERT INTO `hooks` VALUES ('77ea026e-1a0c-4995-a9de-4d19b24430fb','ce6433df-b4b
 INSERT INTO `hooks` VALUES ('77ec2ce0-6ca7-46a5-9c6a-5cb76f3700ef','9764df32-5254-4230-aaf7-e8f9f59e0aa7','ac5273b8-6655-402c-86de-28749f3bea05','6f37c5cc-dbdd-422d-aa14-9eebeb37b010',152.80,5,58,0);
 INSERT INTO `hooks` VALUES ('77ed8f34-70bc-443a-9b3a-e5127bd06b0b','5b7a7672-6964-4213-be14-937a025768ff','3c4de5f6-6595-45b8-8d18-2f5f2b2a9931','a30906bf-3577-4c3d-b3ee-35df457fd645',319.30,1,100,80);
 INSERT INTO `hooks` VALUES ('77f0345e-dbe2-44df-978a-a42fdbc8c942','9f6f4e3c-b232-4932-bcf0-ac308da3ebdc','ab74d093-dbfc-479c-8041-117fdb23e6d9','289d0316-9f7b-483c-85e5-694a41fff136',74.90,6,46,0);
+INSERT INTO `hooks` VALUES ('77f5f035-f614-4396-8c3f-191a96bba83e','0c434d01-7205-455f-a680-07666e0f13c8','b11fa21b-760d-44ad-baf6-70c457074d8c','f46b119d-7aa5-454c-b10f-2e04c32304f9',325.25,1,100,75);
+INSERT INTO `hooks` VALUES ('77f629e6-b2cc-496c-8d1d-6f06a8e35336','69b7e25e-b56f-47fc-8de2-852e107e04ed','6065dfa4-a26b-490c-b29a-7e191eac18b4','4da9998b-82ce-4e51-8d50-85dd9142deaf',231.50,2,85,0);
 INSERT INTO `hooks` VALUES ('77fb5642-6f0d-4c8e-ba65-21181f11d472','ebd5685c-5495-4f89-b7c9-42e1d913b0e0','b11fa21b-760d-44ad-baf6-70c457074d8c','f46b119d-7aa5-454c-b10f-2e04c32304f9',265.00,3,95,63);
 INSERT INTO `hooks` VALUES ('78017f99-41cb-4609-a25e-201f24d6c3a3','a0bd0b0f-f70b-4c3c-83d3-c95becadadc3','88ee7f8c-abd9-478d-bba4-b85b55abe542','f46b119d-7aa5-454c-b10f-2e04c32304f9',191.92,5,97,38);
 INSERT INTO `hooks` VALUES ('78038382-f78a-4fbf-b4c9-f36fe74b9cc6','d9320d1d-f648-41fb-9a00-62bc7b5bdf73','27f9afb5-5a66-474d-ae4f-cfa3fa2641ce','f46b119d-7aa5-454c-b10f-2e04c32304f9',155.10,9,66,25);
@@ -8094,6 +8169,7 @@ INSERT INTO `hooks` VALUES ('79756519-5f3e-4e69-926b-37abf3acaaf6','53624268-3cf
 INSERT INTO `hooks` VALUES ('798ac19d-9268-4456-b988-bf63381d56f0','dfb395a0-5bd4-4a73-b123-6efb181524d9','ac2087a7-a3b6-4d99-8823-41c798697b09','05837a49-b1a6-4803-a6fa-5ba8785f7f74',199.50,2,89,33);
 INSERT INTO `hooks` VALUES ('7991476e-a45f-48e0-865e-d4e5f0fc867b','f0cadece-32ad-4110-be68-019cc7a9bb99','ab4bcf93-9c38-4469-b66d-79c758422d0f','0adb98bc-b506-4f97-bfa3-79feb210a569',206.25,13,70,13);
 INSERT INTO `hooks` VALUES ('79a7b05f-0a6c-41fe-8565-7cd8216c913e','70ef8088-ef42-40e9-9f98-c4d1e17bb4f8','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',154.75,10,84,44);
+INSERT INTO `hooks` VALUES ('79a839a7-b457-435a-a318-0ec075236ba9','396fc320-e614-4cb9-851d-6e844721f6ac','85f659f9-cff3-4bff-ae78-9d7169b0e066','236d6ef2-8e42-43b6-81a9-fb0315b02594',293.58,6,73,0);
 INSERT INTO `hooks` VALUES ('79a97642-03f1-4f31-ad24-f506c206764a','9cd8faa8-5a87-426a-b039-92dddf5d6406','0d6027f5-a114-4a6e-9d4f-391649034fb8','214c7844-9a20-441a-89c7-9a8885a70440',308.90,2,99,60);
 INSERT INTO `hooks` VALUES ('79b0b9bb-9748-4d85-9d2c-4bb4ffd06430','2936b9e4-ab0b-43e1-aab4-ee6b9ff1a3a9','13e89edf-8fc6-4cc3-8669-1ca27768e7e5','f46b119d-7aa5-454c-b10f-2e04c32304f9',241.50,2,100,67);
 INSERT INTO `hooks` VALUES ('79b16c62-e5ce-4c01-b7d2-1b3c14da91be','5c54ccd2-7cd3-4740-8767-18f20746b194','5932cef0-316d-4edb-9982-a1a7179467c3','ffa8662a-067b-435d-af37-fc3fa4897461',268.30,3,69,40);
@@ -8195,6 +8271,7 @@ INSERT INTO `hooks` VALUES ('7ba8c56e-1df8-4626-b5c1-819f656ca8e4','2ece75d2-7e2
 INSERT INTO `hooks` VALUES ('7bb1f6ed-fe4b-401b-9e80-c882579507b4','9d311cc4-c38d-4f3e-8635-b54459fb662b','7dedf1b5-dae4-43c2-adbd-cb00437ce29e','236d6ef2-8e42-43b6-81a9-fb0315b02594',191.30,2,98,60);
 INSERT INTO `hooks` VALUES ('7bb7c049-bbf3-45d7-8609-accf997aa89b','072aa642-f49d-4110-861e-45cfcc1987b6','7d090c6e-3f00-408a-beba-29a3e98efd95','719f8f7b-3ef5-4764-88f8-acf8250abf89',235.92,4,81,60);
 INSERT INTO `hooks` VALUES ('7bbb183e-99fb-405f-be53-ffa98d2b58a9','d7f885d2-3dba-41e9-b8be-be30ec9b997c','983aef6a-47ce-4bbc-985e-d3668616106f','c3026089-8e7d-4b21-8e49-1a0925de14b0',84.17,1,100,67);
+INSERT INTO `hooks` VALUES ('7bbc0f5c-ab37-4cd3-a9c5-63534760a0a6','b816f4fa-483a-4e67-99ff-4e35bd4fa952','1ebc531a-0f02-467b-99ae-3866f794cd2e','a30906bf-3577-4c3d-b3ee-35df457fd645',405.25,4,99,43);
 INSERT INTO `hooks` VALUES ('7bc903e8-fca6-416e-a44d-ba861faecd2f','f803295c-6d16-4ecd-aae0-6f747808bc44','27f9afb5-5a66-474d-ae4f-cfa3fa2641ce','f46b119d-7aa5-454c-b10f-2e04c32304f9',180.42,7,86,13);
 INSERT INTO `hooks` VALUES ('7bd039f1-fefd-4f23-9477-a4717b43b1f3','bb0aa5f8-504e-4fc7-b24e-9144cc8eada8','ee206cbf-0133-4f8d-9dd4-bfc01fed5a89','254a626e-19be-481e-b6e1-5492648db50d',253.67,1,100,90);
 INSERT INTO `hooks` VALUES ('7be45d5e-f297-4873-b020-2002a0ddb369','c3a121f4-cbdc-4bca-82da-b54a196aa507','93545bca-6455-43de-b0a4-64e4a2fdb17f','0f4644cf-e143-4bf4-93d4-1e728e11b4e8',293.42,1,100,75);
@@ -8378,6 +8455,7 @@ INSERT INTO `hooks` VALUES ('7fa8b63e-3951-4031-9712-c6aa3c5abc45','9aa292a9-a5f
 INSERT INTO `hooks` VALUES ('7faaeb87-e202-4dab-a7fe-7fb7ef3ba9a8','2193f9aa-fed6-409c-aa4b-9665a2fde17c','ac5273b8-6655-402c-86de-28749f3bea05','6f37c5cc-dbdd-422d-aa14-9eebeb37b010',166.17,2,74,60);
 INSERT INTO `hooks` VALUES ('7fb0aa39-7698-4e59-b9d3-935946888393','002ee82a-7c16-4da6-947b-4fe9348e35cb','27f9afb5-5a66-474d-ae4f-cfa3fa2641ce','f46b119d-7aa5-454c-b10f-2e04c32304f9',169.90,9,87,31);
 INSERT INTO `hooks` VALUES ('7fb3405b-5898-485e-9f23-4f07a26b1e82','730f7ae6-eb07-4545-897f-ec7da0149cfc','a04a1ecc-9090-4d0b-af94-3bb6bfb37148','236d6ef2-8e42-43b6-81a9-fb0315b02594',247.00,3,87,75);
+INSERT INTO `hooks` VALUES ('7fb8c22a-864a-41ce-b34f-87f64a7dc42f','0cae1ab4-d3a0-46ee-b384-f952e1d6afa0','93545bca-6455-43de-b0a4-64e4a2fdb17f','bf6ff62f-d42b-48f8-956c-f8dbde4a1555',258.00,2,98,60);
 INSERT INTO `hooks` VALUES ('7fbcc170-97f9-48a6-aa16-78757b625a34','4a393507-1c19-46c0-80ac-f631efdb23e3','62751ca2-6669-4ce6-be87-9443f1370985','1de0ffff-4bd4-4819-ab5a-601dca685e94',401.33,3,92,0);
 INSERT INTO `hooks` VALUES ('7fc75f29-3028-49c1-afc8-b94c16c6d43f','2d98a067-79cc-487a-ab4f-e82397dcba22','91c98bee-447c-439a-90d1-3d26bcd18a06','214c7844-9a20-441a-89c7-9a8885a70440',181.33,2,81,71);
 INSERT INTO `hooks` VALUES ('7fc8070b-14f5-449c-8483-7b81f2f89dc3','a575e168-4b48-4ee9-a0da-0d2d66508c11','b2cc1888-10a3-49e4-83fb-ab6ed56181c3','c3026089-8e7d-4b21-8e49-1a0925de14b0',284.00,8,92,38);
@@ -8395,6 +8473,7 @@ INSERT INTO `hooks` VALUES ('7feb6415-99cd-433d-b9b1-efa2ce1907b1','084cbb38-25b
 INSERT INTO `hooks` VALUES ('7ff0416f-0f53-4ca9-aadb-684511d5474a','2e99d1d9-cba5-4915-af25-00dec7616bdf','d42d0c0c-85c3-4576-8c0b-c4316e4fa31a','a30906bf-3577-4c3d-b3ee-35df457fd645',293.90,2,95,80);
 INSERT INTO `hooks` VALUES ('7ff1ebfd-60f6-4ba7-9312-3fc99063b1f5','1b6d0026-d3ac-46db-9ab0-fb851f775ff2','53670d4c-9be1-4193-ba13-af3b9a3a497b','e0066fe4-4a60-4163-8bfa-4abcdb29b6a6',184.25,5,76,17);
 INSERT INTO `hooks` VALUES ('7ff1ed10-2309-4db5-b7dc-7493d7d36c33','16368abf-2683-4cee-a253-b73ada00df95','b45924c1-e992-49a5-919d-fa34e2f99046','4752b071-f14a-4d07-8205-b664f24763ad',238.80,1,100,67);
+INSERT INTO `hooks` VALUES ('7ff2ddd1-4aa9-400d-9189-807521f35908','bb99fea8-269c-4b80-a70e-e8041d1ad32a','297102b4-1fba-42dd-a627-4cdc359628fd','f46b119d-7aa5-454c-b10f-2e04c32304f9',342.75,3,87,57);
 INSERT INTO `hooks` VALUES ('7ff6bcfb-b329-42a9-a077-2f29c277a59e','78c0dc50-9c9e-49ff-bbf8-35ba1cce7c52','10cecf43-99b8-49c7-8d39-11657bfb3b0c','173b5937-aeb1-47dc-8abc-cb65acc2e98e',189.75,6,72,25);
 INSERT INTO `hooks` VALUES ('8001955f-75aa-4688-b36b-bc2a84f586ef','7ad69742-0633-4356-9db6-8c3a7f1cc2b0','5a5a3f8c-8978-463b-a5f8-edd1a7ecf425','c3026089-8e7d-4b21-8e49-1a0925de14b0',240.60,10,63,9);
 INSERT INTO `hooks` VALUES ('8001b369-05ec-4d00-ba60-00c61df4cdd9','61046f18-11de-4d98-adcc-cf630f9fc8a2','cf997620-1259-41b1-9cd5-60430106ce7a','a3402d72-6e9c-45e3-9c35-6eac6b5adf13',205.58,3,94,40);
@@ -8494,6 +8573,7 @@ INSERT INTO `hooks` VALUES ('82014456-291f-47fb-988a-750d339ce99f','c8d6756c-f6d
 INSERT INTO `hooks` VALUES ('82025986-a063-444a-bb52-7f25b699064e','85f240bb-bb82-43c7-96c9-d90de70fc7b7','e47ca203-8933-4c88-a968-26f50de610db','4da9998b-82ce-4e51-8d50-85dd9142deaf',171.75,6,71,0);
 INSERT INTO `hooks` VALUES ('82055646-192e-40ac-80dd-80cc5404a65f','2a2450bb-f559-42fb-89b9-e3744f1f4108','239e2f33-94cf-47d1-90d7-f0eb948392d5','df10f08f-1148-4445-8b6d-9dc20bf11534',225.20,2,98,60);
 INSERT INTO `hooks` VALUES ('820dfed6-ad29-4a88-b263-ddc6b0830e7e','457b4640-7b2b-4cd2-b6d4-d8e9529a88c2','3c4de5f6-6595-45b8-8d18-2f5f2b2a9931','214c7844-9a20-441a-89c7-9a8885a70440',346.50,1,100,80);
+INSERT INTO `hooks` VALUES ('82169d7e-da60-4bf3-a44f-11680191fa03','8bd10faa-1d0c-4244-8832-080f558ef7ea','b5438e57-c824-4b04-be90-cd790bd9105c','289d0316-9f7b-483c-85e5-694a41fff136',240.83,3,88,25);
 INSERT INTO `hooks` VALUES ('821907f4-6fad-4751-81df-d9a5911ba958','4388972c-6954-4c16-a982-9653dd6970c9','207f9c0f-d1c6-4563-bb5e-1b980c9bd34a','83e5cda1-560d-49ad-9aa8-43ca439b8657',56.92,8,24,11);
 INSERT INTO `hooks` VALUES ('821acb19-e0ae-4480-ac7f-58fb8debbe21','10448d9e-9f97-4c90-b07a-669ecd5bceaf','9465a7eb-b6f6-4ff6-b89f-e2c0d68e5d6c','541520b9-6151-43c6-8956-31a02acb59bd',165.60,4,98,56);
 INSERT INTO `hooks` VALUES ('8222304e-ab76-4141-b848-d6c4c33387a9','7175bde5-1a16-4194-bc41-66948dff7b22','ac2087a7-a3b6-4d99-8823-41c798697b09','f46b119d-7aa5-454c-b10f-2e04c32304f9',255.90,1,100,67);
@@ -8584,6 +8664,7 @@ INSERT INTO `hooks` VALUES ('83e39ca7-cc5c-4749-b863-f013b3ef2e12','47adf156-924
 INSERT INTO `hooks` VALUES ('83e3b045-6ae6-4ae1-b385-bf0d85152f96','90210277-be99-4536-b2fb-019cd37c83b9','737d77c5-739c-42f2-9db9-fb2177546cf6','f46b119d-7aa5-454c-b10f-2e04c32304f9',280.67,2,98,71);
 INSERT INTO `hooks` VALUES ('83e49caf-1add-46b2-afa8-b21d460140fe','0d94d397-ed39-4a71-bd30-80c7d71a3b42','d7a0b032-7445-4e85-bbb7-9eed54fa25ce','254a626e-19be-481e-b6e1-5492648db50d',232.25,2,97,60);
 INSERT INTO `hooks` VALUES ('83eb8687-8473-4cd1-9e48-1c9c5be0e12b','d9734b43-2dd1-4a58-8905-6ff55f8330bf','3ec21a0b-e749-48fd-84a7-b7f32d356b1c','214c7844-9a20-441a-89c7-9a8885a70440',174.33,4,74,56);
+INSERT INTO `hooks` VALUES ('83f18437-1543-4bee-a3db-90e7f4d3dcbb','5b86938a-016d-4911-9141-4f053248bc53','fe30ccf7-32cb-43c0-b782-69a22f319863','289d0316-9f7b-483c-85e5-694a41fff136',230.42,3,99,50);
 INSERT INTO `hooks` VALUES ('83f2d652-ba92-474e-8707-217458781f7e','9509fea3-3ef3-43a6-ba90-58eb451c9a55','239e2f33-94cf-47d1-90d7-f0eb948392d5','0adb98bc-b506-4f97-bfa3-79feb210a569',134.30,6,70,14);
 INSERT INTO `hooks` VALUES ('83f5be46-debd-4dfc-b440-32c1bb593cc1','2193f9aa-fed6-409c-aa4b-9665a2fde17c','27f9afb5-5a66-474d-ae4f-cfa3fa2641ce','a7b1c7c9-d1de-4b3d-80de-b7e445877e8c',3.33,5,1,0);
 INSERT INTO `hooks` VALUES ('83ff0c8b-88cf-4d63-80a0-6b3b57869851','867aa2b1-e986-4577-8837-b9293d547751','737d77c5-739c-42f2-9db9-fb2177546cf6','f46b119d-7aa5-454c-b10f-2e04c32304f9',171.80,6,89,0);
@@ -8767,6 +8848,7 @@ INSERT INTO `hooks` VALUES ('87c8f21f-a7be-428d-bc70-f5e65685b8b5','d2e7e488-8d1
 INSERT INTO `hooks` VALUES ('87cafe8e-5c36-4b2f-ba38-95e0718cfdc3','a6d6e4ce-25da-4490-84a2-35e066f99344','cfb42854-1a41-432d-a410-03a95d753492','236d6ef2-8e42-43b6-81a9-fb0315b02594',327.42,2,97,50);
 INSERT INTO `hooks` VALUES ('87d2f54f-01e3-4b1c-bed6-e2e8687ba645','346454bd-57f7-4efd-8009-902bbfb61421','c4022963-02e3-481c-9f9c-7115a6ed5db5','c3026089-8e7d-4b21-8e49-1a0925de14b0',158.50,2,92,71);
 INSERT INTO `hooks` VALUES ('87d653bc-2460-4be3-9710-72d6034dded2','517d189d-515e-4648-9c05-b7e510558390','e13f1da0-5487-4648-82e6-09d3d4a1b334','05837a49-b1a6-4803-a6fa-5ba8785f7f74',186.40,7,75,22);
+INSERT INTO `hooks` VALUES ('87f08325-411b-4986-9298-33a58667729d','bb99fea8-269c-4b80-a70e-e8041d1ad32a','1d3ca75e-6017-47f5-b673-955cfb8db66b','bf6ff62f-d42b-48f8-956c-f8dbde4a1555',326.58,4,83,43);
 INSERT INTO `hooks` VALUES ('87f60c2c-0b63-42a7-b154-87c5a8b081cc','8ce6dcb4-f0e6-461d-a9de-1bf77aa2a1f0','fc17c4d8-e95b-4158-b8f7-d652f897ad46','f46b119d-7aa5-454c-b10f-2e04c32304f9',221.50,1,100,83);
 INSERT INTO `hooks` VALUES ('87f73d44-deae-46fc-b4a5-644845b5ef10','8216a576-29ed-4b02-9304-74e6a8354ad8','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',231.33,3,64,40);
 INSERT INTO `hooks` VALUES ('87f90541-fb11-48c5-965c-3471d662ad37','00d31ac9-6312-457e-8137-b12ab4aa7ad1','4da3caec-885a-4748-816a-800fe07dbc35','0adb98bc-b506-4f97-bfa3-79feb210a569',216.50,2,99,67);
@@ -8914,6 +8996,7 @@ INSERT INTO `hooks` VALUES ('8abbe58a-0bf4-4569-a2f5-66d65826cb58','fb00bd75-20e
 INSERT INTO `hooks` VALUES ('8ac9faab-2dca-4014-9d4c-1cd0df08501d','6d278679-a822-4cd4-afde-13063ec56a58','480e07ba-137a-48dc-adaf-f2ab3dd661af','4976cf65-4fea-46b7-b870-594d355acb95',228.75,1,100,67);
 INSERT INTO `hooks` VALUES ('8ad87b77-807f-4cda-a1cb-e6cff1764832','e65e2dac-5cb9-4de1-9c9b-08098e8aeb23','d67cb541-d010-4e09-897b-2307b42f0149','a30906bf-3577-4c3d-b3ee-35df457fd645',233.60,4,84,43);
 INSERT INTO `hooks` VALUES ('8adc35f8-7bd8-4bef-b623-eb323819af8e','9e28f7d7-0dcb-4269-b548-ecfd31bd1f3d','1c3fcf0b-b024-42e0-85aa-4e0e62345739','a30906bf-3577-4c3d-b3ee-35df457fd645',158.70,3,97,70);
+INSERT INTO `hooks` VALUES ('8adfa1b3-a796-4df2-9ecc-1510938fb449','e68b7aac-a0c4-4b41-92f4-8053620c8a4c','fe30ccf7-32cb-43c0-b782-69a22f319863','289d0316-9f7b-483c-85e5-694a41fff136',235.67,7,81,22);
 INSERT INTO `hooks` VALUES ('8ae29757-1b55-4ae7-9984-93c732a1ce9a','7569768e-ef98-4dd8-b909-d3e342612ead','f922e380-97b5-479f-a762-36269d163f55','0adb98bc-b506-4f97-bfa3-79feb210a569',266.20,5,93,17);
 INSERT INTO `hooks` VALUES ('8ae42209-50d1-4d46-aa71-57c2d1ab3240','7a459c7f-67d6-4e0c-99ed-1ce960b97e49','1549c831-99a8-4947-947f-dbdc618cd2aa','254a626e-19be-481e-b6e1-5492648db50d',225.90,2,98,85);
 INSERT INTO `hooks` VALUES ('8ae9afa5-c2a7-429e-a479-cbf3921442d1','f48ca0f8-2fd4-4360-97cf-3861ea09bfcb','15927dbc-ed5b-40dc-a8cc-b6443b05be1f','0adb98bc-b506-4f97-bfa3-79feb210a569',257.42,3,92,77);
@@ -8942,6 +9025,7 @@ INSERT INTO `hooks` VALUES ('8b64801c-b497-4664-8523-a9533043e900','cc74f035-7ad
 INSERT INTO `hooks` VALUES ('8b73ade8-1dbd-4b12-bd71-3a73d9abe9bc','0efdc459-7e4a-4b39-9965-fc3740459eb4','62751ca2-6669-4ce6-be87-9443f1370985','cb59644a-bc5c-4ac7-a690-c8af9f21df3a',254.10,8,89,0);
 INSERT INTO `hooks` VALUES ('8b855e34-9755-4077-ba17-59cec7162134','9b8241a8-0833-4112-87a5-9f65fa4b8935','9465a7eb-b6f6-4ff6-b89f-e2c0d68e5d6c','214c7844-9a20-441a-89c7-9a8885a70440',188.17,4,76,33);
 INSERT INTO `hooks` VALUES ('8b88eaaa-c85d-40e4-9500-ca2886986bae','aa415582-d916-47ef-beaa-4b2ffb670534','93545bca-6455-43de-b0a4-64e4a2fdb17f','d1eabdfd-cb8b-4601-b115-70c8c102b3c3',180.30,3,79,63);
+INSERT INTO `hooks` VALUES ('8b8ae2d4-0598-493a-b096-fa8153eb7f18','0cae1ab4-d3a0-46ee-b384-f952e1d6afa0','ccfa2af7-bbe1-418e-a356-d4de84e8a486','05837a49-b1a6-4803-a6fa-5ba8785f7f74',240.58,3,91,40);
 INSERT INTO `hooks` VALUES ('8b90e6f7-63b3-4e30-94a3-f425a6ae61ee','d752c10a-f18a-4ab6-b374-30295a7fdb62','b34559c3-9483-448c-8397-321d1f8dd813','f46b119d-7aa5-454c-b10f-2e04c32304f9',283.75,4,93,20);
 INSERT INTO `hooks` VALUES ('8b91b7f2-44fa-438f-b204-7c4edd31f2db','094be395-a54e-47e0-946a-926250ce5bd4','93545bca-6455-43de-b0a4-64e4a2fdb17f','d1eabdfd-cb8b-4601-b115-70c8c102b3c3',323.25,2,100,50);
 INSERT INTO `hooks` VALUES ('8ba2e469-3e10-432c-8458-20bfb6897713','e00f187a-e064-4537-81f2-8a40c1c2c2ab','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',172.33,5,83,29);
@@ -8999,6 +9083,7 @@ INSERT INTO `hooks` VALUES ('8cad2745-5fad-4b23-88e3-e8eb9b89f76d','bf43de44-e73
 INSERT INTO `hooks` VALUES ('8cb068a6-52ca-4231-8425-916190a0bf55','47943c2f-60ef-4b8f-b939-81b2cc1a363a','ee668867-ac4d-4364-99cf-5aece274cf51','3a345595-5af0-440c-a374-6997654b68ed',190.92,5,78,17);
 INSERT INTO `hooks` VALUES ('8cb2db17-0f4f-4061-99da-721b38dac486','740823ff-4b90-4b3f-afe1-9bb37bbf9fc5','4bb469e8-c8db-4799-b8cf-4db808d1651f','4da9998b-82ce-4e51-8d50-85dd9142deaf',140.90,4,91,50);
 INSERT INTO `hooks` VALUES ('8cb80538-0930-48de-841b-63a164d6ae9e','9a788806-61cc-4ec5-b475-26880b7f8a7c','1ebc531a-0f02-467b-99ae-3866f794cd2e','f46b119d-7aa5-454c-b10f-2e04c32304f9',167.58,3,96,40);
+INSERT INTO `hooks` VALUES ('8cb89c79-8cc0-4c62-a08d-4618f8c99cae','87cee659-4620-452d-9a81-90c468a530db','662e65b3-83f5-4f37-9db8-c66c19a50faf','254a626e-19be-481e-b6e1-5492648db50d',356.83,5,87,0);
 INSERT INTO `hooks` VALUES ('8cc8c41c-ec2d-494f-b3cd-fda6b620e6df','7c3d65f2-caae-4f98-a881-3ae658401b81','c39eb255-9486-4703-8855-3cb7a7ddc955','f46b119d-7aa5-454c-b10f-2e04c32304f9',186.67,4,87,20);
 INSERT INTO `hooks` VALUES ('8ccf0bf8-721a-40f9-861c-ccd54f0a84fb','71684be8-0a09-4581-a828-63a16b7e04c8','62751ca2-6669-4ce6-be87-9443f1370985','1de0ffff-4bd4-4819-ab5a-601dca685e94',264.75,1,100,0);
 INSERT INTO `hooks` VALUES ('8cd33c18-5ae5-4d70-855e-e73bd1812c3f','e4313fd4-2041-4187-a14d-3f55b6e55f56','239e2f33-94cf-47d1-90d7-f0eb948392d5','df10f08f-1148-4445-8b6d-9dc20bf11534',134.90,6,74,0);
@@ -9048,6 +9133,7 @@ INSERT INTO `hooks` VALUES ('8d9264cb-c88d-4830-909e-1d334fb5f2be','ff4bedf3-94a
 INSERT INTO `hooks` VALUES ('8d94abc6-ee7d-47dd-87b3-27e7f5ce3d0b','0bff660d-6f7a-4a8c-9a8e-bbf54cc00db9','fc17c4d8-e95b-4158-b8f7-d652f897ad46','f46b119d-7aa5-454c-b10f-2e04c32304f9',260.80,1,100,50);
 INSERT INTO `hooks` VALUES ('8d9d1acd-91bc-4fd0-9a76-967c12d8b2dc','4b08ee5f-1c08-4e31-9c83-b09825576197','450cfb0c-b991-4b91-b5b5-1aa8c92306ac','ffa8662a-067b-435d-af37-fc3fa4897461',149.90,1,100,89);
 INSERT INTO `hooks` VALUES ('8d9f8cf0-266a-4607-8f34-748aa31d4599','8aeab72d-d031-46e8-87c7-25fda0f8a882','5c56674e-97de-4164-b573-f5f7dd3afba1','214c7844-9a20-441a-89c7-9a8885a70440',282.80,5,99,44);
+INSERT INTO `hooks` VALUES ('8db31016-c1d4-4070-b104-102cd4e7c1b9','c72680dc-c412-40cf-874e-1d911988d5f7','9d162f39-7aa6-460d-96b2-8410f2816448','f46b119d-7aa5-454c-b10f-2e04c32304f9',198.08,7,84,13);
 INSERT INTO `hooks` VALUES ('8dbde784-358c-4f82-8401-8bb39858aa4d','c8ee5471-036a-4dcf-b64f-3afa71c6db00','ccfa2af7-bbe1-418e-a356-d4de84e8a486','05837a49-b1a6-4803-a6fa-5ba8785f7f74',180.67,6,57,0);
 INSERT INTO `hooks` VALUES ('8dc12b6e-51dc-4a7d-a8e5-7bd19ca79f5d','9ca0a59c-c56d-4b9d-9170-30e3a52798a8','239e2f33-94cf-47d1-90d7-f0eb948392d5','0adb98bc-b506-4f97-bfa3-79feb210a569',160.08,3,89,57);
 INSERT INTO `hooks` VALUES ('8dc4623c-9793-4a31-a42a-11c0a8507e96','c9ee526b-7b0b-4d53-9285-98f6b9f1845c','1ebc531a-0f02-467b-99ae-3866f794cd2e','a30906bf-3577-4c3d-b3ee-35df457fd645',285.75,3,92,40);
@@ -9124,6 +9210,7 @@ INSERT INTO `hooks` VALUES ('8f566836-7585-4b48-966a-12140a7d547d','031c96fc-9eb
 INSERT INTO `hooks` VALUES ('8f5ba7ff-790c-42ca-9fdf-e2d66f29509f','9f5c63e5-af17-49d8-94b3-7a9609e2e5c5','c4022963-02e3-481c-9f9c-7115a6ed5db5','c3026089-8e7d-4b21-8e49-1a0925de14b0',169.33,1,100,50);
 INSERT INTO `hooks` VALUES ('8f64b6a7-fa93-42ca-8c23-074d5b8e7f12','f7be8595-7f06-48cf-b277-67504b286969','6065dfa4-a26b-490c-b29a-7e191eac18b4','4da9998b-82ce-4e51-8d50-85dd9142deaf',215.25,4,67,50);
 INSERT INTO `hooks` VALUES ('8f6cbaa4-19a5-47a3-8d92-5d2208baf573','337bc014-4682-489a-9999-c9f876866e3f','e13f1da0-5487-4648-82e6-09d3d4a1b334','f46b119d-7aa5-454c-b10f-2e04c32304f9',168.90,6,79,50);
+INSERT INTO `hooks` VALUES ('8f72fc64-c9cd-4956-bfb7-16dde95de397','e68b7aac-a0c4-4b41-92f4-8053620c8a4c','1549c831-99a8-4947-947f-dbdc618cd2aa','254a626e-19be-481e-b6e1-5492648db50d',288.58,2,99,78);
 INSERT INTO `hooks` VALUES ('8f73c598-f23a-4dfd-a0b3-dd2300761ef0','090da581-317f-4abf-91b1-d87cc1ca5564','7d090c6e-3f00-408a-beba-29a3e98efd95','719f8f7b-3ef5-4764-88f8-acf8250abf89',222.90,3,92,67);
 INSERT INTO `hooks` VALUES ('8f73e07f-eb59-47ec-84a8-8449526fe42d','9e8e58f4-a50f-4634-9a5e-cb9a8a92c531','d0e8e68f-a6ca-4d72-ad41-74a67b0fdecf','0d69459f-a2ac-4580-abe8-797a7aa3c615',200.25,6,84,14);
 INSERT INTO `hooks` VALUES ('8f747b95-d015-41ac-99e8-b11f09ff2cd8','5fb8b928-2842-43a2-b80b-0f1e2b08239c','1ebc531a-0f02-467b-99ae-3866f794cd2e','f46b119d-7aa5-454c-b10f-2e04c32304f9',287.08,6,81,25);
@@ -9227,6 +9314,7 @@ INSERT INTO `hooks` VALUES ('912b12fc-ff6d-48cc-87db-0350e7405956','3c5e0644-cc6
 INSERT INTO `hooks` VALUES ('912fbb23-7341-4704-9f35-67053b043c41','c2e47d4b-1f72-4e73-8812-67a09352a420','e22a10d4-1a2b-4c2a-ae40-bb943e7e14c4','c73a06d2-d45d-4a4a-ac04-8d951525c34f',165.60,4,92,64);
 INSERT INTO `hooks` VALUES ('91318f4f-ad2c-4b17-be09-5ab667955969','24aebaec-0bf8-44cc-b486-908d4dc212a5','239e2f33-94cf-47d1-90d7-f0eb948392d5','0adb98bc-b506-4f97-bfa3-79feb210a569',134.33,3,77,0);
 INSERT INTO `hooks` VALUES ('9140963d-4b3a-44a8-b391-84a8bd2b9120','c4ddc1bf-328a-43b8-ab00-eaec2e93f798','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',157.67,7,90,42);
+INSERT INTO `hooks` VALUES ('9143ff56-ad42-40f5-bb35-5bfcdb6a2446','0f9ab65d-9fc0-4052-91cc-38e6057a9985','62751ca2-6669-4ce6-be87-9443f1370985','1de0ffff-4bd4-4819-ab5a-601dca685e94',415.42,2,100,50);
 INSERT INTO `hooks` VALUES ('914a3199-7b57-421b-9031-bd391f0bd9e1','414bb0da-5c92-42a6-8032-5c731d872aba','239e2f33-94cf-47d1-90d7-f0eb948392d5','0adb98bc-b506-4f97-bfa3-79feb210a569',165.40,2,100,60);
 INSERT INTO `hooks` VALUES ('914db022-c8b2-4c1f-b42a-492f2ca5c59a','e876e248-854c-42c2-91a2-8d43d504b00c','3c4de5f6-6595-45b8-8d18-2f5f2b2a9931','a30906bf-3577-4c3d-b3ee-35df457fd645',191.80,3,88,57);
 INSERT INTO `hooks` VALUES ('914efa8d-7e1e-487c-8426-73432df3dc9a','99f5927c-4d98-4fb2-9802-d8d1dcf31d56','e22a10d4-1a2b-4c2a-ae40-bb943e7e14c4','c73a06d2-d45d-4a4a-ac04-8d951525c34f',217.25,2,89,50);
@@ -9884,6 +9972,7 @@ INSERT INTO `hooks` VALUES ('9f61384b-94f0-49d1-b226-7c207dc09468','7f385998-856
 INSERT INTO `hooks` VALUES ('9f67102d-91fe-488c-90d0-1d847e92f13f','68c4c376-5a68-4970-8d4f-8af59eeeb2d1','7dfd5a9c-0cd6-4b98-aca9-ab51b73da4d8','c3026089-8e7d-4b21-8e49-1a0925de14b0',167.83,5,67,0);
 INSERT INTO `hooks` VALUES ('9f685e17-92fe-4bdc-8702-8d3d5a98ec95','03980157-cbdc-4a1c-a7cd-25bcbe74e59d','b11fa21b-760d-44ad-baf6-70c457074d8c','f46b119d-7aa5-454c-b10f-2e04c32304f9',155.00,7,92,36);
 INSERT INTO `hooks` VALUES ('9f6aa5ee-703f-4a33-b9ac-60f374c2f4a9','31e393dc-6080-46e6-a74b-0d1021c2cc03','c6508e29-be89-4bac-a4a7-b2f357d2961c','f9338055-df4c-46b2-876d-f226119fa0c1',165.80,6,78,0);
+INSERT INTO `hooks` VALUES ('9f6bc262-0bfc-44fe-90d4-5d78ee6974a3','c72680dc-c412-40cf-874e-1d911988d5f7','f22fd15f-bf1c-4278-8eaf-32dbe9a37ae1','366d718c-abfb-4ee0-9641-0c75a6b94331',225.67,5,96,38);
 INSERT INTO `hooks` VALUES ('9f6c9d1d-6768-4d66-a828-5bd0464ab195','5cce81b4-5ef3-49cd-9524-7aea6bca644c','dae63473-8c49-46bf-9f24-30bad15c914b','289d0316-9f7b-483c-85e5-694a41fff136',166.50,4,79,0);
 INSERT INTO `hooks` VALUES ('9f75c5c2-0fda-432f-8a4c-f9fead5705cd','063a9bc8-3b02-48c5-b120-4d695722e445','46b0ce8c-f89e-4214-8f38-498c68e87844','214c7844-9a20-441a-89c7-9a8885a70440',251.90,4,94,69);
 INSERT INTO `hooks` VALUES ('9f7c2a35-e65a-4716-9bc0-b9d8a080a35f','931e2329-1e0a-427b-93b3-1182b933a66e','1ebc531a-0f02-467b-99ae-3866f794cd2e','05837a49-b1a6-4803-a6fa-5ba8785f7f74',242.30,4,94,60);
@@ -9931,6 +10020,7 @@ INSERT INTO `hooks` VALUES ('a05903a6-c2d2-413d-8425-362f546c7f98','9805c97b-2da
 INSERT INTO `hooks` VALUES ('a05b7ec1-b056-4576-9e01-9baaa0547cb4','41e7eed2-9479-4f2c-8f3f-5985262464a3','df6a58e9-55f8-47e7-b89f-2cfff3323375','3934ef49-3829-46a3-8041-ed401172b8fc',279.60,1,100,67);
 INSERT INTO `hooks` VALUES ('a06088f2-580c-4238-b98e-b88806681d03','c4810745-ee5e-4ac7-8cd6-26b01ec81fe4','ae731a58-7815-4a37-b930-12fc4a6931fb','a7b1c7c9-d1de-4b3d-80de-b7e445877e8c',104.00,10,42,9);
 INSERT INTO `hooks` VALUES ('a067c503-ad2d-4642-b927-72c7137ddaf9','72256da1-648b-4a1f-97df-ce1332defb52','56aea5c0-b1cd-4205-a2c6-4f78cc93828f','0adb98bc-b506-4f97-bfa3-79feb210a569',159.25,6,84,0);
+INSERT INTO `hooks` VALUES ('a06e4422-44e8-4445-8a68-fcc00c489144','5b86938a-016d-4911-9141-4f053248bc53','d1b2553b-e296-4fcb-903d-8e6a79300438','05837a49-b1a6-4803-a6fa-5ba8785f7f74',196.67,6,84,0);
 INSERT INTO `hooks` VALUES ('a0722d65-454a-470c-b497-89d704bc3dd4','6b13e899-5205-480e-a3cd-201b79b15b83','6cf79081-8779-4465-99b8-ad884fb55070','1de0ffff-4bd4-4819-ab5a-601dca685e94',285.50,11,71,15);
 INSERT INTO `hooks` VALUES ('a0763283-ad08-4f53-9436-9627db40a226','824d6c2c-f874-4a49-a719-f578786dfb09','53670d4c-9be1-4193-ba13-af3b9a3a497b','3a345595-5af0-440c-a374-6997654b68ed',244.00,10,79,17);
 INSERT INTO `hooks` VALUES ('a07acce6-80b5-4ead-858c-2a8545cc211f','07b7c49f-aa71-402a-97cf-b3b43eedda12','fc17c4d8-e95b-4158-b8f7-d652f897ad46','f46b119d-7aa5-454c-b10f-2e04c32304f9',223.90,6,85,14);
@@ -10009,6 +10099,7 @@ INSERT INTO `hooks` VALUES ('a22fd449-9960-4843-b00f-ab05aeaf7086','845c459e-893
 INSERT INTO `hooks` VALUES ('a235241e-34c0-4cca-acf6-01908bf8d3cd','e0f0dd55-7fc4-476a-8255-c1009119af69','f7d81e20-f579-4052-aa0e-96200f868a5c','a3402d72-6e9c-45e3-9c35-6eac6b5adf13',293.00,1,100,88);
 INSERT INTO `hooks` VALUES ('a2384ae0-0b98-4711-98aa-05950739a275','cb8e23a2-b8ce-49ab-b1a1-02fe16b4ad36','d0e8e68f-a6ca-4d72-ad41-74a67b0fdecf','0d69459f-a2ac-4580-abe8-797a7aa3c615',192.50,12,73,29);
 INSERT INTO `hooks` VALUES ('a239a2f5-021a-47e4-ba2c-1a7f2b518ff9','9603e88a-7996-4055-8257-6884dc006092','62751ca2-6669-4ce6-be87-9443f1370985','1de0ffff-4bd4-4819-ab5a-601dca685e94',223.60,2,80,0);
+INSERT INTO `hooks` VALUES ('a23ce7c6-292c-4f0e-8fe3-143f5bc4ecb5','e68b7aac-a0c4-4b41-92f4-8053620c8a4c','239e2f33-94cf-47d1-90d7-f0eb948392d5','101ae17c-a3af-4cac-9c2f-21b284762555',234.75,8,81,11);
 INSERT INTO `hooks` VALUES ('a245b139-fa77-49e2-8c3e-bef0fe76cad1','b461e213-a411-4646-ad1a-f2e9bbdb6512','b2cc1888-10a3-49e4-83fb-ab6ed56181c3','c3026089-8e7d-4b21-8e49-1a0925de14b0',255.83,6,68,0);
 INSERT INTO `hooks` VALUES ('a248c3f4-e9d9-4d9f-a2e9-59cbc9512430','4a09cf04-fbcf-46c3-b7e0-f95f55a7ec72','63f3d13a-ef2e-4224-bbcd-923db01fd77f','a30906bf-3577-4c3d-b3ee-35df457fd645',162.90,9,63,0);
 INSERT INTO `hooks` VALUES ('a249a4f1-41a0-4d70-afbe-62a08f750eae','bb5f978f-eb73-48ea-badb-bbf891bed5c5','9465a7eb-b6f6-4ff6-b89f-e2c0d68e5d6c','541520b9-6151-43c6-8956-31a02acb59bd',224.42,1,100,50);
@@ -10101,6 +10192,7 @@ INSERT INTO `hooks` VALUES ('a3f1c563-60c9-478b-8412-5d613dd34bf3','c3a121f4-cbd
 INSERT INTO `hooks` VALUES ('a3f91106-aadd-43fe-bade-d12f74baa183','06b4afc7-9b88-4652-bbd2-f68e1c961614','e29b158f-a4a0-43fb-8fdc-4fe0a30b6cc9','101ae17c-a3af-4cac-9c2f-21b284762555',187.17,2,97,60);
 INSERT INTO `hooks` VALUES ('a3fd9d88-e557-4328-b30f-63b08d41e0df','02b2cb2e-aa2e-4cd9-a930-daba72bc2868','5f6e9cee-d228-42c1-b77d-41e196caaae8','f46b119d-7aa5-454c-b10f-2e04c32304f9',203.92,7,86,22);
 INSERT INTO `hooks` VALUES ('a40ed16f-5581-4f86-b779-83b94b550b0c','3da82219-8525-4e29-a3d4-fbebc680aea5','62751ca2-6669-4ce6-be87-9443f1370985','1de0ffff-4bd4-4819-ab5a-601dca685e94',240.67,3,86,50);
+INSERT INTO `hooks` VALUES ('a412d534-df77-43b9-b5e9-a404460943bb','87cee659-4620-452d-9a81-90c468a530db','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',405.08,4,99,20);
 INSERT INTO `hooks` VALUES ('a4178709-55ca-4afe-8209-bf674f194b24','dd48021f-2e7f-4913-8b53-785b80fcdbbe','cf997620-1259-41b1-9cd5-60430106ce7a','a3402d72-6e9c-45e3-9c35-6eac6b5adf13',184.90,13,53,7);
 INSERT INTO `hooks` VALUES ('a42248ee-3020-473f-9631-9badb25983d2','49bc44dd-663c-4baf-9325-65b047934c4c','f922e380-97b5-479f-a762-36269d163f55','289d0316-9f7b-483c-85e5-694a41fff136',232.60,2,76,33);
 INSERT INTO `hooks` VALUES ('a424403e-5326-4a08-af02-1461ed9c6c74','e6836cd4-e574-447f-991a-785fec84da19','fc17c4d8-e95b-4158-b8f7-d652f897ad46','f46b119d-7aa5-454c-b10f-2e04c32304f9',256.83,1,100,89);
@@ -10138,6 +10230,7 @@ INSERT INTO `hooks` VALUES ('a4e1e588-2f8e-439e-ab9e-243df0f5e993','3f4028b9-4c5
 INSERT INTO `hooks` VALUES ('a4e27228-94c6-44d4-b894-96d264218380','c594254f-ff07-4767-bcf8-7b544659eb76','1b50f2a7-3720-45a8-82ba-7c4938348006','254a626e-19be-481e-b6e1-5492648db50d',169.00,1,100,50);
 INSERT INTO `hooks` VALUES ('a4f16bf4-ce2c-459d-96c0-844e26dcf54c','346454bd-57f7-4efd-8009-902bbfb61421','294b3eae-0a7e-4453-aca8-4681dea1b5aa','4976cf65-4fea-46b7-b870-594d355acb95',95.42,7,55,0);
 INSERT INTO `hooks` VALUES ('a4fa5c24-a12a-4b60-87b8-79abf76d3815','b1197b0b-79d0-4c85-af84-38d2c881158f','1d3ca75e-6017-47f5-b673-955cfb8db66b','bf6ff62f-d42b-48f8-956c-f8dbde4a1555',232.50,5,77,17);
+INSERT INTO `hooks` VALUES ('a4facea2-5e4c-4504-9481-c2f77eed2046','b816f4fa-483a-4e67-99ff-4e35bd4fa952','662e65b3-83f5-4f37-9db8-c66c19a50faf','254a626e-19be-481e-b6e1-5492648db50d',296.58,7,73,0);
 INSERT INTO `hooks` VALUES ('a503cb74-a505-4ff1-8785-69b2d9f32384','1a2f4311-d9bd-4f65-9a89-0630a87bf211','239e2f33-94cf-47d1-90d7-f0eb948392d5','0adb98bc-b506-4f97-bfa3-79feb210a569',176.30,4,96,0);
 INSERT INTO `hooks` VALUES ('a5049784-62e3-487c-a9fd-d1ca9b0b0d0c','5869b9d8-21f3-4249-a3f8-d78b82fbee49','d1b2553b-e296-4fcb-903d-8e6a79300438','289d0316-9f7b-483c-85e5-694a41fff136',159.92,6,48,0);
 INSERT INTO `hooks` VALUES ('a5109a48-1391-4c9b-8a16-c1c8efaf05b6','1c871eff-5938-4822-b647-c7479b4de589','85f659f9-cff3-4bff-ae78-9d7169b0e066','dba0f658-b06e-44d1-94bf-64237e6d7ffb',1.10,4,1,0);
@@ -10408,6 +10501,7 @@ INSERT INTO `hooks` VALUES ('aa7d2799-6ceb-41ab-bd4a-fb0d20856a6c','1feaa949-fee
 INSERT INTO `hooks` VALUES ('aa7ecb79-208b-4845-b966-7efdc44fe19c','f34f8ff8-4a4c-401f-ac6c-5dbcc0cba1b2','e13f1da0-5487-4648-82e6-09d3d4a1b334','f46b119d-7aa5-454c-b10f-2e04c32304f9',211.90,4,76,50);
 INSERT INTO `hooks` VALUES ('aa7ff110-e986-4e2d-a18a-1d54b4ba28b5','78c0dc50-9c9e-49ff-bbf8-35ba1cce7c52','fc17c4d8-e95b-4158-b8f7-d652f897ad46','f46b119d-7aa5-454c-b10f-2e04c32304f9',234.08,3,88,63);
 INSERT INTO `hooks` VALUES ('aa8bbe86-0941-4b51-bf54-b5d731697fb0','771b1d7e-67ae-4dbb-97a6-4da2529442e0','f922e380-97b5-479f-a762-36269d163f55','0adb98bc-b506-4f97-bfa3-79feb210a569',246.90,4,98,33);
+INSERT INTO `hooks` VALUES ('aa9201ef-7743-4e91-a6b9-9df67c0a07ab','ec1e8edc-3209-4067-b0b5-cfbba4943ebf','e22a10d4-1a2b-4c2a-ae40-bb943e7e14c4','236d6ef2-8e42-43b6-81a9-fb0315b02594',235.50,1,100,86);
 INSERT INTO `hooks` VALUES ('aa92411e-be00-48ed-831e-ffae926172c2','67c56d6b-1b9a-4071-a82c-5e5f062ec16c','b45924c1-e992-49a5-919d-fa34e2f99046','4752b071-f14a-4d07-8205-b664f24763ad',207.17,2,97,83);
 INSERT INTO `hooks` VALUES ('aa9fb8b3-8d02-483d-aacc-b362e60b6c6d','b01738c8-5d7c-4a04-bf87-ef4532286351','fc17c4d8-e95b-4158-b8f7-d652f897ad46','f46b119d-7aa5-454c-b10f-2e04c32304f9',244.75,4,86,20);
 INSERT INTO `hooks` VALUES ('aaa25e2b-621b-4964-afa4-4def2bc1e204','6314bf87-8f0a-4d2d-a2f7-384c5ae9f773','b42e9c43-f219-459a-8ffb-f85a15f1ce5d','5d859ee8-9a9d-48a6-bb1a-740afc3dafb0',292.58,1,100,50);
@@ -10571,6 +10665,7 @@ INSERT INTO `hooks` VALUES ('ade0fd60-354b-4f3e-9b31-64b47177a972','eee1e6a5-607
 INSERT INTO `hooks` VALUES ('adec1f69-0c1d-4514-a4f9-157a19bb30cb','7181f95c-3459-4c3e-aca5-9961ab1a1897','93545bca-6455-43de-b0a4-64e4a2fdb17f','d1eabdfd-cb8b-4601-b115-70c8c102b3c3',166.25,4,83,0);
 INSERT INTO `hooks` VALUES ('adf1275a-3256-4ec3-9c37-df520aa6c233','1141c539-a6b7-4f14-ac9d-6e08e6b70ea2','436fbfab-55f6-428c-b3ad-54a178415f11','214c7844-9a20-441a-89c7-9a8885a70440',124.00,4,94,50);
 INSERT INTO `hooks` VALUES ('adf74a72-49e3-4c14-ab5e-deee32115312','5b7a7672-6964-4213-be14-937a025768ff','297102b4-1fba-42dd-a627-4cdc359628fd','f46b119d-7aa5-454c-b10f-2e04c32304f9',248.60,2,78,60);
+INSERT INTO `hooks` VALUES ('adfe22fa-8e66-40b3-bcd0-36a5d37e5336','ec1e8edc-3209-4067-b0b5-cfbba4943ebf','9f639768-fd30-4304-a53d-aaa94c438efc','236d6ef2-8e42-43b6-81a9-fb0315b02594',233.92,2,99,71);
 INSERT INTO `hooks` VALUES ('adfe7825-a75b-472b-b31a-8abb8ee11b5e','e99d11c8-d46a-458b-86a5-f5f345199f1d','d7a0b032-7445-4e85-bbb7-9eed54fa25ce','f46b119d-7aa5-454c-b10f-2e04c32304f9',171.75,8,58,33);
 INSERT INTO `hooks` VALUES ('ae059fe4-954c-469e-8058-9cd0a811ee68','0edf588b-bc0d-4263-b813-75e16a4ec4ff','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',293.00,2,98,71);
 INSERT INTO `hooks` VALUES ('ae096764-b3b8-439f-b9e5-ae0a2e356f35','7f385998-856d-4e2a-a8ae-5783fbae709c','56aea5c0-b1cd-4205-a2c6-4f78cc93828f','0adb98bc-b506-4f97-bfa3-79feb210a569',167.42,4,73,73);
@@ -10718,6 +10813,7 @@ INSERT INTO `hooks` VALUES ('b0b76a9d-bc19-4c4d-a54a-161bbf5c632c','d056dfcf-1e7
 INSERT INTO `hooks` VALUES ('b0bb7d5c-33e4-4fb9-8611-1f3f552e7437','95c0cf49-b48a-42e7-9bd7-0c90eadcc678','62751ca2-6669-4ce6-be87-9443f1370985','1de0ffff-4bd4-4819-ab5a-601dca685e94',170.40,2,69,0);
 INSERT INTO `hooks` VALUES ('b0c5cce5-04ba-4999-accc-21e4597e37a3','d752c10a-f18a-4ab6-b374-30295a7fdb62','d79123fa-3414-4d19-911f-5e116d185b5b','254a626e-19be-481e-b6e1-5492648db50d',281.75,5,92,0);
 INSERT INTO `hooks` VALUES ('b0d5133f-6f12-47a7-b15b-46efcfba1c3e','f31b84b7-d2dc-48b9-8afd-54e0fd738ef6','6ddc85f2-d75d-44fa-8de7-fca379423276','dba0f658-b06e-44d1-94bf-64237e6d7ffb',215.60,4,71,20);
+INSERT INTO `hooks` VALUES ('b0d8c20f-91d6-4526-8939-250239ff8cd4','c72680dc-c412-40cf-874e-1d911988d5f7','88ee7f8c-abd9-478d-bba4-b85b55abe542','719f8f7b-3ef5-4764-88f8-acf8250abf89',228.50,2,97,75);
 INSERT INTO `hooks` VALUES ('b0dc6033-8a2d-4cb4-8bb4-3e78c698c664','def4fa4b-0c71-4945-9808-c8bf8e860161','436fbfab-55f6-428c-b3ad-54a178415f11','214c7844-9a20-441a-89c7-9a8885a70440',160.00,7,91,53);
 INSERT INTO `hooks` VALUES ('b0e13750-24fb-434b-8bd2-b980ae1016cf','c65a857e-c8eb-4f73-8083-0ea5aaeafebf','7904e606-d984-4e42-98ed-f786d2ee13f4','dba0f658-b06e-44d1-94bf-64237e6d7ffb',251.42,1,100,67);
 INSERT INTO `hooks` VALUES ('b0e6b8ff-cfc5-45a4-a6d6-03008ce996f1','73fe1bc9-5941-42b3-b7c7-8d92f4988e38','df6a58e9-55f8-47e7-b89f-2cfff3323375','236d6ef2-8e42-43b6-81a9-fb0315b02594',121.50,6,61,25);
@@ -10820,6 +10916,7 @@ INSERT INTO `hooks` VALUES ('b2d406ac-2f3a-450a-bccb-66481558a05e','a3997b84-b46
 INSERT INTO `hooks` VALUES ('b2d79969-2002-402f-bff7-1d160463e86d','96dcb103-2c20-4919-9cbf-7a6c13bf96a6','3ec21a0b-e749-48fd-84a7-b7f32d356b1c','214c7844-9a20-441a-89c7-9a8885a70440',139.17,6,79,0);
 INSERT INTO `hooks` VALUES ('b2da0399-e01f-40ee-9c52-3fdc4ecd3fbc','337bc014-4682-489a-9999-c9f876866e3f','cc6e37be-7048-4c80-8db4-2f4a7b859afd','f46b119d-7aa5-454c-b10f-2e04c32304f9',125.50,12,59,0);
 INSERT INTO `hooks` VALUES ('b2da9d11-8c3f-445c-9d4b-6c1b7c0e039b','35c69fa5-2577-4f28-89b4-6a1a6901dd3c','ac5273b8-6655-402c-86de-28749f3bea05','6f37c5cc-dbdd-422d-aa14-9eebeb37b010',169.08,4,78,20);
+INSERT INTO `hooks` VALUES ('b2df4b3a-1c8c-4996-8ff9-d7f50eeaac56','396fc320-e614-4cb9-851d-6e844721f6ac','e22a10d4-1a2b-4c2a-ae40-bb943e7e14c4','254a626e-19be-481e-b6e1-5492648db50d',350.17,2,87,67);
 INSERT INTO `hooks` VALUES ('b2e52ec9-dfcc-4ceb-bcd0-f744ec28a1b1','672e9176-aeb7-413c-b181-bd6cf17b90e3','fc17c4d8-e95b-4158-b8f7-d652f897ad46','f46b119d-7aa5-454c-b10f-2e04c32304f9',236.80,4,88,43);
 INSERT INTO `hooks` VALUES ('b2eb5269-4b9a-4659-a438-2fad0f1fa7f2','a6c5490a-0fd1-479d-8a56-d18e7a9f0102','297102b4-1fba-42dd-a627-4cdc359628fd','f46b119d-7aa5-454c-b10f-2e04c32304f9',213.50,2,100,50);
 INSERT INTO `hooks` VALUES ('b2ef8977-e066-40b7-882b-45a33937c9a2','b5dd162e-d10c-4382-b4a0-bfa77c95c2a9','4da3caec-885a-4748-816a-800fe07dbc35','4da9998b-82ce-4e51-8d50-85dd9142deaf',214.08,9,57,10);
@@ -10872,6 +10969,7 @@ INSERT INTO `hooks` VALUES ('b42ae2a4-3d7a-4d1d-98f4-21475dd9c986','f5515395-3e0
 INSERT INTO `hooks` VALUES ('b42fd160-c231-4b82-b1fe-f4b1239dd38b','736f6489-dd2a-4506-8ca8-cf4c04fbbf6b','62751ca2-6669-4ce6-be87-9443f1370985','1de0ffff-4bd4-4819-ab5a-601dca685e94',242.60,1,100,67);
 INSERT INTO `hooks` VALUES ('b43fcbb2-d04e-4fc6-bf11-183cebb92073','20edb3a5-e8a9-4414-8322-c624ef60d3a7','e13f1da0-5487-4648-82e6-09d3d4a1b334','5f48a57a-4d8e-4a92-82c8-5d411c0b6079',258.25,4,81,0);
 INSERT INTO `hooks` VALUES ('b4407b0c-bf07-414b-b509-8ba24e4704af','0d8d1488-35e8-46f9-8146-7e5a55e8a90c','ac5273b8-6655-402c-86de-28749f3bea05','6f37c5cc-dbdd-422d-aa14-9eebeb37b010',190.92,2,99,33);
+INSERT INTO `hooks` VALUES ('b455dd85-8a1d-4f60-924d-806e7c4446da','5b86938a-016d-4911-9141-4f053248bc53','c075a7b3-b982-4414-a065-25fef1d53a2d','4752b071-f14a-4d07-8205-b664f24763ad',229.50,4,98,33);
 INSERT INTO `hooks` VALUES ('b4597dae-98e2-43dc-9d44-00d7011c2ef8','0c283c42-8e2a-42ec-a819-11f8e6c97658','297102b4-1fba-42dd-a627-4cdc359628fd','f46b119d-7aa5-454c-b10f-2e04c32304f9',249.33,2,85,50);
 INSERT INTO `hooks` VALUES ('b45ae62a-90d7-484c-b378-a70c26ec48cd','70ef8088-ef42-40e9-9f98-c4d1e17bb4f8','436fbfab-55f6-428c-b3ad-54a178415f11','236d6ef2-8e42-43b6-81a9-fb0315b02594',168.42,4,91,78);
 INSERT INTO `hooks` VALUES ('b45b1750-c58a-460d-bc25-49e44384315b','d5a9b157-4c3f-4a01-be4a-46721e92ed7f','4bb469e8-c8db-4799-b8cf-4db808d1651f','3a345595-5af0-440c-a374-6997654b68ed',121.50,8,81,47);
@@ -10937,8 +11035,10 @@ INSERT INTO `hooks` VALUES ('b597d41e-cd1d-4798-b461-e0d9e052fd8f','24fe3377-5d3
 INSERT INTO `hooks` VALUES ('b59f122b-018d-4cdd-9076-74d9e2e0609b','f01f27c3-b332-4f2c-983b-4e0032be169c','b11fa21b-760d-44ad-baf6-70c457074d8c','f46b119d-7aa5-454c-b10f-2e04c32304f9',151.90,6,71,25);
 INSERT INTO `hooks` VALUES ('b5a53339-1357-4e8c-bd60-d5de3cde6519','aefd26f6-cc93-4210-b51a-20c1eb781db9','62751ca2-6669-4ce6-be87-9443f1370985','1de0ffff-4bd4-4819-ab5a-601dca685e94',289.00,2,91,60);
 INSERT INTO `hooks` VALUES ('b5a875db-a169-419a-a5f3-733f7c8a2f55','31293cab-239c-4bd1-912d-4cd2614bd2db','5932cef0-316d-4edb-9982-a1a7179467c3','ffa8662a-067b-435d-af37-fc3fa4897461',279.00,2,83,33);
+INSERT INTO `hooks` VALUES ('b5ae016a-3bdb-4a4a-86b7-1b934a2ed07e','74df8428-fd97-4558-aa0c-0b445f545460','b11fa21b-760d-44ad-baf6-70c457074d8c','f46b119d-7aa5-454c-b10f-2e04c32304f9',291.92,1,100,86);
 INSERT INTO `hooks` VALUES ('b5ae5694-044b-4ad2-89b5-e13b150d7b19','d4bdb0ee-3ee9-4d30-9afc-5e3996021136','86f0eb94-6475-4758-8263-0e10c84a5578','0d69459f-a2ac-4580-abe8-797a7aa3c615',180.90,10,72,9);
 INSERT INTO `hooks` VALUES ('b5ca8bf5-901c-4012-a5e8-6c3f51001d38','6d06008a-4b6a-4776-91d4-7ff3003289a6','ee668867-ac4d-4364-99cf-5aece274cf51','3a345595-5af0-440c-a374-6997654b68ed',144.58,2,99,50);
+INSERT INTO `hooks` VALUES ('b5ce884b-d2ce-4cd8-9017-aaac1efa48ae','87cee659-4620-452d-9a81-90c468a530db','62751ca2-6669-4ce6-be87-9443f1370985','1de0ffff-4bd4-4819-ab5a-601dca685e94',409.25,1,100,80);
 INSERT INTO `hooks` VALUES ('b5cecbf8-3231-4061-8483-863e20f8a947','9785107c-ffcf-40a8-8b96-9b878eb4a4ec','cf997620-1259-41b1-9cd5-60430106ce7a','a3402d72-6e9c-45e3-9c35-6eac6b5adf13',127.90,4,81,20);
 INSERT INTO `hooks` VALUES ('b5d3c094-324a-4dec-98ed-0e06286d3b11','7053fc65-b9d3-4b3e-9d82-127dbea64ec6','983aef6a-47ce-4bbc-985e-d3668616106f','c3026089-8e7d-4b21-8e49-1a0925de14b0',235.60,6,67,0);
 INSERT INTO `hooks` VALUES ('b5d45160-723a-4cc0-a310-e595e3b13781','12bbf73e-626f-4438-8ecb-b3d46f8bf764','2b743ab2-5c85-4b14-914d-79b8eafc5cc0','ffa8662a-067b-435d-af37-fc3fa4897461',162.80,9,87,36);
@@ -10978,9 +11078,11 @@ INSERT INTO `hooks` VALUES ('b68ce503-4000-4753-b4d9-eadda5b13cd3','d2adc9fa-fcd
 INSERT INTO `hooks` VALUES ('b68d2336-3ea4-4749-b63e-93c21852a745','5f3c1000-6db4-40bf-ac1c-4a5076026274','d0938565-ef1e-4d5c-a990-042e59108c76','f46b119d-7aa5-454c-b10f-2e04c32304f9',224.08,6,98,50);
 INSERT INTO `hooks` VALUES ('b68e5f9d-cf36-4e5c-956d-3595b4486457','130cd424-b246-4677-b953-438b64d58bb9','62751ca2-6669-4ce6-be87-9443f1370985','1de0ffff-4bd4-4819-ab5a-601dca685e94',239.00,2,84,71);
 INSERT INTO `hooks` VALUES ('b690a243-0f40-4be4-8166-7d2cb0f31549','40b9dc6a-fe18-43db-8d65-65db2a88c8b4','5932cef0-316d-4edb-9982-a1a7179467c3','ffa8662a-067b-435d-af37-fc3fa4897461',383.75,5,78,0);
+INSERT INTO `hooks` VALUES ('b6931b57-2e14-4493-ae23-2f381f345328','2cf82ef7-3e1b-48bb-a475-5ff566a540b8','1ebc531a-0f02-467b-99ae-3866f794cd2e','a30906bf-3577-4c3d-b3ee-35df457fd645',360.25,1,100,83);
 INSERT INTO `hooks` VALUES ('b695b8ce-8e1d-447a-b79b-0541c07068e5','4b08ee5f-1c08-4e31-9c83-b09825576197','ccfa2af7-bbe1-418e-a356-d4de84e8a486','f46b119d-7aa5-454c-b10f-2e04c32304f9',106.90,8,71,11);
 INSERT INTO `hooks` VALUES ('b699df4b-1340-4a0b-b83a-428f5b5b3e50','25d8dd27-48f5-4d5b-9d3b-25c378b48807','93545bca-6455-43de-b0a4-64e4a2fdb17f','d1eabdfd-cb8b-4601-b115-70c8c102b3c3',127.20,5,81,58);
 INSERT INTO `hooks` VALUES ('b69acaaa-7c25-4192-88c2-aba2dee9e694','211fb06e-ec55-433a-9496-f245d2bcff17','63361ee5-14a9-4a7c-a560-24c863164f10','a3402d72-6e9c-45e3-9c35-6eac6b5adf13',249.90,6,83,33);
+INSERT INTO `hooks` VALUES ('b69c0ece-ad0b-45bf-9b6a-dddc5326b7f3','4eede0e8-7668-4048-a8bf-d50a295aa8b7','ccfa2af7-bbe1-418e-a356-d4de84e8a486','05837a49-b1a6-4803-a6fa-5ba8785f7f74',410.33,1,100,83);
 INSERT INTO `hooks` VALUES ('b69ca076-c217-459a-b2e4-1080cb77a3d5','07949e74-6853-4ad6-9fb4-5a330b5b4952','62751ca2-6669-4ce6-be87-9443f1370985','1de0ffff-4bd4-4819-ab5a-601dca685e94',278.25,5,84,17);
 INSERT INTO `hooks` VALUES ('b69d6ecc-2cbf-4958-a7f8-8a6fc32555db','70933ad3-868e-4230-8f20-f47f1cdfa59b','239e2f33-94cf-47d1-90d7-f0eb948392d5','ffa8662a-067b-435d-af37-fc3fa4897461',197.25,5,97,29);
 INSERT INTO `hooks` VALUES ('b6a006ba-0a50-4be0-924e-b329d4d83249','edfd7415-901c-4a77-8c10-a83e754965ab','ab74d093-dbfc-479c-8041-117fdb23e6d9','289d0316-9f7b-483c-85e5-694a41fff136',198.00,7,79,0);
@@ -11057,6 +11159,7 @@ INSERT INTO `hooks` VALUES ('b7b6b0d1-5c42-46e5-9cf6-6ae5e5576879','30955f0b-edd
 INSERT INTO `hooks` VALUES ('b7c42a3d-0b80-4902-8681-3e8273b354ec','7dd72a7b-7769-4499-8130-905a07c9df05','3c4de5f6-6595-45b8-8d18-2f5f2b2a9931','214c7844-9a20-441a-89c7-9a8885a70440',236.60,1,100,67);
 INSERT INTO `hooks` VALUES ('b7c4e53b-2ab4-42e5-8c02-270ae627600c','01db3a9a-32dc-4a2c-a912-704271da58c9','88ee7f8c-abd9-478d-bba4-b85b55abe542','719f8f7b-3ef5-4764-88f8-acf8250abf89',210.67,3,71,50);
 INSERT INTO `hooks` VALUES ('b7d32845-4fd0-4ead-8faa-81ff3c45dbdb','bba9037d-0d9d-47a6-859b-e164dbbebd7b','b45924c1-e992-49a5-919d-fa34e2f99046','4752b071-f14a-4d07-8205-b664f24763ad',243.08,3,90,57);
+INSERT INTO `hooks` VALUES ('b7d8b71f-d3e5-475d-af71-97a3397e3229','c72680dc-c412-40cf-874e-1d911988d5f7','b11fa21b-760d-44ad-baf6-70c457074d8c','f46b119d-7aa5-454c-b10f-2e04c32304f9',226.00,4,96,50);
 INSERT INTO `hooks` VALUES ('b7da6a56-335e-45c0-a4a3-9ecf401cb5f6','dce4c9bb-fd15-4136-97e3-607647741e97','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',190.75,2,99,83);
 INSERT INTO `hooks` VALUES ('b7db0c4c-60a1-43bc-8b02-1d85ac632eff','11db64f6-2154-4c21-9e4a-63812e9cb43c','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',165.90,3,79,63);
 INSERT INTO `hooks` VALUES ('b7dd13cb-c1c1-4b09-be94-a39f6293daea','70fb9b77-ab2c-4dc1-962a-21f2641206de','53c68634-19c2-4608-bb35-597ed1f3a180','0d69459f-a2ac-4580-abe8-797a7aa3c615',247.75,2,83,67);
@@ -11085,6 +11188,7 @@ INSERT INTO `hooks` VALUES ('b82ef53f-e2f4-4f97-aa21-062390c39cc6','d3832ea0-f3f
 INSERT INTO `hooks` VALUES ('b838b858-38fd-46d9-a501-a1d8e18b9366','2ffd6cd6-cd38-4ef2-b19e-c3a7ee428cc6','62751ca2-6669-4ce6-be87-9443f1370985','1de0ffff-4bd4-4819-ab5a-601dca685e94',345.92,2,97,33);
 INSERT INTO `hooks` VALUES ('b838eefe-b9d1-4032-9c21-ccaa89278b36','1555f1af-69f5-463e-956b-6ec66c681e62','13e89edf-8fc6-4cc3-8669-1ca27768e7e5','f46b119d-7aa5-454c-b10f-2e04c32304f9',192.17,2,100,67);
 INSERT INTO `hooks` VALUES ('b8395b73-f6fc-4948-82c8-fc197746229f','be1253fc-b6c2-4a44-a14b-9917568d8726','297102b4-1fba-42dd-a627-4cdc359628fd','f46b119d-7aa5-454c-b10f-2e04c32304f9',303.42,1,100,75);
+INSERT INTO `hooks` VALUES ('b839d855-f38c-485c-b664-51672b8ff7a0','2cf82ef7-3e1b-48bb-a475-5ff566a540b8','9f639768-fd30-4304-a53d-aaa94c438efc','236d6ef2-8e42-43b6-81a9-fb0315b02594',349.67,2,97,67);
 INSERT INTO `hooks` VALUES ('b83ee934-dc84-4ade-9532-1ff9fe10ee39','43d1adb4-deb0-46dd-9a78-867a4c38cd4b','1549c831-99a8-4947-947f-dbdc618cd2aa','254a626e-19be-481e-b6e1-5492648db50d',278.83,1,100,75);
 INSERT INTO `hooks` VALUES ('b83f963b-30f8-45f9-a705-62fcf70dd72f','f8f230b2-29e3-4816-bd6c-b8331bcea852','5932cef0-316d-4edb-9982-a1a7179467c3','ffa8662a-067b-435d-af37-fc3fa4897461',352.17,1,100,50);
 INSERT INTO `hooks` VALUES ('b845f1a8-61c4-494a-b3d2-3756af3238fb','78c0dbd3-eccf-442b-aae0-584de0f71f25','32b7a057-435f-4d6b-a3e9-f5fa452c840d','ef3c865f-2395-49df-bdc3-f9cf3a188d4b',291.25,1,100,80);
@@ -11150,6 +11254,7 @@ INSERT INTO `hooks` VALUES ('b997e7aa-ee68-455c-8dd6-3bbf77e94c36','741e9481-184
 INSERT INTO `hooks` VALUES ('b997ffb4-443c-4c22-b42e-651bc048d587','c3b3fdd1-3ada-47f5-9dbe-0057f11de507','fe30ccf7-32cb-43c0-b782-69a22f319863','289d0316-9f7b-483c-85e5-694a41fff136',173.92,5,89,17);
 INSERT INTO `hooks` VALUES ('b99a033a-5147-4dc0-b54d-7da138df4507','3dc5aef7-8b11-4da8-bec7-599647c3e03f','fc17c4d8-e95b-4158-b8f7-d652f897ad46','f46b119d-7aa5-454c-b10f-2e04c32304f9',262.40,3,86,57);
 INSERT INTO `hooks` VALUES ('b99c457b-1389-49a0-8980-83e4b2dfb5af','5e32b0d0-3c41-476c-a91a-cd7c7f2757bc','f922e380-97b5-479f-a762-36269d163f55','289d0316-9f7b-483c-85e5-694a41fff136',231.00,1,100,50);
+INSERT INTO `hooks` VALUES ('b99dbfcc-35cc-49d0-8a93-0cc201862c3b','396fc320-e614-4cb9-851d-6e844721f6ac','1ebc531a-0f02-467b-99ae-3866f794cd2e','a30906bf-3577-4c3d-b3ee-35df457fd645',403.83,1,100,83);
 INSERT INTO `hooks` VALUES ('b99f80a7-e5a4-4a5e-9ccc-a0d24294c320','9bc8cbf3-89c5-4998-b37f-8068ba813c02','436fbfab-55f6-428c-b3ad-54a178415f11','dba0f658-b06e-44d1-94bf-64237e6d7ffb',270.83,1,100,88);
 INSERT INTO `hooks` VALUES ('b9a378a6-a616-4ca5-94dd-4301efea8775','2b864121-6311-4345-9fe7-70c5af1b55bc','62751ca2-6669-4ce6-be87-9443f1370985','1de0ffff-4bd4-4819-ab5a-601dca685e94',321.50,1,100,50);
 INSERT INTO `hooks` VALUES ('b9a3c08a-dcf8-4d7f-9b47-ba628e6286eb','1ab71249-4684-461f-a64c-f8d34b1a07d9','d1b2553b-e296-4fcb-903d-8e6a79300438','05837a49-b1a6-4803-a6fa-5ba8785f7f74',202.75,4,69,0);
@@ -11160,6 +11265,7 @@ INSERT INTO `hooks` VALUES ('b9ba531a-480a-4ffd-a4ab-61823472fb98','bf9a6677-536
 INSERT INTO `hooks` VALUES ('b9bdae93-e75b-454f-a474-b846e32f4e44','dc1ca10f-e449-4136-a9c3-0ec5a5bdd4a9','a7048657-bc3c-4189-a7b4-749d6f28e433','214c7844-9a20-441a-89c7-9a8885a70440',232.00,2,64,78);
 INSERT INTO `hooks` VALUES ('b9c1c574-af5e-43b0-b335-ae725c91a28f','59144a29-bed4-48b2-a37a-8ff16821a683','5b35246b-8da9-4716-ac48-67730ec121ea','f46b119d-7aa5-454c-b10f-2e04c32304f9',278.90,7,96,46);
 INSERT INTO `hooks` VALUES ('b9c37861-09ae-4822-8772-5c354f3b6354','275f05dc-605a-4a8f-9383-3ea5e1e7f31b','b45924c1-e992-49a5-919d-fa34e2f99046','4752b071-f14a-4d07-8205-b664f24763ad',279.90,1,100,90);
+INSERT INTO `hooks` VALUES ('b9c7e2e4-9bf8-4608-a1d5-63ffdf5dedbf','bb99fea8-269c-4b80-a70e-e8041d1ad32a','239e2f33-94cf-47d1-90d7-f0eb948392d5','101ae17c-a3af-4cac-9c2f-21b284762555',293.50,6,74,14);
 INSERT INTO `hooks` VALUES ('b9c8a423-25f1-4cce-9a85-97e46751397b','b3305f78-63c4-48a3-a64e-7eb1817c582a','421d2b84-bf95-44b8-b6d2-2f1ac98dde6f','c73a06d2-d45d-4a4a-ac04-8d951525c34f',224.90,5,94,50);
 INSERT INTO `hooks` VALUES ('b9d41d2e-a14f-4e9e-9a95-727b767decf5','4c8af63d-cb09-4d15-b1d7-fd071920b410','7d55a506-839a-4abd-ab45-09862a2bc9f8','10e37fd5-d99b-42d2-9b5c-059e75fe1ba3',239.30,3,90,40);
 INSERT INTO `hooks` VALUES ('b9d85a1d-6222-4995-a79a-32a8e7bdd62e','7a459c7f-67d6-4e0c-99ed-1ce960b97e49','b11fa21b-760d-44ad-baf6-70c457074d8c','f46b119d-7aa5-454c-b10f-2e04c32304f9',221.10,4,96,69);
@@ -11280,6 +11386,7 @@ INSERT INTO `hooks` VALUES ('bc8de817-15fa-481a-b853-4764ba69a90e','ef054a2d-a4c
 INSERT INTO `hooks` VALUES ('bc953fbf-8afd-4dd0-bc59-70c098dfaeb6','ac889ca8-d8c3-400a-99b7-a9f5d23a0e49','ac5273b8-6655-402c-86de-28749f3bea05','6f37c5cc-dbdd-422d-aa14-9eebeb37b010',264.70,2,98,80);
 INSERT INTO `hooks` VALUES ('bca44c49-67f5-4089-bd0f-ca5793939beb','0a4389c4-6031-43e2-8428-238e429c0537','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',237.17,4,94,33);
 INSERT INTO `hooks` VALUES ('bca4ae68-4a8c-4d8c-ab6f-100af7caa72a','54dcdbb1-b412-4623-a37f-a6ae56add070','384ec355-d75b-407b-9961-1507e1d6d9f1','4da9998b-82ce-4e51-8d50-85dd9142deaf',274.80,1,100,83);
+INSERT INTO `hooks` VALUES ('bca6e463-599a-48ec-8b7e-431dcd1ab714','bb99fea8-269c-4b80-a70e-e8041d1ad32a','ccfa2af7-bbe1-418e-a356-d4de84e8a486','05837a49-b1a6-4803-a6fa-5ba8785f7f74',374.75,2,95,71);
 INSERT INTO `hooks` VALUES ('bcb49610-21d0-4a03-b772-1f8f2871feae','15dcdb7a-4e38-4c70-aa55-8eb3b238f853','297102b4-1fba-42dd-a627-4cdc359628fd','214c7844-9a20-441a-89c7-9a8885a70440',158.80,2,69,0);
 INSERT INTO `hooks` VALUES ('bcb51ef3-74a8-4470-aee3-1dfdb59173ed','246b26a9-cdd1-4bd0-81f7-964037345dfc','e22a10d4-1a2b-4c2a-ae40-bb943e7e14c4','c73a06d2-d45d-4a4a-ac04-8d951525c34f',316.30,3,50,40);
 INSERT INTO `hooks` VALUES ('bcb6959a-ae85-42bf-9ca0-ee71184aa8d2','be7aa5ec-d6fe-465b-8266-4b4ea00aeb5b','561acc7e-bb9c-4dd8-ab9c-3337447f6f47','214c7844-9a20-441a-89c7-9a8885a70440',215.58,4,93,64);
@@ -11361,6 +11468,7 @@ INSERT INTO `hooks` VALUES ('be3aad54-e052-413a-af0a-6dfbc5c90bfb','b9b38aed-af1
 INSERT INTO `hooks` VALUES ('be41959b-d8af-420c-8c69-be0a716e775e','41718787-b831-4e4c-8780-9e5c25aad019','56aea5c0-b1cd-4205-a2c6-4f78cc93828f','0adb98bc-b506-4f97-bfa3-79feb210a569',144.90,3,79,0);
 INSERT INTO `hooks` VALUES ('be42418c-36c0-4ac5-a96c-9feb2cf9d3bb','ebd5685c-5495-4f89-b7c9-42e1d913b0e0','7b5ed829-7399-4dbd-b802-7c458af36dad','214c7844-9a20-441a-89c7-9a8885a70440',149.30,7,53,13);
 INSERT INTO `hooks` VALUES ('be43669a-f37b-4ece-8ec6-073dc0eb2b8f','db757807-4f1e-40f4-8782-525220c4a132','afd68dc0-dbbc-46e0-be38-4a11d3a03af2','846671a7-3918-4de4-8bfe-e182a4c651b4',120.00,3,59,0);
+INSERT INTO `hooks` VALUES ('be45fd39-9fd1-4b37-8bcb-d09c0938aab3','e68b7aac-a0c4-4b41-92f4-8053620c8a4c','93545bca-6455-43de-b0a4-64e4a2fdb17f','bf6ff62f-d42b-48f8-956c-f8dbde4a1555',285.83,4,98,56);
 INSERT INTO `hooks` VALUES ('be47ee8f-d686-4a17-ba58-6ba1207d092a','f4838d1b-6dd7-4865-b0e1-739bfc954c5c','d7a0b032-7445-4e85-bbb7-9eed54fa25ce','f46b119d-7aa5-454c-b10f-2e04c32304f9',204.20,5,80,0);
 INSERT INTO `hooks` VALUES ('be4da52f-611c-4665-90d5-4aeda6288d21','b90ef00c-e77d-43df-9d64-3c8a29879816','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',134.40,7,56,30);
 INSERT INTO `hooks` VALUES ('be4e1c9c-a038-4e8d-950f-e0a306ede6c7','b788d485-6a53-4ef5-8fcc-7f8887cac269','1ebc531a-0f02-467b-99ae-3866f794cd2e','05837a49-b1a6-4803-a6fa-5ba8785f7f74',119.90,10,52,0);
@@ -11498,6 +11606,7 @@ INSERT INTO `hooks` VALUES ('c0c3ef97-7048-4ba8-a90e-5681f715e8b7','28771d4a-b85
 INSERT INTO `hooks` VALUES ('c0c6b2ed-ae22-4dc5-88a4-af2c6f8fe60b','7ff4d6fc-5510-44fb-8241-b669052c34bf','b45924c1-e992-49a5-919d-fa34e2f99046','4752b071-f14a-4d07-8205-b664f24763ad',278.50,1,100,83);
 INSERT INTO `hooks` VALUES ('c0cde8ca-7220-4f28-b1de-587197ef14ce','ece2b542-efc2-4133-936c-b76b350e9680','4da3caec-885a-4748-816a-800fe07dbc35','4da9998b-82ce-4e51-8d50-85dd9142deaf',298.08,5,95,29);
 INSERT INTO `hooks` VALUES ('c0cfe3bb-35ec-47be-9bfc-4776ef3ca2ac','4b02df31-e7da-4b42-a3f6-01e427153706','239e2f33-94cf-47d1-90d7-f0eb948392d5','df10f08f-1148-4445-8b6d-9dc20bf11534',224.80,2,93,33);
+INSERT INTO `hooks` VALUES ('c0d13958-d28c-452d-af82-ba5a6dfb7e4c','396fc320-e614-4cb9-851d-6e844721f6ac','b8f92d0b-1b71-487c-828c-cf0f5224046a','236d6ef2-8e42-43b6-81a9-fb0315b02594',297.58,5,74,17);
 INSERT INTO `hooks` VALUES ('c0d40c0f-b089-4d68-9c8c-ec3993e3914f','0b683588-de69-44dc-99c3-4c6f9f0b5b7a','1fac8f0c-69ea-45d0-b935-4df361b31777','0adb98bc-b506-4f97-bfa3-79feb210a569',125.92,4,62,56);
 INSERT INTO `hooks` VALUES ('c0d5fcd1-e3ab-4d73-a173-421243fd6c74','4b9a3524-15e0-4ee0-8abd-9b1cb1dd4e1e','1d3ca75e-6017-47f5-b673-955cfb8db66b','bf6ff62f-d42b-48f8-956c-f8dbde4a1555',198.92,2,96,75);
 INSERT INTO `hooks` VALUES ('c0dbd2eb-ac4f-4d36-9671-3642704ba29d','4dac99f5-f3b8-428c-a145-b514ebe6a722','56aea5c0-b1cd-4205-a2c6-4f78cc93828f','0adb98bc-b506-4f97-bfa3-79feb210a569',167.80,5,72,17);
@@ -11540,6 +11649,7 @@ INSERT INTO `hooks` VALUES ('c164a35d-4560-45fb-b0a6-6b49a8aabd21','91072e69-33b
 INSERT INTO `hooks` VALUES ('c1700157-374e-476a-b2b9-90f743015174','d091c034-afb2-43ff-84ec-f0d9c098c53d','ee668867-ac4d-4364-99cf-5aece274cf51','3a345595-5af0-440c-a374-6997654b68ed',288.60,4,84,33);
 INSERT INTO `hooks` VALUES ('c171f61b-15b7-4b23-bc82-bef170ee3949','566aca29-97fd-4efc-9f91-755cd4d986c7','ac2087a7-a3b6-4d99-8823-41c798697b09','05837a49-b1a6-4803-a6fa-5ba8785f7f74',175.67,3,70,0);
 INSERT INTO `hooks` VALUES ('c179149d-a0f2-4437-bdbf-7ba5081936cc','92d22db8-f45a-49ed-acb0-e4a2f845b8e3','e22a10d4-1a2b-4c2a-ae40-bb943e7e14c4','c73a06d2-d45d-4a4a-ac04-8d951525c34f',212.50,3,93,25);
+INSERT INTO `hooks` VALUES ('c179da36-d738-4038-a79c-6c996f42c912','ec1e8edc-3209-4067-b0b5-cfbba4943ebf','b5438e57-c824-4b04-be90-cd790bd9105c','289d0316-9f7b-483c-85e5-694a41fff136',228.75,4,97,43);
 INSERT INTO `hooks` VALUES ('c17f7c8b-3323-4eb5-85cf-6bbef8025512','32a94907-b87d-4104-914b-3c69550fa3c8','7c2fb9e9-57c2-4536-9bfa-7808c597456a','f46b119d-7aa5-454c-b10f-2e04c32304f9',282.67,4,89,56);
 INSERT INTO `hooks` VALUES ('c18bfd01-0c96-43b1-864e-4224c1e90982','336979fe-c23c-40e6-aced-dc6878ae4ec8','ccfa2af7-bbe1-418e-a356-d4de84e8a486','f46b119d-7aa5-454c-b10f-2e04c32304f9',196.50,6,77,25);
 INSERT INTO `hooks` VALUES ('c18dd3e5-01c6-4dbd-aa02-3714145a36a5','bdcc75d0-786e-4d47-b967-46698c57fce4','436fbfab-55f6-428c-b3ad-54a178415f11','214c7844-9a20-441a-89c7-9a8885a70440',137.30,3,98,77);
@@ -11689,6 +11799,7 @@ INSERT INTO `hooks` VALUES ('c43b75e0-2350-4fcb-b259-cd765c27c1a7','da01d246-5c6
 INSERT INTO `hooks` VALUES ('c447ddf2-45d2-433f-9d71-8c63aae9ed53','47979a14-58a6-4094-9363-6346eaa72420','df6a58e9-55f8-47e7-b89f-2cfff3323375','f46b119d-7aa5-454c-b10f-2e04c32304f9',188.50,3,98,57);
 INSERT INTO `hooks` VALUES ('c447f70f-030d-43ed-9f10-73724467d0bd','7a459c7f-67d6-4e0c-99ed-1ce960b97e49','436fbfab-55f6-428c-b3ad-54a178415f11','214c7844-9a20-441a-89c7-9a8885a70440',197.40,8,85,38);
 INSERT INTO `hooks` VALUES ('c44827a7-9bb5-49fa-b6cd-b5da2294f666','9cb98bc2-2856-4d23-80dc-d1891ca0680d','d0096ab6-5ab4-49e5-9843-cae3298da5fb','05837a49-b1a6-4803-a6fa-5ba8785f7f74',158.80,5,77,38);
+INSERT INTO `hooks` VALUES ('c448d834-87c9-4567-accd-59729b575748','c52e1241-8a7e-485e-b96d-a6e4945a7a9c','6065dfa4-a26b-490c-b29a-7e191eac18b4','4da9998b-82ce-4e51-8d50-85dd9142deaf',300.00,1,100,50);
 INSERT INTO `hooks` VALUES ('c461eeef-1439-467c-b413-5e4cd3a02c40','1fedf49b-770c-4c3d-abac-384d6ca721fe','3c4de5f6-6595-45b8-8d18-2f5f2b2a9931','a30906bf-3577-4c3d-b3ee-35df457fd645',160.67,4,76,0);
 INSERT INTO `hooks` VALUES ('c465f03c-f36e-439f-b2e5-5ffa8fdaefae','8d438768-f3e7-4329-82d2-fd67eca5df5a','46b0ce8c-f89e-4214-8f38-498c68e87844','82d6b28a-9e07-4e2a-bfe4-ae4f522dacf5',234.90,5,75,29);
 INSERT INTO `hooks` VALUES ('c46c3def-1397-4551-99a5-7efcbdaadb7e','06c0a960-5a6b-439d-90b9-9e2454a7073f','fc17c4d8-e95b-4158-b8f7-d652f897ad46','f46b119d-7aa5-454c-b10f-2e04c32304f9',172.00,4,79,43);
@@ -11753,10 +11864,12 @@ INSERT INTO `hooks` VALUES ('c5a13f9e-c4be-4a6d-a9c2-79e2972e0992','8fe9e7c0-66a
 INSERT INTO `hooks` VALUES ('c5a29927-5d65-4d9a-9942-d129a2afe17b','d84ee518-4d27-4786-8e80-9230eda03548','3c4de5f6-6595-45b8-8d18-2f5f2b2a9931','a30906bf-3577-4c3d-b3ee-35df457fd645',165.80,7,94,42);
 INSERT INTO `hooks` VALUES ('c5a67dff-56b4-4278-b7b5-484d25149932','4e71bb20-4d9a-426b-a13e-e8e06855eba6','436fbfab-55f6-428c-b3ad-54a178415f11','214c7844-9a20-441a-89c7-9a8885a70440',179.60,4,74,33);
 INSERT INTO `hooks` VALUES ('c5a92436-2571-4033-9d64-aa1f101967dc','6344163c-cac8-4f06-91a3-f64e8e0cd450','ac3a27d0-64a5-48d3-8126-c47d44dbcb86','0f4644cf-e143-4bf4-93d4-1e728e11b4e8',97.75,7,90,22);
+INSERT INTO `hooks` VALUES ('c5a9d8fc-a588-4cc7-8c76-c676911a7b03','16312c89-0121-4ed4-94b5-e3d48e470c3d','1d3ca75e-6017-47f5-b673-955cfb8db66b','289d0316-9f7b-483c-85e5-694a41fff136',294.33,3,71,0);
 INSERT INTO `hooks` VALUES ('c5aadb91-6324-44dd-b60a-3c380e9f9f1d','c3c3a3cf-a696-47e9-bf17-538957421be7','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',242.58,4,75,76);
 INSERT INTO `hooks` VALUES ('c5b45c9b-8398-47f1-8fed-a28a3ec631e8','408ed838-fe14-4b1f-997e-1d4b986da5ea','92e7ddfb-9488-4fe0-bf35-b0e84485f1ba','c3026089-8e7d-4b21-8e49-1a0925de14b0',119.67,7,37,13);
 INSERT INTO `hooks` VALUES ('c5c04a00-38c5-45b7-9d65-3dd0caa22cdf','7ead0f5c-f5c8-41e4-8bc0-a4560bc4dea5','7abca881-d659-44a6-bc84-aaca4607c254','ffa8662a-067b-435d-af37-fc3fa4897461',172.90,7,71,30);
 INSERT INTO `hooks` VALUES ('c5c21deb-0c96-425b-96e8-f1e19094354c','12355cf9-c6a2-44be-9913-6fd7b1e47db5','3ec21a0b-e749-48fd-84a7-b7f32d356b1c','236d6ef2-8e42-43b6-81a9-fb0315b02594',240.70,3,93,50);
+INSERT INTO `hooks` VALUES ('c5c27ff3-b752-42e1-9135-e61527438942','2cf82ef7-3e1b-48bb-a475-5ff566a540b8','e13f1da0-5487-4648-82e6-09d3d4a1b334','5f48a57a-4d8e-4a92-82c8-5d411c0b6079',269.67,5,75,17);
 INSERT INTO `hooks` VALUES ('c5c4f667-aca2-49a5-a569-2d985b51ef31','80caa968-6823-49c7-ba55-2d1d865db95e','fa9ca141-62cb-4d21-bf4c-b5f70897ba5b','5f48a57a-4d8e-4a92-82c8-5d411c0b6079',184.10,4,94,20);
 INSERT INTO `hooks` VALUES ('c5c64f56-f6de-431e-b8e2-101d96628c82','8e310e83-b346-47c0-9009-36c0307f54a7','27f9afb5-5a66-474d-ae4f-cfa3fa2641ce','f46b119d-7aa5-454c-b10f-2e04c32304f9',196.33,3,73,0);
 INSERT INTO `hooks` VALUES ('c5cb4cdb-8102-4ec8-8ab3-9ace8dc8555a','d0dc148a-a13d-45ef-9d15-e381fe9f8781','9f3a2311-88a2-4134-be94-3d14ed3b40a0','6f37c5cc-dbdd-422d-aa14-9eebeb37b010',186.25,3,84,25);
@@ -12302,6 +12415,7 @@ INSERT INTO `hooks` VALUES ('d117b971-9514-4fb6-a818-d8a6d66b2dfc','b5e022c8-1e3
 INSERT INTO `hooks` VALUES ('d11ef9bb-3c90-47c3-94b2-378a646062bc','24fe3377-5d3b-4445-83b4-a87e5338cce7','a3401750-7174-40bf-a126-0caba877f64c','214c7844-9a20-441a-89c7-9a8885a70440',119.30,16,65,6);
 INSERT INTO `hooks` VALUES ('d12053e0-7891-46a4-a4ed-2cfbf60d8a44','529180c4-cdfa-4090-b7ce-69f59244d66c','239e2f33-94cf-47d1-90d7-f0eb948392d5','0f4644cf-e143-4bf4-93d4-1e728e11b4e8',154.92,3,69,25);
 INSERT INTO `hooks` VALUES ('d126c408-935b-481f-a44a-933d1663f006','254b5591-bfce-4a1c-b6cf-bad7349e00f0','00876a04-693e-4df4-abd2-ef0a68252d99','0d69459f-a2ac-4580-abe8-797a7aa3c615',198.08,7,87,36);
+INSERT INTO `hooks` VALUES ('d12cb874-68c9-4f70-a593-c247ac3dfeb1','0c434d01-7205-455f-a680-07666e0f13c8','88ee7f8c-abd9-478d-bba4-b85b55abe542','719f8f7b-3ef5-4764-88f8-acf8250abf89',302.67,2,93,50);
 INSERT INTO `hooks` VALUES ('d1307df0-df83-4390-87a4-8c217d92f274','bb2cc3d8-6644-4e50-ba49-652d6b7677de','ccfa2af7-bbe1-418e-a356-d4de84e8a486','dba2bdec-2d21-424c-813a-525a13f46080',252.33,4,84,43);
 INSERT INTO `hooks` VALUES ('d13561a7-6544-4207-ad72-c624020a9539','8e4ca92b-b6be-4aa1-8093-3c828db0e149','1b50f2a7-3720-45a8-82ba-7c4938348006','254a626e-19be-481e-b6e1-5492648db50d',454.30,1,100,50);
 INSERT INTO `hooks` VALUES ('d13d9795-bce1-4c2c-a2c2-e7bd13f79c85','556c52ec-6e25-4be5-b7cb-a56c1d4ea872','fa9ca141-62cb-4d21-bf4c-b5f70897ba5b','5f48a57a-4d8e-4a92-82c8-5d411c0b6079',212.70,3,77,63);
@@ -12366,6 +12480,7 @@ INSERT INTO `hooks` VALUES ('d25ee3f2-fbf2-4cb5-aab4-1b863b48883f','dc9ad6d1-0f9
 INSERT INTO `hooks` VALUES ('d261e380-9edd-40be-bb09-39ec61b18985','9b8241a8-0833-4112-87a5-9f65fa4b8935','1ebc531a-0f02-467b-99ae-3866f794cd2e','a30906bf-3577-4c3d-b3ee-35df457fd645',184.42,5,74,17);
 INSERT INTO `hooks` VALUES ('d2638040-353c-4261-88d9-7c547086e566','1cb7b068-e424-4409-bd75-bb4cc85b4efb','3ec21a0b-e749-48fd-84a7-b7f32d356b1c','214c7844-9a20-441a-89c7-9a8885a70440',147.10,3,77,50);
 INSERT INTO `hooks` VALUES ('d263f989-b080-48a8-851a-27a53a146328','8f4a1855-ca9f-4efa-80aa-2338c6b24f5a','7904e606-d984-4e42-98ed-f786d2ee13f4','dba0f658-b06e-44d1-94bf-64237e6d7ffb',242.50,1,100,67);
+INSERT INTO `hooks` VALUES ('d26bec98-aecd-460a-bb59-fb9aaf7e041c','b816f4fa-483a-4e67-99ff-4e35bd4fa952','b34559c3-9483-448c-8397-321d1f8dd813','f46b119d-7aa5-454c-b10f-2e04c32304f9',405.50,3,99,57);
 INSERT INTO `hooks` VALUES ('d26c24de-aa6c-4f52-9f13-45a7f0417b54','7a2c60d9-fdd8-4a39-b530-a1491dc8ff13','18b1ace4-1400-4e38-a3c9-fbadf65cdd25','4da9998b-82ce-4e51-8d50-85dd9142deaf',151.67,5,54,29);
 INSERT INTO `hooks` VALUES ('d26f4e66-136c-48b1-8d77-38e5fdd9518e','1b3149b6-af57-4a37-b09d-720be583aea1','239e2f33-94cf-47d1-90d7-f0eb948392d5','101ae17c-a3af-4cac-9c2f-21b284762555',181.08,1,100,50);
 INSERT INTO `hooks` VALUES ('d2727f18-7b6c-44a9-84ed-7e004db68912','9c4e1b82-c571-4350-86b6-3007701747b4','fc17c4d8-e95b-4158-b8f7-d652f897ad46','f46b119d-7aa5-454c-b10f-2e04c32304f9',180.17,2,90,33);
@@ -12379,6 +12494,7 @@ INSERT INTO `hooks` VALUES ('d2a4be2a-f22d-4eed-aed7-7d70cf94a869','aa093589-20b
 INSERT INTO `hooks` VALUES ('d2a50981-aa1e-4169-8571-3a6cde6b5a1b','7e01cba6-923a-4bca-9691-431a1fcbc552','c075a7b3-b982-4414-a065-25fef1d53a2d','a30906bf-3577-4c3d-b3ee-35df457fd645',120.50,4,41,43);
 INSERT INTO `hooks` VALUES ('d2a70dc3-f9b9-4c27-b350-75d4b19d6ae7','fbbdf2a9-f4ac-4f2d-812e-ae1f6bfbdd8a','f922e380-97b5-479f-a762-36269d163f55','0adb98bc-b506-4f97-bfa3-79feb210a569',123.20,7,63,0);
 INSERT INTO `hooks` VALUES ('d2a7fea2-906e-48bd-b365-2ab245774916','eb5ef2f4-61ae-4044-a718-82de07c3f965','e29b158f-a4a0-43fb-8fdc-4fe0a30b6cc9','101ae17c-a3af-4cac-9c2f-21b284762555',197.00,10,69,0);
+INSERT INTO `hooks` VALUES ('d2a97753-120b-4f8a-9a61-d6e82da1808f','b816f4fa-483a-4e67-99ff-4e35bd4fa952','62751ca2-6669-4ce6-be87-9443f1370985','1de0ffff-4bd4-4819-ab5a-601dca685e94',406.00,2,100,71);
 INSERT INTO `hooks` VALUES ('d2ab057b-37d2-4698-86b6-bfd4c5c07342','f43b1d91-e653-4904-8494-5e2882fe9ce5','cf997620-1259-41b1-9cd5-60430106ce7a','a3402d72-6e9c-45e3-9c35-6eac6b5adf13',226.70,3,88,40);
 INSERT INTO `hooks` VALUES ('d2ab05cc-2cd5-47d4-8df4-5eb5f1559435','c9ee526b-7b0b-4d53-9285-98f6b9f1845c','9f639768-fd30-4304-a53d-aaa94c438efc','236d6ef2-8e42-43b6-81a9-fb0315b02594',289.33,2,93,60);
 INSERT INTO `hooks` VALUES ('d2aeca99-9e95-4775-a17a-dfbb6b336ffe','9805c97b-2da9-4050-8f8e-dfa4fe5f34ff','46b0ce8c-f89e-4214-8f38-498c68e87844','82d6b28a-9e07-4e2a-bfe4-ae4f522dacf5',99.20,11,47,0);
@@ -12488,6 +12604,7 @@ INSERT INTO `hooks` VALUES ('d4f55ee0-8388-4f4a-86fb-49512642c21b','d5a9b157-4c3
 INSERT INTO `hooks` VALUES ('d4fcc45c-8c41-490a-9f86-9d9bc7f359d4','715294ce-44f0-431f-8011-d7c3daa0da16','3c4de5f6-6595-45b8-8d18-2f5f2b2a9931','214c7844-9a20-441a-89c7-9a8885a70440',222.60,1,100,67);
 INSERT INTO `hooks` VALUES ('d500d408-1e99-4d44-9be1-4887fc604d78','878d43f0-dd5d-4ff4-a59d-56884f22332c','00876a04-693e-4df4-abd2-ef0a68252d99','c3026089-8e7d-4b21-8e49-1a0925de14b0',220.67,3,86,25);
 INSERT INTO `hooks` VALUES ('d501d9b2-a221-40a3-b9fb-519995a5ff20','254b5591-bfce-4a1c-b6cf-bad7349e00f0','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',227.58,2,100,82);
+INSERT INTO `hooks` VALUES ('d5035f87-5ae3-45bf-8e44-08eee56e8b34','74df8428-fd97-4558-aa0c-0b445f545460','f22fd15f-bf1c-4278-8eaf-32dbe9a37ae1','366d718c-abfb-4ee0-9641-0c75a6b94331',230.75,6,79,14);
 INSERT INTO `hooks` VALUES ('d50ac9cc-4b77-41d6-9015-893a3fb7131b','6b67a4e8-20c6-4675-bd9a-691a5a418b11','421d2b84-bf95-44b8-b6d2-2f1ac98dde6f','289d0316-9f7b-483c-85e5-694a41fff136',290.90,2,91,67);
 INSERT INTO `hooks` VALUES ('d51173b6-ddaa-4d6b-9618-07cc9afabb51','48c5bd6e-e9a4-4714-ac38-ddecc8036f53','62751ca2-6669-4ce6-be87-9443f1370985','1de0ffff-4bd4-4819-ab5a-601dca685e94',178.58,1,100,67);
 INSERT INTO `hooks` VALUES ('d52148a7-21be-4ec1-95c6-6c550aae09e5','5fe1d38f-da35-47ba-90ab-2d0ad7aedff3','5c7902db-131a-4de4-883c-e1b614ac19de','254a626e-19be-481e-b6e1-5492648db50d',311.67,1,100,67);
@@ -12565,6 +12682,7 @@ INSERT INTO `hooks` VALUES ('d671af07-7c97-475a-9970-1ce04dda2872','bf9a6677-536
 INSERT INTO `hooks` VALUES ('d675ada0-bb8e-4e52-a50c-fcd0e2233c58','cddb9118-aecb-4197-8653-0c8b83f3ea69','5f8228ac-f40c-4323-bf78-6c52c2404361','05837a49-b1a6-4803-a6fa-5ba8785f7f74',280.08,2,95,71);
 INSERT INTO `hooks` VALUES ('d67ac4d6-974f-4cf4-8edf-f783e0fe704e','2e96fceb-6aa5-4385-98aa-de6686d5f605','ac5273b8-6655-402c-86de-28749f3bea05','6f37c5cc-dbdd-422d-aa14-9eebeb37b010',157.00,2,76,0);
 INSERT INTO `hooks` VALUES ('d682c165-c275-4256-9276-d24f04b362df','4edef79d-5745-4ce7-b60e-1a750cfbf63c','8a930eea-d460-4ec5-9ab1-5bab6731ad97','4752b071-f14a-4d07-8205-b664f24763ad',285.50,1,100,89);
+INSERT INTO `hooks` VALUES ('d682e8a0-275f-4da6-a23f-87e72cba7009','c52e1241-8a7e-485e-b96d-a6e4945a7a9c','e22a10d4-1a2b-4c2a-ae40-bb943e7e14c4','236d6ef2-8e42-43b6-81a9-fb0315b02594',266.25,2,89,0);
 INSERT INTO `hooks` VALUES ('d6887228-bea4-4c27-a55f-62116c0dcb1e','4b08ee5f-1c08-4e31-9c83-b09825576197','41863805-13c7-4f3c-8b73-eef95d1a13e6','289d0316-9f7b-483c-85e5-694a41fff136',126.90,5,85,44);
 INSERT INTO `hooks` VALUES ('d68afc5f-4c9f-43de-bc0f-45dc9cffa3c5','5e71f305-f356-4e49-86be-9ecea30297c2','d42d0c0c-85c3-4576-8c0b-c4316e4fa31a','82d6b28a-9e07-4e2a-bfe4-ae4f522dacf5',173.67,1,100,67);
 INSERT INTO `hooks` VALUES ('d68c7f0e-f223-4f6f-a4c3-01957aec49d9','5bab0771-2b3a-4d9b-a274-9fda11214580','9465a7eb-b6f6-4ff6-b89f-e2c0d68e5d6c','214c7844-9a20-441a-89c7-9a8885a70440',279.92,5,86,17);
@@ -12685,6 +12803,7 @@ INSERT INTO `hooks` VALUES ('d8b5277b-dda4-4267-9f71-4159c308c52b','dadde3f3-c18
 INSERT INTO `hooks` VALUES ('d8b77f12-84cd-494f-81d8-fa011f823c6f','e00f187a-e064-4537-81f2-8a40c1c2c2ab','84c832bb-b2eb-4fd4-8ddb-06b811fe42f7','521ae438-d9bf-4539-a10b-32b32cf3198a',207.17,1,100,86);
 INSERT INTO `hooks` VALUES ('d8bb5446-28c9-4540-ab93-acc28b491c3b','9442e2df-7fe1-49a1-b102-17a7e827fa07','02753bf8-3bf0-461e-b935-1bf570889287','3a345595-5af0-440c-a374-6997654b68ed',161.70,8,69,0);
 INSERT INTO `hooks` VALUES ('d8bba29f-e3b5-4227-8313-884b38998f4d','97a5f865-108d-4d53-a64b-f0fdb79c7a30','e22a10d4-1a2b-4c2a-ae40-bb943e7e14c4','10e37fd5-d99b-42d2-9b5c-059e75fe1ba3',142.70,1,100,67);
+INSERT INTO `hooks` VALUES ('d8bd4576-a8c9-4f59-8b04-5e323bc2375e','5b86938a-016d-4911-9141-4f053248bc53','ccfa2af7-bbe1-418e-a356-d4de84e8a486','05837a49-b1a6-4803-a6fa-5ba8785f7f74',233.25,2,100,67);
 INSERT INTO `hooks` VALUES ('d8bf57dd-e372-4ce2-a756-33d417d79486','4e826945-db7e-4b91-9c29-9561ed3f88fa','18b1ace4-1400-4e38-a3c9-fbadf65cdd25','4da9998b-82ce-4e51-8d50-85dd9142deaf',113.33,10,74,0);
 INSERT INTO `hooks` VALUES ('d8c6ff58-d949-4f60-87d0-092e6439510a','532db28c-9e0c-4f4d-995a-1ab81c27389d','cf997620-1259-41b1-9cd5-60430106ce7a','a3402d72-6e9c-45e3-9c35-6eac6b5adf13',228.58,6,97,25);
 INSERT INTO `hooks` VALUES ('d8c84524-e248-4b3d-b15d-1cfe9c447221','aa65ff5d-a343-45fa-bcfb-8c1f3731aa0a','ac5273b8-6655-402c-86de-28749f3bea05','6f37c5cc-dbdd-422d-aa14-9eebeb37b010',238.90,6,80,63);
@@ -12890,6 +13009,7 @@ INSERT INTO `hooks` VALUES ('dd3c5be1-d555-4c39-bd38-e4ddf7f85766','17b5e49b-fb8
 INSERT INTO `hooks` VALUES ('dd3ed056-74e0-4c41-b296-bc5069c6880a','cd5a2ac6-d46b-4b54-8df8-fd41f4737094','93545bca-6455-43de-b0a4-64e4a2fdb17f','d1eabdfd-cb8b-4601-b115-70c8c102b3c3',223.67,2,99,60);
 INSERT INTO `hooks` VALUES ('dd42143e-04f4-48e3-a299-d1a9f38cabad','031c96fc-9eb5-49c4-998e-63ace9c5e32b','9b5a8c61-0aa2-4148-831d-21fae49fa29f','ffa8662a-067b-435d-af37-fc3fa4897461',144.50,8,72,20);
 INSERT INTO `hooks` VALUES ('dd5e1776-eeed-4f28-b8ec-9a8a2a3a712c','cdd06d92-298b-45f6-882b-b37517217761','7d090c6e-3f00-408a-beba-29a3e98efd95','719f8f7b-3ef5-4764-88f8-acf8250abf89',220.33,1,100,86);
+INSERT INTO `hooks` VALUES ('dd68fdff-cae5-4611-91bc-25e8fb32e71e','a0bf6ec0-fc32-4724-bf4b-7ebd4c051886','62751ca2-6669-4ce6-be87-9443f1370985','1de0ffff-4bd4-4819-ab5a-601dca685e94',330.42,1,100,50);
 INSERT INTO `hooks` VALUES ('dd736fd3-982c-4632-8dd8-92181747b178','8ae6e442-5d23-4024-8ea6-ee2818bfd721','10cecf43-99b8-49c7-8d39-11657bfb3b0c','173b5937-aeb1-47dc-8abc-cb65acc2e98e',162.33,2,99,60);
 INSERT INTO `hooks` VALUES ('dd7ec984-a902-4817-848e-e5e1859de3e5','9ed717cd-cfd3-406c-a458-49782462c5b7','c1fea58a-d0e7-472d-8b96-c250d3b5cd32','f46b119d-7aa5-454c-b10f-2e04c32304f9',109.17,6,88,33);
 INSERT INTO `hooks` VALUES ('dd7f5c4c-77bb-410d-b560-62052d583717','26aa954b-5cef-453f-90af-9b267de83d7b','5a5a3f8c-8978-463b-a5f8-edd1a7ecf425','05837a49-b1a6-4803-a6fa-5ba8785f7f74',237.20,3,94,67);
@@ -13063,6 +13183,7 @@ INSERT INTO `hooks` VALUES ('e0b49623-4f13-47d6-b53f-868ab3e2c159','2610c387-a21
 INSERT INTO `hooks` VALUES ('e0bab5c1-9a48-42b2-be28-ba64acc086e3','6368afba-ad16-4091-a610-01ce389bdb0f','62751ca2-6669-4ce6-be87-9443f1370985','1de0ffff-4bd4-4819-ab5a-601dca685e94',314.00,2,97,60);
 INSERT INTO `hooks` VALUES ('e0baf974-2abf-4f61-9e6d-3c487021dc41','7e7371c3-8a2d-436a-951d-d2f56efafc70','239e2f33-94cf-47d1-90d7-f0eb948392d5','0adb98bc-b506-4f97-bfa3-79feb210a569',262.80,3,96,70);
 INSERT INTO `hooks` VALUES ('e0bdd4ef-111e-42cc-b434-eb936e81d669','4c8af63d-cb09-4d15-b1d7-fd071920b410','dc988b19-b0c9-4cd2-bc26-019b72a8d670','6f37c5cc-dbdd-422d-aa14-9eebeb37b010',246.20,2,93,60);
+INSERT INTO `hooks` VALUES ('e0c0130e-82b7-44d7-8e3e-1627fc19c90b','69b7e25e-b56f-47fc-8de2-852e107e04ed','e22a10d4-1a2b-4c2a-ae40-bb943e7e14c4','236d6ef2-8e42-43b6-81a9-fb0315b02594',271.42,1,100,50);
 INSERT INTO `hooks` VALUES ('e0c36596-556d-4e29-96dd-bdcd32c58237','23ac090f-3db0-4a43-842e-b9f093f00d02','7d55a506-839a-4abd-ab45-09862a2bc9f8','10e37fd5-d99b-42d2-9b5c-059e75fe1ba3',191.70,1,100,50);
 INSERT INTO `hooks` VALUES ('e0c7d92f-99cd-4e34-b6a8-513031c37d7c','4eda5de2-5adc-4727-b0f0-d60bab9801fb','f7d81e20-f579-4052-aa0e-96200f868a5c','a3402d72-6e9c-45e3-9c35-6eac6b5adf13',131.90,3,60,50);
 INSERT INTO `hooks` VALUES ('e0ceaa4b-75da-44fd-b972-059b7dea919c','ebad4780-e7e8-4629-9628-35df93dd827e','62751ca2-6669-4ce6-be87-9443f1370985','1de0ffff-4bd4-4819-ab5a-601dca685e94',326.10,3,96,57);
@@ -13084,6 +13205,7 @@ INSERT INTO `hooks` VALUES ('e121a7f2-7b2e-4a3e-88fa-2e2a0842f90d','9850d836-18c
 INSERT INTO `hooks` VALUES ('e146c964-088b-4bf5-a6f9-d0167bd36545','c62624ab-3f2d-4d8c-9dd0-3a7f07a49347','7d090c6e-3f00-408a-beba-29a3e98efd95','719f8f7b-3ef5-4764-88f8-acf8250abf89',224.58,4,87,64);
 INSERT INTO `hooks` VALUES ('e14c5366-5d73-4ee1-9773-0da41fb5a740','b90ef00c-e77d-43df-9d64-3c8a29879816','239e2f33-94cf-47d1-90d7-f0eb948392d5','0adb98bc-b506-4f97-bfa3-79feb210a569',198.90,5,83,50);
 INSERT INTO `hooks` VALUES ('e156c2bb-be33-4fc6-8b75-4eee30227525','dfbcef15-5d7c-4f92-aed9-6ed2f8b3591f','207f9c0f-d1c6-4563-bb5e-1b980c9bd34a','83e5cda1-560d-49ad-9aa8-43ca439b8657',221.08,5,87,0);
+INSERT INTO `hooks` VALUES ('e16146da-1334-4337-8109-f054a4849e97','16312c89-0121-4ed4-94b5-e3d48e470c3d','ccfa2af7-bbe1-418e-a356-d4de84e8a486','f46b119d-7aa5-454c-b10f-2e04c32304f9',410.25,2,99,33);
 INSERT INTO `hooks` VALUES ('e1654d57-ef09-4978-9124-16a1e64e67a6','db1c42a5-2a7c-4971-8d28-42313bc2c3f1','239e2f33-94cf-47d1-90d7-f0eb948392d5','d1eabdfd-cb8b-4601-b115-70c8c102b3c3',168.25,5,99,38);
 INSERT INTO `hooks` VALUES ('e1668576-5263-4906-8ab4-bf1ef2326d00','bf2bad7c-1956-465e-b0f2-955d485f4513','88ee7f8c-abd9-478d-bba4-b85b55abe542','719f8f7b-3ef5-4764-88f8-acf8250abf89',302.92,6,93,33);
 INSERT INTO `hooks` VALUES ('e16744e3-c23a-437d-b196-bbecde01b196','da01d246-5c6f-4d60-a53f-a2c79a931063','e22a10d4-1a2b-4c2a-ae40-bb943e7e14c4','c73a06d2-d45d-4a4a-ac04-8d951525c34f',197.33,8,72,33);
@@ -13095,6 +13217,7 @@ INSERT INTO `hooks` VALUES ('e1819cbf-3ff3-4f30-a2de-88b53decf5c6','9f5bd62d-7f5
 INSERT INTO `hooks` VALUES ('e18576a4-96ff-4915-b1d3-b9698760522e','4f377532-154c-406f-b800-2ca901a0b63e','ac5273b8-6655-402c-86de-28749f3bea05','6f37c5cc-dbdd-422d-aa14-9eebeb37b010',165.08,1,100,67);
 INSERT INTO `hooks` VALUES ('e18588b3-35b2-407c-84f3-86c5b615da9d','38a229e5-a73c-451d-921f-ac7b187517b6','ab4bcf93-9c38-4469-b66d-79c758422d0f','0adb98bc-b506-4f97-bfa3-79feb210a569',251.08,4,85,43);
 INSERT INTO `hooks` VALUES ('e1877db1-3cef-4108-816a-6b7637dfa54b','e09fede8-39d1-41bc-a1e5-e92cacfb9bba','d7a0b032-7445-4e85-bbb7-9eed54fa25ce','254a626e-19be-481e-b6e1-5492648db50d',262.75,1,100,83);
+INSERT INTO `hooks` VALUES ('e191c49f-fb87-424d-b9df-efc858ddea2a','0cae1ab4-d3a0-46ee-b384-f952e1d6afa0','239e2f33-94cf-47d1-90d7-f0eb948392d5','101ae17c-a3af-4cac-9c2f-21b284762555',230.08,4,87,20);
 INSERT INTO `hooks` VALUES ('e1992703-f953-43cc-87c2-15ef565967e2','18ff1015-37c8-44ae-9926-1827b884327d','b28c86f0-48f8-4a0c-bf61-e4cbb1e40756','6f37c5cc-dbdd-422d-aa14-9eebeb37b010',202.90,7,64,42);
 INSERT INTO `hooks` VALUES ('e199b0d2-17af-42a2-bd1e-70fe25780ec0','acfb8995-cd4d-44e1-b443-5c2146a528ff','d0938565-ef1e-4d5c-a990-042e59108c76','f46b119d-7aa5-454c-b10f-2e04c32304f9',246.67,4,83,33);
 INSERT INTO `hooks` VALUES ('e19dde32-a23c-43b2-aa62-846675768bce','ff34163a-d228-42c7-b220-74b8c1cbbb8b','f7d81e20-f579-4052-aa0e-96200f868a5c','a3402d72-6e9c-45e3-9c35-6eac6b5adf13',132.90,3,91,50);
@@ -13118,6 +13241,7 @@ INSERT INTO `hooks` VALUES ('e1ed316d-6638-4d66-baa1-a9339d7b1781','12f530c7-437
 INSERT INTO `hooks` VALUES ('e1f13e02-7b15-470c-86ec-98f5b0bec50d','8ad2f113-627d-43e6-9672-d2fa6dd006ae','df6a58e9-55f8-47e7-b89f-2cfff3323375','236d6ef2-8e42-43b6-81a9-fb0315b02594',194.58,3,97,75);
 INSERT INTO `hooks` VALUES ('e1f6abde-f10e-4b9d-a7fd-853395a535aa','782ff8ac-faec-493e-9649-74c1a53d39a8','df6a58e9-55f8-47e7-b89f-2cfff3323375','f46b119d-7aa5-454c-b10f-2e04c32304f9',144.75,7,55,13);
 INSERT INTO `hooks` VALUES ('e1f776a1-40f5-4183-9f2e-f2c6f2005a15','1be31e31-76fa-41be-8e8f-f8c6f6f7049c','02753bf8-3bf0-461e-b935-1bf570889287','3a345595-5af0-440c-a374-6997654b68ed',259.30,5,64,17);
+INSERT INTO `hooks` VALUES ('e1f95567-eacb-42c0-b83b-874059de91d1','b003d9bd-a6ab-4b56-8f6c-6b46277a357e','436fbfab-55f6-428c-b3ad-54a178415f11','214c7844-9a20-441a-89c7-9a8885a70440',288.08,2,100,50);
 INSERT INTO `hooks` VALUES ('e200e67c-727a-4bd8-aba7-6841e7efa974','b42f9e73-8cd4-4ef5-a054-edcdcfe14222','85f659f9-cff3-4bff-ae78-9d7169b0e066','dba0f658-b06e-44d1-94bf-64237e6d7ffb',248.08,6,70,0);
 INSERT INTO `hooks` VALUES ('e2049c9c-e359-4969-ac14-b0c251db43e7','5bd37ac5-2d9d-4715-bf83-da1016d159e1','a12c49ea-d0e7-4d87-a719-c69d24d4e392','0adb98bc-b506-4f97-bfa3-79feb210a569',213.90,2,90,60);
 INSERT INTO `hooks` VALUES ('e209e90f-623d-4779-a930-20b8e79f5d58','4092656c-a9af-4a6b-83fb-4a5916ac93d9','62751ca2-6669-4ce6-be87-9443f1370985','1de0ffff-4bd4-4819-ab5a-601dca685e94',214.58,3,98,50);
@@ -13126,6 +13250,7 @@ INSERT INTO `hooks` VALUES ('e21d6935-80ae-4e13-b205-d13404f91ac2','0ac620f8-fa0
 INSERT INTO `hooks` VALUES ('e222e335-a026-469d-b4cd-a00f6f63df4e','f00b4cee-352b-498c-8a05-c5ef414c37cf','983aef6a-47ce-4bbc-985e-d3668616106f','c3026089-8e7d-4b21-8e49-1a0925de14b0',121.92,3,79,50);
 INSERT INTO `hooks` VALUES ('e226960c-3512-4c55-b70a-e025320c7195','88525a44-65a0-45e3-a5fc-b361fdd6f73e','7d55a506-839a-4abd-ab45-09862a2bc9f8','3934ef49-3829-46a3-8041-ed401172b8fc',248.90,2,81,67);
 INSERT INTO `hooks` VALUES ('e231f3d6-04cb-4768-9ece-dc56fd599cf6','9aa292a9-a5fe-4b5e-8671-763535360c8a','d1b2553b-e296-4fcb-903d-8e6a79300438','05837a49-b1a6-4803-a6fa-5ba8785f7f74',146.58,9,53,0);
+INSERT INTO `hooks` VALUES ('e25008ef-4aa7-4023-b16e-539d83dea075','ec1e8edc-3209-4067-b0b5-cfbba4943ebf','e13f1da0-5487-4648-82e6-09d3d4a1b334','5f48a57a-4d8e-4a92-82c8-5d411c0b6079',230.42,3,98,57);
 INSERT INTO `hooks` VALUES ('e25336d3-e0db-450e-8693-591e9b3c6196','f674cbdd-1cad-4a0a-ba9f-e754cf899db0','4da3caec-885a-4748-816a-800fe07dbc35','4da9998b-82ce-4e51-8d50-85dd9142deaf',164.75,7,66,0);
 INSERT INTO `hooks` VALUES ('e253e838-5509-4400-b3e8-accbfa313bd8','736f6489-dd2a-4506-8ca8-cf4c04fbbf6b','d7a0b032-7445-4e85-bbb7-9eed54fa25ce','05837a49-b1a6-4803-a6fa-5ba8785f7f74',209.90,3,87,0);
 INSERT INTO `hooks` VALUES ('e25852a2-f4e2-4bfa-bc12-8a8bf1a14859','f62ae68e-72bb-4c03-be3f-0c1f2ae9df64','9f639768-fd30-4304-a53d-aaa94c438efc','236d6ef2-8e42-43b6-81a9-fb0315b02594',156.75,10,81,9);
@@ -13333,6 +13458,7 @@ INSERT INTO `hooks` VALUES ('e6b06387-9c6a-47e6-9710-3bb3ed4d0ccc','9fa6d994-99f
 INSERT INTO `hooks` VALUES ('e6ccb2c0-7efc-4edc-b990-b983a8c3537d','afc9b38f-e440-4a9b-bd7d-d0e60fb8c3f4','1b61d847-15fc-41a8-a681-cd78c4ec7ecc','6f37c5cc-dbdd-422d-aa14-9eebeb37b010',273.90,3,99,63);
 INSERT INTO `hooks` VALUES ('e6ccf753-7e5c-4915-bdbb-bec2add46da2','5169b65e-0214-4430-b476-a8fdfb0ca269','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',224.75,10,95,41);
 INSERT INTO `hooks` VALUES ('e6d061c3-3159-4fdd-b59c-c462f08d41c3','686a9e84-9d0e-4c84-99ce-45d5b9d09277','bb5aafcf-e8d2-4a73-98c6-92a13a06da05','62d78025-8cbb-47a8-8010-2cddb8420b2f',226.40,3,74,0);
+INSERT INTO `hooks` VALUES ('e6dac855-76a7-482d-8806-be78772e3933','74df8428-fd97-4558-aa0c-0b445f545460','4cb0374a-6f32-4af6-b287-6a34da530c69','f46b119d-7aa5-454c-b10f-2e04c32304f9',265.17,2,91,71);
 INSERT INTO `hooks` VALUES ('e6dce05e-be2a-495e-918c-2d846498d9c8','9aa1adae-c6d1-4681-8b5a-7633b5b8bfaf','1ebc531a-0f02-467b-99ae-3866f794cd2e','05837a49-b1a6-4803-a6fa-5ba8785f7f74',198.90,6,81,40);
 INSERT INTO `hooks` VALUES ('e6de6cff-d416-44eb-ad1d-450ff85f417d','aaf111c3-a977-4caa-a80b-9374eef0b21c','ac2087a7-a3b6-4d99-8823-41c798697b09','f46b119d-7aa5-454c-b10f-2e04c32304f9',204.40,2,98,50);
 INSERT INTO `hooks` VALUES ('e6e1addc-161f-427d-8e9d-e0f8677ca29c','9bc8cbf3-89c5-4998-b37f-8068ba813c02','b28c86f0-48f8-4a0c-bf61-e4cbb1e40756','6f37c5cc-dbdd-422d-aa14-9eebeb37b010',171.25,8,63,0);
@@ -13372,6 +13498,7 @@ INSERT INTO `hooks` VALUES ('e786177a-3449-4444-902a-41188eb14b70','c7d575f6-8b1
 INSERT INTO `hooks` VALUES ('e78c598d-802c-4546-b844-2355411e6234','4b10eca2-2d17-4531-bec2-db1a69ec8938','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',220.00,2,95,75);
 INSERT INTO `hooks` VALUES ('e794cd2d-c767-4c67-9876-425d91d3d6ef','4e8b53d7-af41-4394-bf65-487fc4e168d0','1ebc531a-0f02-467b-99ae-3866f794cd2e','214c7844-9a20-441a-89c7-9a8885a70440',247.33,9,85,10);
 INSERT INTO `hooks` VALUES ('e79df0d3-6875-4974-97cc-392156299a19','b3305f78-63c4-48a3-a64e-7eb1817c582a','13e89edf-8fc6-4cc3-8669-1ca27768e7e5','f46b119d-7aa5-454c-b10f-2e04c32304f9',230.70,4,96,60);
+INSERT INTO `hooks` VALUES ('e7a7d76b-7ad5-4e9b-ab51-6fa03301d2d3','a0bf6ec0-fc32-4724-bf4b-7ebd4c051886','fc17c4d8-e95b-4158-b8f7-d652f897ad46','f46b119d-7aa5-454c-b10f-2e04c32304f9',297.58,2,90,0);
 INSERT INTO `hooks` VALUES ('e7a815ea-72cd-4c9e-a4b0-6ce29474623f','f204b758-8584-427f-a2f3-7fe9ddad6e4f','239e2f33-94cf-47d1-90d7-f0eb948392d5','0adb98bc-b506-4f97-bfa3-79feb210a569',285.80,3,98,50);
 INSERT INTO `hooks` VALUES ('e7a988d1-3f91-413c-8146-55fbb84e8304','17e81589-38e2-4233-837e-c05aafc12edc','63f3d13a-ef2e-4224-bbcd-923db01fd77f','a30906bf-3577-4c3d-b3ee-35df457fd645',225.90,8,73,0);
 INSERT INTO `hooks` VALUES ('e7aa3900-db08-4457-81a1-e576d6d3ad02','779f2f06-0271-49aa-8e23-92cd2f63f195','62751ca2-6669-4ce6-be87-9443f1370985','1de0ffff-4bd4-4819-ab5a-601dca685e94',195.08,2,98,71);
@@ -13556,6 +13683,7 @@ INSERT INTO `hooks` VALUES ('eae7e025-78f6-4129-a495-0f79aee11d4e','939a9c41-7e5
 INSERT INTO `hooks` VALUES ('eaeed235-fd29-41ee-8f03-9fe4de26cae5','12771c1f-76e9-47b2-8100-1ba2a7f7b676','ac2087a7-a3b6-4d99-8823-41c798697b09','f46b119d-7aa5-454c-b10f-2e04c32304f9',186.10,2,89,0);
 INSERT INTO `hooks` VALUES ('eaf23998-3731-4370-bfac-b27481850e18','6c3a6795-28c1-4bc5-a428-fed88ef58878','fc17c4d8-e95b-4158-b8f7-d652f897ad46','f46b119d-7aa5-454c-b10f-2e04c32304f9',277.25,2,92,60);
 INSERT INTO `hooks` VALUES ('eaf2ccea-046e-4e0a-9fa8-39a0f26d3743','8378b26a-b9ec-4417-9233-cb3aea855796','b7a4269e-f04e-4a99-ac99-fc174bb734ae','521ae438-d9bf-4539-a10b-32b32cf3198a',242.92,2,99,60);
+INSERT INTO `hooks` VALUES ('eb042c79-ac57-4449-b944-d3ba6c792f70','396fc320-e614-4cb9-851d-6e844721f6ac','848c90fd-f856-4cf9-a60f-80fcef39a276','f46b119d-7aa5-454c-b10f-2e04c32304f9',346.50,3,86,50);
 INSERT INTO `hooks` VALUES ('eb07d55f-beb7-48d5-8b01-14af55994cb9','c5a3c01f-7c5a-4b48-a15b-a24c71a4be3d','145fa443-c6e8-4ef4-8c5b-a3d5ce3d2fd6','214c7844-9a20-441a-89c7-9a8885a70440',146.08,2,85,60);
 INSERT INTO `hooks` VALUES ('eb10a1c0-5bb8-4e91-a3f9-e399ebaec1b3','ebdcb258-41d9-4a73-89a3-d332387f2e61','21b23bfd-753d-463c-8cd3-4da040c9243c','214c7844-9a20-441a-89c7-9a8885a70440',266.50,2,99,82);
 INSERT INTO `hooks` VALUES ('eb16c225-1cf3-40fd-a1ce-a9f2aaae2966','5b96c03a-6da9-4b91-80db-beaf7d23de81','436fbfab-55f6-428c-b3ad-54a178415f11','dba0f658-b06e-44d1-94bf-64237e6d7ffb',233.42,2,99,0);
@@ -13674,6 +13802,7 @@ INSERT INTO `hooks` VALUES ('ed916291-ad0c-4e33-846b-294f48e61173','1748e99d-b60
 INSERT INTO `hooks` VALUES ('ed932287-938b-4a4c-b5a8-44a29f2fce41','5ef79dd6-43be-4164-8f0f-256eaff4dccc','d7a0b032-7445-4e85-bbb7-9eed54fa25ce','f46b119d-7aa5-454c-b10f-2e04c32304f9',141.50,4,93,33);
 INSERT INTO `hooks` VALUES ('ed9a2ee0-6ee1-4643-a137-5b3587946142','8e49e3f2-51e6-4932-95e9-44593359d304','5a5a3f8c-8978-463b-a5f8-edd1a7ecf425','c3026089-8e7d-4b21-8e49-1a0925de14b0',185.90,1,100,50);
 INSERT INTO `hooks` VALUES ('ed9a7708-a108-4f84-89a4-15de46f00bcc','1555f1af-69f5-463e-956b-6ec66c681e62','d67cb541-d010-4e09-897b-2307b42f0149','a30906bf-3577-4c3d-b3ee-35df457fd645',183.83,3,95,50);
+INSERT INTO `hooks` VALUES ('ed9ede14-1eb4-46ad-9b5a-412f567fe694','ec1e8edc-3209-4067-b0b5-cfbba4943ebf','b8f92d0b-1b71-487c-828c-cf0f5224046a','236d6ef2-8e42-43b6-81a9-fb0315b02594',217.25,7,92,0);
 INSERT INTO `hooks` VALUES ('eda11b7d-73ac-4eca-85e3-b1096c0e1458','d9320d1d-f648-41fb-9a00-62bc7b5bdf73','9e31db71-1b1c-454c-aebf-66de745428f2','f46b119d-7aa5-454c-b10f-2e04c32304f9',161.00,7,68,42);
 INSERT INTO `hooks` VALUES ('eda20a39-893e-495d-bee0-6c52967709b3','e79f1b75-9ce2-42b2-a22e-a25bc6554a4b','56aea5c0-b1cd-4205-a2c6-4f78cc93828f','846671a7-3918-4de4-8bfe-e182a4c651b4',196.20,4,82,0);
 INSERT INTO `hooks` VALUES ('eda44c58-3b64-4e50-b392-eab759d4b2e4','d056dfcf-1e7d-4e67-b92c-632ef92fe090','1d3ca75e-6017-47f5-b673-955cfb8db66b','bf6ff62f-d42b-48f8-956c-f8dbde4a1555',176.08,4,93,33);
@@ -13811,6 +13940,7 @@ INSERT INTO `hooks` VALUES ('f03c974f-6392-49f5-8531-41743e4f71a0','97065ca3-08b
 INSERT INTO `hooks` VALUES ('f03e8189-3d73-4132-a21e-31e246cf310a','9850240d-e886-4e41-a04c-355e12c8b8c0','8a381eca-34bf-450b-9215-5705b51f23a9','0adb98bc-b506-4f97-bfa3-79feb210a569',348.10,2,83,67);
 INSERT INTO `hooks` VALUES ('f042d582-9b8e-4f44-ba08-24730178576e','379d8b56-cd26-47ba-be34-50d6be900c0e','fa9ca141-62cb-4d21-bf4c-b5f70897ba5b','5f48a57a-4d8e-4a92-82c8-5d411c0b6079',238.42,1,100,50);
 INSERT INTO `hooks` VALUES ('f048b8cc-4c1b-4ac9-8b88-4d90df1e5ccf','3fefa82c-80d4-4ccd-8618-92100ab30bb3','26cd4979-18e7-484c-80f1-716863bd89e4','05837a49-b1a6-4803-a6fa-5ba8785f7f74',276.17,1,100,83);
+INSERT INTO `hooks` VALUES ('f04a32df-177f-4781-a47a-11097eef13c9','0cae1ab4-d3a0-46ee-b384-f952e1d6afa0','1d3ca75e-6017-47f5-b673-955cfb8db66b','bf6ff62f-d42b-48f8-956c-f8dbde4a1555',229.00,5,87,0);
 INSERT INTO `hooks` VALUES ('f04dd7a8-f5ac-4f71-90a4-3f907a48fa5f','56326272-2011-448c-bd84-97ae2f24fb67','9f639768-fd30-4304-a53d-aaa94c438efc','236d6ef2-8e42-43b6-81a9-fb0315b02594',212.75,3,80,70);
 INSERT INTO `hooks` VALUES ('f0543584-da91-4499-af38-4cf9e8b7de51','a82c1c59-c901-4f12-b57e-7c522bd7e32f','d387d3f3-0c56-4939-bf6a-77160084d2e0','4da9998b-82ce-4e51-8d50-85dd9142deaf',260.08,6,85,14);
 INSERT INTO `hooks` VALUES ('f056a3f7-95d4-4c2b-a4f5-cdd2ea50367c','195cfcd3-5643-4dc5-b5a5-f7b258837d20','3c4de5f6-6595-45b8-8d18-2f5f2b2a9931','a30906bf-3577-4c3d-b3ee-35df457fd645',255.00,5,83,17);
@@ -13855,6 +13985,7 @@ INSERT INTO `hooks` VALUES ('f0f416c0-12e0-4c86-8df4-f93464048799','608746f5-6f9
 INSERT INTO `hooks` VALUES ('f100019b-20c7-437d-9063-d27ef60d2e3e','fd9bdfdf-61c6-47fb-b3df-edc3a646505a','fc17c4d8-e95b-4158-b8f7-d652f897ad46','f46b119d-7aa5-454c-b10f-2e04c32304f9',185.90,1,100,88);
 INSERT INTO `hooks` VALUES ('f100f163-5714-4f52-9f1c-ab67798a797a','80012eed-410e-4b7f-9f8c-bc7e26723b8e','983aef6a-47ce-4bbc-985e-d3668616106f','c3026089-8e7d-4b21-8e49-1a0925de14b0',182.10,2,94,0);
 INSERT INTO `hooks` VALUES ('f1050ac2-da49-4005-b6d3-49cba35c3ab8','3482477f-3342-413b-a92d-a9793b3f4651','d1b2553b-e296-4fcb-903d-8e6a79300438','05837a49-b1a6-4803-a6fa-5ba8785f7f74',270.25,3,94,0);
+INSERT INTO `hooks` VALUES ('f117791d-3678-46ae-8f75-0b87966548d9','b69daac0-2e34-4617-ad80-9ec8d8c90e10','5932cef0-316d-4edb-9982-a1a7179467c3','ffa8662a-067b-435d-af37-fc3fa4897461',362.83,3,89,40);
 INSERT INTO `hooks` VALUES ('f11c2427-74d7-47a2-8da5-c2a63b72326b','11a3430f-5e1f-4189-9131-5530b1618fa5','9f639768-fd30-4304-a53d-aaa94c438efc','236d6ef2-8e42-43b6-81a9-fb0315b02594',140.83,2,92,75);
 INSERT INTO `hooks` VALUES ('f123f768-8b87-4112-9d30-4d04fb016da4','7d2e90dd-ba21-4617-b813-b52cd585becf','d0096ab6-5ab4-49e5-9843-cae3298da5fb','05837a49-b1a6-4803-a6fa-5ba8785f7f74',136.17,3,87,63);
 INSERT INTO `hooks` VALUES ('f12514c5-0e3a-4290-9f55-e28f881c58e2','d0df0246-3f71-4bcb-9c6c-c69821ecb654','7d55a506-839a-4abd-ab45-09862a2bc9f8','10e37fd5-d99b-42d2-9b5c-059e75fe1ba3',250.30,1,100,88);
@@ -14015,6 +14146,7 @@ INSERT INTO `hooks` VALUES ('f40b939d-f6cb-4fdb-be75-1648605e4a3c','10286f50-802
 INSERT INTO `hooks` VALUES ('f415bf94-3d80-499e-a228-7d65dd693264','5e800b8b-58d7-4090-8d4a-dfd3ec12eb24','62751ca2-6669-4ce6-be87-9443f1370985','1de0ffff-4bd4-4819-ab5a-601dca685e94',222.33,1,100,86);
 INSERT INTO `hooks` VALUES ('f4162963-5435-45cc-a3a5-51ba00c7fc10','c86a4ff5-2b55-4d01-baec-558fe0037844','239e2f33-94cf-47d1-90d7-f0eb948392d5','101ae17c-a3af-4cac-9c2f-21b284762555',232.00,7,96,22);
 INSERT INTO `hooks` VALUES ('f41abf50-89b9-40de-921a-6ce8bb7dd5b4','5002a2f4-e667-4271-a531-0242e8663253','df6a58e9-55f8-47e7-b89f-2cfff3323375','236d6ef2-8e42-43b6-81a9-fb0315b02594',179.00,2,91,80);
+INSERT INTO `hooks` VALUES ('f420dae4-15f1-43c9-b49a-fc4f9a1109e4','c72680dc-c412-40cf-874e-1d911988d5f7','ccfa2af7-bbe1-418e-a356-d4de84e8a486','f46b119d-7aa5-454c-b10f-2e04c32304f9',192.42,8,82,0);
 INSERT INTO `hooks` VALUES ('f423ff81-0af1-4c71-b00c-17d0f66132e9','90ed8b44-4da5-40e3-90b6-26ca9ba283d9','df6a58e9-55f8-47e7-b89f-2cfff3323375','236d6ef2-8e42-43b6-81a9-fb0315b02594',285.60,2,99,75);
 INSERT INTO `hooks` VALUES ('f4251cf5-4c22-4792-aaf2-51fed767a3e6','e4ec7607-24ac-4b01-b5ff-3b6fa076572f','297102b4-1fba-42dd-a627-4cdc359628fd','f46b119d-7aa5-454c-b10f-2e04c32304f9',332.92,1,100,75);
 INSERT INTO `hooks` VALUES ('f42606de-a2f8-434d-9a98-995842eea720','f785f494-15bc-45f1-9c76-023ab73049ad','e22a10d4-1a2b-4c2a-ae40-bb943e7e14c4','c73a06d2-d45d-4a4a-ac04-8d951525c34f',243.20,4,76,33);
@@ -14034,6 +14166,7 @@ INSERT INTO `hooks` VALUES ('f476f71b-12aa-4c87-90d6-96ef2354ce83','e551d8d6-646
 INSERT INTO `hooks` VALUES ('f47e5dfc-7f00-454e-8d96-c97235c86e0a','31f388b7-d9f5-4f44-afbf-c2cf4b1a5e33','8a930eea-d460-4ec5-9ab1-5bab6731ad97','f93ef823-548c-49e6-8c1c-fa114921dc44',142.90,10,75,17);
 INSERT INTO `hooks` VALUES ('f483fefb-5038-4bf6-a18b-83cbf0ff3da1','dd48021f-2e7f-4913-8b53-785b80fcdbbe','ccfa2af7-bbe1-418e-a356-d4de84e8a486','f46b119d-7aa5-454c-b10f-2e04c32304f9',220.90,8,63,43);
 INSERT INTO `hooks` VALUES ('f48a76e2-fb5e-4439-9587-29e0ba4c34ec','af540a48-99cb-47c0-8ccd-8131c6e8f64f','9465a7eb-b6f6-4ff6-b89f-e2c0d68e5d6c','541520b9-6151-43c6-8956-31a02acb59bd',126.80,3,58,40);
+INSERT INTO `hooks` VALUES ('f48b18a1-e3d8-460c-813d-fad6495d8be9','2cf82ef7-3e1b-48bb-a475-5ff566a540b8','b8f92d0b-1b71-487c-828c-cf0f5224046a','236d6ef2-8e42-43b6-81a9-fb0315b02594',293.67,3,82,50);
 INSERT INTO `hooks` VALUES ('f48d8230-39b5-4bd6-b627-11ccb06ba657','c8789f6f-afc5-48e7-8584-02dffeb277ec','1ebc531a-0f02-467b-99ae-3866f794cd2e','236d6ef2-8e42-43b6-81a9-fb0315b02594',220.25,10,74,0);
 INSERT INTO `hooks` VALUES ('f4949c5c-76d5-47ca-b8ce-f97251be4775','ce8c411f-e676-4b32-bcd6-9e3fcab9c983','4bb469e8-c8db-4799-b8cf-4db808d1651f','f46b119d-7aa5-454c-b10f-2e04c32304f9',99.30,15,64,12);
 INSERT INTO `hooks` VALUES ('f49ab94e-fd7e-40b5-94e3-359c4a688355','223cb839-6914-4c69-90e1-ef92a4a2d33b','fa9ca141-62cb-4d21-bf4c-b5f70897ba5b','5f48a57a-4d8e-4a92-82c8-5d411c0b6079',145.30,2,90,75);
@@ -14231,6 +14364,7 @@ INSERT INTO `hooks` VALUES ('f87bb336-0c27-4699-838c-a1938d9ce863','5d178ef8-2e5
 INSERT INTO `hooks` VALUES ('f8812d75-9c68-4a90-9860-7a17e6c2a1df','42eb0787-ccdb-43d9-b0fe-8203d782a91e','df6a58e9-55f8-47e7-b89f-2cfff3323375','f46b119d-7aa5-454c-b10f-2e04c32304f9',194.90,2,89,33);
 INSERT INTO `hooks` VALUES ('f883f308-d87f-4809-b89b-bf04bb0515e7','cf555c92-ca6d-45e4-ba44-c68871fdd792','b5438e57-c824-4b04-be90-cd790bd9105c','289d0316-9f7b-483c-85e5-694a41fff136',199.00,3,93,67);
 INSERT INTO `hooks` VALUES ('f8855c3c-14d0-4a78-a7c9-e36b7ae3c367','22c35921-d00f-4fcd-a1d1-61069ec6cf9c','f922e380-97b5-479f-a762-36269d163f55','0adb98bc-b506-4f97-bfa3-79feb210a569',256.30,2,85,33);
+INSERT INTO `hooks` VALUES ('f89254f2-ce5f-4120-8f8f-c9d5da941398','4eede0e8-7668-4048-a8bf-d50a295aa8b7','1d3ca75e-6017-47f5-b673-955cfb8db66b','bf6ff62f-d42b-48f8-956c-f8dbde4a1555',371.75,4,91,33);
 INSERT INTO `hooks` VALUES ('f892d547-1513-43fb-a486-84424ecef2c4','e88c17cc-d7e6-4305-99cb-5c7753fa740c','6ddc85f2-d75d-44fa-8de7-fca379423276','519ae6bf-d347-4a39-9758-76c0c3656280',164.92,6,70,33);
 INSERT INTO `hooks` VALUES ('f89738d6-18c2-4412-b857-b63ffb7978dc','c0ac3e6e-ed02-42dc-bda7-46b83af0e187','5932cef0-316d-4edb-9982-a1a7179467c3','ffa8662a-067b-435d-af37-fc3fa4897461',155.00,4,88,0);
 INSERT INTO `hooks` VALUES ('f8a60601-d098-417b-96f9-493cd9b0d49f','b87d6d07-66c5-4727-85d0-c7e19ed32c9c','3c4de5f6-6595-45b8-8d18-2f5f2b2a9931','a30906bf-3577-4c3d-b3ee-35df457fd645',263.00,6,93,25);
@@ -14251,6 +14385,7 @@ INSERT INTO `hooks` VALUES ('f8ed6182-dd34-4bac-b8e6-9a6d0ecfa44e','43a14655-79f
 INSERT INTO `hooks` VALUES ('f8fa75ad-8d12-4e18-a91c-ffd8d82768ce','7527b16d-57d0-4fac-90ba-e8e9a5fd3c5e','e13f1da0-5487-4648-82e6-09d3d4a1b334','05837a49-b1a6-4803-a6fa-5ba8785f7f74',169.80,8,89,27);
 INSERT INTO `hooks` VALUES ('f8ff7652-b3c4-4c7f-9076-140ff209359d','1876e899-0f01-4878-a372-a3f818c0057b','c4022963-02e3-481c-9f9c-7115a6ed5db5','0adb98bc-b506-4f97-bfa3-79feb210a569',249.67,2,100,60);
 INSERT INTO `hooks` VALUES ('f90938df-9685-4eac-8edb-e9cbb441da5f','909a4220-634c-4912-8a50-fa1ca9073490','62751ca2-6669-4ce6-be87-9443f1370985','289d0316-9f7b-483c-85e5-694a41fff136',169.83,7,67,0);
+INSERT INTO `hooks` VALUES ('f90c4fb3-5005-4931-9197-d4c0158ba070','b003d9bd-a6ab-4b56-8f6c-6b46277a357e','4cb0374a-6f32-4af6-b287-6a34da530c69','f46b119d-7aa5-454c-b10f-2e04c32304f9',288.50,1,100,75);
 INSERT INTO `hooks` VALUES ('f910c595-68ab-4f0d-b8b6-059a0fb60576','4ef0fa7c-feeb-4a23-a30e-6f8a7947d9ec','ac5273b8-6655-402c-86de-28749f3bea05','6f37c5cc-dbdd-422d-aa14-9eebeb37b010',96.60,7,50,0);
 INSERT INTO `hooks` VALUES ('f9116474-6de5-4965-b918-21f04956c535','70abc31e-1cea-42b9-8e61-6f0dc8cd576e','62751ca2-6669-4ce6-be87-9443f1370985','1de0ffff-4bd4-4819-ab5a-601dca685e94',267.50,6,92,0);
 INSERT INTO `hooks` VALUES ('f912d4c3-8880-4e5d-b0c6-5976843319ef','539d8bec-8cab-4590-9688-7a277897f924','5adee300-5661-40ea-afe6-62ea2531c69e','1c6bd4c2-a3f8-42fd-bfd5-9d2f5018b51e',171.08,4,69,64);
@@ -14525,6 +14660,7 @@ INSERT INTO `hooks` VALUES ('fe475862-0c10-45fe-9d52-fd908d88c916','12391be1-d7c
 INSERT INTO `hooks` VALUES ('fe497d0a-799f-4d14-930f-064c8788c84d','471be38e-781a-4dc7-ada3-e70d21ee5bc4','fa9ca141-62cb-4d21-bf4c-b5f70897ba5b','5f48a57a-4d8e-4a92-82c8-5d411c0b6079',259.10,2,85,33);
 INSERT INTO `hooks` VALUES ('fe575fde-2d24-40c0-bc2c-628f568760a4','056cd982-ffd3-48ed-b618-809ed981c0ab','62751ca2-6669-4ce6-be87-9443f1370985','1de0ffff-4bd4-4819-ab5a-601dca685e94',332.33,1,100,67);
 INSERT INTO `hooks` VALUES ('fe59e3af-4237-4bb8-8a3f-4ea264201cc9','8d6444ff-e4cc-4a9c-827b-48c018927195','6ddc85f2-d75d-44fa-8de7-fca379423276','289d0316-9f7b-483c-85e5-694a41fff136',143.20,4,91,67);
+INSERT INTO `hooks` VALUES ('fe612479-c115-4b18-bf40-386b768f2743','e68b7aac-a0c4-4b41-92f4-8053620c8a4c','d1b2553b-e296-4fcb-903d-8e6a79300438','05837a49-b1a6-4803-a6fa-5ba8785f7f74',227.50,9,78,0);
 INSERT INTO `hooks` VALUES ('fe6fb6c1-90b0-4388-aa01-d11138e5aee3','00fd62b5-b707-493f-bce8-4af6753e5c3c','fa9ca141-62cb-4d21-bf4c-b5f70897ba5b','5f48a57a-4d8e-4a92-82c8-5d411c0b6079',190.90,2,99,87);
 INSERT INTO `hooks` VALUES ('fe6ff6d1-2412-4422-97a3-97fc93f0229d','04ac05e1-1fe0-436e-8edc-a0de17e3fd97','2f2dfe80-b89e-40fd-95d5-248962b0c9eb','ffa8662a-067b-435d-af37-fc3fa4897461',235.00,1,100,92);
 INSERT INTO `hooks` VALUES ('fe717f9e-4091-46b2-be4f-fda77e19fcff','e880293c-01a5-480d-afb0-a8787438abd9','5932cef0-316d-4edb-9982-a1a7179467c3','ffa8662a-067b-435d-af37-fc3fa4897461',179.70,3,73,0);
@@ -15092,6 +15228,7 @@ INSERT INTO `pullers` VALUES ('b8523f4e-6710-4dc5-b3e6-69a16785293c','Addison','
 INSERT INTO `pullers` VALUES ('b85a9943-de45-4404-b800-bbed7de797fa','Cody','Miller');
 INSERT INTO `pullers` VALUES ('b8a303c3-1e95-45e1-a48e-2488fd2311ec','Scott','Johnson');
 INSERT INTO `pullers` VALUES ('b8c80f69-6dad-4d7f-b6c9-95956503006b','Chris','Malkow');
+INSERT INTO `pullers` VALUES ('b8f92d0b-1b71-487c-828c-cf0f5224046a','Logan','Dawson');
 INSERT INTO `pullers` VALUES ('ba728925-e14b-44ac-88d3-b53af16f9568','Amara','McPherson');
 INSERT INTO `pullers` VALUES ('bb2e3c10-3e5e-4198-9561-6d6697c857be','Alex','Cupp');
 INSERT INTO `pullers` VALUES ('bb495ba4-c36b-4b8c-be71-0909505934b8','Rubert','Kerl');
@@ -15333,6 +15470,7 @@ INSERT INTO `pulls` VALUES ('75739f76-90b6-48aa-b8fb-b87f6a009cef','930c7a7a-354
 INSERT INTO `pulls` VALUES ('7916d5d1-fc00-4731-ad66-90f7a88e9a91','faaa7d37-be9b-45e1-b28b-ab45472b40bd','1275ed46-1b7b-43d5-9597-e0597545ebeb','2021-09-25','');
 INSERT INTO `pulls` VALUES ('7ea2f0fa-face-452f-ad8f-c14743f084cc','3dd9c157-35b6-42fe-9a6e-f63a08dac538','e3a419c7-1a25-472f-a180-f620e7b8ed30','2023-05-13','');
 INSERT INTO `pulls` VALUES ('7f616fdb-5780-4e14-97ab-fe58bb7cfa30','3194b8f3-3d17-4a90-a0d6-58bb33c3ea17','7a95293c-5040-4a42-8021-4436b61f294d','2018-06-23','');
+INSERT INTO `pulls` VALUES ('7fca0c41-d64e-45ae-9cf3-18783b469ad1','3dd9c157-35b6-42fe-9a6e-f63a08dac538','e7cbc106-3d49-4b5e-9b69-e708aa7db80d','2023-08-12','');
 INSERT INTO `pulls` VALUES ('7ff34dad-0b3e-4c78-9606-8d5266f289f6','9f29a60a-f6f8-4fb1-94db-66b46810e7a9','1fdb3aaa-6da5-49b2-adc7-52ef5e8c9415','2015-06-20','');
 INSERT INTO `pulls` VALUES ('806f8c42-fcbc-4785-baf3-e281384a6579','75fc5120-1d00-4977-9ef9-b0fe414cb39e','4a8d0495-024f-40ca-a526-705ff69cd72e','2019-08-24','');
 INSERT INTO `pulls` VALUES ('81a9e230-09cf-4880-a9ca-112269056de6','930c7a7a-354a-4600-80a2-95ddf2634764','7a95293c-5040-4a42-8021-4436b61f294d','2020-06-20','');
@@ -15611,4 +15749,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-09-10 15:35:10
+-- Dump completed on 2023-09-10 15:40:18
