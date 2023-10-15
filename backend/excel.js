@@ -140,12 +140,13 @@ function getTractor(tractor) {
     tractor == "460" ||
     tractor == "560" ||
     tractor == "656" ||
-    tractor == "666"
+    tractor == "666" ||
+    tractor == "1206"
   ) {
     tractor = "Farmall " + tractor;
   }
 
-  if (tractor == "4010") {
+  if (tractor == "4010" || tractor == "4020") {
     tractor = "John Deere " + tractor;
   }
 
