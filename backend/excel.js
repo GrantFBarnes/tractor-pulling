@@ -139,7 +139,8 @@ function getTractor(tractor) {
     tractor == "450" ||
     tractor == "460" ||
     tractor == "560" ||
-    tractor == "656"
+    tractor == "656" ||
+    tractor == "666"
   ) {
     tractor = "Farmall " + tractor;
   }
