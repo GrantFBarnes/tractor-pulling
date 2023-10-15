@@ -70,6 +70,7 @@ function checkTractor(tractor, brand) {
         switch (model) {
           case "S88 Diesel":
           case "S 88 D":
+          case "S88 D":
           case "NSSS88D":
             model = "Super 88 Diesel";
             break;
